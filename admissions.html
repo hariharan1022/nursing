@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions | Mount Zion College of Nursing</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        .admission-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 40px;
+            border-top: 5px solid var(--primary);
+        }
+
+        .admission-card h3 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .admission-card h3 i {
+            color: var(--accent);
+        }
+
+        .admission-card h4 {
+            color: var(--secondary);
+            margin: 20px 0 10px;
+        }
+
+        .admission-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .admission-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+
+        .admission-list li::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .sub-list {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .doc-item {
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .doc-item i {
+            color: var(--accent);
+        }
+
+        .age-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .age-table td,
+        .age-table th {
+            padding: 12px;
+            border: 1px solid #eee;
+            text-align: left;
+        }
+
+        .age-table th {
+            background: var(--bg-light);
+            color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="top-contact">
+                <a href="tel:+919965566664"><i class="fas fa-phone"></i> +91 99655 66664</a>
+                <a href="mailto:info@mzcn.in" style="margin-left: 20px;"><i class="fas fa-envelope"></i>
+                    info@mzcn.in</a>
+            </div>
+            <div class="top-bar-links">
+                <a href="http://betanet.mzcet.in:8080/">Student Portal</a>
+                <a href="https://mail.google.com/a/mzcn.in">Web Mail</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.webp" alt="MZCN Logo">
+                <div class="logo-text">
+                    <h2>MOUNT ZION</h2>
+                    <p>COLLEGE OF NURSING</p>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="about.html">About Us</a>
+                    <ul class="dropdown">
+                        <li><a href="about.html#vision">Vision & Mission</a></li>
+                        <li><a href="about.html#idp">Institutional Developmental Plan</a></li>
+                        <li><a href="about.html#profile">Profile</a></li>
+                        <li><a href="about.html#chairman">Our Founder Chairman</a></li>
+                        <li><a href="about.html#trustees">Board of Trustees</a></li>
+                        <li><a href="about.html#director">Director</a></li>
+                        <li><a href="about.html#principal">Principal</a></li>
+                        <li><a href="about.html#organogram">Organogram</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="course-details.html">Course Details</a>
+                    <ul class="dropdown">
+                        <li><a href="bsc-nursing.html">Programs</a></li>
+                        <li><a href="facilities.html">Facilities</a></li>
+                        <li><a href="faculty.html">Faculty</a></li>
+                    </ul>
+                </li>
+                <li><a href="clubs-and-cells.html">Clubs & Cells</a></li>
+                <li>
+                    <a href="info-corner.html">Info Corner</a>
+                    <ul class="dropdown">
+                        <li><a href="info-corner.html#circulars">Circulars and notices</a></li>
+                        <li><a href="info-corner.html#announcements">Announcement</a></li>
+                        <li><a href="info-corner.html#news">News, Events, Achievements</a></li>
+                        <li><a href="info-corner.html#jobs">Job openings</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="feedback.html">Feedback</a>
+                    <ul class="dropdown">
+                        <li><a href="feedback.html?tab=staff-student">Staff & Student Feedback</a></li>
+                        <li><a href="feedback.html?tab=general">General Feedback</a></li>
+                        <li><a href="feedback.html?tab=course">Course Feedback</a></li>
+                        <li><a href="feedback.html?tab=hostel">Hostel Feedback</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="Search..." id="topSearch">
+                    <button></button>
+                </div>
+            </div>
+            <button class="mobile-nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Inner Hero -->
+    <div class="inner-hero">
+        <div class="container">
+            <span class="estd-tag" style="background: var(--accent); color: var(--primary);">ADMISSION PORTAL</span>
+            <h1 style="font-size: 3rem; margin: 20px 0;">Admission Details</h1>
+            <p style="max-width: 700px; margin: 0 auto; opacity: 0.9;">Welcome to the Admission Portal of Mount Zion
+                College of Nursing. We are excited to help you begin your journey in nursing excellence.</p>
+        </div>
+    </div>
+
+    <section class="section" style="background: var(--bg-light);">
+        <div class="container">
+            <div class="grid" style="grid-template-columns: 2fr 1fr; gap: 40px; align-items: start;">
+                <div class="admission-main">
+                    <!-- Eligibility -->
+                    <div class="admission-card">
+                        <h3><i class="fas fa-user-graduate"></i> Eligibility Criteria</h3>
+
+                        <h4>1. Academic Requirements (B.Sc. Nursing)</h4>
+                        <ul class="admission-list">
+                            <li>Candidates must have passed 10+2 with Science (Physics, Chemistry, Biology) and English
+                                (Core/Elective).</li>
+                            <li>Minimum aggregate of 45% marks from a recognized board (AISSCE, CBSE, ICSE, SSCE, HSCE,
+                                etc.).</li>
+                        </ul>
+
+                        <h4>2. NRI Candidates Eligibility</h4>
+                        <ul class="admission-list">
+                            <li>12th-grade diploma or equivalent from a recognized board or university.</li>
+                            <li>Minimum 50% aggregate marks in Physics, Chemistry, Biology, and English.</li>
+                            <li>Additional Requirements for NRI:
+                                <ul class="sub-list">
+                                    <li>Photocopy of Passport and Visa.</li>
+                                    <li>Four recent passport-sized photographs.</li>
+                                    <li>Details of residence in India.</li>
+                                    <li>HIV/AIDS/COVID-19 test report from a WHO-recognized institution.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Nationality & Documents -->
+                    <div class="admission-card">
+                        <h3><i class="fas fa-id-card"></i> Nationality & Requirements</h3>
+                        <ul class="admission-list">
+                            <li><strong>Citizen & Nativity:</strong> Candidate should be an Indian citizen and a native
+                                of Tamil Nadu.</li>
+                            <li><strong>Nativity Exemption:</strong> Candidates who studied from 6th to 12th standard in
+                                Tamil Nadu schools do not need a Nativity Certificate but must provide proof of
+                                residence.</li>
+                        </ul>
+
+                        <h4>Documents Required (Checklist)</h4>
+                        <div class="docs-grid">
+                            <div class="doc-item"><i class="fas fa-file-alt"></i> 12th Mark Sheet</div>
+                            <div class="doc-item"><i class="fas fa-file-export"></i> Transfer Certificate</div>
+                            <div class="doc-item"><i class="fas fa-money-bill-wave"></i> Income Certificate</div>
+                            <div class="doc-item"><i class="fas fa-id-badge"></i> Aadhar Card Xerox</div>
+                            <div class="doc-item"><i class="fas fa-users"></i> Community Certificate</div>
+                            <div class="doc-item"><i class="fas fa-map-marker-alt"></i> Migration Certificate*</div>
+                            <div class="doc-item"><i class="fas fa-check-double"></i> Genuineness Certificate*</div>
+                            <div class="doc-item"><i class="fas fa-certificate"></i> Eligibility Certificate*</div>
+                        </div>
+                        <p style="font-size: 0.85rem; color: #888; margin-top: 15px;">* Required for other state or NRI
+                            candidates as applicable.</p>
+                    </div>
+
+                    <!-- Age Limit -->
+                    <div class="admission-card">
+                        <h3><i class="fas fa-calendar-alt"></i> Age Limit</h3>
+                        <ul class="admission-list">
+                            <li>Minimum: 17 years completed by 31st December of the admission year.</li>
+                        </ul>
+                        <table class="age-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Maximum Age (as of Dec 31st)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>OC / BC / BCM / MBC / DNC</td>
+                                    <td>30 Years</td>
+                                </tr>
+                                <tr>
+                                    <td>SC / SCA / ST</td>
+                                    <td>35 Years</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Scholarship -->
+                    <div class="admission-card">
+                        <h3><i class="fas fa-hand-holding-usd"></i> Scholarship Details</h3>
+                        <ul class="admission-list">
+                            <li><strong>First Graduate Scholarship:</strong> Must submit a valid First Graduate
+                                Certificate for eligibility.</li>
+                            <li><strong>Government Scholarships:</strong> Eligible students can apply for Government of
+                                Tamil Nadu scholarships by submitting required documents during admission.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="admission-sidebar">
+                    <!-- Selection Process -->
+                    <div class="admission-card" style="border-top-color: var(--accent);">
+                        <h3 style="font-size: 1.2rem;"><i class="fas fa-tasks"></i> Selection Process</h3>
+                        <ol style="padding-left: 20px; color: var(--text-muted); line-height: 2;">
+                            <li><strong>Entrance Exam:</strong> Based on institutional entrance performance.</li>
+                            <li><strong>Interview:</strong> Shortlisted candidates will be invited for a personal
+                                interview.</li>
+                            <li><strong>Physical Fitness:</strong> Must submit a Medical Fitness Certificate from an
+                                authorized medical officer.</li>
+                        </ol>
+                    </div>
+
+                    <!-- How to Apply -->
+                    <div class="admission-card" id="apply"
+                        style="background: var(--primary); color: white; border: none;">
+                        <h3 style="color: white;"><i class="fas fa-paper-plane"></i> How to Apply</h3>
+                        <p style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 20px;">For local and NRI candidates,
+                            you can apply online or visit our administrative office.</p>
+                        <a href="mailto:info@mzcn.in" class="btn btn-outline"
+                            style="color: white; border-color: white; width: 100%; text-align: center; margin-bottom: 20px;">Send
+                            Inquiry</a>
+                        <p style="font-size: 0.8rem; text-align: center;">Or visit: <br> The Tamil Nadu Dr. M.G.R.
+                            Medical University, Chennai (For NRIs)</p>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="admission-card">
+                        <h3 style="font-size: 1.2rem;"><i class="fas fa-headset"></i> Support</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">Need help with the
+                            application?</p>
+                        <p><strong><i class="fas fa-phone-alt" style="color: var(--accent);"></i> +91 99655
+                                66664</strong></p>
+                        <p><strong><i class="fas fa-envelope" style="color: var(--accent);"></i> info@mzcn.in</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #4a0000; color: white; padding: 80px 0 30px; border-top: 5px solid var(--accent);">
+        <div class="container grid" style="grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 50px;">
+            <div class="f-brand">
+                <img src="logo.webp" alt="MZCN Logo" style="height: 70px; margin-bottom: 25px;">
+                <p style="opacity: 0.8; line-height: 1.6; margin-bottom: 25px;">To Make Man Whole. Providing world-class
+                    nursing education with clinical excellence for over 15 years.</p>
+                <div style="display: flex; gap: 15px;">
+                    <a href="https://www.facebook.com/MZNursing"
+                        style="color: white; font-size: 1.2rem; opacity: 0.7;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/919965566664" style="color: white; font-size: 1.2rem; opacity: 0.7;"><i
+                            class="fab fa-whatsapp"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem; opacity: 0.7;"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem; opacity: 0.7;"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="f-links">
+                <h4 style="color: var(--accent); margin-bottom: 25px; font-family: 'Outfit';">Navigation</h4>
+                <ul style="list-style: none; padding: 0; line-height: 2.2;">
+                    <li><a href="index.html" style="color: white; text-decoration: none; opacity: 0.7;">Home</a></li>
+                    <li><a href="about.html" style="color: white; text-decoration: none; opacity: 0.7;">About Us</a>
+                    </li>
+                    <li><a href="course-details.html" style="color: white; text-decoration: none; opacity: 0.7;">Course
+                            Details</a></li>
+                    <li><a href="clubs-and-cells.html" style="color: white; text-decoration: none; opacity: 0.7;">Clubs
+                            & Cells</a>
+                    </li>
+                    <li><a href="info-corner.html" style="color: white; text-decoration: none; opacity: 0.7;">Info
+                            Corner</a>
+                    </li>
+                    <li><a href="admissions.html"
+                            style="color: white; text-decoration: none; opacity: 0.7;">Admissions</a></li>
+                    <li><a href="contact.html" style="color: white; text-decoration: none; opacity: 0.7;">Contact</a>
+                    </li>
+                    <li><a href="feedback.html" style="color: white; text-decoration: none; opacity: 0.7;">Feedback</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="f-links">
+                <h4 style="color: var(--accent); margin-bottom: 25px; font-family: 'Outfit';">Affiliations</h4>
+                <ul style="list-style: none; padding: 0; line-height: 2.2; font-size: 0.9rem;">
+                    <li><a href="https://www.tnmgrmu.ac.in/" target="_blank"
+                            style="color: white; text-decoration: none; opacity: 0.7;">The MGR University</a></li>
+                    <li><a href="https://www.indiannursingcouncil.org/" target="_blank"
+                            style="color: white; text-decoration: none; opacity: 0.7;">Nursing Council (INC)</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; opacity: 0.7;">TNNMC Council</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; opacity: 0.7;">Health Department</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="f-contact">
+                <h4 style="color: var(--accent); margin-bottom: 25px; font-family: 'Outfit';">Get in Touch</h4>
+                <div
+                    style="margin-bottom: 15px; display: flex; gap: 15px; align-items: start; font-size: 0.9rem; opacity: 0.8;">
+                    <i class="fas fa-map-marker-alt" style="margin-top: 5px; color: var(--accent);"></i>
+                    <span>Lena Vilakku, Pilivalam P.O, Thirumayam Tk., Pudukkottai Dt - 622507, Tamil Nadu, INDIA.</span>
+                </div>
+                <div
+                    style="margin-bottom: 15px; display: flex; gap: 15px; align-items: start; font-size: 0.9rem; opacity: 0.8;">
+                    <i class="fas fa-phone-alt" style="color: var(--accent);"></i>
+                    <span>+91 75021 73000 (Adm)<br>+91 99655 20316 (Prin)</span>
+                </div>
+                <div style="display: flex; gap: 15px; align-items: start; font-size: 0.9rem; opacity: 0.8;">
+                    <i class="fas fa-envelope" style="color: var(--accent);"></i>
+                    <span>info@mzcn.in<br>principal@mzcn.in</span>
+                </div>
+            </div>
+        </div>
+        <div class="container"
+            style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.6;">
+            © 2026 Mount Zion College of Nursing. All Rights Reserved.
+        </div>
+    </footer>
+</body>
+
+</html>
+
+

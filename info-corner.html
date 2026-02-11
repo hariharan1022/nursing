@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Information Corner | Mount Zion College of Nursing</title>
+    <meta name="description"
+        content="Latest announcements, circulars, news, and achievements from Mount Zion College of Nursing.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .info-sidebar {
+            position: sticky;
+            top: 120px;
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            border-top: 5px solid var(--primary);
+        }
+
+        .info-nav {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-nav li {
+            margin-bottom: 15px;
+        }
+
+        .info-nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: var(--transition);
+        }
+
+        .info-nav a:hover,
+        .info-nav a.active {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .info-section {
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 40px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .info-section h2 {
+            color: var(--primary);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+            display: inline-flex;
+        }
+
+        .announcement-card {
+            border-left: 4px solid var(--accent);
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 20px;
+        }
+
+        .announcement-card h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .date-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .achievement-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .achievement-table th,
+        .achievement-table td {
+            padding: 12px;
+            border: 1px solid #eee;
+            text-align: left;
+        }
+
+        .achievement-table th {
+            background: var(--primary);
+            color: white;
+        }
+
+        .job-photo {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .info-sidebar {
+                position: static;
+                margin-bottom: 30px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="top-contact">
+                <a href="tel:+919965566664"><i class="fas fa-phone"></i> +91 99655 66664</a>
+                <a href="mailto:info@mzcn.in"><i class="fas fa-envelope"></i> info@mzcn.in</a>
+            </div>
+            <div class="top-bar-links">
+                <a href="http://betanet.mzcet.in:8080/">Student Portal</a>
+                <a href="https://mail.google.com/a/mzcn.in">Web Mail</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.webp" alt="MZCN Logo">
+                <div class="logo-text">
+                    <h2>MOUNT ZION</h2>
+                    <p>COLLEGE OF NURSING</p>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="about.html">About Us</a>
+                    <ul class="dropdown">
+                        <li><a href="about.html#vision">Vision & Mission</a></li>
+                        <li><a href="about.html#idp">Institutional Developmental Plan</a></li>
+                        <li><a href="about.html#profile">Profile</a></li>
+                        <li><a href="about.html#chairman">Our Founder Chairman</a></li>
+                        <li><a href="about.html#trustees">Board of Trustees</a></li>
+                        <li><a href="about.html#director">Director</a></li>
+                        <li><a href="about.html#principal">Principal</a></li>
+                        <li><a href="about.html#organogram">Organogram</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="course-details.html">Course Details</a>
+                    <ul class="dropdown">
+                        <li><a href="bsc-nursing.html">Programs</a></li>
+                        <li><a href="facilities.html">Facilities</a></li>
+                        <li><a href="faculty.html">Faculty</a></li>
+                    </ul>
+                </li>
+                <li><a href="clubs-and-cells.html">Clubs & Cells</a></li>
+                <li>
+                    <a href="info-corner.html" class="active">Info Corner</a>
+                    <ul class="dropdown">
+                        <li><a href="info-corner.html#circulars">Circulars and notices</a></li>
+                        <li><a href="info-corner.html#announcements">Announcement</a></li>
+                        <li><a href="info-corner.html#news">News, Events, Achievements</a></li>
+                        <li><a href="info-corner.html#jobs">Job openings</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="feedback.html">Feedback</a>
+                    <ul class="dropdown">
+                        <li><a href="feedback.html?tab=staff-student">Staff & Student Feedback</a></li>
+                        <li><a href="feedback.html?tab=general">General Feedback</a></li>
+                        <li><a href="feedback.html?tab=course">Course Feedback</a></li>
+                        <li><a href="feedback.html?tab=hostel">Hostel Feedback</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="Search..." id="topSearch">
+                    <button></button>
+                </div>
+            </div>
+            <button class="mobile-nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Inner Hero -->
+    <div class="inner-hero">
+        <div class="container">
+            <span class="estd-tag">LATEST UPDATES</span>
+            <h1 style="font-size: 3rem; margin: 20px 0;">Information Corner</h1>
+            <p style="max-width: 800px; margin: 0 auto; opacity: 0.9;">Circulars, Announcements, Events, and
+                Professional Achievements of Mount Zion College of Nursing.</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="section">
+        <div class="container">
+            <div class="grid info-grid" style="grid-template-columns: 1fr 2.5fr; gap: 40px; align-items: start;">
+                <!-- Sidebar -->
+                <aside class="info-sidebar">
+                    <h3 style="color: var(--primary); margin-bottom: 20px;">Quick Access</h3>
+                    <ul class="info-nav">
+                        <li><a href="#announcements"><i class="fas fa-bullhorn"></i> Announcements</a></li>
+                        <li><a href="#circulars"><i class="fas fa-file-alt"></i> Circulars & Notices</a></li>
+                        <li><a href="#news"><i class="fas fa-newspaper"></i> News & Events</a></li>
+                        <li><a href="#achievements"><i class="fas fa-trophy"></i> Achievements</a></li>
+                        <li><a href="#jobs"><i class="fas fa-briefcase"></i> Job Openings</a></li>
+                    </ul>
+                </aside>
+
+                <!-- Content Area -->
+                <div class="info-container">
+
+                    <!-- Announcements -->
+                    <div id="announcements" class="info-section">
+                        <h2><i class="fas fa-bullhorn"></i> Announcements</h2>
+
+                        <div class="announcement-card">
+                            <span class="date-badge">Professional Event</span>
+                            <h4>Lamp Lighting Ceremony</h4>
+                            <p>The Lamp Lighting Ceremony for the first-year batch (2024-2028) will take place on 29th
+                                January 2025. This significant event symbolizes the beginning of their professional
+                                journey into nursing.</p>
+                        </div>
+
+                        <div class="announcement-card">
+                            <span class="date-badge">Update</span>
+                            <h4>Administrative Announcements</h4>
+                            <p><strong>Fee Payment Deadlines:</strong> Students are reminded to adhere to tuition and
+                                fee payment deadlines to avoid any inconvenience. Please ensure timely submission.</p>
+                        </div>
+
+                        <div class="announcement-card">
+                            <span class="date-badge">Celebration</span>
+                            <h4>Pongal Celebration 2025</h4>
+                            <p>On 10th January 2025, the college celebrated Pongal with traditional fervor. The occasion
+                                was graced by Mrs. Florence Jeyabarathan and Dr. Jayson K. Jeyabarathan.</p>
+                        </div>
+
+                        <div class="announcement-card">
+                            <span class="date-badge">Celebration</span>
+                            <h4>Christmas Celebration</h4>
+                            <p>Celebrated on 19th December 2024 with the theme "We Are His Children," featuring songs,
+                                skits, and inspiring messages.</p>
+                        </div>
+
+                        <div class="announcement-card">
+                            <span class="date-badge">Celebration</span>
+                            <h4>Founders’ Day</h4>
+                            <p>On 17th December 2024, we commemorated the life and vision of our founder, Mr.
+                                Jeyabarathan Chelliah, with children from Christhu King Home for Children.</p>
+                        </div>
+                    </div>
+
+                    <!-- News & Events -->
+                    <div id="news" class="info-section">
+                        <h2><i class="fas fa-newspaper"></i> Recent News & Initiatives</h2>
+
+                        <div class="announcement-card">
+                            <span class="date-badge">Initiative</span>
+                            <h4>Healthy Nutrition Demonstration</h4>
+                            <p>On 8th November 2024, the "Radiant Rubies" batch organized a Nutrition Event, preparing
+                                dishes tailored to health conditions like diabetes and anemia.</p>
+                        </div>
+
+                        <div class="announcement-card">
+                            <span class="date-badge">Leadership</span>
+                            <h4>SALT 2024</h4>
+                            <p>Hosted the Student Advocacy and Leadership Training in collaboration with TNAI for
+                                students from 21 institutions.</p>
+                        </div>
+
+                        <div class="announcement-card">
+                            <span class="date-badge">Milestone</span>
+                            <h4>XI Graduation Day</h4>
+                            <p>Celebrated on 2nd April 2024. 46 graduates received their degrees, marking the
+                                culmination of their dedication.</p>
+                        </div>
+
+                        <div class="announcement-card">
+                            <span class="date-badge">Sports</span>
+                            <h4>XVI Annual Sports Meet</h4>
+                            <p>On 16th July 2024, showcasing talent in 18 extracurricular and 22 sports events.</p>
+                        </div>
+
+                        <div class="announcement-card">
+                            <span class="date-badge">Event</span>
+                            <h4>Fresher’s Day</h4>
+                            <p>Welcomed the 16th batch, "Joyful Generous Topaz," on 25th November 2024.</p>
+                        </div>
+                    </div>
+
+                    <!-- Achievements -->
+                    <div id="achievements" class="info-section">
+                        <h2><i class="fas fa-trophy"></i> Academic Achievements</h2>
+
+                        <h4 style="color: var(--primary); margin: 20px 0 10px;">Third Year Rank Holders</h4>
+                        <table class="achievement-table">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Name of the Students</th>
+                                    <th>Subject Topped At</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Ms. Nanthika, Ms. Vivetha</td>
+                                    <td>Medical Surgical Nursing - II</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Mr. Sivashanmugam</td>
+                                    <td>Child Health Nursing</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Ms. Nirmala Devi</td>
+                                    <td>Mental Health Nursing</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Ms. Subasri, Mr. Sivashanmugam</td>
+                                    <td>Nursing Research and Statistics</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h4 style="color: var(--primary); margin: 30px 0 10px;">Second Year Rank Holders</h4>
+                        <table class="achievement-table">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Name of the Students</th>
+                                    <th>Subject Topped At</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Ms. Keran Jancy</td>
+                                    <td>Sociology</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Ms. Snowlin</td>
+                                    <td>Medical Surgical Nursing - I</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Ms. Reena</td>
+                                    <td>Pharmacology, Pathology, and Genetics</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Ms. Renisha</td>
+                                    <td>Community Health Nursing - II</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Ms. Dharani</td>
+                                    <td>Communication and Educational Technology</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h4 style="color: var(--primary); margin: 30px 0 10px;">First Year (II Sem) Rank Holders</h4>
+                        <table class="achievement-table">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Name of the Students</th>
+                                    <th>Subject Topped At</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Mr. Ratan Sagar Singh</td>
+                                    <td>Nursing Foundation – I & II</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Ms. Umayal</td>
+                                    <td>Applied Nutrition and Biochemistry</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div style="margin-top: 30px;">
+                            <p><strong><i class="fas fa-star" style="color: var(--accent);"></i> Co-Curricular:</strong>
+                                Students secured top positions in quiz competitions, essay writing, and poster
+                                presentations.</p>
+                            <p><strong><i class="fas fa-medal" style="color: var(--accent);"></i> Sports:</strong>
+                                Students excelled in volleyball, cricket, and athletics, bringing home numerous
+                                accolades.</p>
+                        </div>
+                    </div>
+
+                    <!-- Job Openings -->
+                    <div id="jobs" class="info-section">
+                        <h2><i class="fas fa-briefcase"></i> Job Openings</h2>
+                        <p>We are looking for dedicated professionals to join our faculty. Current vacancies are listed
+                            below:</p>
+                        <img src="wanted.jpg" alt="Job Opening - Nursing Tutor and Assistant Professor"
+                            class="job-photo">
+                        <div
+                            style="margin-top: 20px; background: var(--bg-light); padding: 20px; border-radius: 12px; text-align: center;">
+                            <p style="font-weight: 700; color: var(--primary);">Apply within 7 days to the Director</p>
+                            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:jobs@mzcn.in"
+                                    style="color: var(--primary); font-weight: 700; text-decoration: none;">jobs@mzcn.in</a>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #4a0000; color: white; padding: 80px 0 30px; border-top: 5px solid var(--accent);">
+        <div class="container grid" style="grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 50px;">
+            <div class="f-brand">
+                <img src="logo.webp" alt="MZCN Logo" style="height: 70px; margin-bottom: 25px;">
+                <p style="opacity: 0.8; line-height: 1.6; margin-bottom: 25px;">To Make Man Whole. Providing world-class
+                    nursing education with clinical excellence for over 15 years.</p>
+                <div style="display: flex; gap: 15px;">
+                    <a href="https://www.facebook.com/MZNursing"
+                        style="color: white; font-size: 1.2rem; opacity: 0.7;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/919965566664" style="color: white; font-size: 1.2rem; opacity: 0.7;"><i
+                            class="fab fa-whatsapp"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem; opacity: 0.7;"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem; opacity: 0.7;"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="f-links">
+                <h4 style="color: var(--accent); margin-bottom: 25px; font-family: 'Outfit';">Navigation</h4>
+                <ul style="list-style: none; padding: 0; line-height: 2.2;">
+                    <li><a href="index.html" style="color: white; text-decoration: none; opacity: 0.7;">Home</a></li>
+                    <li><a href="about.html" style="color: white; text-decoration: none; opacity: 0.7;">About Us</a>
+                    </li>
+                    <li><a href="course-details.html" style="color: white; text-decoration: none; opacity: 0.7;">Course
+                            Details</a></li>
+                    <li><a href="clubs-and-cells.html" style="color: white; text-decoration: none; opacity: 0.7;">Clubs
+                            & Cells</a>
+                    </li>
+                    <li><a href="info-corner.html" style="color: white; text-decoration: none; opacity: 0.7;">Info
+                            Corner</a></li>
+                    <li><a href="admissions.html"
+                            style="color: white; text-decoration: none; opacity: 0.7;">Admissions</a></li>
+                    <li><a href="contact.html" style="color: white; text-decoration: none; opacity: 0.7;">Contact</a>
+                    </li>
+                    <li><a href="feedback.html" style="color: white; text-decoration: none; opacity: 0.7;">Feedback</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="f-links">
+                <h4 style="color: var(--accent); margin-bottom: 25px; font-family: 'Outfit';">Affiliations</h4>
+                <ul style="list-style: none; padding: 0; line-height: 2.2; font-size: 0.9rem;">
+                    <li><a href="https://www.tnmgrmu.ac.in/" target="_blank"
+                            style="color: white; text-decoration: none; opacity: 0.7;">The MGR University</a></li>
+                    <li><a href="https://www.indiannursingcouncil.org/" target="_blank"
+                            style="color: white; text-decoration: none; opacity: 0.7;">Nursing Council (INC)</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; opacity: 0.7;">TNNMC Council</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; opacity: 0.7;">Health Department</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="f-contact">
+                <h4 style="color: var(--accent); margin-bottom: 25px; font-family: 'Outfit';">Get in Touch</h4>
+                <div
+                    style="margin-bottom: 15px; display: flex; gap: 15px; align-items: start; font-size: 0.9rem; opacity: 0.8;">
+                    <i class="fas fa-map-marker-alt" style="margin-top: 5px; color: var(--accent);"></i>
+                    <span>Lena Vilakku, Pilivalam P.O, Thirumayam Tk., Pudukkottai Dt - 622507, Tamil Nadu, INDIA.</span>
+                </div>
+                <div
+                    style="margin-bottom: 15px; display: flex; gap: 15px; align-items: start; font-size: 0.9rem; opacity: 0.8;">
+                    <i class="fas fa-phone-alt" style="color: var(--accent);"></i>
+                    <span>+91 75021 73000 (Adm)<br>+91 99655 20316 (Prin)</span>
+                </div>
+                <div style="display: flex; gap: 15px; align-items: start; font-size: 0.9rem; opacity: 0.8;">
+                    <i class="fas fa-envelope" style="color: var(--accent);"></i>
+                    <span>info@mzcn.in<br>principal@mzcn.in</span>
+                </div>
+            </div>
+        </div>
+        <div class="container"
+            style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.6;">
+            © 2026 Mount Zion College of Nursing. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
+
+

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facilities & Activities | Mount Zion College of Nursing</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        .facility-section {
+            margin-bottom: 80px;
+        }
+
+        .facility-header {
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .facility-header i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            background: var(--bg-light);
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+        }
+
+        .facility-header h2 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin: 0;
+        }
+
+        .facility-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            border-left: 6px solid var(--primary);
+        }
+
+        .facility-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+
+        .affiliations-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .affiliations-table th {
+            background: var(--primary);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .affiliations-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .affiliations-table tr:hover {
+            background: var(--bg-light);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            background: var(--accent);
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <div class="top-contact">
+                <a href="tel:+919965566664"><i class="fas fa-phone"></i> +91 99655 66664</a>
+                <a href="mailto:info@mzcn.in" style="margin-left: 20px;"><i class="fas fa-envelope"></i>
+                    info@mzcn.in</a>
+            </div>
+            <div class="top-bar-links">
+                <a href="http://betanet.mzcet.in:8080/">Student Portal</a>
+                <a href="https://mail.google.com/a/mzcn.in">Web Mail</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.webp" alt="MZCN Logo">
+                <div class="logo-text">
+                    <h2>MOUNT ZION</h2>
+                    <p>COLLEGE OF NURSING</p>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="about.html">About Us</a>
+                    <ul class="dropdown">
+                        <li><a href="about.html#vision">Vision & Mission</a></li>
+                        <li><a href="about.html#idp">Institutional Developmental Plan</a></li>
+                        <li><a href="about.html#profile">Profile</a></li>
+                        <li><a href="about.html#chairman">Our Founder Chairman</a></li>
+                        <li><a href="about.html#trustees">Board of Trustees</a></li>
+                        <li><a href="about.html#director">Director</a></li>
+                        <li><a href="about.html#principal">Principal</a></li>
+                        <li><a href="about.html#organogram">Organogram</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="course-details.html" class="active">Course Details</a>
+                    <ul class="dropdown">
+                        <li><a href="bsc-nursing.html">Programs</a></li>
+                        <li><a href="facilities.html" class="active">Facilities</a></li>
+                        <li><a href="faculty.html">Faculty</a></li>
+                    </ul>
+                </li>
+                <li><a href="clubs-and-cells.html">Clubs & Cells</a></li>
+                <li>
+                    <a href="info-corner.html">Info Corner</a>
+                    <ul class="dropdown">
+                        <li><a href="info-corner.html#circulars">Circulars and notices</a></li>
+                        <li><a href="info-corner.html#announcements">Announcement</a></li>
+                        <li><a href="info-corner.html#news">News, Events, Achievements</a></li>
+                        <li><a href="info-corner.html#jobs">Job openings</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="feedback.html">Feedback</a>
+                    <ul class="dropdown">
+                        <li><a href="feedback.html?tab=staff-student">Staff & Student Feedback</a></li>
+                        <li><a href="feedback.html?tab=general">General Feedback</a></li>
+                        <li><a href="feedback.html?tab=course">Course Feedback</a></li>
+                        <li><a href="feedback.html?tab=hostel">Hostel Feedback</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <div class="search-box">
+                    <input type="text" placeholder="Search..." id="topSearch">
+                    <button></button>
+                </div>
+            </div>
+            <button class="mobile-nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Inner Hero -->
+    <div class="inner-hero">
+        <div class="container">
+            <span class="estd-tag" style="background: var(--accent); color: var(--primary);">INFRASTRUCTURE &
+                BEYOND</span>
+            <h1 style="font-size: 3rem; margin: 20px 0;">Facilities & Activities</h1>
+            <p style="max-width: 800px; margin: 0 auto; opacity: 0.9;">We believe that the best learning happens in an
+                environment that is well-equipped, safe, and nurturing. Explore our world-class infrastructure and
+                clinical ecosystem.</p>
+        </div>
+    </div>
+
+    <section class="section" style="background: var(--bg-light);">
+        <div class="container">
+
+            <!-- 1. Classroom and Laboratory -->
+            <div class="facility-section" id="academics">
+                <div class="facility-header">
+                    <i class="fas fa-laptop-medical"></i>
+                    <h2>Classrooms & Laboratories</h2>
+                </div>
+                <div class="facility-card">
+                    <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80&w=1200"
+                        alt="Laboratory" class="facility-image">
+                    <p style="line-height: 1.8; color: var(--text-muted); font-size: 1.1rem;">Our classrooms are modern,
+                        well-equipped, and designed to provide an interactive learning experience. Advanced teaching
+                        aids, including projectors and smart boards, create an environment conducive to effective
+                        learning.</p>
+                    <p style="line-height: 1.8; color: var(--text-muted); font-size: 1.1rem; margin-top: 20px;">
+                        Specialized laboratories for all nursing disciplines are equipped with high-fidelity mannequins
+                        and simulation tools, ensuring hands-on practical training for students to excel in clinical
+                        competencies.</p>
+                </div>
+            </div>
+
+            <!-- 2. Library -->
+            <div class="facility-section" id="library">
+                <div class="facility-header">
+                    <i class="fas fa-book-reader"></i>
+                    <h2>Digital Library</h2>
+                </div>
+                <div class="facility-card">
+                    <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=1200"
+                        alt="Library" class="facility-image">
+                    <p style="line-height: 1.8; color: var(--text-muted); font-size: 1.1rem;">The library is a treasure
+                        trove of nursing literature and research journals, offering comprehensive resources to support
+                        academic and professional growth. It features digital access for e-books and journals, a quiet
+                        study space, and photocopy facilities, catering to the diverse needs of students and faculty.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 3. Clinical Facility -->
+            <div class="facility-section" id="clinical">
+                <div class="facility-header">
+                    <i class="fas fa-hospital-user"></i>
+                    <h2>Clinical ecosystem</h2>
+                </div>
+                <div class="facility-card">
+                    <p style="line-height: 1.8; color: var(--text-muted); font-size: 1.1rem;">We have robust clinical
+                        partnerships with renowned hospitals, providing students with real-world exposure to patient
+                        care. These collaborations offer opportunities for hands-on training under the guidance of
+                        experienced professionals, ensuring the highest standards of clinical education.</p>
+
+                    <h3 style="color: var(--primary); margin: 40px 0 20px;">Clinical Affiliations</h3>
+                    <div style="overflow-x: auto;">
+                        <table class="affiliations-table">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Name of the Hospital</th>
+                                    <th>Bed Strength</th>
+                                    <th>Clinical Posting / Specialization</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Government Medical College Hospital, Pudukkottai</td>
+                                    <td>1200</td>
+                                    <td>Medical Surgical, Child Health, Mental Health Nursing</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Harshamithra Oncology Hospital, Trichy</td>
+                                    <td>50</td>
+                                    <td>Oncology Nursing</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Government Ranee’s Maternity Hospital, Pudukkottai</td>
+                                    <td>435</td>
+                                    <td>OBG Nursing, Child Health Nursing</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Athma Mind Care Hospital, Trichy</td>
+                                    <td>150</td>
+                                    <td>Mental Health Nursing</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Community Health Nursing -->
+            <div class="facility-section" id="community">
+                <div class="facility-header">
+                    <i class="fas fa-users-cog"></i>
+                    <h2>Community Outreach</h2>
+                </div>
+                <div class="facility-card">
+                    <p style="line-height: 1.8; color: var(--text-muted); font-size: 1.1rem;">The Community Health
+                        Nursing program emphasizes outreach and public health initiatives. Through collaborations with
+                        local health organizations and primary health centers, students actively engage in health
+                        screenings and awareness programs.</p>
+
+                    <h3 style="color: var(--primary); margin: 40px 0 20px;">Community Service Areas</h3>
+                    <div style="overflow-x: auto;">
+                        <table class="affiliations-table">
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+                                    <th>Community Area Name</th>
+                                    <th>Type</th>
+                                    <th>Facility Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Kamarajapuram</td>
+                                    <td>Rural</td>
+                                    <td>Community Health Centre</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Natchanthupatti</td>
+                                    <td>Rural</td>
+                                    <td>Community Health Centre</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Virachilai</td>
+                                    <td>Urban</td>
+                                    <td>Primary Health Centre</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Hostel, Sports, Recreation -->
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <div class="facility-card" style="border-left-color: var(--accent);">
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <i class="fas fa-home" style="font-size: 2.5rem; color: var(--primary);"></i>
+                    </div>
+                    <h3 style="text-align: center; color: var(--primary);">Residences</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; text-align: center;">
+                        Comfortable home-away-from-home experience with Wi-Fi, recreational areas, and 24/7 security for
+                        a safe and nurturing environment.</p>
+                </div>
+                <div class="facility-card" style="border-left-color: var(--accent);">
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <i class="fas fa-running" style="font-size: 2.5rem; color: var(--primary);"></i>
+                    </div>
+                    <h3 style="text-align: center; color: var(--primary);">Sports Facilities</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; text-align: center;">
+                        Excellent facilities for indoor and outdoor sports, regular competitions, and coaching sessions
+                        to encourage physical fitness.</p>
+                </div>
+                <div class="facility-card" style="border-left-color: var(--accent);">
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <i class="fas fa-smile-beam" style="font-size: 2.5rem; color: var(--primary);"></i>
+                    </div>
+                    <h3 style="text-align: center; color: var(--primary);">Leisure & Recreation</h3>
+                    <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; text-align: center;">
+                        Spaces for relaxation, cultural events, and hobby clubs to help students unwind, recharge, and
+                        foster creative talents.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #4a0000; color: white; padding: 80px 0 30px; border-top: 5px solid var(--accent);">
+        <div class="container grid" style="grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 50px;">
+            <div class="f-brand">
+                <img src="logo.webp" alt="MZCN Logo" style="height: 70px; margin-bottom: 25px;">
+                <p style="opacity: 0.8; line-height: 1.6; margin-bottom: 25px;">To Make Man Whole. Providing world-class
+                    nursing education with clinical excellence for over 15 years.</p>
+                <div style="display: flex; gap: 15px;">
+                    <a href="https://www.facebook.com/MZNursing"
+                        style="color: white; font-size: 1.2rem; opacity: 0.7;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/919965566664" style="color: white; font-size: 1.2rem; opacity: 0.7;"><i
+                            class="fab fa-whatsapp"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem; opacity: 0.7;"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem; opacity: 0.7;"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="f-links">
+                <h4 style="color: var(--accent); margin-bottom: 25px; font-family: 'Outfit';">Navigation</h4>
+                <ul style="list-style: none; padding: 0; line-height: 2.2;">
+                    <li><a href="index.html" style="color: white; text-decoration: none; opacity: 0.7;">Home</a></li>
+                    <li><a href="about.html" style="color: white; text-decoration: none; opacity: 0.7;">About Us</a>
+                    </li>
+                    <li><a href="course-details.html" style="color: white; text-decoration: none; opacity: 0.7;">Course
+                            Details</a></li>
+                    <li><a href="clubs-and-cells.html" style="color: white; text-decoration: none; opacity: 0.7;">Clubs
+                            & Cells</a>
+                    </li>
+                    <li><a href="info-corner.html" style="color: white; text-decoration: none; opacity: 0.7;">Info
+                            Corner</a>
+                    </li>
+                    <li><a href="admissions.html"
+                            style="color: white; text-decoration: none; opacity: 0.7;">Admissions</a></li>
+                    <li><a href="contact.html" style="color: white; text-decoration: none; opacity: 0.7;">Contact</a>
+                    </li>
+                    <li><a href="feedback.html" style="color: white; text-decoration: none; opacity: 0.7;">Feedback</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="f-links">
+                <h4 style="color: var(--accent); margin-bottom: 25px; font-family: 'Outfit';">Affiliations</h4>
+                <ul style="list-style: none; padding: 0; line-height: 2.2; font-size: 0.9rem;">
+                    <li><a href="https://www.tnmgrmu.ac.in/" target="_blank"
+                            style="color: white; text-decoration: none; opacity: 0.7;">The MGR University</a></li>
+                    <li><a href="https://www.indiannursingcouncil.org/" target="_blank"
+                            style="color: white; text-decoration: none; opacity: 0.7;">Nursing Council (INC)</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; opacity: 0.7;">TNNMC Council</a></li>
+                    <li><a href="#" style="color: white; text-decoration: none; opacity: 0.7;">Health Department</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="f-contact">
+                <h4 style="color: var(--accent); margin-bottom: 25px; font-family: 'Outfit';">Get in Touch</h4>
+                <div
+                    style="margin-bottom: 15px; display: flex; gap: 15px; align-items: start; font-size: 0.9rem; opacity: 0.8;">
+                    <i class="fas fa-map-marker-alt" style="margin-top: 5px; color: var(--accent);"></i>
+                    <span>Lena Vilakku, Pilivalam P.O, Thirumayam Tk., Pudukkottai Dt - 622507, Tamil Nadu, INDIA.</span>
+                </div>
+                <div
+                    style="margin-bottom: 15px; display: flex; gap: 15px; align-items: start; font-size: 0.9rem; opacity: 0.8;">
+                    <i class="fas fa-phone-alt" style="color: var(--accent);"></i>
+                    <span>+91 75021 73000 (Adm)<br>+91 99655 20316 (Prin)</span>
+                </div>
+                <div style="display: flex; gap: 15px; align-items: start; font-size: 0.9rem; opacity: 0.8;">
+                    <i class="fas fa-envelope" style="color: var(--accent);"></i>
+                    <span>info@mzcn.in<br>principal@mzcn.in</span>
+                </div>
+            </div>
+        </div>
+        <div class="container"
+            style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.6;">
+            © 2026 Mount Zion College of Nursing. All Rights Reserved.
+        </div>
+    </footer>
+</body>
+
+</html>
+
+
