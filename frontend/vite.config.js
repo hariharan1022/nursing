@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/mount_zion_college_of_nursing/',
+  base: '/nursing/',
   build: {
     outDir: '../docs',
     emptyOutDir: true,
