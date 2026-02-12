@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: '/nursing/',
   build: {
-    outDir: '../docs',
-    emptyOutDir: true,
+    outDir: '../',
+    emptyOutDir: false,
   },
 })
