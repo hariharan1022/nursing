@@ -127,7 +127,7 @@ const Navbar = () => {
             <nav id="navbar" className={isSticky ? 'sticky' : ''}>
                 <div className="container nav-container">
                     <Link to="/" className="logo" onClick={closeMobileMenu}>
-                        <img src="/logo.webp" alt="MZCN Logo" />
+                        <img src={`${import.meta.env.BASE_URL}logo.webp`} alt="MZCN Logo" />
                         <div className="logo-text">
                             <h2>MOUNT ZION</h2>
                             <p>COLLEGE OF NURSING</p>

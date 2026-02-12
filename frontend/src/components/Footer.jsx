@@ -6,7 +6,7 @@ const Footer = () => {
         <footer style={{ background: '#4a0000', color: 'white', padding: '80px 0 30px', borderTop: '5px solid var(--accent)' }}>
             <div className="container grid" style={{ gridTemplateColumns: '1.5fr 1fr 1fr 1.2fr', gap: '50px' }}>
                 <div className="f-brand">
-                    <img src="/logo.webp" alt="MZCN Logo" style={{ height: '70px', marginBottom: '25px' }} />
+                    <img src={`${import.meta.env.BASE_URL}logo.webp`} alt="MZCN Logo" style={{ height: '70px', marginBottom: '25px' }} />
                     <p style={{ opacity: 0.8, lineHeight: 1.6, marginBottom: '25px' }}>
                         To Make Man Whole. Providing world-class nursing education with clinical excellence for over 15 years.
                     </p>

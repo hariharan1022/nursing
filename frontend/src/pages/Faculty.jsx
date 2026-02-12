@@ -85,7 +85,7 @@ const Faculty = () => {
                     }}>
                         <div style={{ textAlign: 'center' }}>
                             <div style={{ padding: '10px', border: '5px solid var(--bg-light)', borderRadius: '20px', marginBottom: '15px' }}>
-                                <img src="/photo/PRINCIPAL.png" alt="Principal" style={{ width: '100%', borderRadius: '12px' }} />
+                                <img src={`${import.meta.env.BASE_URL}photo/PRINCIPAL.png`} alt="Principal" style={{ width: '100%', borderRadius: '12px' }} />
                             </div>
                             <h4 style={{ color: 'var(--primary)', marginBottom: '5px' }}>Prof. Dr. Jasmine Sheela</h4>
                             <span style={{ color: 'var(--accent)', fontWeight: 800, fontSize: '0.8rem' }}>PRINCIPAL, Ph.D.</span>
@@ -106,7 +106,7 @@ const Faculty = () => {
                     }}>
                         <div style={{ textAlign: 'center' }}>
                             <div style={{ padding: '10px', border: '5px solid var(--bg-light)', borderRadius: '20px', marginBottom: '15px' }}>
-                                <img src="/photo/Vice%20Principal.png" alt="Vice Principal" style={{ width: '100%', borderRadius: '12px' }} />
+                                <img src={`${import.meta.env.BASE_URL}photo/Vice%20Principal.png`} alt="Vice Principal" style={{ width: '100%', borderRadius: '12px' }} />
                             </div>
                             <h4 style={{ color: 'var(--primary)', marginBottom: '5px' }}>Prof. Dr. Jerin Kumar J</h4>
                             <span style={{ color: 'var(--accent)', fontWeight: 800, fontSize: '0.8rem' }}>VICE PRINCIPAL, Ph.D.</span>

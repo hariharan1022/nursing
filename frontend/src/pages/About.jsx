@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 const About = () => {
     const location = useLocation();
@@ -53,9 +53,9 @@ const About = () => {
                             <div style={{ marginTop: '30px', padding: '20px', background: 'var(--bg-light)', borderRadius: '12px' }}>
                                 <h4 style={{ color: 'var(--primary)', marginBottom: '15px' }}>Quick Links</h4>
                                 <ul style={{ listStyle: 'none', padding: 0 }}>
-                                    <li style={{ marginBottom: '10px' }}><a href="#leadership" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Our Leadership</a></li>
-                                    <li style={{ marginBottom: '10px' }}><a href="#vision" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Vision & Mission</a></li>
-                                    <li style={{ marginBottom: '10px' }}><a href="#idp" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Development Plan</a></li>
+                                    <li style={{ marginBottom: '10px' }}><Link to="/about#leadership" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Our Leadership</Link></li>
+                                    <li style={{ marginBottom: '10px' }}><Link to="/about#vision" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Vision & Mission</Link></li>
+                                    <li style={{ marginBottom: '10px' }}><Link to="/about#idp" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Development Plan</Link></li>
                                 </ul>
                             </div>
                         </div>
@@ -131,7 +131,7 @@ const About = () => {
                                 <div style={{ background: 'var(--bg-light)', padding: '30px', borderRadius: '12px', textAlign: 'center', border: '1px dashed var(--primary-light)' }}>
                                     <i className="fas fa-sitemap" style={{ fontSize: '3rem', color: 'var(--primary)', marginBottom: '15px', opacity: 0.5 }}></i>
                                     <h4 style={{ color: 'var(--primary)' }}>View Organizational Chart</h4>
-                                    <a href="/photo/Organogram MZCN.jpg" target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ marginTop: '15px', display: 'inline-block' }}>Open Full Organogram</a>
+                                    <a href={`${import.meta.env.BASE_URL}photo/Organogram MZCN.jpg`} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ marginTop: '15px', display: 'inline-block' }}>Open Full Organogram</a>
                                 </div>
                             </div>
                         </div>
@@ -148,7 +148,7 @@ const About = () => {
                     <div id="chairman" className="grid reveal" style={{ gridTemplateColumns: '1fr 2fr', gap: '40px', background: 'white', padding: '40px', borderRadius: '20px', marginBottom: '40px', borderLeft: '5px solid var(--accent)' }}>
                         <div className="leader-img">
                             <div style={{ padding: '10px', border: '2px solid var(--primary-light)', borderRadius: '12px', maxWidth: '300px', margin: '0 auto' }}>
-                                <img src="/photo/FOUNDER.png" alt="Founder" style={{ width: '100%', borderRadius: '8px' }} />
+                                <img src={`${import.meta.env.BASE_URL}photo/FOUNDER.png`} alt="Founder" style={{ width: '100%', borderRadius: '8px' }} />
                             </div>
                             <div style={{ textAlign: 'center', marginTop: '15px' }}>
                                 <h4 style={{ color: 'var(--primary)' }}>Mr. Jayabarathan Chelliah</h4>
@@ -179,7 +179,7 @@ const About = () => {
                             {/* Chairperson */}
                             <div className="leader-card" style={{ display: 'flex', flexDirection: 'column', height: '100%', background: 'white', padding: '30px', borderRadius: '15px', boxShadow: 'var(--shadow-md)' }}>
                                 <div style={{ width: '140px', height: '140px', margin: '0 auto 20px', borderRadius: '50%', overflow: 'hidden', border: '4px solid var(--bg-light)', flexShrink: 0 }}>
-                                    <img src="/photo/CHAIRPERSON.png" alt="Chairperson" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                    <img src={`${import.meta.env.BASE_URL}photo/CHAIRPERSON.png`} alt="Chairperson" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                 </div>
                                 <h4 style={{ textAlign: 'center', fontSize: '1.1rem', color: 'var(--primary)' }}>Mrs. Florence Jayabarathan</h4>
                                 <p style={{ textAlign: 'center', fontSize: '0.8rem', color: 'var(--primary-light)', fontWeight: 700, marginBottom: '15px' }}>
@@ -197,7 +197,7 @@ const About = () => {
                             {/* Director */}
                             <div id="director" className="leader-card" style={{ display: 'flex', flexDirection: 'column', height: '100%', background: 'white', padding: '30px', borderRadius: '15px', boxShadow: 'var(--shadow-md)' }}>
                                 <div style={{ width: '140px', height: '140px', margin: '0 auto 20px', borderRadius: '50%', overflow: 'hidden', border: '4px solid var(--bg-light)', flexShrink: 0 }}>
-                                    <img src="/photo/DIRECTOR.png" alt="Director" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                    <img src={`${import.meta.env.BASE_URL}photo/DIRECTOR.png`} alt="Director" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                 </div>
                                 <h4 style={{ textAlign: 'center', fontSize: '1.1rem', color: 'var(--primary)' }}>Prof. Jayson Keerthy Jayabarathan</h4>
                                 <p style={{ textAlign: 'center', fontSize: '0.8rem', color: 'var(--primary-light)', fontWeight: 700, marginBottom: '15px' }}>
@@ -216,7 +216,7 @@ const About = () => {
                             {/* Trustee */}
                             <div className="leader-card" style={{ display: 'flex', flexDirection: 'column', height: '100%', background: 'white', padding: '30px', borderRadius: '15px', boxShadow: 'var(--shadow-md)' }}>
                                 <div style={{ width: '140px', height: '140px', margin: '0 auto 20px', borderRadius: '50%', overflow: 'hidden', border: '4px solid var(--bg-light)', flexShrink: 0 }}>
-                                    <img src="/photo/TRUSTEE.png" alt="Trustee" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                    <img src={`${import.meta.env.BASE_URL}photo/TRUSTEE.png`} alt="Trustee" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                 </div>
                                 <h4 style={{ textAlign: 'center', fontSize: '1.1rem', color: 'var(--primary)' }}>Mrs. Vivian Jayson</h4>
                                 <p style={{ textAlign: 'center', fontSize: '0.8rem', color: 'var(--primary-light)', fontWeight: 700, marginBottom: '15px' }}>
@@ -243,7 +243,7 @@ const About = () => {
                             <div id="principal" className="leader-card" style={{ textAlign: 'left', padding: '40px', background: 'white', borderRadius: '15px', boxShadow: 'var(--shadow-md)' }}>
                                 <div style={{ display: 'flex', gap: '30px', marginBottom: '25px', alignItems: 'start' }}>
                                     <div style={{ width: '160px', height: '200px', borderRadius: '15px', overflow: 'hidden', border: '4px solid var(--bg-light)', flexShrink: 0 }}>
-                                        <img src="/photo/PRINCIPAL.png" alt="Principal" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        <img src={`${import.meta.env.BASE_URL}photo/PRINCIPAL.png`} alt="Principal" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                     </div>
                                     <div>
                                         <h4 style={{ color: 'var(--primary)', marginBottom: '5px' }}>Prof. Dr. Jasmine Sheela</h4>
@@ -270,7 +270,7 @@ const About = () => {
                             <div className="leader-card" style={{ textAlign: 'left', padding: '40px', background: 'white', borderRadius: '15px', boxShadow: 'var(--shadow-md)' }}>
                                 <div style={{ display: 'flex', gap: '30px', marginBottom: '25px', alignItems: 'start' }}>
                                     <div style={{ width: '160px', height: '200px', borderRadius: '15px', overflow: 'hidden', border: '4px solid var(--bg-light)', flexShrink: 0 }}>
-                                        <img src="/photo/Vice%20Principal.png" alt="Vice Principal" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                        <img src={`${import.meta.env.BASE_URL}photo/Vice%20Principal.png`} alt="Vice Principal" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                     </div>
                                     <div>
                                         <h4 style={{ color: 'var(--primary)', marginBottom: '5px' }}>Prof. Dr. Jerin Kumar J</h4>

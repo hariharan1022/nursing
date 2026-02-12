@@ -6,7 +6,7 @@ const Home = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const slides = [
         {
-            img: "/photo/p5_files/banner1.jpg",
+            img: `${import.meta.env.BASE_URL}photo/p5_files/banner1.jpg`,
             estd: true,
             title: "Excellence in Nursing Education",
             desc: "Training compassionate healthcare leaders for a better tomorrow.",
@@ -14,35 +14,35 @@ const Home = () => {
             link: "/about"
         },
         {
-            img: "/photo/p5_files/banner2.jpg",
+            img: `${import.meta.env.BASE_URL}photo/p5_files/banner2.jpg`,
             title: "State-of-the-art Clinical Facilities",
             desc: "Real-world training in our 500-bed multi-speciality hospital.",
             cta: "View Facilities",
             link: "/facilities"
         },
         {
-            img: "/photo/p5_files/banner3.jpg",
+            img: `${import.meta.env.BASE_URL}photo/p5_files/banner3.jpg`,
             title: "Empowering Future Nurses",
             desc: "Comprehensive curriculum approved by INC and TNNMC Council.",
             cta: "Our Programs",
             link: "/bsc-nursing"
         },
         {
-            img: "/photo/p5_files/banner4.jpg",
+            img: `${import.meta.env.BASE_URL}photo/p5_files/banner4.jpg`,
             title: "Admissions Open 2026",
             desc: "Join the premier nursing college in Pudukkottai District.",
             cta: "Apply Now",
             link: "/admissions"
         },
         {
-            img: "/photo/p5_files/banner5.jpg",
+            img: `${import.meta.env.BASE_URL}photo/p5_files/banner5.jpg`,
             title: "Advanced Research Labs",
             desc: "Fostering innovation and scientific enquiry in healthcare.",
             cta: "Discover More",
             link: "/facilities"
         },
         {
-            img: "/photo/p5_files/banner6.jpg",
+            img: `${import.meta.env.BASE_URL}photo/p5_files/banner6.jpg`,
             title: "To Make Man Whole",
             desc: "Holistic development through quality education and discipline.",
             cta: "Contact Us",
@@ -122,10 +122,10 @@ const Home = () => {
 
     // Gallery Images (Hardcoded from main.js/html for now)
     const galleryImages = [
-        "/photo/gallery/WhatsApp Image 2026-02-10 at 9.12.54 PM.jpeg",
-        "/photo/gallery/WhatsApp Image 2026-02-10 at 9.12.57 PM.jpeg",
-        "/photo/gallery/WhatsApp Image 2026-02-10 at 9.13.02 PM.jpeg",
-        "/photo/gallery/WhatsApp Image 2026-02-10 at 9.13.07 PM.jpeg"
+        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.12.54 PM.jpeg`,
+        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.12.57 PM.jpeg`,
+        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.02 PM.jpeg`,
+        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.07 PM.jpeg`
     ];
 
     const openLightbox = (src) => {
@@ -259,7 +259,7 @@ const Home = () => {
 
                         <Link to="/gallery" className="gallery-item-link" style={{ textDecoration: 'none' }}>
                             <div className="gallery-item" style={{ position: 'relative' }}>
-                                <img src="/photo/gallery/WhatsApp Image 2026-02-10 at 9.13.07 PM.jpeg" alt="MZCN Gallery 4" />
+                                <img src={`${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.07 PM.jpeg`} alt="MZCN Gallery 4" />
                                 <div className="gallery-overlay" style={{ opacity: 1, background: 'rgba(128, 0, 0, 0.7)' }}>
                                     <div style={{ textAlign: 'center' }}>
                                         <i className="fas fa-images" style={{ display: 'block', marginBottom: '15px', fontSize: '2.2rem', color: 'var(--accent)' }}></i>

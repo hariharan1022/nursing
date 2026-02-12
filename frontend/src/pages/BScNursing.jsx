@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const BScNursing = () => {
     const [activeSem, setActiveSem] = useState('sem1');
@@ -280,8 +281,8 @@ const BScNursing = () => {
                             <h2 style={{ color: 'var(--accent)', marginBottom: '20px' }}>Ready to start your nursing career?</h2>
                             <p style={{ fontSize: '1.2rem', marginBottom: '40px', opacity: 0.9 }}>Join Mount Zion College of Nursing and become a qualified professional nurse.</p>
                             <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
-                                <a href="/admissions" className="btn btn-primary" style={{ background: 'var(--accent)', color: 'var(--primary)', padding: '15px 40px' }}>ADMISSION INFO</a>
-                                <a href="/contact" className="btn btn-outline" style={{ borderColor: 'white', color: 'white', padding: '15px 40px' }}>CONTACT US</a>
+                                <Link to="/admissions" className="btn btn-primary" style={{ background: 'var(--accent)', color: 'var(--primary)', padding: '15px 40px' }}>ADMISSION INFO</Link>
+                                <Link to="/contact" className="btn btn-outline" style={{ borderColor: 'white', color: 'white', padding: '15px 40px' }}>CONTACT US</Link>
                             </div>
                         </div>
                         <div style={{ position: 'absolute', top: '-50%', right: '-10%', width: '500px', height: '500px', background: 'rgba(255,255,255,0.05)', borderRadius: '50%' }}></div>
