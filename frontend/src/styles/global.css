@@ -810,13 +810,19 @@ nav.sticky .logo-text h2 {
     position: absolute;
     text-align: center;
     color: white;
-    max-width: 1000px;
-    padding: 0 40px;
+    max-width: 900px;
+    padding: 60px;
     z-index: 10;
     transform: translateY(50px) scale(0.95);
     transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
     opacity: 0;
     filter: blur(8px);
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }
 
 .slide.active .slide-content {
@@ -943,7 +949,7 @@ nav.sticky .logo-text h2 {
 
 .stat-card {
     background: white;
-    padding: 35px 30px;
+    padding: 40px 30px;
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-md);
     text-align: center;
@@ -951,6 +957,7 @@ nav.sticky .logo-text h2 {
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
     overflow: hidden;
+    z-index: 1;
 }
 
 .stat-card::before {
@@ -965,9 +972,20 @@ nav.sticky .logo-text h2 {
 }
 
 .stat-card:hover {
-    transform: translateY(-10px) scale(1.02);
+    transform: translateY(-15px) scale(1.03);
     box-shadow: var(--shadow-premium);
-    border-color: rgba(128, 0, 0, 0.1);
+    border-color: rgba(133, 0, 0, 0.2);
+}
+
+.stat-card:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(133, 0, 0, 0.03) 0%, rgba(255, 215, 0, 0.05) 100%);
+    z-index: -1;
 }
 
 .stat-card h3 {
@@ -1731,8 +1749,15 @@ footer a:hover {
 }
 
 @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .search-header {
