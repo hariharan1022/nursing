@@ -220,6 +220,36 @@ p {
     justify-content: space-between;
 }
 
+/* --- Sticky Header Wrapper --- */
+.header-wrapper {
+    position: relative;
+    z-index: 1001;
+    transition: all 0.3s ease;
+}
+
+.header-wrapper.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1001;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.3s ease;
+}
+
+/* Add padding to body when header is sticky to prevent content jump */
+body.header-sticky-active {
+    padding-top: 140px;
+    /* Adjust based on header height */
+}
+
+@media (max-width: 768px) {
+    body.header-sticky-active {
+        padding-top: 120px;
+    }
+}
+
 /* --- Top Bar --- */
 .top-bar {
     background: var(--primary-dark);
@@ -230,7 +260,6 @@ p {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     letter-spacing: 0.3px;
     position: relative;
-    z-index: 1001;
 }
 
 .top-bar-content {
@@ -382,7 +411,6 @@ p {
 
     .top-search-input {
         width: 130px;
-        /* Smaller size for mobile as requested */
         padding: 6px 30px 6px 12px;
         font-size: 0.8rem;
     }
@@ -399,7 +427,6 @@ p {
         align-items: center !important;
         flex-wrap: nowrap !important;
         padding: 0 15px;
-        /* Adjust padding for small screens */
     }
 
     .top-bar-left {
@@ -409,7 +436,11 @@ p {
 
     .search-bar-container {
         flex-shrink: 1;
-        /* Allow container to shrink if needed, though input has fixed width */
+    }
+
+    .search-results-dropdown {
+        width: 220px;
+        right: -10px;
     }
 }
 
@@ -421,7 +452,7 @@ nav {
     align-items: center;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
     z-index: 1000;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
 }
 
@@ -429,24 +460,18 @@ nav {
     display: none;
 }
 
-nav.sticky {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+.header-wrapper.sticky nav {
     height: var(--nav-height-sticky);
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    box-shadow: var(--shadow-md);
-    border-bottom: 1px solid rgba(128, 0, 0, 0.05);
 }
 
-nav.sticky .logo img {
+.header-wrapper.sticky .logo img {
     height: 50px;
 }
 
-nav.sticky .logo-text h2 {
+.header-wrapper.sticky .logo-text h2 {
     font-size: 1.2rem;
 }
 
