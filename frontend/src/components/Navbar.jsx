@@ -112,13 +112,39 @@ const Navbar = () => {
             {/* Top Bar */}
             <div className="top-bar">
                 <div className="container top-bar-content">
-                    <div className="top-contact">
-                        <a href="tel:+917502173000"><i className="fas fa-phone-alt"></i> +91 75021 73000</a>
-                        <a href="mailto:info@mzcn.in" style={{ marginLeft: '20px' }}><i className="fas fa-envelope"></i> info@mzcn.in</a>
-                    </div>
-                    <div className="top-bar-links">
+                    <div className="top-bar-left">
                         <a href="http://betanet.mzcet.in:8080/" target="_blank" rel="noopener noreferrer">Portal</a>
                         <a href="https://mail.google.com/a/mzcn.in" target="_blank" rel="noopener noreferrer">WebMail</a>
+                    </div>
+
+                    <div className="top-bar-right">
+                        <div className="search-bar-container">
+                            <input
+                                className="top-search-input"
+                                type="text"
+                                placeholder="Search..."
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                onKeyDown={handleSearchKeyDown}
+                            />
+                            <i className="fas fa-search search-icon"></i>
+                            {/* Search Results Dropdown */}
+                            {searchQuery.trim().length > 0 && (
+                                <ul className="search-results-dropdown">
+                                    {filteredResults.length > 0 ? (
+                                        filteredResults.map((result, index) => (
+                                            <li key={index}>
+                                                <button onClick={() => handleSearchNavigate(result.path)}>
+                                                    {result.title}
+                                                </button>
+                                            </li>
+                                        ))
+                                    ) : (
+                                        <li className="search-no-results">No results found</li>
+                                    )}
+                                </ul>
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -146,7 +172,7 @@ const Navbar = () => {
 
                         <li className={activeDropdown === 'about' ? 'dropdown-open' : ''}>
                             <NavLink to="/about" onClick={(e) => toggleDropdown(e, 'about')}>
-                                About Us
+                                About Us <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'about' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                             </NavLink>
                             <ul className={`dropdown ${activeDropdown === 'about' ? 'active-mobile' : ''}`}>
                                 <li><Link to="/about#vision" onClick={closeMobileMenu}>Vision & Mission</Link></li>
@@ -158,7 +184,7 @@ const Navbar = () => {
 
                         <li className={activeDropdown === 'course' ? 'dropdown-open' : ''}>
                             <NavLink to="/course-details" onClick={(e) => toggleDropdown(e, 'course')}>
-                                Course Details
+                                Course Details <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'course' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                             </NavLink>
                             <ul className={`dropdown ${activeDropdown === 'course' ? 'active-mobile' : ''}`}>
                                 <li><Link to="/bsc-nursing" onClick={closeMobileMenu}>B.Sc. Nursing</Link></li>
@@ -167,11 +193,25 @@ const Navbar = () => {
                             </ul>
                         </li>
 
-                        <li><NavLink to="/clubs-and-cells" onClick={closeMobileMenu}>Clubs & Cells</NavLink></li>
+                        <li className={activeDropdown === 'clubs' ? 'dropdown-open' : ''}>
+                            <NavLink to="/clubs-and-cells" onClick={(e) => toggleDropdown(e, 'clubs')}>
+                                Clubs & Cells <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'clubs' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
+                            </NavLink>
+                            <ul className={`dropdown ${activeDropdown === 'clubs' ? 'active-mobile' : ''}`}>
+                                <li><Link to="/clubs-and-cells#curriculum" onClick={closeMobileMenu}>Curriculum Committee</Link></li>
+                                <li><Link to="/clubs-and-cells#anti-ragging" onClick={closeMobileMenu}>Anti-Ragging Committee</Link></li>
+                                <li><Link to="/clubs-and-cells#student-welfare" onClick={closeMobileMenu}>Student's Welfare Committee</Link></li>
+                                <li><Link to="/clubs-and-cells#grievance" onClick={closeMobileMenu}>Grievance Redressal Cell</Link></li>
+                                <li><Link to="/clubs-and-cells#research" onClick={closeMobileMenu}>Research Committee</Link></li>
+                                <li><Link to="/clubs-and-cells#sports" onClick={closeMobileMenu}>Sports Committee</Link></li>
+                                <li><Link to="/clubs-and-cells#eco-friendly" onClick={closeMobileMenu}>Eco-Friendly Committee</Link></li>
+                                <li><Link to="/clubs-and-cells#thought-flow" onClick={closeMobileMenu}>Rationalized Thought Flow</Link></li>
+                            </ul>
+                        </li>
 
                         <li className={activeDropdown === 'info' ? 'dropdown-open' : ''}>
                             <NavLink to="/info-corner" onClick={(e) => toggleDropdown(e, 'info')}>
-                                Info Corner
+                                Info Corner <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'info' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                             </NavLink>
                             <ul className={`dropdown ${activeDropdown === 'info' ? 'active-mobile' : ''}`}>
                                 <li><Link to="/info-corner#announcements" onClick={closeMobileMenu}>Announcements</Link></li>
@@ -181,11 +221,33 @@ const Navbar = () => {
                             </ul>
                         </li>
 
-                        <li><NavLink to="/admissions" onClick={closeMobileMenu}>Admissions</NavLink></li>
-                        <li><NavLink to="/contact" onClick={closeMobileMenu}>Contact</NavLink></li>
+                        <li className={activeDropdown === 'admissions' ? 'dropdown-open' : ''}>
+                            <NavLink to="/admissions" onClick={(e) => toggleDropdown(e, 'admissions')}>
+                                Admissions <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'admissions' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
+                            </NavLink>
+                            <ul className={`dropdown ${activeDropdown === 'admissions' ? 'active-mobile' : ''}`}>
+                                <li><Link to="/admissions#eligibility" onClick={closeMobileMenu}>Eligibility Criteria</Link></li>
+                                <li><Link to="/admissions#age-limit" onClick={closeMobileMenu}>Age Limit</Link></li>
+                                <li><Link to="/admissions#documents" onClick={closeMobileMenu}>Required Documents</Link></li>
+                                <li><Link to="/admissions#scholarships" onClick={closeMobileMenu}>Scholarships</Link></li>
+                                <li><Link to="/admissions#selection" onClick={closeMobileMenu}>Selection Process</Link></li>
+                                <li><Link to="/admissions#apply" onClick={closeMobileMenu}>Start Application</Link></li>
+                            </ul>
+                        </li>
+                        <li className={activeDropdown === 'contact' ? 'dropdown-open' : ''}>
+                            <NavLink to="/contact" onClick={(e) => toggleDropdown(e, 'contact')}>
+                                Contact <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'contact' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
+                            </NavLink>
+                            <ul className={`dropdown ${activeDropdown === 'contact' ? 'active-mobile' : ''}`}>
+                                <li><Link to="/contact#address" onClick={closeMobileMenu}>Campus Address</Link></li>
+                                <li><Link to="/contact#phone" onClick={closeMobileMenu}>Contact Numbers</Link></li>
+                                <li><Link to="/contact#email" onClick={closeMobileMenu}>Email Support</Link></li>
+                                <li><Link to="/contact#map" onClick={closeMobileMenu}>Find Us on Map</Link></li>
+                            </ul>
+                        </li>
                         <li className={activeDropdown === 'feedback' ? 'dropdown-open' : ''}>
                             <NavLink to="/feedback" onClick={(e) => toggleDropdown(e, 'feedback')}>
-                                Feedback
+                                Feedback <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'feedback' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                             </NavLink>
                             <ul className={`dropdown ${activeDropdown === 'feedback' ? 'active-mobile' : ''}`}>
                                 <li><Link to="/feedback?tab=staff-student" onClick={closeMobileMenu}>Staff & Student</Link></li>
@@ -196,13 +258,6 @@ const Navbar = () => {
                             </ul>
                         </li>
                     </ul>
-
-                    <div className="nav-actions">
-                        {/* Search Icon */}
-                        <button className="nav-search-btn" onClick={toggleSearch} aria-label="Search">
-                            <i className="fas fa-search"></i>
-                        </button>
-                    </div>
 
                     <button className="mobile-nav-toggle" onClick={toggleMobileMenu} aria-label="Toggle Menu">
                         <div className="burger-icon">

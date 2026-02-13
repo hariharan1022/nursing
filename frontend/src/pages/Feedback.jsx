@@ -54,7 +54,7 @@ const Feedback = () => {
                                 key={tab.id}
                                 className={`btn ${activeTab === tab.id ? 'btn-primary' : 'btn-outline'}`}
                                 onClick={() => setActiveTab(tab.id)}
-                                style={{ textTransform: 'none', padding: '12px 25px' }}
+                                style={{ textTransform: 'none', padding: '12px 25px', transition: 'all 0.3s ease', transform: activeTab === tab.id ? 'translateY(-2px)' : 'none' }}
                             >
                                 <i className={`fas ${tab.icon}`} style={{ marginRight: '8px' }}></i>
                                 {tab.label}
@@ -111,11 +111,17 @@ const Feedback = () => {
                                             ].map((item, idx) => (
                                                 <div key={idx} style={{ padding: '15px', background: 'var(--bg-light)', borderRadius: '10px' }}>
                                                     <p style={{ marginBottom: '10px', fontWeight: 600, fontSize: '0.9rem' }}>{item.q}</p>
-                                                    <div style={{ display: 'flex', justifyContent: 'space-between', maxWidth: '300px' }}>
-                                                        {[1, 2, 3, 4, 5].map(num => (
-                                                            <label key={num} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '5px', fontSize: '0.8rem', cursor: 'pointer' }}>
-                                                                <input type="radio" name={item.n} value={num} required />
-                                                                {num}
+                                                    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '15px' }}>
+                                                        {[
+                                                            { val: 1, label: 'Very Poor' },
+                                                            { val: 2, label: 'Poor' },
+                                                            { val: 3, label: 'Average' },
+                                                            { val: 4, label: 'Good' },
+                                                            { val: 5, label: 'Excellent' }
+                                                        ].map(opt => (
+                                                            <label key={opt.val} className="feedback-option" style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', cursor: 'pointer', padding: '8px 12px', borderRadius: '5px', transition: 'all 0.2s' }}>
+                                                                <input type="radio" name={item.n} value={opt.label} required />
+                                                                {opt.val}. {opt.label}
                                                             </label>
                                                         ))}
                                                     </div>
@@ -151,11 +157,17 @@ const Feedback = () => {
                                             ].map((item, idx) => (
                                                 <div key={idx} style={{ padding: '15px', background: 'var(--bg-light)', borderRadius: '10px' }}>
                                                     <p style={{ marginBottom: '10px', fontWeight: 600, fontSize: '0.9rem' }}>{item.q}</p>
-                                                    <div style={{ display: 'flex', justifyContent: 'space-between', maxWidth: '300px' }}>
-                                                        {[1, 2, 3, 4, 5].map(num => (
-                                                            <label key={num} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '5px', fontSize: '0.8rem', cursor: 'pointer' }}>
-                                                                <input type="radio" name={item.n} value={num} required />
-                                                                {num}
+                                                    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '15px' }}>
+                                                        {[
+                                                            { val: 1, label: 'Very Poor' },
+                                                            { val: 2, label: 'Poor' },
+                                                            { val: 3, label: 'Average' },
+                                                            { val: 4, label: 'Good' },
+                                                            { val: 5, label: 'Excellent' }
+                                                        ].map(opt => (
+                                                            <label key={opt.val} className="feedback-option" style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', cursor: 'pointer', padding: '8px 12px', borderRadius: '5px', transition: 'all 0.2s' }}>
+                                                                <input type="radio" name={item.n} value={opt.label} required />
+                                                                {opt.val}. {opt.label}
                                                             </label>
                                                         ))}
                                                     </div>
@@ -191,11 +203,17 @@ const Feedback = () => {
                                             ].map((item, idx) => (
                                                 <div key={idx} style={{ padding: '15px', background: 'var(--bg-light)', borderRadius: '10px' }}>
                                                     <p style={{ marginBottom: '10px', fontWeight: 600, fontSize: '0.9rem' }}>{item.q}</p>
-                                                    <div style={{ display: 'flex', justifyContent: 'space-between', maxWidth: '300px' }}>
-                                                        {[1, 2, 3, 4, 5].map(num => (
-                                                            <label key={num} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '5px', fontSize: '0.8rem', cursor: 'pointer' }}>
-                                                                <input type="radio" name={item.n} value={num} required />
-                                                                {num}
+                                                    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '15px' }}>
+                                                        {[
+                                                            { val: 1, label: 'Very Poor' },
+                                                            { val: 2, label: 'Poor' },
+                                                            { val: 3, label: 'Average' },
+                                                            { val: 4, label: 'Good' },
+                                                            { val: 5, label: 'Excellent' }
+                                                        ].map(opt => (
+                                                            <label key={opt.val} className="feedback-option" style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', cursor: 'pointer', padding: '8px 12px', borderRadius: '5px', transition: 'all 0.2s' }}>
+                                                                <input type="radio" name={item.n} value={opt.label} required />
+                                                                {opt.val}. {opt.label}
                                                             </label>
                                                         ))}
                                                     </div>
@@ -226,11 +244,17 @@ const Feedback = () => {
                                             ].map((item, idx) => (
                                                 <div key={idx} style={{ padding: '15px', background: 'var(--bg-light)', borderRadius: '10px' }}>
                                                     <p style={{ marginBottom: '10px', fontWeight: 600, fontSize: '0.9rem' }}>{item.q}</p>
-                                                    <div style={{ display: 'flex', justifyContent: 'space-between', maxWidth: '300px' }}>
-                                                        {[1, 2, 3, 4, 5].map(num => (
-                                                            <label key={num} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '5px', fontSize: '0.8rem', cursor: 'pointer' }}>
-                                                                <input type="radio" name={item.n} value={num} required />
-                                                                {num}
+                                                    <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', gap: '15px' }}>
+                                                        {[
+                                                            { val: 1, label: 'Very Poor' },
+                                                            { val: 2, label: 'Poor' },
+                                                            { val: 3, label: 'Average' },
+                                                            { val: 4, label: 'Good' },
+                                                            { val: 5, label: 'Excellent' }
+                                                        ].map(opt => (
+                                                            <label key={opt.val} className="feedback-option" style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', cursor: 'pointer', padding: '8px 12px', borderRadius: '5px', transition: 'all 0.2s' }}>
+                                                                <input type="radio" name={item.n} value={opt.label} required />
+                                                                {opt.val}. {opt.label}
                                                             </label>
                                                         ))}
                                                     </div>

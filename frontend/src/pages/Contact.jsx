@@ -42,7 +42,7 @@ const Contact = () => {
                             <h2 style={{ fontSize: '2.2rem', color: 'var(--primary)', marginBottom: '30px' }}>Reach Our Administration</h2>
 
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-                                <div className="hover-lift" style={{ display: 'flex', gap: '20px', alignItems: 'center', padding: '20px', borderRadius: '15px' }}>
+                                <div id="address" className="hover-lift" style={{ display: 'flex', gap: '20px', alignItems: 'center', padding: '20px', borderRadius: '15px' }}>
                                     <div style={{ width: '60px', height: '60px', background: 'var(--bg-light)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '15px', fontSize: '1.5rem', flexShrink: 0 }}>
                                         <i className="fas fa-map-marked-alt"></i>
                                     </div>
@@ -54,7 +54,7 @@ const Contact = () => {
                                     </div>
                                 </div>
 
-                                <div className="hover-lift" style={{ display: 'flex', gap: '20px', alignItems: 'start', padding: '20px', borderRadius: '15px' }}>
+                                <div id="phone" className="hover-lift" style={{ display: 'flex', gap: '20px', alignItems: 'start', padding: '20px', borderRadius: '15px' }}>
                                     <div style={{ width: '60px', height: '60px', background: 'var(--bg-light)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '15px', fontSize: '1.5rem', flexShrink: 0 }}>
                                         <i className="fas fa-phone-volume"></i>
                                     </div>
@@ -68,7 +68,7 @@ const Contact = () => {
                                     </div>
                                 </div>
 
-                                <div className="hover-lift" style={{ display: 'flex', gap: '20px', alignItems: 'start', padding: '20px', borderRadius: '15px' }}>
+                                <div id="email" className="hover-lift" style={{ display: 'flex', gap: '20px', alignItems: 'start', padding: '20px', borderRadius: '15px' }}>
                                     <div style={{ width: '60px', height: '60px', background: 'var(--bg-light)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '15px', fontSize: '1.5rem', flexShrink: 0 }}>
                                         <i className="fas fa-envelope-open-text"></i>
                                     </div>
@@ -95,7 +95,7 @@ const Contact = () => {
                         </div >
 
                         {/* Map */}
-                        <div className="reveal" style={{ animationDelay: '0.2s' }}>
+                        <div id="map" className="reveal" style={{ animationDelay: '0.2s' }}>
                             <h2 style={{ fontSize: '2.2rem', color: 'var(--primary)', marginBottom: '30px' }}>Find Us on Map</h2>
                             <div className="hover-scale" style={{ borderRadius: '20px', overflow: 'hidden', boxShadow: 'var(--shadow-lg)', height: '450px', border: '1px solid #eee' }}>
                                 <iframe

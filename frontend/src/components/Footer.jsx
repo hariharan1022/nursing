@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer style={{ background: '#4a0000', color: 'white', padding: '80px 0 30px', borderTop: '5px solid var(--accent)' }}>
+        <footer style={{ background: 'var(--primary-dark)', color: 'white', padding: '80px 0 30px', borderTop: '5px solid var(--accent)' }}>
             <div className="container grid" style={{ gridTemplateColumns: '1.5fr 1fr 1fr 1.2fr', gap: '50px' }}>
                 <div className="f-brand">
                     <img src={`${import.meta.env.BASE_URL}logo.webp`} alt="MZCN Logo" style={{ height: '70px', marginBottom: '25px' }} />
-                    <p style={{ opacity: 0.8, lineHeight: 1.6, marginBottom: '25px' }}>
+                    <p style={{ opacity: 0.8, lineHeight: 1.6, marginBottom: '25px', fontSize: '0.9rem' }}>
                         To Make Man Whole. Providing world-class nursing education with clinical excellence for over 15 years.
                     </p>
                     <div style={{ display: 'flex', gap: '15px' }}>
@@ -58,8 +58,9 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="container" style={{ textAlign: 'center', marginTop: '60px', paddingTop: '30px', borderTop: '1px solid rgba(255,255,255,0.1)', fontSize: '0.85rem', opacity: 0.6 }}>
-                © 2026 Mount Zion College of Nursing. All Rights Reserved.
+            <div className="container" style={{ textAlign: 'center', marginTop: '60px', paddingTop: '30px', borderTop: '1px solid rgba(255,255,255,0.1)', fontSize: '0.85rem' }}>
+                <p style={{ opacity: 0.6 }}>© 2026 Mount Zion College of Nursing. All Rights Reserved.</p>
+                <p style={{ opacity: 0.8, marginTop: '10px', color: 'var(--accent)', fontWeight: '600' }}>Designed and Maintained by Dept. of IT - MZCET</p>
             </div>
         </footer>
     );

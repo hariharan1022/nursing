@@ -37,7 +37,7 @@ const Admissions = () => {
                     <div className="grid" style={{ gridTemplateColumns: '2fr 1fr', gap: '40px', alignItems: 'start' }}>
                         <div className="admission-main">
                             {/* Eligibility */}
-                            <div className="reveal" style={{ background: 'white', padding: '40px', borderRadius: '20px', boxShadow: 'var(--shadow-md)', borderTop: '5px solid var(--primary)', marginBottom: '40px' }}>
+                            <div id="eligibility" className="reveal" style={{ background: 'white', padding: '40px', borderRadius: '20px', boxShadow: 'var(--shadow-md)', borderTop: '5px solid var(--primary)', marginBottom: '40px' }}>
                                 <h3 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
                                     <i className="fas fa-user-graduate" style={{ color: 'var(--accent)' }}></i>
                                     Eligibility Criteria
@@ -65,7 +65,7 @@ const Admissions = () => {
                             </div>
 
                             {/* Age Limit */}
-                            <div className="reveal" style={{ background: 'white', padding: '40px', borderRadius: '20px', boxShadow: 'var(--shadow-md)', borderTop: '5px solid var(--primary)', marginBottom: '40px' }}>
+                            <div id="age-limit" className="reveal" style={{ background: 'white', padding: '40px', borderRadius: '20px', boxShadow: 'var(--shadow-md)', borderTop: '5px solid var(--primary)', marginBottom: '40px' }}>
                                 <h3 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
                                     <i className="fas fa-calendar-alt" style={{ color: 'var(--accent)' }}></i>
                                     Age Limit
@@ -94,7 +94,7 @@ const Admissions = () => {
                             </div>
 
                             {/* Documents */}
-                            <div className="reveal" style={{ background: 'white', padding: '40px', borderRadius: '20px', boxShadow: 'var(--shadow-md)', borderTop: '5px solid var(--primary)', marginBottom: '40px' }}>
+                            <div id="documents" className="reveal" style={{ background: 'white', padding: '40px', borderRadius: '20px', boxShadow: 'var(--shadow-md)', borderTop: '5px solid var(--primary)', marginBottom: '40px' }}>
                                 <h3 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
                                     <i className="fas fa-id-card" style={{ color: 'var(--accent)' }}></i>
                                     Required Documents
@@ -110,7 +110,7 @@ const Admissions = () => {
                             </div>
 
                             {/* Scholarship */}
-                            <div className="reveal" style={{ background: 'white', padding: '40px', borderRadius: '20px', boxShadow: 'var(--shadow-md)', borderTop: '5px solid var(--primary)' }}>
+                            <div id="scholarships" className="reveal" style={{ background: 'white', padding: '40px', borderRadius: '20px', boxShadow: 'var(--shadow-md)', borderTop: '5px solid var(--primary)' }}>
                                 <h3 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
                                     <i className="fas fa-hand-holding-usd" style={{ color: 'var(--accent)' }}></i>
                                     Scholarships
@@ -130,7 +130,7 @@ const Admissions = () => {
 
                         <div className="admission-sidebar">
                             {/* Process */}
-                            <div className="reveal" style={{ background: 'white', padding: '30px', borderRadius: '20px', boxShadow: 'var(--shadow-md)', marginBottom: '30px', borderTop: '5px solid var(--accent)' }}>
+                            <div id="selection" className="reveal" style={{ background: 'white', padding: '30px', borderRadius: '20px', boxShadow: 'var(--shadow-md)', marginBottom: '30px', borderTop: '5px solid var(--accent)' }}>
                                 <h4 style={{ color: 'var(--primary)', marginBottom: '20px' }}>Selection Process</h4>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                                     {[
@@ -151,7 +151,7 @@ const Admissions = () => {
                             </div>
 
                             {/* Action */}
-                            <div className="reveal" style={{ background: 'var(--primary)', color: 'white', padding: '40px', borderRadius: '20px', textAlign: 'center' }}>
+                            <div id="apply" className="reveal" style={{ background: 'var(--primary)', color: 'white', padding: '40px', borderRadius: '20px', textAlign: 'center' }}>
                                 <h3 style={{ color: 'white', marginBottom: '15px' }}>Start Your Application</h3>
                                 <p style={{ fontSize: '0.9rem', opacity: 0.8, marginBottom: '25px' }}>Inquiries are now open for the {new Date().getFullYear()}-{new Date().getFullYear() + 1} academic year.</p>
                                 <a href="mailto:info@mzcn.in" className="btn" style={{ background: 'var(--accent)', color: 'var(--primary)', width: '100%', fontWeight: 800 }}>INQUIRE NOW</a>

@@ -260,7 +260,7 @@ const Home = () => {
                         <Link to="/gallery" className="gallery-item-link" style={{ textDecoration: 'none' }}>
                             <div className="gallery-item" style={{ position: 'relative' }}>
                                 <img src={`${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.07 PM.jpeg`} alt="MZCN Gallery 4" />
-                                <div className="gallery-overlay" style={{ opacity: 1, background: 'rgba(128, 0, 0, 0.7)' }}>
+                                <div className="gallery-overlay" style={{ opacity: 1, background: 'rgba(0, 43, 91, 0.8)' }}>
                                     <div style={{ textAlign: 'center' }}>
                                         <i className="fas fa-images" style={{ display: 'block', marginBottom: '15px', fontSize: '2.2rem', color: 'var(--accent)' }}></i>
                                         <span style={{ color: 'white', fontWeight: 800, fontSize: '1.1rem', textTransform: 'uppercase', letterSpacing: '1px' }}>View Full Gallery</span>
