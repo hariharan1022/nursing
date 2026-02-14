@@ -42,7 +42,7 @@ const About = () => {
             {/* About Section Content */}
             <section className="section">
                 <div className="container">
-                    <div className="grid" style={{ gridTemplateColumns: '1fr 1.5fr', gap: '60px', alignItems: 'start' }}>
+                    <div className="grid grid-cols-2 md-grid-cols-1" style={{ gridTemplateColumns: 'minmax(300px, 1fr) 2fr', gap: '60px', alignItems: 'start' }}>
                         {/* Sidebar Navigation */}
                         <div className="about-nav-card" style={{ position: 'sticky', top: '100px' }}>
                             <h2 style={{ color: 'var(--primary)', marginBottom: '20px' }}>Identity</h2>
@@ -97,7 +97,7 @@ const About = () => {
                                 <h3 style={{ color: 'var(--primary)', marginBottom: '20px', borderBottom: '2px solid var(--accent)', display: 'inline-block' }}>
                                     Institutional Development Plan (IDP)
                                 </h3>
-                                <div className="idp-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                                <div className="grid grid-cols-2 sm-grid-cols-1" style={{ gap: '20px' }}>
                                     <div className="idp-card" style={{ padding: '20px', background: 'white', borderRadius: '12px', boxShadow: 'var(--shadow-sm)', border: '1px solid #eee' }}>
                                         <i className="fas fa-hospital" style={{ fontSize: '2rem', color: 'var(--primary)', marginBottom: '15px' }}></i>
                                         <h4 style={{ color: 'var(--primary)', marginBottom: '10px' }}>MZ Multispecialty Hospital</h4>
@@ -145,7 +145,7 @@ const About = () => {
                     <h2 style={{ textAlign: 'center', fontSize: '2.5rem', color: 'var(--primary)', marginBottom: '60px' }} className="reveal">Our Leadership</h2>
 
                     {/* Founder */}
-                    <div id="chairman" className="grid reveal" style={{ gridTemplateColumns: '1fr 2fr', gap: '40px', background: 'white', padding: '40px', borderRadius: '20px', marginBottom: '40px', borderLeft: '5px solid var(--accent)' }}>
+                    <div id="chairman" className="grid grid-cols-2 md-grid-cols-1 reveal" style={{ gridTemplateColumns: '1fr 2fr', gap: '40px', background: 'white', padding: '40px', borderRadius: '20px', marginBottom: '40px', borderLeft: '5px solid var(--accent)' }}>
                         <div className="leader-img">
                             <div style={{ padding: '10px', border: '2px solid var(--primary-light)', borderRadius: '12px', maxWidth: '300px', margin: '0 auto' }}>
                                 <img src={`${import.meta.env.BASE_URL}photo/FOUNDER.png`} alt="Founder" style={{ width: '100%', borderRadius: '8px' }} />
@@ -175,7 +175,7 @@ const About = () => {
                         <h3 style={{ color: 'var(--primary)', borderLeft: '4px solid var(--accent)', paddingLeft: '15px', marginBottom: '30px' }}>
                             Institutional Trust
                         </h3>
-                        <div className="leadership-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px' }}>
+                        <div className="grid grid-cols-3 md-grid-cols-1" style={{ gap: '30px' }}>
                             {/* Chairperson */}
                             <div className="leader-card" style={{ display: 'flex', flexDirection: 'column', height: '100%', background: 'white', padding: '30px', borderRadius: '15px', boxShadow: 'var(--shadow-md)' }}>
                                 <div style={{ width: '140px', height: '140px', margin: '0 auto 20px', borderRadius: '50%', overflow: 'hidden', border: '4px solid var(--bg-light)', flexShrink: 0 }}>
@@ -238,7 +238,7 @@ const About = () => {
                         <h3 style={{ color: 'var(--primary)', borderLeft: '4px solid var(--accent)', paddingLeft: '15px', marginBottom: '30px' }}>
                             Academic Administration
                         </h3>
-                        <div className="leadership-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '30px' }}>
+                        <div className="grid grid-cols-2 md-grid-cols-1" style={{ gap: '30px' }}>
                             {/* Principal */}
                             <div id="principal" className="leader-card" style={{ textAlign: 'left', padding: '40px', background: 'white', borderRadius: '15px', boxShadow: 'var(--shadow-md)' }}>
                                 <div style={{ display: 'flex', gap: '30px', marginBottom: '25px', alignItems: 'start' }}>

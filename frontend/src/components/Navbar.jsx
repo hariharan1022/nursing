@@ -72,7 +72,7 @@ const Navbar = () => {
     };
 
     const toggleDropdown = (e, name) => {
-        if (window.innerWidth <= 1024) {
+        if (window.innerWidth <= 1100) {
             e.preventDefault();
             setActiveDropdown(activeDropdown === name ? null : name);
         }

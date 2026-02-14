@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer style={{ background: 'var(--primary-dark)', color: 'white', padding: '80px 0 30px', borderTop: '5px solid var(--accent)' }}>
-            <div className="container grid" style={{ gridTemplateColumns: '1.5fr 1fr 1fr 1.2fr', gap: '50px' }}>
+        <footer style={{ background: 'var(--primary-dark)', color: 'white', borderTop: '5px solid var(--accent)' }}>
+            <div className="container grid grid-cols-4 md-grid-cols-2 sm-grid-cols-1" style={{ gridTemplateColumns: '1.5fr 1fr 1fr 1.2fr', gap: '50px' }}>
                 <div className="f-brand">
                     <img src={`${import.meta.env.BASE_URL}logo.webp`} alt="MZCN Logo" style={{ height: '70px', marginBottom: '25px' }} />
                     <p style={{ opacity: 0.8, lineHeight: 1.6, marginBottom: '25px', fontSize: '0.9rem' }}>

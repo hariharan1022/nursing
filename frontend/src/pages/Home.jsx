@@ -196,7 +196,7 @@ const Home = () => {
             </div>
 
             {/* About Us Section */}
-            <section className="section reveal" style={{ padding: '100px 0', background: 'white' }}>
+            <section className="section reveal" style={{ background: 'white' }}>
                 <div className="container text-center">
                     <span className="estd-tag" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>ESTD 2009</span>
                     <h2 style={{ fontSize: '3rem', color: 'var(--primary)', margin: '20px 0' }}>To Make Man Whole</h2>
@@ -209,9 +209,9 @@ const Home = () => {
             </section>
 
             {/* Core Pillars */}
-            <section className="section reveal" style={{ background: 'var(--bg-light)', paddingBottom: '100px' }}>
+            <section className="section reveal" style={{ background: 'var(--bg-light)' }}>
                 <div className="container">
-                    <div className="grid reveal-stagger" style={{ gridTemplateColumns: '1fr 1fr', gap: '40px' }}>
+                    <div className="grid grid-cols-2 sm-grid-cols-1" style={{ gap: '40px' }}>
                         {/* Programs Card */}
                         <div className="stat-card interactive-card reveal" style={{ textAlign: 'left', padding: '40px', background: 'white', borderRadius: '20px', boxShadow: 'var(--shadow-md)' }}>
                             <div style={{ width: '60px', height: '60px', background: 'var(--primary)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '12px', marginBottom: '25px' }}>
@@ -281,7 +281,7 @@ const Home = () => {
             )}
 
             {/* Global Navigation CTA */}
-            <section className="section" style={{ background: 'var(--primary)', color: 'white', padding: '80px 0' }}>
+            <section className="section" style={{ background: 'var(--primary)', color: 'white' }}>
                 <div className="container text-center">
                     <h2 style={{ fontSize: '2.5rem', marginBottom: '20px' }}>Join the 2026 Batch</h2>
                     <p style={{ fontSize: '1.1rem', opacity: 0.9, maxWidth: '600px', margin: '0 auto 30px' }}>
@@ -296,7 +296,7 @@ const Home = () => {
             {/* Quick Links Summary - Before Footer */}
             <section className="section">
                 <div className="container">
-                    <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '40px' }}>
+                    <div className="grid grid-cols-3 sm-grid-cols-1" style={{ gap: '40px' }}>
                         <div>
                             <h4 style={{ color: 'var(--primary)', marginBottom: '20px' }}>Resources</h4>
                             <ul style={{ listStyle: 'none', padding: 0, lineHeight: 2.2 }}>

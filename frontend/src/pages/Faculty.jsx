@@ -67,7 +67,7 @@ const Faculty = () => {
 
     return (
         <div className="faculty-page">
-            <div className="inner-hero" style={{ background: 'var(--primary)', color: 'white', padding: '100px 0', textAlign: 'center' }}>
+            <div className="inner-hero" style={{ background: 'var(--primary)', color: 'white', textAlign: 'center' }}>
                 <div className="container">
                     <span className="estd-tag" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>ACADEMIC TEAM</span>
                     <h1 style={{ fontSize: '3rem', margin: '20px 0' }} className="reveal">Department Faculty</h1>
@@ -78,8 +78,8 @@ const Faculty = () => {
             <section className="section" style={{ background: 'var(--bg-light)' }}>
                 <div className="container">
                     {/* Leadership Bio - Principal */}
-                    <div className="reveal" style={{
-                        display: 'grid', gridTemplateColumns: 'minmax(250px, 1fr) 2fr', gap: '40px',
+                    <div className="reveal grid grid-cols-2 md-grid-cols-1" style={{
+                        gridTemplateColumns: 'minmax(250px, 1fr) 2fr', gap: '40px',
                         background: 'white', padding: '40px', borderRadius: '30px',
                         boxShadow: 'var(--shadow-lg)', marginBottom: '40px', borderLeft: '10px solid var(--accent)'
                     }}>
@@ -99,8 +99,8 @@ const Faculty = () => {
                     </div>
 
                     {/* Leadership Bio - Vice Principal */}
-                    <div className="reveal" style={{
-                        display: 'grid', gridTemplateColumns: 'minmax(250px, 1fr) 2fr', gap: '40px',
+                    <div className="reveal grid grid-cols-2 md-grid-cols-1" style={{
+                        gridTemplateColumns: 'minmax(250px, 1fr) 2fr', gap: '40px',
                         background: 'white', padding: '40px', borderRadius: '30px',
                         boxShadow: 'var(--shadow-lg)', marginBottom: '60px', borderLeft: '10px solid var(--accent)'
                     }}>

@@ -166,6 +166,16 @@ iframe {
     height: auto;
 }
 
+footer {
+    padding: 80px 0 30px;
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 60px 0 40px;
+    }
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
@@ -214,10 +224,16 @@ p {
 
 /* --- Layout --- */
 .container {
-    max-width: 1240px;
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px;
     width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 20px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -245,6 +261,44 @@ p {
 
 .grid {
     display: grid;
+    gap: 20px;
+}
+
+.grid>* {
+    min-width: 0;
+}
+
+/* Responsive Grid Utilities (Replacing inline styles) */
+.grid-cols-1 {
+    grid-template-columns: 1fr;
+}
+
+.grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1024px) {
+    .md-grid-cols-1 {
+        grid-template-columns: 1fr !important;
+    }
+
+    .md-grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .sm-grid-cols-1 {
+        grid-template-columns: 1fr !important;
+    }
 }
 
 .items-center {
@@ -605,19 +659,28 @@ nav {
     letter-spacing: 0.1px;
 }
 
-/* Adjustments for Laptop screens (approx 1366px down to 1025px) */
-@media (max-width: 1300px) and (min-width: 1025px) {
+/* Adjustments for Laptop screens (approx 1366px down to 1101px) */
+@media (max-width: 1350px) and (min-width: 1101px) {
     .nav-links a {
-        padding: 6px 8px;
-        font-size: 0.82rem;
+        padding: 6px 10px;
+        font-size: 0.8rem;
     }
 
     .logo-text h2 {
-        font-size: 1.1rem;
+        font-size: 1rem;
+    }
+
+    .logo img {
+        height: 45px;
     }
 
     .nav-links {
-        gap: 2px;
+        gap: 1px;
+    }
+
+    .nav-container {
+        padding: 0 15px;
+        gap: 10px;
     }
 }
 
@@ -1711,7 +1774,7 @@ footer a:hover {
     border-top: 2px solid var(--accent);
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1100px) {
     .grid {
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
     }
@@ -1721,7 +1784,7 @@ footer a:hover {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     .section {
         padding: 50px 0;
     }
@@ -1730,7 +1793,6 @@ footer a:hover {
         padding: 10px 0;
         font-size: 0.72rem;
         background: var(--primary);
-        /* Slightly lighter for better contrast on small screens */
     }
 
     .top-bar-content {
@@ -1783,17 +1845,20 @@ footer a:hover {
         display: flex !important;
         background: var(--primary);
         color: white;
-        width: 48px;
-        height: 48px;
-        border-radius: 12px;
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
         border: none;
-        box-shadow: 0 4px 15px rgba(128, 0, 0, 0.3);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         align-items: center;
         justify-content: center;
         z-index: 9999;
         cursor: pointer;
         position: relative;
     }
+}
+
+@media (max-width: 768px) {
 
     /* --- Mobile Menu Panel --- */
     .nav-links {

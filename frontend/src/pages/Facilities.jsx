@@ -29,7 +29,7 @@ const Facilities = () => {
 
     return (
         <div className="facilities-page">
-            <div className="inner-hero" style={{ background: 'var(--primary)', color: 'white', padding: '100px 0', textAlign: 'center' }}>
+            <div className="inner-hero" style={{ background: 'var(--primary)', color: 'white', textAlign: 'center' }}>
                 <div className="container">
                     <span className="estd-tag" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>INFRASTRUCTURE & BEYOND</span>
                     <h1 style={{ fontSize: '3rem', margin: '20px 0' }} className="reveal">Facilities & Ecosystem</h1>
@@ -54,7 +54,7 @@ const Facilities = () => {
                             <h2 style={{ color: 'var(--primary)', margin: 0 }}>Classrooms & Laboratories</h2>
                         </div>
                         <div style={{ background: 'white', padding: '40px', borderRadius: '20px', boxShadow: 'var(--shadow-lg)', borderLeft: '6px solid var(--primary)' }}>
-                            <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80&w=1200" alt="Lab" style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '15px', marginBottom: '30px' }} />
+                            <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80&w=1200" alt="Lab" style={{ width: '100%', objectFit: 'cover', borderRadius: '15px', marginBottom: '30px', maxHeight: '400px' }} />
                             <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: '1.8' }}>
                                 Our classrooms are modern, well-equipped, and designed to provide an interactive learning experience. specialized laboratories for all nursing disciplines are equipped with high-fidelity mannequins and simulation tools.
                             </p>
@@ -74,7 +74,7 @@ const Facilities = () => {
                             <h2 style={{ color: 'var(--primary)', margin: 0 }}>Digital Library</h2>
                         </div>
                         <div style={{ background: 'white', padding: '40px', borderRadius: '20px', boxShadow: 'var(--shadow-lg)', borderLeft: '6px solid var(--primary)' }}>
-                            <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=1200" alt="Library" style={{ width: '100%', height: '400px', objectFit: 'cover', borderRadius: '15px', marginBottom: '30px' }} />
+                            <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=1200" alt="Library" style={{ width: '100%', objectFit: 'cover', borderRadius: '15px', marginBottom: '30px', maxHeight: '400px' }} />
                             <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: '1.8' }}>
                                 The library is a treasure trove of nursing literature and research journals. It features digital access for e-books and journals, quiet study spaces, and comprehensive resources for academic growth.
                             </p>

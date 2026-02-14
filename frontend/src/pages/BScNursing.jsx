@@ -113,7 +113,7 @@ const BScNursing = () => {
 
     return (
         <div className="bsc-nursing-page">
-            <div className="inner-hero" style={{ background: 'var(--primary)', color: 'white', padding: '120px 0 80px', textAlign: 'center' }}>
+            <div className="inner-hero" style={{ background: 'var(--primary)', color: 'white', textAlign: 'center' }}>
                 <div className="container reveal">
                     <span className="estd-tag" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>BACHELOR OF SCIENCE</span>
                     <h1 style={{ fontSize: '3.5rem', margin: '20px 0' }}>B.Sc. Nursing</h1>

@@ -83,7 +83,7 @@ const ClubsAndCells = () => {
 
     return (
         <div className="clubs-cells-page">
-            <div className="inner-hero" style={{ background: 'var(--primary)', color: 'white', padding: '100px 0', textAlign: 'center' }}>
+            <div className="inner-hero" style={{ background: 'var(--primary)', color: 'white', textAlign: 'center' }}>
                 <div className="container">
                     <span className="estd-tag" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>COMMITTEES & CELLS</span>
                     <h1 style={{ fontSize: '3rem', margin: '20px 0' }} className="reveal">Empowering Excellence</h1>
@@ -95,7 +95,7 @@ const ClubsAndCells = () => {
 
             <section className="section" style={{ background: 'var(--bg-light)' }}>
                 <div className="container">
-                    <div className="grid" style={{ gridTemplateColumns: 'minmax(250px, 1fr) 3fr', gap: '40px', alignItems: 'start' }}>
+                    <div className="grid grid-cols-2 md-grid-cols-1" style={{ gridTemplateColumns: 'minmax(250px, 1fr) 3fr', gap: '40px', alignItems: 'start' }}>
                         {/* Interactive Sidebar */}
                         <aside className="reveal" style={{ background: 'white', padding: '30px', borderRadius: '25px', boxShadow: 'var(--shadow-md)', position: 'sticky', top: '120px' }}>
                             <h4 style={{ color: 'var(--primary)', marginBottom: '20px', borderBottom: '2px solid var(--accent)', paddingBottom: '10px' }}>Quick Navigation</h4>

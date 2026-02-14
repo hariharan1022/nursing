@@ -62,7 +62,7 @@ const InfoCorner = () => {
 
     return (
         <div className="info-corner-page">
-            <div className="inner-hero" style={{ background: 'var(--primary)', color: 'white', padding: '100px 0', textAlign: 'center' }}>
+            <div className="inner-hero" style={{ background: 'var(--primary)', color: 'white', textAlign: 'center' }}>
                 <div className="container">
                     <span className="estd-tag" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>LATEST UPDATES</span>
                     <h1 style={{ fontSize: '3rem', margin: '20px 0' }} className="reveal">Information Corner</h1>
@@ -74,7 +74,7 @@ const InfoCorner = () => {
 
             <section className="section" style={{ background: 'var(--bg-light)' }}>
                 <div className="container">
-                    <div className="grid" style={{ gridTemplateColumns: '1fr 2.5fr', gap: '40px', alignItems: 'start' }}>
+                    <div className="grid grid-cols-2 md-grid-cols-1" style={{ gridTemplateColumns: '1fr 2.5fr', gap: '40px', alignItems: 'start' }}>
                         {/* Sticky Sidebar */}
                         <aside className="reveal" style={{ background: 'white', padding: '30px', borderRadius: '20px', boxShadow: 'var(--shadow-md)', position: 'sticky', top: '120px' }}>
                             <h3 style={{ color: 'var(--primary)', marginBottom: '20px', fontSize: '1.2rem' }}>Quick Access</h3>

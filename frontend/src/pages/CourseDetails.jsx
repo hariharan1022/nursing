@@ -17,7 +17,7 @@ const CourseDetails = () => {
 
     return (
         <div className="course-details-page">
-            <div className="inner-hero" style={{ background: 'var(--primary)', padding: '100px 0', color: 'white', textAlign: 'center' }}>
+            <div className="inner-hero" style={{ background: 'var(--primary)', color: 'white', textAlign: 'center' }}>
                 <div className="container reveal">
                     <span className="estd-tag" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>ACADEMIC EXCELLENCE</span>
                     <h1 style={{ fontSize: '3rem', margin: '20px 0' }}>Course Details</h1>
@@ -45,7 +45,7 @@ const CourseDetails = () => {
                         </div>
                     </div>
 
-                    <div className="grid" style={{ gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
+                    <div className="grid grid-cols-2 md-grid-cols-1" style={{ gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
                         <div className="hover-lift" style={{ background: 'var(--bg-light)', padding: '30px', borderRadius: '15px' }}>
                             <h4 style={{ color: 'var(--primary)', marginBottom: '15px' }}><i className="fas fa-bullseye" style={{ marginRight: '10px', color: 'var(--accent)' }}></i> Aims</h4>
                             <ul style={{ paddingLeft: '20px', color: 'var(--text-muted)' }}>

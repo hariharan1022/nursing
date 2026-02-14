@@ -36,7 +36,7 @@ const Contact = () => {
             {/* Contact & Map Section */}
             <section className="section">
                 <div className="container">
-                    <div className="grid" style={{ gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'start' }}>
+                    <div className="grid grid-cols-2 md-grid-cols-1" style={{ gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'start' }}>
                         {/* Contact Info */}
                         <div className="contact-info reveal">
                             <h2 style={{ fontSize: '2.2rem', color: 'var(--primary)', marginBottom: '30px' }}>Reach Our Administration</h2>

@@ -22,7 +22,7 @@ const Admissions = () => {
 
     return (
         <div className="admissions-page">
-            <div className="inner-hero" style={{ background: 'var(--primary)', color: 'white', padding: '100px 0', textAlign: 'center' }}>
+            <div className="inner-hero" style={{ background: 'var(--primary)', color: 'white', textAlign: 'center' }}>
                 <div className="container">
                     <span className="estd-tag" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>ADMISSION PORTAL</span>
                     <h1 style={{ fontSize: '3rem', margin: '20px 0' }} className="reveal">Join the Future of Nursing</h1>
@@ -34,7 +34,7 @@ const Admissions = () => {
 
             <section className="section" style={{ background: 'var(--bg-light)' }}>
                 <div className="container">
-                    <div className="grid" style={{ gridTemplateColumns: '2fr 1fr', gap: '40px', alignItems: 'start' }}>
+                    <div className="grid grid-cols-2 md-grid-cols-1" style={{ gridTemplateColumns: '2fr 1fr', gap: '40px', alignItems: 'start' }}>
                         <div className="admission-main">
                             {/* Eligibility */}
                             <div id="eligibility" className="reveal" style={{ background: 'white', padding: '40px', borderRadius: '20px', boxShadow: 'var(--shadow-md)', borderTop: '5px solid var(--primary)', marginBottom: '40px' }}>
