@@ -54,9 +54,9 @@ const About = () => {
                             <div className="quick-links-card">
                                 <h4 style={{ color: 'var(--primary)', marginBottom: '15px' }}>Quick Links</h4>
                                 <ul className="quick-links-list">
-                                    <li><Link to="/about#leadership" onClick={() => document.getElementById('leadership').scrollIntoView({behavior: 'smooth'})}>Our Leadership <i className="fas fa-chevron-right"></i></Link></li>
-                                    <li><Link to="/about#vision" onClick={() => document.getElementById('vision').scrollIntoView({behavior: 'smooth'})}>Vision & Mission <i className="fas fa-chevron-right"></i></Link></li>
-                                    <li><Link to="/about#idp" onClick={() => document.getElementById('idp').scrollIntoView({behavior: 'smooth'})}>Development Plan <i className="fas fa-chevron-right"></i></Link></li>
+                                    <li><Link to="/about#leadership" onClick={() => document.getElementById('leadership').scrollIntoView({ behavior: 'smooth' })}>Our Leadership <i className="fas fa-chevron-right"></i></Link></li>
+                                    <li><Link to="/about#vision" onClick={() => document.getElementById('vision').scrollIntoView({ behavior: 'smooth' })}>Vision & Mission <i className="fas fa-chevron-right"></i></Link></li>
+                                    <li><Link to="/about#idp" onClick={() => document.getElementById('idp').scrollIntoView({ behavior: 'smooth' })}>Development Plan <i className="fas fa-chevron-right"></i></Link></li>
                                 </ul>
                             </div>
                         </div>
@@ -184,7 +184,7 @@ const About = () => {
                                         </ul>
                                     </div>
                                     <div style={{ textAlign: 'center', marginTop: '20px' }}>
-                                        <a href={`${import.meta.env.BASE_URL}photo/Organogram MZCN.jpg`} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ fontSize: '0.9rem' }}>
+                                        <a href={`${import.meta.env.BASE_URL}photo/Organogram_MZCN.jpg`} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ fontSize: '0.9rem' }}>
                                             <i className="fas fa-search-plus" style={{ marginRight: '8px' }}></i> View Original Chart
                                         </a>
                                     </div>
