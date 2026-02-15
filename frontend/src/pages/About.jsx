@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import '../styles/organogram.css';
 
 const About = () => {
     const location = useLocation();
@@ -129,65 +128,35 @@ const About = () => {
                                 <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
                                     The organizational structure of Mount Zion College of Nursing follows a systematic hierarchy to ensure effective administration and academic excellence.
                                 </p>
-                                <div className="organogram-wrapper" style={{ overflowX: 'auto', paddingBottom: '20px' }}>
-                                    <div className="org-tree">
-                                        <ul>
-                                            <li>
-                                                <div className="org-node root-node">Chair Person and Trustees</div>
-                                                <ul>
-                                                    <li>
-                                                        <div className="org-node">Director</div>
-                                                        <ul>
-                                                            <li>
-                                                                <div className="org-node">Principal</div>
-                                                                <ul>
-                                                                    {/* Left Branch */}
-                                                                    <li style={{ verticalAlign: 'top' }}>
-                                                                        <div className="vertical-list">
-                                                                            <div className="org-node vertical-node">Vice-Principal</div>
-                                                                            <div className="org-node vertical-node">Associate Professor</div>
-                                                                            <div className="org-node vertical-node">Asst. Professor</div>
-                                                                            <div className="org-node vertical-node">Lecturer</div>
-                                                                            <div className="org-node vertical-node">Clinical Instructor</div>
-                                                                            <div className="org-node vertical-node">Librarian</div>
-                                                                            <div className="org-node vertical-node">Lab assistant</div>
-                                                                            <div className="org-node vertical-node">Peon</div>
-                                                                        </div>
-                                                                    </li>
-                                                                    {/* Middle Branch */}
-                                                                    <li style={{ verticalAlign: 'top' }}>
-                                                                        <div className="vertical-list">
-                                                                            <div className="org-node vertical-node">Administrative Officer</div>
-                                                                            <div className="org-node vertical-node">Accountant</div>
-                                                                            <div className="org-node vertical-node">Cashier</div>
-                                                                            <div className="org-node vertical-node">Clerk</div>
-                                                                            <div className="org-node vertical-node">Office Assistant</div>
-                                                                            <div className="org-node vertical-node">Security</div>
-                                                                            <div className="org-node vertical-node">IV Class</div>
-                                                                        </div>
-                                                                    </li>
-                                                                    {/* Right Branch */}
-                                                                    <li style={{ verticalAlign: 'top' }}>
-                                                                        <div className="vertical-list">
-                                                                            <div className="org-node vertical-node">Warden</div>
-                                                                            <div className="org-node vertical-node">House Keeper</div>
-                                                                            <div className="org-node vertical-node">Security</div>
-                                                                            <div className="org-node vertical-node">IV Class</div>
-                                                                        </div>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
+                                <div className="organogram-entrance-card reveal" style={{
+                                    background: 'white',
+                                    padding: '60px 40px',
+                                    borderRadius: '24px',
+                                    boxShadow: '0 15px 35px rgba(0,0,0,0.05)',
+                                    border: '1px dashed rgba(0, 28, 48, 0.2)',
+                                    textAlign: 'center'
+                                }}>
+                                    <div style={{
+                                        width: '80px',
+                                        height: '80px',
+                                        background: 'var(--bg-light)',
+                                        color: 'var(--primary)',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        borderRadius: '50%',
+                                        margin: '0 auto 25px',
+                                        fontSize: '2rem'
+                                    }}>
+                                        <i className="fas fa-sitemap"></i>
                                     </div>
-                                    <div style={{ textAlign: 'center', marginTop: '20px' }}>
-                                        <a href={`${import.meta.env.BASE_URL}photo/Organogram_MZCN.jpg`} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ fontSize: '0.9rem' }}>
-                                            <i className="fas fa-search-plus" style={{ marginRight: '8px' }}></i> View Original Chart
-                                        </a>
-                                    </div>
+                                    <h3 style={{ fontSize: '1.5rem', color: 'var(--primary)', marginBottom: '15px' }}>View Organizational Chart</h3>
+                                    <p style={{ color: 'var(--text-muted)', marginBottom: '30px', maxWidth: '500px', margin: '0 auto 30px' }}>
+                                        Explore the detailed administrative and academic structure of our institution in a dedicated interactive view.
+                                    </p>
+                                    <Link to="/organogram" className="btn btn-primary magnetic" style={{ padding: '15px 40px', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 800 }}>
+                                        Open Full Organogram
+                                    </Link>
                                 </div>
                             </div>
                         </div>

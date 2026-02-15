@@ -16,6 +16,7 @@ import Feedback from './pages/Feedback';
 import Gallery from './pages/Gallery';
 import Careers from './pages/Careers';
 import JobApplication from './pages/JobApplication';
+import Organogram from './pages/Organogram';
 
 // Component to scroll to top on route change
 const ScrollToTop = () => {
@@ -84,6 +85,7 @@ function AppContent() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/apply-job" element={<JobApplication />} />
+        <Route path="/organogram" element={<Organogram />} />
       </Routes>
       <Footer />
     </div>
