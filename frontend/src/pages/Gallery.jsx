@@ -1,144 +1,210 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
+import { Calendar, Layers, ZoomIn, X, Image as ImageIcon } from 'lucide-react';
+import '../styles/Gallery.css';
 
 const Gallery = () => {
-    useEffect(() => {
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
-        }, observerOptions);
+    const [lightboxOpen, setLightboxOpen] = useState(false);
+    const [currentImage, setCurrentImage] = useState(null);
 
-        const elements = document.querySelectorAll('.reveal, .reveal-stagger');
-        elements.forEach(el => observer.observe(el));
-        return () => observer.disconnect();
+    // Dynamic Image Loading
+    const galleryData = useMemo(() => {
+        const glob = import.meta.glob('../assets/gallery/**/*.{png,jpg,jpeg,svg}', { eager: true });
+
+        return Object.entries(glob).map(([path, module], index) => {
+            // Path example: "../assets/gallery/2024/image.jpg" or "../assets/gallery/Events/Graduation/image.jpg"
+            const parts = path.split('/');
+            const fileName = parts[parts.length - 1];
+            const folderName = parts[parts.length - 2];
+            const parentFolder = parts[parts.length - 3]; // might be 'Events' or 'gallery'
+
+            let year = '2024';
+            let event = 'General';
+
+            // Metadata extraction logic
+            // Check if the parent folder is a year (e.g. gallery/2025/EventName/image.jpg)
+            if (/^\d{4}$/.test(parentFolder)) {
+                year = parentFolder;
+                event = folderName.replace(/_/g, ' '); // Replace underscores with spaces if any
+            }
+            // Check if the folder itself is a year (e.g. gallery/2025/image.jpg)
+            else if (/^\d{4}$/.test(folderName)) {
+                year = folderName;
+                event = 'Campus Life';
+            }
+            // Logic for existing structure (e.g. gallery/Events/EventName/image.jpg)
+            else if (parentFolder === 'Events') {
+                event = folderName.replace(/([A-Z])/g, ' $1').trim();
+                year = '2024';
+            }
+            else {
+                // Fallback
+                if (folderName === '2023') year = '2023';
+                else if (folderName === '2022') year = '2022';
+            }
+
+            return {
+                id: index,
+                src: module.default, // Vite returns module with default export as URL
+                year,
+                event,
+                title: fileName.replace(/\.[^/.]+$/, "").replace(/WhatsApp Image/, "Photo"), // Clean up filename
+                category: parentFolder === 'Events' ? folderName : year
+            };
+        });
     }, []);
 
-    const [lightboxOpen, setLightboxOpen] = useState(false);
-    const [lightboxImage, setLightboxImage] = useState('');
-
-    const images = [
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.12.54 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.12.57 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.02 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.07 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.10 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.12 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.13 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.14 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.15 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.16 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.17 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.18 PM (1).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.18 PM (2).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.18 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.19 PM (1).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.19 PM (2).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.19 PM (3).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.19 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.20 PM (1).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.20 PM (2).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.20 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.21 PM (1).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.21 PM (2).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.21 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.22 PM (1).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.22 PM (2).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.22 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.23 PM (1).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.23 PM (2).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.23 PM (3).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.23 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.24 PM (1).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.24 PM (2).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.24 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.25 PM (1).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.25 PM (2).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.25 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.26 PM (1).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.26 PM (2).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.26 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.27 PM (1).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.27 PM (2).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.27 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.28 PM (1).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.28 PM (2).jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.28 PM.jpeg`
-    ];
-
-    const openLightbox = (src) => {
-        setLightboxImage(src);
+    const openLightbox = (image) => {
+        setCurrentImage(image);
         setLightboxOpen(true);
         document.body.style.overflow = 'hidden';
     };
 
     const closeLightbox = () => {
         setLightboxOpen(false);
+        setCurrentImage(null);
         document.body.style.overflow = 'auto';
     };
 
+    // Grouping Logic
+    const sections = useMemo(() => {
+        // Helper to group by a key
+        const groupBy = (data, keySelector) => {
+            return data.reduce((acc, item) => {
+                const key = keySelector(item);
+                if (!acc[key]) acc[key] = [];
+                acc[key].push(item);
+                return acc;
+            }, {});
+        };
+
+        // Group by Year -> Then by Event
+        const yearGroups = groupBy(galleryData, item => item.year);
+        // Sort years descending
+        return Object.keys(yearGroups).sort((a, b) => b - a).map(year => {
+            const photosInYear = yearGroups[year];
+            const eventGroupsInYear = groupBy(photosInYear, item => item.event);
+
+            // Sort events alphabetically
+            const sortedEvents = Object.keys(eventGroupsInYear).sort();
+
+            return {
+                title: year,
+                count: photosInYear.length,
+                subSections: sortedEvents.map(event => ({
+                    title: event,
+                    photos: eventGroupsInYear[event]
+                }))
+            };
+        });
+    }, [galleryData]);
+
     return (
         <div className="gallery-page">
-            <div className="inner-hero" style={{ background: 'var(--primary)', color: 'white', textAlign: 'center' }}>
-                <div className="container reveal">
-                    <span className="estd-tag" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>VISUAL JOURNEY</span>
-                    <h1 style={{ fontSize: '3.5rem', margin: '20px 0' }}>Photo Gallery</h1>
-                    <p style={{ maxWidth: '700px', margin: '0 auto', fontSize: '1.2rem', opacity: 0.9 }}>
-                        Exploring the vibrant life, excellence in training, and moments of celebration at Mount Zion College of Nursing.
+            {/* Hero Section */}
+            <div className="gallery-hero">
+                <div className="gallery-hero-bg"></div>
+                <div className="gallery-hero-content">
+                    <span className="visual-tag animate-fade-in-up">Visual Journey</span>
+                    <h1 className="gallery-title animate-fade-in-up delay-100">Moments of Excellence</h1>
+                    <p className="gallery-desc animate-fade-in-up delay-200">
+                        Explore the vibrant life at Mount Zion College of Nursing, captured through the lens of our events, achievements, and daily campus life.
                     </p>
                 </div>
             </div>
 
-            <section className="section" style={{ background: 'var(--bg-light)' }}>
-                <div className="container">
-                    <div className="gallery-grid-main" style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-                        gap: '25px',
-                        padding: '20px 0'
-                    }}>
-                        {images.map((src, i) => (
-                            <div
-                                key={i}
-                                className="reveal gallery-item-premium"
-                                onClick={() => openLightbox(src)}
-                                style={{
-                                    background: 'white',
-                                    borderRadius: '20px',
-                                    overflow: 'hidden',
-                                    cursor: 'zoom-in',
-                                    boxShadow: 'var(--shadow-md)',
-                                    transition: 'var(--transition)'
-                                }}
-                            >
-                                <div style={{ overflow: 'hidden', height: '280px', position: 'relative' }}>
-                                    <img
-                                        src={src}
-                                        alt={`Gallery Image ${i + 1}`}
-                                        style={{
-                                            width: '100%',
-                                            height: '100%',
-                                            objectFit: 'cover',
-                                            display: 'block',
-                                            transition: 'transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1)'
-                                        }}
-                                        className="gallery-zoom"
-                                    />
-                                    <div className="gallery-overlay-premium">
-                                        <i className="fas fa-expand" style={{ color: 'white', fontSize: '1.5rem' }}></i>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
+            {/* Gallery Content */}
+            <div className="container" style={{ paddingBottom: '5rem' }}>
+                {galleryData.length === 0 ? (
+                    <div className="text-center py-20 text-gray-500">
+                        <p>No photos found in the gallery.</p>
                     </div>
-                </div>
-            </section>
+                ) : (
+                    sections.map((section, sectionIndex) => (
+                        <div key={section.title} className="section-group animate-on-scroll" style={{ animationDelay: `${sectionIndex * 0.1}s` }}>
+                            {/* Main Section Header (Year or Event Name) */}
+                            <div className="group-header">
+                                <h2 className="group-title">
+                                    {section.title}
+                                </h2>
+                                <div className="group-line"></div>
+                                <span className="group-count">
+                                    {section.count} Photos
+                                </span>
+                            </div>
 
-            {lightboxOpen && (
-                <div className="lightbox" style={{ display: 'flex' }} onClick={closeLightbox}>
-                    <span className="lightbox-close" onClick={closeLightbox}>&times;</span>
-                    <div className="lightbox-container" onClick={(e) => e.stopPropagation()}>
-                        <img className="lightbox-content" src={lightboxImage} alt="Gallery Preview" />
+                            {/* Subsections (Events within Year) */}
+                            {section.subSections.map((sub, subIndex) => (
+                                <div key={`${section.title}-${sub.title || subIndex}`} className="subsection">
+                                    {sub.title && (
+                                        <h3 className="subsection-title">
+                                            {sub.title}
+                                        </h3>
+                                    )}
+
+                                    <div className="gallery-grid">
+                                        {sub.photos.map((item) => (
+                                            <div
+                                                key={item.id}
+                                                className="gallery-card"
+                                                onClick={() => openLightbox(item)}
+                                            >
+                                                <div className="card-image-wrapper">
+                                                    <img
+                                                        src={item.src}
+                                                        alt={item.title}
+                                                        className="card-image"
+                                                        loading="lazy"
+                                                    />
+                                                    <div className="card-overlay">
+                                                        <div className="zoom-icon">
+                                                            <ZoomIn size={20} />
+                                                        </div>
+                                                        <span className="card-year">
+                                                            {item.year}
+                                                        </span>
+                                                        <h3 className="card-title">
+                                                            {item.event}
+                                                        </h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    {/* Spacer between subsections */}
+                                    <div className="h-12"></div>
+                                </div>
+                            ))}
+                        </div>
+                    ))
+                )}
+            </div>
+
+            {/* Lightbox */}
+            {lightboxOpen && currentImage && (
+                <div
+                    className="lightbox-overlay"
+                    onClick={closeLightbox}
+                >
+                    <button
+                        className="lightbox-close"
+                        onClick={closeLightbox}
+                    >
+                        <X size={24} />
+                    </button>
+
+                    <div
+                        className="lightbox-content-wrapper"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <img
+                            src={currentImage.src}
+                            alt={currentImage.title}
+                            className="lightbox-image"
+                        />
+                        <div className="lightbox-info">
+                            <h3 className="lightbox-event">{currentImage.event}</h3>
+                            <p className="lightbox-meta">{currentImage.year} • {currentImage.title}</p>
+                        </div>
                     </div>
                 </div>
             )}

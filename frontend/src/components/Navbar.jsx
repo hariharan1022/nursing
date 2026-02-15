@@ -115,7 +115,7 @@ const Navbar = () => {
                 <div className="top-bar">
                     <div className="container top-bar-content">
                         <div className="top-bar-left">
-                            <a href="http://betanet.mzcet.in:8080/" target="_blank" rel="noopener noreferrer">Portal</a>
+                            <a href="http://betanet.mzcet.in:8080/" target="_blank" rel="noopener noreferrer">Student Portal</a>
                             <a href="https://mail.google.com/a/mzcn.in" target="_blank" rel="noopener noreferrer">WebMail</a>
                         </div>
 
@@ -315,4 +315,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default Navbar;
