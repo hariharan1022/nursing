@@ -197,8 +197,8 @@ const InfoCorner = () => {
                                 {staticAnnouncements.map((ann, idx) => (
                                     <div key={idx} className={`info-card hover-lift ${ann.image ? 'featured-card' : ''}`} style={ann.image ? { padding: '0', overflow: 'hidden' } : {}}>
                                         {ann.image && (
-                                            <div style={{ width: '100%', height: '300px', overflow: 'hidden' }}>
-                                                <img src={ann.image} alt={ann.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                            <div style={{ width: '100%', height: '400px', maxHeight: '50vh', overflow: 'hidden', position: 'relative' }}>
+                                                <img src={ann.image} alt={ann.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
                                             </div>
                                         )}
                                         <div style={ann.image ? { padding: '30px' } : {}}>
@@ -239,8 +239,8 @@ const InfoCorner = () => {
                                 {staticNews.map((news, idx) => (
                                     <div key={idx} className={`info-card hover-lift ${news.image ? 'featured-card' : ''}`} style={news.image ? { padding: '0', borderLeftColor: 'var(--accent)', overflow: 'hidden' } : { borderLeftColor: 'var(--primary)' }}>
                                         {news.image && (
-                                            <div style={{ width: '100%', height: '300px', overflow: 'hidden' }}>
-                                                <img src={news.image} alt={news.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                            <div style={{ width: '100%', height: '400px', maxHeight: '50vh', overflow: 'hidden', position: 'relative' }}>
+                                                <img src={news.image} alt={news.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
                                             </div>
                                         )}
                                         <div style={news.image ? { padding: '30px' } : {}}>
