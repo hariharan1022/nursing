@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+// Gallery Images (Imported from src/assets)
+import gallery1 from '../assets/gallery/2026/17th Lamp Lighting Ceremony 2026/WhatsApp Image 2026-02-15 at 6.03.02 PM.jpeg';
+import gallery2 from '../assets/gallery/2026/17th Lamp Lighting Ceremony 2026/WhatsApp Image 2026-02-15 at 6.03.04 PM.jpeg';
+import gallery3 from '../assets/gallery/2026/17th Lamp Lighting Ceremony 2026/WhatsApp Image 2026-02-15 at 6.03.05 PM.jpeg';
+import gallery4 from '../assets/gallery/2026/17th Lamp Lighting Ceremony 2026/WhatsApp Image 2026-02-15 at 6.03.06 PM.jpeg';
+
 const Home = () => {
     // Slider State
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -120,12 +126,12 @@ const Home = () => {
         return () => observer.disconnect();
     }, []);
 
-    // Gallery Images (Hardcoded from main.js/html for now)
+    // Gallery Images
     const galleryImages = [
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.12.54 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.12.57 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.02 PM.jpeg`,
-        `${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.07 PM.jpeg`
+        gallery1,
+        gallery2,
+        gallery3,
+        gallery4
     ];
 
     const openLightbox = (src) => {
@@ -259,7 +265,7 @@ const Home = () => {
 
                         <Link to="/gallery" className="gallery-item-link" style={{ textDecoration: 'none' }}>
                             <div className="gallery-item" style={{ position: 'relative' }}>
-                                <img src={`${import.meta.env.BASE_URL}photo/gallery/WhatsApp Image 2026-02-10 at 9.13.07 PM.jpeg`} alt="MZCN Gallery 4" />
+                                <img src={gallery4} alt="MZCN Gallery 4" />
                                 <div className="gallery-overlay" style={{ opacity: 1, background: 'rgba(0, 43, 91, 0.8)' }}>
                                     <div style={{ textAlign: 'center' }}>
                                         <i className="fas fa-images" style={{ display: 'block', marginBottom: '15px', fontSize: '2.2rem', color: 'var(--accent)' }}></i>
