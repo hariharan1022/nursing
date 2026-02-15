@@ -118,10 +118,10 @@ const Footer = () => {
                             To Make Man Whole. Providing world-class nursing education with clinical excellence for over <span className="animated-text">17 years</span>.
                         </p>
                         <div style={{ display: 'flex', gap: '15px' }}>
-                            <a href="https://facebook.com" className="social-icon"><i className="fab fa-facebook-f"></i></a>
-                            <a href="https://twitter.com" className="social-icon"><i className="fab fa-twitter"></i></a>
-                            <a href="https://instagram.com" className="social-icon"><i className="fab fa-instagram"></i></a>
-                            <a href="https://linkedin.com" className="social-icon"><i className="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.facebook.com/share/17Few28nzE/" target="_blank" rel="noopener noreferrer" className="social-icon"><i className="fab fa-facebook-f"></i></a>
+                            <a href="mailto:jobs@mzcn.in" className="social-icon"><i className="fas fa-envelope"></i></a>
+                            <Link to="/" className="social-icon"><i className="fab fa-instagram"></i></Link>
+                            <a href="https://in.linkedin.com/school/mount-zion-college-of-engineering-and-technology/" target="_blank" rel="noopener noreferrer" className="social-icon"><i className="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
 
@@ -132,7 +132,7 @@ const Footer = () => {
                         <Link to="/about" className="f-link">About Us</Link>
                         <Link to="/course-details" className="f-link">Course Details</Link>
                         <Link to="/contact" className="f-link">Contact Us</Link>
-                        <a href="#" className="f-link">Web Mail</a>
+                        <a href="https://mail.google.com/a/mzcn.in" target="_blank" rel="noopener noreferrer" className="f-link">Web Mail</a>
                         <a href="/feedback" className="f-link">Feedback</a>
                         <a href="#" className="f-link">Facility for Faculty & Students</a>
                     </div>
@@ -183,9 +183,11 @@ const Footer = () => {
                 <div style={{ marginTop: '60px', padding: '30px 0', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '15px', alignItems: 'center', justifyContent: 'center' }}>
                         <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem', marginRight: '10px' }}>Our Affiliations:</span>
-                        <div className="affiliation-tag">INC | TNNMC</div>
-                        <div className="affiliation-tag">The Tamil Nadu Dr. M.G.R. Medical University</div>
-                        <div className="affiliation-tag">TNHFW DME Selection Committee</div>
+                        <a href="https://www.indiannursingcouncil.org/" target="_blank" rel="noopener noreferrer" className="affiliation-tag" style={{ textDecoration: 'none' }}>INC</a>
+                        <a href="https://tamilnadunursingcouncil.com/#/home" target="_blank" rel="noopener noreferrer" className="affiliation-tag" style={{ textDecoration: 'none' }}>TNNMC</a>
+                        <a href="https://www.tnmgrmu.ac.in/" target="_blank" rel="noopener noreferrer" className="affiliation-tag" style={{ textDecoration: 'none' }}>The Tamil Nadu Dr. M.G.R. Medical University</a>
+                        <a href="https://tnhealth.tn.gov.in/" target="_blank" rel="noopener noreferrer" className="affiliation-tag" style={{ textDecoration: 'none' }}>TNHFW</a>
+                        <a href="https://tnmedicalselection.net/" target="_blank" rel="noopener noreferrer" className="affiliation-tag" style={{ textDecoration: 'none' }}>DME Selection Committee</a>
                     </div>
                 </div>
 
