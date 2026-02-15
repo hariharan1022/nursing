@@ -56,6 +56,20 @@ const InfoCorner = () => {
         };
     }, []);
 
+    const handleScrollToSection = (sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            const navHeight = 120; // Account for sticky header
+            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - navHeight;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    };
+
     useEffect(() => {
         if (location.hash) {
             const element = document.getElementById(location.hash.substring(1));
@@ -118,7 +132,7 @@ const InfoCorner = () => {
             tags: '#MZCN #LampLightingCeremony #NursingProfession #Batch2024_25 #FutureNurses #FlorenceNightingaleLegacy',
             image: lampLighting16Img
         },
-       
+
     ];
 
     const staticNews = [
@@ -149,7 +163,7 @@ const InfoCorner = () => {
             tags: '#MountZionPride #StateChampion #100MetersRun #MZCN #ExcellenceInAction',
             image: mahayagavanImg
         },
-     
+
     ];
 
     const rankHolders = [
@@ -190,7 +204,15 @@ const InfoCorner = () => {
                             <ul style={{ listStyle: 'none', padding: 0 }}>
                                 {['Announcements', 'News', 'Achievements', 'Jobs'].map(item => (
                                     <li key={item} style={{ marginBottom: '15px' }}>
-                                        <a href={`#${item.toLowerCase()}`} style={{ textDecoration: 'none', color: 'var(--text-muted)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '10px' }} className="hover-primary">
+                                        <a
+                                            href={`#${item.toLowerCase()}`}
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                handleScrollToSection(item.toLowerCase());
+                                            }}
+                                            style={{ textDecoration: 'none', color: 'var(--text-muted)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}
+                                            className="hover-primary"
+                                        >
                                             <i className="fas fa-chevron-right" style={{ fontSize: '0.8rem', color: 'var(--accent)' }}></i>
                                             {item}
                                         </a>
