@@ -3,6 +3,10 @@ import { useLocation, Link } from 'react-router-dom';
 
 // Import Featured Images
 import lampLightingImg from '../assets/updates/announcements/lamp-lighting-2026.jpg';
+import pongal2026Img from '../assets/updates/announcements/pongal 2026.jpeg';
+import graduation12Img from '../assets/updates/announcements/12th graduation.jpeg';
+import foundersDay2024Img from '../assets/updates/announcements/founders day 2025.jpeg';
+import lampLighting16Img from '../assets/updates/announcements/16th lamp lighting 2025.jpeg';
 import republicDayImg from '../assets/updates/news/rajiv-gandhi-republic-day.jpg';
 import antonyAmisImg from '../assets/updates/news/antony-amis-silver-medal.jpg';
 import mahayagavanImg from '../assets/updates/news/mahayagavan-m-bronze-medal.jpg';
@@ -22,6 +26,10 @@ const InfoCorner = () => {
                 // Skip if it's one of our hardcoded featured ones to avoid duplication
                 const featured = [
                     'lamp-lighting-2026',
+                    'pongal 2026',
+                    '12th graduation',
+                    'founders day 2025',
+                    '16th lamp lighting 2025',
                     'rajiv-gandhi-republic-day',
                     'antony-amis-silver-medal',
                     'mahayagavan-m-bronze-medal',
@@ -82,10 +90,35 @@ const InfoCorner = () => {
             tags: '#MountZionCollegeOfNursing #LampLightingCeremony2026 #FutureNurses #NursingProfession #ProudMoment',
             image: lampLightingImg
         },
-        { type: 'Professional Event', title: 'Lamp Lighting Ceremony 2025', text: 'The Lamp Lighting Ceremony for the first-year batch (2024-2028) on 29th Jan 2025. This significant event symbolizes the beginning of their professional journey into nursing.' },
-        { type: 'Celebration', title: 'Pongal Celebration 2025', text: 'On 10th Jan 2025, the college celebrated Pongal with traditional fervor, graced by the Chairperson and Director.' },
-        { type: 'Celebration', title: "Founders' Day", text: 'Commemorating the life and vision of our founder, Mr. Jeyabarathan Chelliah, on 17th Dec 2024.' },
-        { type: 'Event', title: 'Fresher’s Day', text: 'Welcomed the 16th batch, "Joyful Generous Topaz," on 25th Nov 2024.' }
+        {
+            type: 'Cultural Celebration',
+            title: 'Pongal Celebration 2026 🌾✨',
+            text: 'Celebrating the spirit of Tamil heritage and the vibrant essence of nature, Mount Zion College of Nursing proudly hosted Pongal Celebration 2026 under the theme Thamilan Who Lived with Nature. The event was a symphony of culture and tradition, featuring beautiful rhyming poems, soulful traditional dances, and an engaging skit reflecting the harmony between humans and nature. Students relived the charm of old traditional games like tug-of-war, showcasing the strength of unity and camaraderie. Through every activity, from the aromatic preparation of Pongal to heartfelt greetings and cultural expressions, we rejoiced in recalling the beauty of Tamil culture - a timeless connection to our roots. Here is to cherishing tradition and celebrating togetherness! 🌿🌞 Happy Pongal to all! 🪷🎉',
+            tags: '#MZCN #PongalCelebration #ThamilanWithNature #TraditionsAlive',
+            image: pongal2026Img
+        },
+        {
+            type: 'Milestone Achievement',
+            title: '12th Graduation Day - A Moment of Pride and Blessings! 🎓🎉',
+            text: 'With hearts full of gratitude and dreams held high, the Class of 2025 stepped into a new chapter of purpose and service. Held on 18th July 2025, this memorable occasion was graced by esteemed dignitaries, heartfelt songs, and proud moments of recognition. We celebrate the dedication, perseverance, and success of our graduates - our future nurses committed to care, compassion, and excellence.',
+            tags: '#MZCNGraduationDay2025 #ProudMoment #NursingGraduates #MountZionCollegeOfNursing #ClassOf2025 #NurseWithPurpose #ServingWithCompassion',
+            image: graduation12Img
+        },
+        {
+            type: 'Special Event',
+            title: 'A Heartwarming Founder\'s Day ✨',
+            text: 'On 17th December 2024 by 6 p.m., Mount Zion College of Nursing celebrated Founder\'s Day with 50 joyful kids from Christhu King Home for Children, Irudhayapuram. 💖 A red carpet welcome, heartfelt songs, motivational messages, fun games, delightful gifts, and a memorable dinner filled the evening with love and laughter. 🌈 The hugs, smiles, and shared moments truly embodied the spirit of love and care, making this Founder\'s Day unforgettable. 🫂💫',
+            tags: '#FoundersDay2024 #MountZionCollegeOfNursing #SpreadingLove #JoyfulMemories',
+            image: foundersDay2024Img
+        },
+        {
+            type: 'Professional Ceremony',
+            title: 'XVI Lamp Lighting Ceremony - Batch of 2024-25 📸✨',
+            text: 'Mount Zion College of Nursing proudly conducted its 16th Lamp Lighting Ceremony on 29th January 2025 at 10:30 a.m. The event marked a significant milestone in the journey of our aspiring nurses as they embraced the noble profession with dedication and commitment. The ceremony was graced by esteemed dignitaries, including Mrs. Florence Jayabarathan, Chairperson, Mount Zion Educational Institutions, and our Chief Guest, Dr. Prameed Pilli, a distinguished Orthopedic Surgeon from Bengaluru. The lighting of the Nightingale\'s lamp symbolized the beginning of a lifelong journey in service, care, and compassion. A heartfelt appreciation to all our faculty, students, and guests for making this occasion memorable. We extend our best wishes to the Batch of 2024-25 as they step forward with purpose and integrity in their nursing profession. 🌟 "Take my life and let it be, consecrated, Lord, to Thee." 🌟',
+            tags: '#MZCN #LampLightingCeremony #NursingProfession #Batch2024_25 #FutureNurses #FlorenceNightingaleLegacy',
+            image: lampLighting16Img
+        },
+       
     ];
 
     const staticNews = [
@@ -97,8 +130,8 @@ const InfoCorner = () => {
         },
         {
             type: 'Sports Achievement',
-            title: '🏅 Victory shines brighter when it’s shared!',
-            text: 'Congratulations to Ham Joel Raj.M and Ratan Sagar Singh for clinching the Gold Medal in Badminton Doubles, and to Sundar Gnanasekar for winning the Silver Medal in the Chief Minister Trophy 2024, Pudukkottai District Level! Both the award winners are proud B.Sc. Nursing students of Mount Zion College of Nursing. Let’s celebrate this moment of triumph and dedication together! 🥇🥈',
+            title: '🏅 Victory shines brighter when it\'s shared!',
+            text: 'Congratulations to Ham Joel Raj.M and Ratan Sagar Singh for clinching the Gold Medal in Badminton Doubles, and to Sundar Gnanasekar for winning the Silver Medal in the Chief Minister Trophy 2024, Pudukkottai District Level! Both the award winners are proud B.Sc. Nursing students of Mount Zion College of Nursing. Let\'s celebrate this moment of triumph and dedication together! 🥇🥈',
             tags: '#ProudMoment #Champions #BadmintonDoubles #MountZionSpirit',
             image: badmintonImg
         },
@@ -116,9 +149,7 @@ const InfoCorner = () => {
             tags: '#MountZionPride #StateChampion #100MetersRun #MZCN #ExcellenceInAction',
             image: mahayagavanImg
         },
-        { type: 'Initiative', title: 'Healthy Nutrition Demonstration', text: 'Radiant Rubies batch organized a Nutrition Event, preparing dishes tailored to health conditions like diabetes and anemia.' },
-        { type: 'Leadership', title: 'SALT 2024', text: 'Hosted Student Advocacy and Leadership Training in collaboration with TNAI for students from 21 institutions.' },
-        { type: 'Milestone', title: 'XI Graduation Day', text: '46 graduates received their degrees on 2nd April 2024, marking the culmination of their dedication.' }
+     
     ];
 
     const rankHolders = [
