@@ -1,10 +1,14 @@
 import React, { useEffect, useMemo } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 
+// Import Featured Images
+import lampLightingImg from '../assets/updates/announcements/lamp-lighting-2026.jpg';
+import republicDayImg from '../assets/updates/news/rajiv-gandhi-republic-day.jpg';
+
 const InfoCorner = () => {
     const location = useLocation();
 
-    // Dynamic Image Loading for Updates
+    // Dynamic Image Loading for generic updates
     const updates = useMemo(() => {
         const annGlob = import.meta.glob('../assets/updates/announcements/*.{png,jpg,jpeg,webp}', { eager: true });
         const newsGlob = import.meta.glob('../assets/updates/news/*.{png,jpg,jpeg,webp}', { eager: true });
@@ -12,7 +16,9 @@ const InfoCorner = () => {
         const processGlob = (glob, defaultType) => {
             return Object.entries(glob).map(([path, module]) => {
                 const fileName = path.split('/').pop().split('.')[0];
-                // Try to extract date if filename starts with YYYY-MM-DD
+                // Skip if it's one of our hardcoded featured ones to avoid duplication
+                if (fileName.includes('lamp-lighting-2026') || fileName.includes('rajiv-gandhi-republic-day')) return null;
+
                 const dateMatch = fileName.match(/^(\d{4}-\d{2}-\d{2})/);
                 const date = dateMatch ? dateMatch[1] : null;
                 const title = date ? fileName.replace(date, '').replace(/^[-_]/, '').replace(/[-_]/g, ' ').trim() : fileName.replace(/[-_]/g, ' ').trim();
@@ -22,11 +28,8 @@ const InfoCorner = () => {
                     title: title || 'Untitled Update',
                     date: date || 'Recent',
                     type: defaultType,
-                    // We can't easily get descriptions from just images, 
-                    // so we'll provide a way to match with hardcoded data if needed,
-                    // or just show the title.
                 };
-            });
+            }).filter(Boolean);
         };
 
         return {
@@ -62,13 +65,26 @@ const InfoCorner = () => {
     }, []);
 
     const staticAnnouncements = [
-        { type: 'Professional Event', title: 'Lamp Lighting Ceremony', text: 'The Lamp Lighting Ceremony for the first-year batch (2024-2028) on 29th Jan 2025. This significant event symbolizes the beginning of their professional journey into nursing.' },
+        {
+            type: 'Featured Event',
+            title: '17th Lamp Lighting Ceremony 2026 🪔',
+            text: 'Mount Zion College of Nursing proudly conducted the 17th Lamp Lighting Ceremony 2026 — a sacred tradition symbolizing compassion ❤️, dedication 🤝, and the noble spirit of nursing 👩⚕️👨⚕️. The ceremony was graced by our respected Chairperson, Chief Guest, Guest of Honour, faculty members, and well-wishers 🎓. A proud and inspiring beginning for our future nurses as they step into a lifelong journey of service and care 🌟✨.',
+            tags: '#MountZionCollegeOfNursing #LampLightingCeremony2026 #FutureNurses #NursingProfession #ProudMoment',
+            image: lampLightingImg
+        },
+        { type: 'Professional Event', title: 'Lamp Lighting Ceremony 2025', text: 'The Lamp Lighting Ceremony for the first-year batch (2024-2028) on 29th Jan 2025. This significant event symbolizes the beginning of their professional journey into nursing.' },
         { type: 'Celebration', title: 'Pongal Celebration 2025', text: 'On 10th Jan 2025, the college celebrated Pongal with traditional fervor, graced by the Chairperson and Director.' },
         { type: 'Celebration', title: "Founders' Day", text: 'Commemorating the life and vision of our founder, Mr. Jeyabarathan Chelliah, on 17th Dec 2024.' },
         { type: 'Event', title: 'Fresher’s Day', text: 'Welcomed the 16th batch, "Joyful Generous Topaz," on 25th Nov 2024.' }
     ];
 
     const staticNews = [
+        {
+            type: 'Achievement',
+            title: 'Proud Moment: Republic Day 2026 Achievement 🎉',
+            text: 'On this Republic Day 2026, Mount Zion College of Nursing celebrates with immense pride the remarkable achievement of Mr Rajiv Gandhi R, Fifth Batch B.Sc. Nursing alumnus. He was honoured by Mrs K. Porkodi, I.A.S., District Collector of Sivaganga District, in recognition of his exemplary and dedicated service as a Nursing Officer in Sivaganga District, Tamil Nadu. 👏 We congratulate him on this well-deserved recognition and wish him continued success in serving society with excellence and humanity. Proud Alumni | Proud Institution | Proud Nation |',
+            image: republicDayImg
+        },
         { type: 'Initiative', title: 'Healthy Nutrition Demonstration', text: 'Radiant Rubies batch organized a Nutrition Event, preparing dishes tailored to health conditions like diabetes and anemia.' },
         { type: 'Leadership', title: 'SALT 2024', text: 'Hosted Student Advocacy and Leadership Training in collaboration with TNAI for students from 21 institutions.' },
         { type: 'Milestone', title: 'XI Graduation Day', text: '46 graduates received their degrees on 2nd April 2024, marking the culmination of their dedication.' }
@@ -129,29 +145,39 @@ const InfoCorner = () => {
                                     <i className="fas fa-bullhorn" style={{ color: 'var(--accent)' }}></i> Announcements
                                 </h2>
 
-                                {/* Dynamic Announcements (Images) */}
-                                <div className="updates-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px', marginBottom: '30px' }}>
-                                    {updates.announcements.map((ann, idx) => (
-                                        <div key={`dyn-ann-${idx}`} className="update-card hover-lift" style={{ background: 'white', borderRadius: '15px', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
-                                            <div style={{ height: '180px', overflow: 'hidden' }}>
-                                                <img src={ann.src} alt={ann.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                {/* Dynamic Announcements (Images only) */}
+                                {updates.announcements.length > 0 && (
+                                    <div className="updates-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px', marginBottom: '30px' }}>
+                                        {updates.announcements.map((ann, idx) => (
+                                            <div key={`dyn-ann-${idx}`} className="update-card hover-lift" style={{ background: 'white', borderRadius: '15px', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
+                                                <div style={{ height: '180px', overflow: 'hidden' }}>
+                                                    <img src={ann.src} alt={ann.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                                </div>
+                                                <div style={{ padding: '20px' }}>
+                                                    <span className="info-type-tag" style={{ background: 'rgba(212, 175, 55, 0.1)', color: 'var(--accent-dark)', marginBottom: '10px', fontSize: '0.7rem' }}>{ann.date}</span>
+                                                    <h4 style={{ color: 'var(--primary)', margin: '5px 0' }}>{ann.title}</h4>
+                                                </div>
                                             </div>
-                                            <div style={{ padding: '20px' }}>
-                                                <span className="info-type-tag" style={{ background: 'rgba(212, 175, 55, 0.1)', color: 'var(--accent-dark)', marginBottom: '10px', fontSize: '0.7rem' }}>{ann.date}</span>
-                                                <h4 style={{ color: 'var(--primary)', margin: '5px 0' }}>{ann.title}</h4>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
+                                        ))}
+                                    </div>
+                                )}
 
-                                {/* Static Announcements (Text) */}
+                                {/* Static Announcements (Featured and Text) */}
                                 {staticAnnouncements.map((ann, idx) => (
-                                    <div key={idx} className="info-card hover-lift">
-                                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-                                            <span className="info-type-tag" style={{ background: 'var(--bg-light)', color: 'var(--primary)' }}>{ann.type}</span>
+                                    <div key={idx} className={`info-card hover-lift ${ann.image ? 'featured-card' : ''}`} style={ann.image ? { padding: '0', overflow: 'hidden' } : {}}>
+                                        {ann.image && (
+                                            <div style={{ width: '100%', height: '300px', overflow: 'hidden' }}>
+                                                <img src={ann.image} alt={ann.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                            </div>
+                                        )}
+                                        <div style={ann.image ? { padding: '30px' } : {}}>
+                                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
+                                                <span className="info-type-tag" style={{ background: ann.image ? 'var(--primary)' : 'var(--bg-light)', color: ann.image ? 'white' : 'var(--primary)' }}>{ann.type}</span>
+                                            </div>
+                                            <h4 style={{ color: 'var(--primary)', marginBottom: '15px', fontSize: ann.image ? '1.5rem' : '1.2rem' }}>{ann.title}</h4>
+                                            <p style={{ margin: 0, color: 'var(--text-muted)', lineHeight: '1.8' }}>{ann.text}</p>
+                                            {ann.tags && <p style={{ marginTop: '15px', color: 'var(--accent)', fontSize: '0.85rem', fontWeight: 600 }}>{ann.tags}</p>}
                                         </div>
-                                        <h4 style={{ color: 'var(--primary)', marginBottom: '10px' }}>{ann.title}</h4>
-                                        <p style={{ margin: 0, color: 'var(--text-muted)', lineHeight: '1.6' }}>{ann.text}</p>
                                     </div>
                                 ))}
                             </div>
@@ -162,26 +188,35 @@ const InfoCorner = () => {
                                     <i className="fas fa-newspaper" style={{ color: 'var(--accent)' }}></i> Recent News
                                 </h2>
 
-                                {/* Dynamic News (Images) */}
-                                <div className="updates-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px', marginBottom: '30px' }}>
-                                    {updates.news.map((news, idx) => (
-                                        <div key={`dyn-news-${idx}`} className="update-card hover-lift" style={{ background: 'white', borderRadius: '15px', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
-                                            <div style={{ height: '180px', overflow: 'hidden' }}>
-                                                <img src={news.src} alt={news.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                {/* Dynamic News (Images only) */}
+                                {updates.news.length > 0 && (
+                                    <div className="updates-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px', marginBottom: '30px' }}>
+                                        {updates.news.map((news, idx) => (
+                                            <div key={`dyn-news-${idx}`} className="update-card hover-lift" style={{ background: 'white', borderRadius: '15px', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
+                                                <div style={{ height: '180px', overflow: 'hidden' }}>
+                                                    <img src={news.src} alt={news.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                                </div>
+                                                <div style={{ padding: '20px' }}>
+                                                    <span className="info-type-tag" style={{ background: 'var(--primary)', color: 'white', marginBottom: '10px', fontSize: '0.7rem' }}>{news.date}</span>
+                                                    <h4 style={{ color: 'var(--primary)', margin: '5px 0' }}>{news.title}</h4>
+                                                </div>
                                             </div>
-                                            <div style={{ padding: '20px' }}>
-                                                <span className="info-type-tag" style={{ background: 'var(--primary)', color: 'white', marginBottom: '10px', fontSize: '0.7rem' }}>{news.date}</span>
-                                                <h4 style={{ color: 'var(--primary)', margin: '5px 0' }}>{news.title}</h4>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
+                                        ))}
+                                    </div>
+                                )}
 
                                 {staticNews.map((news, idx) => (
-                                    <div key={idx} className="info-card hover-lift" style={{ borderLeftColor: 'var(--primary)' }}>
-                                        <span className="info-type-tag" style={{ background: 'var(--primary)', color: 'white' }}>{news.type}</span>
-                                        <h4 style={{ color: 'var(--primary)', marginBottom: '10px' }}>{news.title}</h4>
-                                        <p style={{ margin: 0, color: 'var(--text-muted)', lineHeight: '1.6' }}>{news.text}</p>
+                                    <div key={idx} className={`info-card hover-lift ${news.image ? 'featured-card' : ''}`} style={news.image ? { padding: '0', borderLeftColor: 'var(--accent)', overflow: 'hidden' } : { borderLeftColor: 'var(--primary)' }}>
+                                        {news.image && (
+                                            <div style={{ width: '100%', height: '300px', overflow: 'hidden' }}>
+                                                <img src={news.image} alt={news.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                            </div>
+                                        )}
+                                        <div style={news.image ? { padding: '30px' } : {}}>
+                                            <span className="info-type-tag" style={{ background: 'var(--primary)', color: 'white', marginBottom: '15px' }}>{news.type}</span>
+                                            <h4 style={{ color: 'var(--primary)', margin: '10px 0 15px', fontSize: news.image ? '1.5rem' : '1.2rem' }}>{news.title}</h4>
+                                            <p style={{ margin: 0, color: 'var(--text-muted)', lineHeight: '1.8' }}>{news.text}</p>
+                                        </div>
                                     </div>
                                 ))}
                             </div>
