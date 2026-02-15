@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
+import '../styles/organogram.css';
 
 const About = () => {
     const location = useLocation();
@@ -128,10 +129,65 @@ const About = () => {
                                 <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
                                     The organizational structure of Mount Zion College of Nursing follows a systematic hierarchy to ensure effective administration and academic excellence.
                                 </p>
-                                <div className="organogram-box">
-                                    <i className="fas fa-sitemap" style={{ fontSize: '3rem', color: 'var(--primary)', marginBottom: '15px', opacity: 0.5 }}></i>
-                                    <h4 style={{ color: 'var(--primary)' }}>View Organizational Chart</h4>
-                                    <a href={`${import.meta.env.BASE_URL}photo/Organogram MZCN.jpg`} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ marginTop: '15px', display: 'inline-block' }}>Open Full Organogram</a>
+                                <div className="organogram-wrapper" style={{ overflowX: 'auto', paddingBottom: '20px' }}>
+                                    <div className="org-tree">
+                                        <ul>
+                                            <li>
+                                                <div className="org-node root-node">Chair Person and Trustees</div>
+                                                <ul>
+                                                    <li>
+                                                        <div className="org-node">Director</div>
+                                                        <ul>
+                                                            <li>
+                                                                <div className="org-node">Principal</div>
+                                                                <ul>
+                                                                    {/* Left Branch */}
+                                                                    <li style={{ verticalAlign: 'top' }}>
+                                                                        <div className="vertical-list">
+                                                                            <div className="org-node vertical-node">Vice-Principal</div>
+                                                                            <div className="org-node vertical-node">Associate Professor</div>
+                                                                            <div className="org-node vertical-node">Asst. Professor</div>
+                                                                            <div className="org-node vertical-node">Lecturer</div>
+                                                                            <div className="org-node vertical-node">Clinical Instructor</div>
+                                                                            <div className="org-node vertical-node">Librarian</div>
+                                                                            <div className="org-node vertical-node">Lab assistant</div>
+                                                                            <div className="org-node vertical-node">Peon</div>
+                                                                        </div>
+                                                                    </li>
+                                                                    {/* Middle Branch */}
+                                                                    <li style={{ verticalAlign: 'top' }}>
+                                                                        <div className="vertical-list">
+                                                                            <div className="org-node vertical-node">Administrative Officer</div>
+                                                                            <div className="org-node vertical-node">Accountant</div>
+                                                                            <div className="org-node vertical-node">Cashier</div>
+                                                                            <div className="org-node vertical-node">Clerk</div>
+                                                                            <div className="org-node vertical-node">Office Assistant</div>
+                                                                            <div className="org-node vertical-node">Security</div>
+                                                                            <div className="org-node vertical-node">IV Class</div>
+                                                                        </div>
+                                                                    </li>
+                                                                    {/* Right Branch */}
+                                                                    <li style={{ verticalAlign: 'top' }}>
+                                                                        <div className="vertical-list">
+                                                                            <div className="org-node vertical-node">Warden</div>
+                                                                            <div className="org-node vertical-node">House Keeper</div>
+                                                                            <div className="org-node vertical-node">Security</div>
+                                                                            <div className="org-node vertical-node">IV Class</div>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div style={{ textAlign: 'center', marginTop: '20px' }}>
+                                        <a href={`${import.meta.env.BASE_URL}photo/Organogram MZCN.jpg`} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ fontSize: '0.9rem' }}>
+                                            <i className="fas fa-search-plus" style={{ marginRight: '8px' }}></i> View Original Chart
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
