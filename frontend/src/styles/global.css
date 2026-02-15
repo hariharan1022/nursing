@@ -1111,6 +1111,9 @@ nav {
 @media (max-width: 768px) {
     .inner-hero {
         padding: 60px 0 40px;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+        margin-bottom: 2rem;
     }
 }
 
@@ -2387,18 +2390,38 @@ footer a:hover {
 
 .lightbox-close {
     position: absolute;
-    top: 30px;
-    right: 40px;
+    top: 25px;
+    right: 30px;
     color: white;
-    font-size: 3rem;
+    font-size: 2.5rem;
     cursor: pointer;
     transition: var(--transition);
     line-height: 1;
+    z-index: 2001;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
 }
 
 .lightbox-close:hover {
     color: var(--accent);
-    transform: rotate(90deg);
+    transform: rotate(90deg) scale(1.1);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .lightbox-close {
+        top: 15px;
+        right: 15px;
+        font-size: 2rem;
+        width: 50px;
+        height: 50px;
+        background: rgba(0, 0, 0, 0.6);
+    }
 }
 
 @media (max-width: 480px) {
