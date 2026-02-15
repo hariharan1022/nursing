@@ -4,6 +4,9 @@ import { useLocation, Link } from 'react-router-dom';
 // Import Featured Images
 import lampLightingImg from '../assets/updates/announcements/lamp-lighting-2026.jpg';
 import republicDayImg from '../assets/updates/news/rajiv-gandhi-republic-day.jpg';
+import antonyAmisImg from '../assets/updates/news/antony-amis-silver-medal.jpg';
+import mahayagavanImg from '../assets/updates/news/mahayagavan-m-bronze-medal.jpg';
+import badmintonImg from '../assets/updates/news/badminton-champions-2024.jpg';
 
 const InfoCorner = () => {
     const location = useLocation();
@@ -17,7 +20,14 @@ const InfoCorner = () => {
             return Object.entries(glob).map(([path, module]) => {
                 const fileName = path.split('/').pop().split('.')[0];
                 // Skip if it's one of our hardcoded featured ones to avoid duplication
-                if (fileName.includes('lamp-lighting-2026') || fileName.includes('rajiv-gandhi-republic-day')) return null;
+                const featured = [
+                    'lamp-lighting-2026',
+                    'rajiv-gandhi-republic-day',
+                    'antony-amis-silver-medal',
+                    'mahayagavan-m-bronze-medal',
+                    'badminton-champions-2024'
+                ];
+                if (featured.some(f => fileName.includes(f))) return null;
 
                 const dateMatch = fileName.match(/^(\d{4}-\d{2}-\d{2})/);
                 const date = dateMatch ? dateMatch[1] : null;
@@ -80,10 +90,31 @@ const InfoCorner = () => {
 
     const staticNews = [
         {
-            type: 'Achievement',
-            title: 'Proud Moment: Republic Day 2026 Achievement 🎉',
+            type: 'Top Story',
+            title: 'Republic Day 2026 Achievement 🎉',
             text: 'On this Republic Day 2026, Mount Zion College of Nursing celebrates with immense pride the remarkable achievement of Mr Rajiv Gandhi R, Fifth Batch B.Sc. Nursing alumnus. He was honoured by Mrs K. Porkodi, I.A.S., District Collector of Sivaganga District, in recognition of his exemplary and dedicated service as a Nursing Officer in Sivaganga District, Tamil Nadu. 👏 We congratulate him on this well-deserved recognition and wish him continued success in serving society with excellence and humanity. Proud Alumni | Proud Institution | Proud Nation |',
             image: republicDayImg
+        },
+        {
+            type: 'Sports Achievement',
+            title: '🏅 Victory shines brighter when it’s shared!',
+            text: 'Congratulations to Ham Joel Raj.M and Ratan Sagar Singh for clinching the Gold Medal in Badminton Doubles, and to Sundar Gnanasekar for winning the Silver Medal in the Chief Minister Trophy 2024, Pudukkottai District Level! Both the award winners are proud B.Sc. Nursing students of Mount Zion College of Nursing. Let’s celebrate this moment of triumph and dedication together! 🥇🥈',
+            tags: '#ProudMoment #Champions #BadmintonDoubles #MountZionSpirit',
+            image: badmintonImg
+        },
+        {
+            type: 'Sports Achievement',
+            title: '🏅 Silver Medal in High Jump',
+            text: 'Heartfelt congratulations to our student Mr. Antony Amis A for winning the Silver Medal in High Jump at the Chief Minister Trophy, Pudukkottai District Level, 2024! Your hard work, dedication, and perseverance inspire us all. Keep shining and reaching new heights!',
+            tags: '#MountZionPride #SilverMedalChampion #CMTrophy2024',
+            image: antonyAmisImg
+        },
+        {
+            type: 'Sports Achievement',
+            title: '🏆 Victory in Motion! 🏃♂️',
+            text: 'What a joy to announce that our Mount Zion College of Nursing student, Mr. Mahayagavan M, has won the Bronze Medal in the State Level 100 Meters Run organized by The TN Dr. M.G.R. Medical University, Chennai. Your hard work and determination inspire us all. Congratulations on this incredible achievement! 💪🎉',
+            tags: '#MountZionPride #StateChampion #100MetersRun #MZCN #ExcellenceInAction',
+            image: mahayagavanImg
         },
         { type: 'Initiative', title: 'Healthy Nutrition Demonstration', text: 'Radiant Rubies batch organized a Nutrition Event, preparing dishes tailored to health conditions like diabetes and anemia.' },
         { type: 'Leadership', title: 'SALT 2024', text: 'Hosted Student Advocacy and Leadership Training in collaboration with TNAI for students from 21 institutions.' },
@@ -216,6 +247,7 @@ const InfoCorner = () => {
                                             <span className="info-type-tag" style={{ background: 'var(--primary)', color: 'white', marginBottom: '15px' }}>{news.type}</span>
                                             <h4 style={{ color: 'var(--primary)', margin: '10px 0 15px', fontSize: news.image ? '1.5rem' : '1.2rem' }}>{news.title}</h4>
                                             <p style={{ margin: 0, color: 'var(--text-muted)', lineHeight: '1.8' }}>{news.text}</p>
+                                            {news.tags && <p style={{ marginTop: '15px', color: 'var(--accent)', fontSize: '0.85rem', fontWeight: 600 }}>{news.tags}</p>}
                                         </div>
                                     </div>
                                 ))}
