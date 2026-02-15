@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Admissions = () => {
     useEffect(() => {
@@ -155,7 +156,7 @@ const Admissions = () => {
                                 <div style={{ position: 'relative', zIndex: 2 }}>
                                     <h3 style={{ color: 'white', marginBottom: '15px' }}>Start Your Application</h3>
                                     <p style={{ fontSize: '0.9rem', opacity: 0.8, marginBottom: '25px' }}>Inquiries are now open for the {new Date().getFullYear()}-{new Date().getFullYear() + 1} academic year.</p>
-                                    <a href="mailto:info@mzcn.in" className="btn" style={{ background: 'var(--accent)', color: 'var(--primary)', width: '100%', fontWeight: 800 }}>INQUIRE NOW</a>
+                                    <Link to="/contact" className="btn" style={{ background: 'var(--accent)', color: 'var(--primary)', width: '100%', fontWeight: 800, textDecoration: 'none', display: 'inline-block', textAlign: 'center' }}>INQUIRE NOW</Link>
                                     <p style={{ fontSize: '0.8rem', marginTop: '20px', opacity: 0.6 }}>Selection based on eligibility and performance.</p>
                                 </div>
                             </div>
