@@ -309,9 +309,11 @@ const Home = () => {
                         <div>
                             <h4 style={{ color: 'var(--primary)', marginBottom: '20px' }}>Affiliations</h4>
                             <ul style={{ listStyle: 'none', padding: 0, lineHeight: 2.2 }}>
-                                <li><a href="https://www.tnmgrmu.ac.in/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>The MGR Medical University</a></li>
-                                <li><a href="https://www.indiannursingcouncil.org/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Indian Nursing Council</a></li>
-                                <li><a href="#" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>TNNMC Council</a></li>
+                                <li><a href="https://www.indiannursingcouncil.org/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>INC</a></li>
+                                <li><a href="https://tamilnadunursingcouncil.com/#/home" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>TNNMC</a></li>
+                                <li><a href="https://www.tnmgrmu.ac.in/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>The Tamil Nadu Dr. M.G.R. Medical University</a></li>
+                                <li><a href="https://tnhealth.tn.gov.in/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>TNHFW</a></li>
+                                <li><a href="https://tnmedicalselection.net/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>DME Selection Committee</a></li>
                             </ul>
                         </div>
                         <div>
