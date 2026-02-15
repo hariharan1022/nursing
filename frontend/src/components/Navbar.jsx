@@ -24,7 +24,7 @@ const Navbar = () => {
         { title: 'Campus Facilities', path: '/facilities', keywords: 'campus facilities infrastructure lab library' },
         { title: 'Our Faculty', path: '/faculty', keywords: 'faculty teachers professors staff' },
         { title: 'Clubs & Cells', path: '/clubs-and-cells', keywords: 'clubs cells activities extracurricular' },
-        { title: 'Info Corner', path: '/info-corner', keywords: 'info corner information news' },
+        { title: 'Information Corner', path: '/info-corner', keywords: 'info corner information news' },
         { title: 'Announcements', path: '/info-corner#announcements', keywords: 'announcements notice' },
         { title: 'News & Events', path: '/info-corner#news', keywords: 'news events happenings' },
         { title: 'Rank Holders', path: '/info-corner#achievements', keywords: 'rank holders achievements toppers' },
@@ -214,7 +214,7 @@ const Navbar = () => {
 
                             <li className={activeDropdown === 'info' ? 'dropdown-open' : ''}>
                                 <NavLink to="/info-corner" onClick={(e) => toggleDropdown(e, 'info')}>
-                                    Info Corner <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'info' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
+                                    Information Corner <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'info' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                                 </NavLink>
                                 <ul className={`dropdown ${activeDropdown === 'info' ? 'active-mobile' : ''}`}>
                                     <li><Link to="/info-corner#announcements" onClick={closeMobileMenu}>Announcements</Link></li>
