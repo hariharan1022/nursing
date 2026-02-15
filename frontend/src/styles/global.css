@@ -1100,6 +1100,12 @@ nav {
     color: white;
     padding: 100px 0 60px;
     text-align: center;
+    position: relative;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    margin-bottom: 4rem;
+    overflow: hidden;
 }
 
 @media (max-width: 768px) {
@@ -3225,6 +3231,12 @@ footer a:hover {
     padding: 120px 0 80px;
     text-align: center;
     color: white;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    margin-bottom: 4rem;
+    position: relative;
+    overflow: hidden;
 }
 
 .job-grid {
