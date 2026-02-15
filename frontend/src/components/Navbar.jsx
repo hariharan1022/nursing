@@ -28,7 +28,8 @@ const Navbar = () => {
         { title: 'Announcements', path: '/info-corner#announcements', keywords: 'announcements notice' },
         { title: 'News & Events', path: '/info-corner#news', keywords: 'news events happenings' },
         { title: 'Rank Holders', path: '/info-corner#achievements', keywords: 'rank holders achievements toppers' },
-        { title: 'Careers', path: '/careers', keywords: 'careers jobs recruitment vacancy' },
+        { title: 'Current Openings', path: '/careers', keywords: 'careers jobs recruitment vacancy current openings' },
+        { title: 'Job Application', path: '/apply-job', keywords: 'job application apply work' },
         { title: 'Admissions', path: '/admissions', keywords: 'admissions apply enrollment' },
         { title: 'Contact', path: '/contact', keywords: 'contact us phone email address' },
         { title: 'Feedback', path: '/feedback', keywords: 'feedback review comments' },
@@ -219,7 +220,8 @@ const Navbar = () => {
                                     <li><Link to="/info-corner#announcements" onClick={closeMobileMenu}>Announcements</Link></li>
                                     <li><Link to="/info-corner#news" onClick={closeMobileMenu}>News & Events</Link></li>
                                     <li><Link to="/info-corner#achievements" onClick={closeMobileMenu}>Rank Holders</Link></li>
-                                    <li><Link to="/careers" onClick={closeMobileMenu}>Careers</Link></li>
+                                    <li><Link to="/careers" onClick={closeMobileMenu}>Current Openings</Link></li>
+                                    <li><Link to="/apply-job" onClick={closeMobileMenu}>Job Application</Link></li>
                                 </ul>
                             </li>
 
@@ -315,4 +317,4 @@ const Navbar = () => {
     );
 };
 
-export default Navbar;
+export default Navbar;
