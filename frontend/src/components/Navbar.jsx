@@ -222,6 +222,7 @@ const Navbar = () => {
                                     <li><Link to="/info-corner#achievements" onClick={closeMobileMenu}>Rank Holders</Link></li>
                                     <li><Link to="/careers" onClick={closeMobileMenu}>Current Openings</Link></li>
                                     <li><Link to="/apply-job" onClick={closeMobileMenu}>Job Application</Link></li>
+                                    <li><Link to="/gallery" onClick={closeMobileMenu}>Gallery</Link></li>
                                 </ul>
                             </li>
 
