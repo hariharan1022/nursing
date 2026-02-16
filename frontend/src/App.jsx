@@ -50,7 +50,7 @@ function AppContent() {
   }, []);
 
   useEffect(() => {
-    const observerOptions = { threshold: 0.15 };
+    const observerOptions = { threshold: 0.05 };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {

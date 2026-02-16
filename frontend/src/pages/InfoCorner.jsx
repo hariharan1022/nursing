@@ -175,7 +175,7 @@ const InfoCorner = () => {
             <div className="inner-hero program-hero">
                 <div className="container">
                     <span className="estd-tag float-breathe" style={{ background: 'var(--accent)', color: 'var(--primary)', display: 'block', margin: '0 auto 35px', width: 'fit-content' }}>LATEST UPDATES</span>
-                    <h1 style={{ fontSize: '3.5rem', margin: '15px 0' }}>Information Corner</h1>
+                    <h1 className="h1-style" style={{ margin: '15px 0' }}>Information Corner</h1>
                     <p style={{ maxWidth: '800px', margin: '0 auto', opacity: 0.9 }}>
                         Stay updated with the latest circulars, professional milestones, and academic achievements at Mount Zion College of Nursing.
                     </p>
@@ -216,16 +216,16 @@ const InfoCorner = () => {
                         {/* Content Area */}
                         <div className="info-content content-col">
                             {/* Announcements */}
-                            <div id="announcements" className="reveal-blur" style={{ marginBottom: '60px' }}>
+                            <div id="announcements" style={{ marginBottom: '60px' }}>
                                 <h2 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
                                     <i className="fas fa-bullhorn" style={{ color: 'var(--accent)' }}></i> Announcements
                                 </h2>
 
                                 {/* Dynamic Announcements (Images only) */}
                                 {updates.announcements.length > 0 && (
-                                    <div className="updates-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px', marginBottom: '30px' }}>
+                                    <div className="updates-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '20px', marginBottom: '30px' }}>
                                         {updates.announcements.map((ann, idx) => (
-                                            <div key={`dyn-ann-${idx}`} className="update-card hover-lift" style={{ background: 'white', borderRadius: '15px', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
+                                            <div key={`dyn-ann-${idx}`} className="update-card hover-lift reveal-blur" style={{ background: 'white', borderRadius: '15px', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
                                                 <div style={{ height: '180px', overflow: 'hidden' }}>
                                                     <img src={ann.src} alt={ann.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                                 </div>
@@ -240,7 +240,7 @@ const InfoCorner = () => {
 
                                 {/* Static Announcements (Featured and Text) */}
                                 {staticAnnouncements.map((ann, idx) => (
-                                    <div key={idx} className={`info-card hover-lift ${ann.image ? 'featured-card' : ''}`} style={ann.image ? { padding: '0', overflow: 'hidden' } : {}}>
+                                    <div key={idx} className={`info-card hover-lift reveal-blur ${ann.image ? 'featured-card' : ''}`} style={ann.image ? { padding: '0', overflow: 'hidden' } : {}}>
                                         {ann.image && (
                                             <div style={{ width: '100%', height: '400px', maxHeight: '50vh', overflow: 'hidden', position: 'relative' }}>
                                                 <img src={ann.image} alt={ann.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
@@ -259,16 +259,16 @@ const InfoCorner = () => {
                             </div>
 
                             {/* News & Events */}
-                            <div id="news" className="reveal-flip" style={{ marginBottom: '60px' }}>
+                            <div id="news" style={{ marginBottom: '60px' }}>
                                 <h2 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
                                     <i className="fas fa-newspaper" style={{ color: 'var(--accent)' }}></i> News & Events
                                 </h2>
 
                                 {/* Dynamic News (Images only) */}
                                 {updates.news.length > 0 && (
-                                    <div className="updates-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px', marginBottom: '30px' }}>
+                                    <div className="updates-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '20px', marginBottom: '30px' }}>
                                         {updates.news.map((news, idx) => (
-                                            <div key={`dyn-news-${idx}`} className="update-card hover-lift" style={{ background: 'white', borderRadius: '15px', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
+                                            <div key={`dyn-news-${idx}`} className="update-card hover-lift reveal-blur" style={{ background: 'white', borderRadius: '15px', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
                                                 <div style={{ height: '180px', overflow: 'hidden' }}>
                                                     <img src={news.src} alt={news.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                                 </div>
@@ -282,7 +282,7 @@ const InfoCorner = () => {
                                 )}
 
                                 {staticNews.map((news, idx) => (
-                                    <div key={idx} className={`info-card hover-lift ${news.image ? 'featured-card' : ''}`} style={news.image ? { padding: '0', borderLeftColor: 'var(--accent)', overflow: 'hidden' } : { borderLeftColor: 'var(--primary)' }}>
+                                    <div key={idx} className={`info-card hover-lift reveal-blur ${news.image ? 'featured-card' : ''}`} style={news.image ? { padding: '0', borderLeftColor: 'var(--accent)', overflow: 'hidden' } : { borderLeftColor: 'var(--primary)' }}>
                                         {news.image && (
                                             <div style={{ width: '100%', height: '400px', maxHeight: '50vh', overflow: 'hidden', position: 'relative' }}>
                                                 <img src={news.image} alt={news.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
@@ -299,7 +299,7 @@ const InfoCorner = () => {
                             </div>
 
                             {/* Rank Holders */}
-                            <div id="achievements" className="reveal-flip" style={{ marginBottom: '60px' }}>
+                            <div id="achievements" style={{ marginBottom: '60px' }}>
                                 <h2 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
                                     <i className="fas fa-trophy" style={{ color: 'var(--accent)' }}></i> Rank Holders
                                 </h2>
@@ -331,7 +331,7 @@ const InfoCorner = () => {
                             </div>
 
                             {/* Job Openings */}
-                            <div id="jobs" className="reveal-zoom">
+                            <div id="jobs">
                                 <h2 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
                                     <i className="fas fa-briefcase" style={{ color: 'var(--accent)' }}></i> Careers
                                 </h2>
