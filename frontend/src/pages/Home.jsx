@@ -154,8 +154,8 @@ const Home = () => {
                         <div key={index} className={`slide ${index === currentSlide ? 'active' : ''}`}>
                             <img src={slide.img} alt={`Institutional Banner ${index + 1}`} />
                             <div className="slide-content">
-                                {slide.estd && <span className="estd-tag">ESTD 2009</span>}
-                                <h1>{slide.title}</h1>
+                                {slide.estd && <span className="estd-tag float-breathe" style={{ display: 'block', margin: '0 auto 30px', width: 'fit-content' }}>ESTD 2009</span>}
+                                <h1><span className="reveal-skew">{slide.title}</span></h1>
                                 <p>{slide.desc}</p>
                                 {slide.cta && <Link to={slide.link} className="btn btn-primary magnetic" style={{ marginTop: '25px', padding: '12px 30px' }}>{slide.cta} &rarr;</Link>}
                             </div>
@@ -180,21 +180,21 @@ const Home = () => {
             </section>
 
             {/* Stats Section */}
-            <div className="container" style={{ position: 'relative', zIndex: 10 }}>
-                <div className="stats-grid reveal-stagger">
-                    <div className="stat-card interactive-card">
+            <div className="container" style={{ position: 'relative', zIndex: 10 }} data-reveal-init>
+                <div className="stats-grid reveal-skew">
+                    <div className="stat-card interactive-card glow-card">
                         <h3>100%</h3>
                         <p>Placement Rate</p>
                     </div>
-                    <div className="stat-card interactive-card">
+                    <div className="stat-card interactive-card glow-card">
                         <h3>80%</h3>
                         <p>Practical Classes</p>
                     </div>
-                    <div className="stat-card interactive-card">
+                    <div className="stat-card interactive-card glow-card">
                         <h3>100%</h3>
                         <p>Result Oriented</p>
                     </div>
-                    <div className="stat-card interactive-card">
+                    <div className="stat-card interactive-card glow-card" style={{ borderRight: 'none' }}>
                         <h3>17+</h3>
                         <p>Years of Service</p>
                     </div>
@@ -202,10 +202,10 @@ const Home = () => {
             </div>
 
             {/* About Us Section */}
-            <section className="section reveal" style={{ background: 'white' }}>
+            <section className="section reveal-blur" style={{ background: 'var(--bg-white)' }} data-reveal-init>
                 <div className="container text-center">
-                    <span className="estd-tag" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>ESTD 2009</span>
-                    <h2 style={{ fontSize: '3rem', color: 'var(--primary)', margin: '20px 0' }}>To Make Man Whole</h2>
+                    <span className="estd-tag float-breathe" style={{ background: 'var(--accent)', color: 'var(--primary)', display: 'block', margin: '0 auto 35px', width: 'fit-content' }}>ESTD 2009</span>
+                    <h2 style={{ fontSize: '3rem', color: 'var(--primary)', margin: '20px 0' }} className="reveal-skew">To Make Man Whole</h2>
                     <p style={{ maxWidth: '800px', margin: '0 auto 40px', lineHeight: 1.8, color: 'var(--text-muted)', fontSize: '1.1rem' }}>
                         Mount Zion College of Nursing is a premier institution dedicated to nurturing future nursing
                         professionals with a focus on compassion, excellence, and spiritual integrity.
@@ -215,12 +215,12 @@ const Home = () => {
             </section>
 
             {/* Core Pillars */}
-            <section className="section reveal" style={{ background: 'var(--bg-light)' }}>
+            <section className="section" style={{ background: 'var(--bg-light)' }}>
                 <div className="container">
-                    <div className="grid grid-cols-2 sm-grid-cols-1" style={{ gap: '40px' }}>
+                    <div className="grid grid-cols-2 sm-grid-cols-1" style={{ gap: '40px' }} data-reveal-init>
                         {/* Programs Card */}
-                        <div className="stat-card interactive-card reveal" style={{ textAlign: 'left', padding: '40px', background: 'white', borderRadius: '20px', boxShadow: 'var(--shadow-md)' }}>
-                            <div style={{ width: '60px', height: '60px', background: 'var(--primary)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '12px', marginBottom: '25px' }}>
+                        <div className="stat-card interactive-card glow-card reveal-flip" style={{ textAlign: 'left', padding: '40px', background: 'white', borderRadius: '20px', boxShadow: 'var(--shadow-md)' }}>
+                            <div className="float-breathe" style={{ width: '60px', height: '60px', background: 'var(--primary)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '12px', marginBottom: '25px' }}>
                                 <i className="fas fa-graduation-cap" style={{ fontSize: '1.5rem' }}></i>
                             </div>
                             <h3 style={{ color: 'var(--primary)', marginBottom: '15px' }}>Nursing Programs</h3>
@@ -230,8 +230,8 @@ const Home = () => {
                             <Link to="/bsc-nursing" className="magnetic" style={{ fontWeight: 700, color: 'var(--primary)', textDecoration: 'none', display: 'inline-block' }}>View All Programs →</Link>
                         </div>
                         {/* Facilities Card */}
-                        <div className="stat-card interactive-card reveal" style={{ textAlign: 'left', padding: '40px', background: 'white', borderRadius: '20px', boxShadow: 'var(--shadow-md)' }}>
-                            <div style={{ width: '60px', height: '60px', background: 'var(--accent)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '12px', marginBottom: '25px' }}>
+                        <div className="stat-card interactive-card glow-card reveal-flip" style={{ textAlign: 'left', padding: '40px', background: 'white', borderRadius: '20px', boxShadow: 'var(--shadow-md)' }}>
+                            <div className="float-breathe" style={{ width: '60px', height: '60px', background: 'var(--accent)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '12px', marginBottom: '25px' }}>
                                 <i className="fas fa-hospital" style={{ fontSize: '1.5rem' }}></i>
                             </div>
                             <h3 style={{ color: 'var(--primary)', marginBottom: '15px' }}>World-Class Infrastructure</h3>
@@ -245,10 +245,10 @@ const Home = () => {
             </section>
 
             {/* Gallery Section */}
-            <section className="section" style={{ background: 'white' }} id="gallery">
+            <section className="section" style={{ background: 'var(--bg-white)' }} id="gallery">
                 <div className="container">
-                    <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-                        <span className="estd-tag" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>GALLERY</span>
+                    <div style={{ textAlign: 'center', marginBottom: '60px' }} data-reveal-init className="reveal-zoom">
+                        <span className="estd-tag float-breathe" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>GALLERY</span>
                         <h2 style={{ fontSize: '3rem', color: 'var(--primary)', marginTop: '15px' }}>Capturing Excellence</h2>
                         <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '15px auto' }}>
                             A glimpse into the clinical training, academic events, and student life at Mount Zion.
@@ -287,9 +287,9 @@ const Home = () => {
             )}
 
             {/* Global Navigation CTA */}
-            <section className="section" style={{ background: 'var(--primary)', color: 'white' }}>
+            <section className="section reveal-blur" style={{ background: 'var(--primary)', color: 'white' }} data-reveal-init>
                 <div className="container text-center">
-                    <h2 style={{ fontSize: '2.5rem', marginBottom: '20px' }}>Join the 2026 Batch</h2>
+                    <h2 style={{ fontSize: '2.5rem', marginBottom: '20px' }} className="pulse-glow">Join the 2026 Batch</h2>
                     <p style={{ fontSize: '1.1rem', opacity: 0.9, maxWidth: '600px', margin: '0 auto 30px' }}>
                         Step into a rewarding career in healthcare with one of the most prestigious nursing institutions in Pudukkottai District.
                     </p>

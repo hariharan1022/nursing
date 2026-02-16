@@ -12,7 +12,7 @@ const BScNursing = () => {
             });
         }, observerOptions);
 
-        const elements = document.querySelectorAll('.reveal, .reveal-stagger');
+        const elements = document.querySelectorAll('.reveal, .reveal-stagger, .reveal-skew, .reveal-blur, .reveal-flip, .reveal-zoom');
         elements.forEach(el => observer.observe(el));
         return () => observer.disconnect();
     }, [activeSem]);
@@ -114,9 +114,9 @@ const BScNursing = () => {
     return (
         <div className="bsc-nursing-page">
             <div className="inner-hero program-hero">
-                <div className="container reveal">
-                    <span className="estd-tag" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>BACHELOR OF SCIENCE</span>
-                    <h1 style={{ fontSize: '3.5rem', margin: '20px 0' }}>B.Sc. Nursing</h1>
+                <div className="container" data-reveal-init>
+                    <span className="estd-tag float-breathe" style={{ background: 'var(--accent)', color: 'var(--primary)', display: 'block', margin: '0 auto 35px', width: 'fit-content' }}>BACHELOR OF SCIENCE</span>
+                    <h1 style={{ fontSize: '3.5rem', margin: '15px 0' }} className="reveal-skew">B.Sc. Nursing</h1>
                     <p style={{ maxWidth: '800px', margin: '0 auto', fontSize: '1.2rem', opacity: 0.9 }}>
                         A comprehensive four-year program preparing graduates for clinical excellence and professional leadership in nursing and midwifery.
                     </p>
@@ -126,7 +126,7 @@ const BScNursing = () => {
             <section className="section">
                 <div className="container">
                     <div className="grid" style={{ gridTemplateColumns: 'minmax(300px, 1fr)', gap: '40px' }}>
-                        <div className="reveal">
+                        <div className="reveal-blur" data-reveal-init>
                             <h2 style={{ color: 'var(--primary)', marginBottom: '20px' }}>Program Description</h2>
                             <p style={{ fontSize: '1.1rem', lineHeight: '1.8', color: 'var(--text-muted)' }}>
                                 The B.Sc. nursing degree program is a four-year fulltime program comprising eight semesters, which prepares B.Sc. nursing graduates qualified to practice nursing and midwifery in a variety of settings in either public/government or private healthcare settings. It adopts credit system and semester system as per the Authority guidelines with minor modifications suitable to professional education in a hybrid form.
@@ -136,8 +136,8 @@ const BScNursing = () => {
                             </p>
                         </div>
 
-                        <div className="grid reveal" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', marginTop: '30px' }}>
-                            <div style={{ background: 'var(--bg-light)', padding: '30px', borderRadius: '20px' }}>
+                        <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', marginTop: '30px' }} data-reveal-init>
+                            <div style={{ background: 'var(--bg-light)', padding: '30px', borderRadius: '20px' }} className="reveal-flip">
                                 <h3 style={{ color: 'var(--primary)', marginBottom: '20px' }}><i className="fas fa-bullseye" style={{ marginRight: '10px' }}></i>Aims of the Program</h3>
                                 <ul style={{ listStyle: 'none', padding: 0 }}>
                                     {[
@@ -152,7 +152,7 @@ const BScNursing = () => {
                                     ))}
                                 </ul>
                             </div>
-                            <div style={{ background: 'white', padding: '30px', borderRadius: '20px', boxShadow: 'var(--shadow-md)', border: '1px solid #eee' }}>
+                            <div style={{ background: 'white', padding: '30px', borderRadius: '20px', boxShadow: 'var(--shadow-md)', border: '1px solid #eee' }} className="reveal-flip">
                                 <h3 style={{ color: 'var(--primary)', marginBottom: '20px' }}><i className="fas fa-lightbulb" style={{ marginRight: '10px' }}></i>Objectives</h3>
                                 <ul style={{ listStyle: 'none', padding: 0 }}>
                                     {[
@@ -176,25 +176,27 @@ const BScNursing = () => {
 
             <section className="section" style={{ background: 'var(--bg-light)' }} id="curriculum">
                 <div className="container">
-                    <div className="reveal" style={{ textAlign: 'center', marginBottom: '50px' }}>
+                    <div className="reveal-zoom" style={{ textAlign: 'center', marginBottom: '50px' }} data-reveal-init>
                         <h2 style={{ color: 'var(--primary)' }}>Detailed Syllabus & Credits</h2>
                         <p>Explore the semester-wise academic breakdown and practical training components.</p>
                     </div>
 
-                    <div className="curriculum-tabs reveal">
-                        {semesters.map(sem => (
-                            <button
-                                key={sem.id}
-                                onClick={() => setActiveSem(sem.id)}
-                                className={`btn ${activeSem === sem.id ? 'btn-primary' : 'btn-outline'}`}
-                                style={{ padding: '12px 25px', borderRadius: '50px', textTransform: 'none' }}
-                            >
-                                {sem.label}
-                            </button>
-                        ))}
+                    <div className="curriculum-tabs-wrapper reveal-skew" data-reveal-init>
+                        <div className="curriculum-tabs">
+                            {semesters.map(sem => (
+                                <button
+                                    key={sem.id}
+                                    onClick={() => setActiveSem(sem.id)}
+                                    className={`btn ${activeSem === sem.id ? 'btn-primary' : 'btn-outline'}`}
+                                    style={{ padding: '12px 25px', borderRadius: '50px', textTransform: 'none' }}
+                                >
+                                    {sem.label}
+                                </button>
+                            ))}
+                        </div>
                     </div>
 
-                    <div className="syllabus-container reveal">
+                    <div className="syllabus-container reveal-blur" data-reveal-init>
                         <div className="program-stats">
                             <h3 style={{ color: 'var(--primary)', margin: 0, fontSize: '1.5rem' }}>{activeSemData?.title}</h3>
                             <div style={{ display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
@@ -274,11 +276,11 @@ const BScNursing = () => {
                 </div>
             </section>
 
-            <section className="section reveal">
+            <section className="section reveal-blur" data-reveal-init>
                 <div className="container">
                     <div className="apply-card">
                         <div style={{ position: 'relative', zIndex: 2 }}>
-                            <h2 style={{ color: 'var(--accent)', marginBottom: '20px' }}>Ready to start your nursing career?</h2>
+                            <h2 style={{ color: 'var(--accent)', marginBottom: '20px' }} className="pulse-glow">Ready to start your nursing career?</h2>
                             <p style={{ fontSize: '1.2rem', marginBottom: '40px', opacity: 0.9 }}>Join Mount Zion College of Nursing and become a qualified professional nurse.</p>
                             <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
                                 <Link to="/admissions" className="btn btn-primary" style={{ background: 'var(--accent)', color: 'var(--primary)', padding: '15px 40px' }}>ADMISSION INFO</Link>

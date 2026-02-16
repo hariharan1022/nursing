@@ -30,10 +30,10 @@ const About = () => {
         <div className="about-page">
             {/* Inner Hero */}
             <div className="inner-hero">
-                <div className="container">
-                    <span className="estd-tag" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>PREMIER INSTITUTION</span>
-                    <h1 style={{ fontSize: '3rem', margin: '20px 0' }}>About Our Institution</h1>
-                    <p style={{ maxWidth: '800px', margin: '0 auto', opacity: 0.9 }}>
+                <div className="container" data-reveal-init>
+                    <span className="estd-tag float-breathe" style={{ background: 'var(--accent)', color: 'var(--primary)', display: 'block', margin: '0 auto 35px', width: 'fit-content' }}>PREMIER INSTITUTION</span>
+                    <h1 style={{ fontSize: '3rem', margin: '20px 0' }} className="reveal-skew">About Our Institution</h1>
+                    <p style={{ maxWidth: '800px', margin: '0 auto', opacity: 0.9 }} className="reveal-blur">
                         Mount Zion College of Nursing is committed to nurturing future nursing professionals with excellence, compassion, and spiritual leadership.
                     </p>
                 </div>
@@ -61,7 +61,7 @@ const About = () => {
                         </div>
 
                         <div className="about-content">
-                            <div id="profile" style={{ marginBottom: '60px' }} className="reveal">
+                            <div id="profile" style={{ marginBottom: '60px' }} className="reveal-blur" data-reveal-init>
                                 <span className="estd-tag" style={{ background: 'var(--primary)', color: 'white' }}>ESTABLISHED 2009</span>
                                 <h2 style={{ fontSize: '2.5rem', color: 'var(--primary)', margin: '15px 0' }}>Institution Profile</h2>
                                 <p style={{ lineHeight: 1.8, color: 'var(--text-muted)', fontSize: '1.1rem' }}>
@@ -72,7 +72,7 @@ const About = () => {
                                 </p>
                             </div>
 
-                            <div id="vision" style={{ marginBottom: '60px', paddingTop: '20px' }} className="reveal">
+                            <div id="vision" style={{ marginBottom: '60px', paddingTop: '20px' }} className="reveal-skew" data-reveal-init>
                                 <h3 style={{ color: 'var(--primary)', marginBottom: '20px', borderBottom: '2px solid var(--accent)', display: 'inline-block' }}>
                                     Vision & Mission
                                 </h3>
@@ -93,7 +93,7 @@ const About = () => {
                                 </div>
                             </div>
 
-                            <div id="idp" style={{ marginBottom: '60px', paddingTop: '20px' }} className="reveal">
+                            <div id="idp" style={{ marginBottom: '60px', paddingTop: '20px' }} className="reveal-flip" data-reveal-init>
                                 <h3 style={{ color: 'var(--primary)', marginBottom: '20px', borderBottom: '2px solid var(--accent)', display: 'inline-block' }}>
                                     Institutional Development Plan (IDP)
                                 </h3>
@@ -121,14 +121,14 @@ const About = () => {
                                 </div>
                             </div>
 
-                            <div id="organogram" style={{ marginBottom: '60px', paddingTop: '20px' }} className="reveal">
+                            <div id="organogram" style={{ marginBottom: '60px', paddingTop: '20px' }} className="reveal-zoom" data-reveal-init>
                                 <h3 style={{ color: 'var(--primary)', marginBottom: '20px', borderBottom: '2px solid var(--accent)', display: 'inline-block' }}>
                                     Organogram
                                 </h3>
                                 <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
                                     The organizational structure of Mount Zion College of Nursing follows a systematic hierarchy to ensure effective administration and academic excellence.
                                 </p>
-                                <div className="organogram-entrance-card reveal" style={{
+                                <div className="organogram-entrance-card reveal-skew" data-reveal-init style={{
                                     background: 'white',
                                     padding: '60px 40px',
                                     borderRadius: '24px',
@@ -167,10 +167,10 @@ const About = () => {
             {/* Leadership Section */}
             <section className="section" style={{ background: 'var(--bg-light)' }} id="leadership">
                 <div className="container">
-                    <h2 style={{ textAlign: 'center', fontSize: '2.5rem', color: 'var(--primary)', marginBottom: '60px' }} className="reveal">Our Leadership</h2>
+                    <h2 style={{ textAlign: 'center', fontSize: '2.5rem', color: 'var(--primary)', marginBottom: '60px' }} className="reveal-zoom" data-reveal-init>Our Leadership</h2>
 
                     {/* Founder */}
-                    <div id="chairman" className="founder-card reveal">
+                    <div id="chairman" className="founder-card reveal-flip" data-reveal-init>
                         <div className="founder-img-container">
                             <img src={`${import.meta.env.BASE_URL}photo/FOUNDER.png`} alt="Founder" />
                         </div>

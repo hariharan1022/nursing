@@ -155,7 +155,7 @@ const Navbar = () => {
                 {/* Navigation */}
                 <nav id="navbar">
                     <div className="container nav-container">
-                        <Link to="/" className="logo" onClick={closeMobileMenu}>
+                        <Link to="/" className={`logo ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`} onClick={closeMobileMenu}>
                             <img src={`${import.meta.env.BASE_URL}logo.webp`} alt="MZCN Logo" />
                             <div className="logo-text">
                                 <h2>MOUNT ZION</h2>
@@ -171,9 +171,9 @@ const Navbar = () => {
                                 </button>
                             </li>
 
-                            <li><NavLink to="/" onClick={closeMobileMenu}>Home</NavLink></li>
+                            <li className="reveal-item" style={{ transitionDelay: '0.1s' }}><NavLink to="/" onClick={closeMobileMenu}>Home</NavLink></li>
 
-                            <li className={activeDropdown === 'about' ? 'dropdown-open' : ''}>
+                            <li className={`reveal-item ${activeDropdown === 'about' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.15s' }}>
                                 <NavLink to="/about" onClick={(e) => toggleDropdown(e, 'about')}>
                                     About Us <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'about' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                                 </NavLink>
@@ -185,7 +185,7 @@ const Navbar = () => {
                                 </ul>
                             </li>
 
-                            <li className={activeDropdown === 'course' ? 'dropdown-open' : ''}>
+                            <li className={`reveal-item ${activeDropdown === 'course' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.2s' }}>
                                 <NavLink to="/course-details" onClick={(e) => toggleDropdown(e, 'course')}>
                                     Course Details <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'course' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                                 </NavLink>
@@ -196,7 +196,7 @@ const Navbar = () => {
                                 </ul>
                             </li>
 
-                            <li className={activeDropdown === 'clubs' ? 'dropdown-open' : ''}>
+                            <li className={`reveal-item ${activeDropdown === 'clubs' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.25s' }}>
                                 <NavLink to="/clubs-and-cells" onClick={(e) => toggleDropdown(e, 'clubs')}>
                                     Clubs & Cells <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'clubs' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                                 </NavLink>
@@ -212,7 +212,7 @@ const Navbar = () => {
                                 </ul>
                             </li>
 
-                            <li className={activeDropdown === 'info' ? 'dropdown-open' : ''}>
+                            <li className={`reveal-item ${activeDropdown === 'info' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.3s' }}>
                                 <NavLink to="/info-corner" onClick={(e) => toggleDropdown(e, 'info')}>
                                     Information Corner <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'info' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                                 </NavLink>
@@ -226,7 +226,7 @@ const Navbar = () => {
                                 </ul>
                             </li>
 
-                            <li className={activeDropdown === 'admissions' ? 'dropdown-open' : ''}>
+                            <li className={`reveal-item ${activeDropdown === 'admissions' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.35s' }}>
                                 <NavLink to="/admissions" onClick={(e) => toggleDropdown(e, 'admissions')}>
                                     Admissions <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'admissions' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                                 </NavLink>
@@ -239,7 +239,7 @@ const Navbar = () => {
                                     <li><Link to="/admissions#apply" onClick={closeMobileMenu}>Start Application</Link></li>
                                 </ul>
                             </li>
-                            <li className={activeDropdown === 'contact' ? 'dropdown-open' : ''}>
+                            <li className={`reveal-item ${activeDropdown === 'contact' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.4s' }}>
                                 <NavLink to="/contact" onClick={(e) => toggleDropdown(e, 'contact')}>
                                     Contact <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'contact' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                                 </NavLink>
@@ -250,7 +250,7 @@ const Navbar = () => {
                                     <li><Link to="/contact#map" onClick={closeMobileMenu}>Find Us on Map</Link></li>
                                 </ul>
                             </li>
-                            <li className={activeDropdown === 'feedback' ? 'dropdown-open' : ''}>
+                            <li className={`reveal-item ${activeDropdown === 'feedback' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.45s' }}>
                                 <NavLink to="/feedback" onClick={(e) => toggleDropdown(e, 'feedback')}>
                                     Feedback <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'feedback' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                                 </NavLink>

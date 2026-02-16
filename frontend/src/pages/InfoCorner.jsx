@@ -83,19 +83,6 @@ const InfoCorner = () => {
         }
     }, [location]);
 
-    useEffect(() => {
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
-        }, observerOptions);
-
-        const elements = document.querySelectorAll('.reveal');
-        elements.forEach(el => observer.observe(el));
-        return () => observer.disconnect();
-    }, []);
-
     const staticAnnouncements = [
         {
             type: 'Featured Event',
@@ -187,8 +174,8 @@ const InfoCorner = () => {
         <div className="info-corner-page">
             <div className="inner-hero program-hero">
                 <div className="container">
-                    <span className="estd-tag" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>LATEST UPDATES</span>
-                    <h1 style={{ fontSize: '3rem', margin: '20px 0' }} className="reveal">Information Corner</h1>
+                    <span className="estd-tag float-breathe" style={{ background: 'var(--accent)', color: 'var(--primary)', display: 'block', margin: '0 auto 35px', width: 'fit-content' }}>LATEST UPDATES</span>
+                    <h1 style={{ fontSize: '3.5rem', margin: '15px 0' }}>Information Corner</h1>
                     <p style={{ maxWidth: '800px', margin: '0 auto', opacity: 0.9 }}>
                         Stay updated with the latest circulars, professional milestones, and academic achievements at Mount Zion College of Nursing.
                     </p>
@@ -199,22 +186,27 @@ const InfoCorner = () => {
                 <div className="container">
                     <div className="page-grid">
                         {/* Sticky Sidebar */}
-                        <aside className="about-nav-card reveal sidebar-col" style={{ top: '120px' }}>
+                        <aside className="about-nav-card reveal-zoom sidebar-col glow-card" style={{ top: '120px' }}>
                             <h3 style={{ color: 'var(--primary)', marginBottom: '20px', fontSize: '1.2rem' }}>Quick Access</h3>
                             <ul style={{ listStyle: 'none', padding: 0 }}>
-                                {['Announcements', 'News', 'Achievements', 'Jobs'].map(item => (
-                                    <li key={item} style={{ marginBottom: '15px' }}>
+                                {[
+                                    { name: 'Announcements', id: 'announcements' },
+                                    { name: 'News & Events', id: 'news' },
+                                    { name: 'Rank Holders', id: 'achievements' },
+                                    { name: 'Careers', id: 'jobs' }
+                                ].map(item => (
+                                    <li key={item.id} style={{ marginBottom: '15px' }}>
                                         <a
-                                            href={`#${item.toLowerCase()}`}
+                                            href={`#${item.id}`}
                                             onClick={(e) => {
                                                 e.preventDefault();
-                                                handleScrollToSection(item.toLowerCase());
+                                                handleScrollToSection(item.id);
                                             }}
                                             style={{ textDecoration: 'none', color: 'var(--text-muted)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}
                                             className="hover-primary"
                                         >
                                             <i className="fas fa-chevron-right" style={{ fontSize: '0.8rem', color: 'var(--accent)' }}></i>
-                                            {item}
+                                            {item.name}
                                         </a>
                                     </li>
                                 ))}
@@ -224,7 +216,7 @@ const InfoCorner = () => {
                         {/* Content Area */}
                         <div className="info-content content-col">
                             {/* Announcements */}
-                            <div id="announcements" className="reveal" style={{ marginBottom: '60px' }}>
+                            <div id="announcements" className="reveal-blur" style={{ marginBottom: '60px' }}>
                                 <h2 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
                                     <i className="fas fa-bullhorn" style={{ color: 'var(--accent)' }}></i> Announcements
                                 </h2>
@@ -267,9 +259,9 @@ const InfoCorner = () => {
                             </div>
 
                             {/* News & Events */}
-                            <div id="news" className="reveal" style={{ marginBottom: '60px' }}>
+                            <div id="news" className="reveal-flip" style={{ marginBottom: '60px' }}>
                                 <h2 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
-                                    <i className="fas fa-newspaper" style={{ color: 'var(--accent)' }}></i> Recent News
+                                    <i className="fas fa-newspaper" style={{ color: 'var(--accent)' }}></i> News & Events
                                 </h2>
 
                                 {/* Dynamic News (Images only) */}
@@ -306,13 +298,13 @@ const InfoCorner = () => {
                                 ))}
                             </div>
 
-                            {/* Achievements */}
-                            <div id="achievements" className="reveal" style={{ marginBottom: '60px' }}>
+                            {/* Rank Holders */}
+                            <div id="achievements" className="reveal-flip" style={{ marginBottom: '60px' }}>
                                 <h2 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
                                     <i className="fas fa-trophy" style={{ color: 'var(--accent)' }}></i> Rank Holders
                                 </h2>
                                 {rankHolders.map((group, idx) => (
-                                    <div key={idx} className="rank-card">
+                                    <div key={idx} className="rank-card reveal-flip">
                                         <h4 style={{ color: 'var(--primary)', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                                             <i className="fas fa-medal" style={{ color: 'var(--accent)' }}></i> {group.year}
                                         </h4>
@@ -339,11 +331,11 @@ const InfoCorner = () => {
                             </div>
 
                             {/* Job Openings */}
-                            <div id="jobs" className="reveal">
+                            <div id="jobs" className="reveal-zoom">
                                 <h2 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
                                     <i className="fas fa-briefcase" style={{ color: 'var(--accent)' }}></i> Careers
                                 </h2>
-                                <div className="apply-card">
+                                <div className="apply-card reveal-zoom">
                                     <div style={{ position: 'relative', zIndex: 2 }}>
                                         <h3 style={{ color: 'white', marginBottom: '15px' }}>Join Our Faculty</h3>
                                         <p style={{ opacity: 0.9, marginBottom: '25px' }}>We are looking for dedicated Nursing Tutors and Assistant Professors to join our esteemed institution.</p>

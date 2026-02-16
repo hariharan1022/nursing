@@ -50,7 +50,7 @@ function AppContent() {
   }, []);
 
   useEffect(() => {
-    const observerOptions = { threshold: 0.1 };
+    const observerOptions = { threshold: 0.15 };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -59,14 +59,29 @@ function AppContent() {
       });
     }, observerOptions);
 
-    const elements = document.querySelectorAll('.reveal, .reveal-stagger');
+    const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom, .reveal-rotate, .reveal-skew, .reveal-blur, .reveal-flip, .reveal-stagger, .typewriter');
     elements.forEach(el => observer.observe(el));
 
     return () => observer.disconnect();
   }, [location.pathname]);
 
+  // Scroll Progress Logic
+  useEffect(() => {
+    const handleScroll = () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const progressBar = document.getElementById("scrollBar");
+      if (progressBar) progressBar.style.width = scrolled + "%";
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="app-container">
+      <div id="scrollBar" className="scroll-progress"></div>
       <ScrollToTop />
       <div className="noise-overlay"></div>
       <Navbar />

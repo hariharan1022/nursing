@@ -24,10 +24,10 @@ const Admissions = () => {
     return (
         <div className="admissions-page">
             <div className="inner-hero program-hero">
-                <div className="container">
-                    <span className="estd-tag" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>ADMISSION PORTAL</span>
-                    <h1 style={{ fontSize: '3rem', margin: '20px 0' }} className="reveal">Join the Future of Nursing</h1>
-                    <p style={{ maxWidth: '700px', margin: '0 auto', opacity: 0.9 }}>
+                <div className="container" data-reveal-init>
+                    <span className="estd-tag float-breathe" style={{ background: 'var(--accent)', color: 'var(--primary)', display: 'block', margin: '0 auto 35px', width: 'fit-content' }}>ADMISSION PORTAL</span>
+                    <h1 style={{ fontSize: '3rem', margin: '15px 0' }} className="reveal-skew">Join the Future of Nursing</h1>
+                    <p style={{ maxWidth: '700px', margin: '0 auto', opacity: 0.9 }} className="reveal-blur">
                         Welcome to the Admission Portal of Mount Zion College of Nursing. Begin your journey toward a rewarding career in healthcare.
                     </p>
                 </div>
@@ -38,7 +38,7 @@ const Admissions = () => {
                     <div className="page-grid reverse">
                         <div className="admission-main content-col">
                             {/* Eligibility */}
-                            <div id="eligibility" className="admission-card reveal">
+                            <div id="eligibility" className="admission-card reveal-flip" data-reveal-init>
                                 <h3 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
                                     <i className="fas fa-user-graduate" style={{ color: 'var(--accent)' }}></i>
                                     Eligibility Criteria
@@ -66,7 +66,7 @@ const Admissions = () => {
                             </div>
 
                             {/* Age Limit */}
-                            <div id="age-limit" className="admission-card reveal">
+                            <div id="age-limit" className="admission-card reveal-blur" data-reveal-init>
                                 <h3 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
                                     <i className="fas fa-calendar-alt" style={{ color: 'var(--accent)' }}></i>
                                     Age Limit
@@ -95,7 +95,7 @@ const Admissions = () => {
                             </div>
 
                             {/* Documents */}
-                            <div id="documents" className="admission-card reveal">
+                            <div id="documents" className="admission-card reveal-skew" data-reveal-init>
                                 <h3 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
                                     <i className="fas fa-id-card" style={{ color: 'var(--accent)' }}></i>
                                     Required Documents
@@ -111,7 +111,7 @@ const Admissions = () => {
                             </div>
 
                             {/* Scholarship */}
-                            <div id="scholarships" className="admission-card reveal">
+                            <div id="scholarships" className="admission-card reveal-zoom" data-reveal-init>
                                 <h3 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
                                     <i className="fas fa-hand-holding-usd" style={{ color: 'var(--accent)' }}></i>
                                     Scholarships
@@ -131,7 +131,7 @@ const Admissions = () => {
 
                         <div className="admission-sidebar sidebar-col">
                             {/* Process */}
-                            <div id="selection" className="about-nav-card reveal" style={{ marginBottom: '30px' }}>
+                            <div id="selection" className="about-nav-card reveal-zoom" data-reveal-init style={{ marginBottom: '30px' }}>
                                 <h4 style={{ color: 'var(--primary)', marginBottom: '20px' }}>Selection Process</h4>
                                 <div className="process-steps">
                                     {[
@@ -152,9 +152,9 @@ const Admissions = () => {
                             </div>
 
                             {/* Action */}
-                            <div id="apply" className="apply-card reveal">
+                            <div id="apply" className="apply-card reveal-blur" data-reveal-init>
                                 <div style={{ position: 'relative', zIndex: 2 }}>
-                                    <h3 style={{ color: 'white', marginBottom: '15px' }}>Start Your Application</h3>
+                                    <h3 style={{ color: 'white', marginBottom: '15px' }} className="pulse-glow">Start Your Application</h3>
                                     <p style={{ fontSize: '0.9rem', opacity: 0.8, marginBottom: '25px' }}>Inquiries are now open for the {new Date().getFullYear()}-{new Date().getFullYear() + 1} academic year.</p>
                                     <Link to="/contact" className="btn" style={{ background: 'var(--accent)', color: 'var(--primary)', width: '100%', fontWeight: 800, textDecoration: 'none', display: 'inline-block', textAlign: 'center' }}>INQUIRE NOW</Link>
                                     <p style={{ fontSize: '0.8rem', marginTop: '20px', opacity: 0.6 }}>Selection based on eligibility and performance.</p>

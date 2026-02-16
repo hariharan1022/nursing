@@ -31,7 +31,7 @@ const Organogram = () => {
 
             <section className="section" style={{ background: 'var(--bg-light)', overflow: 'hidden' }}>
                 <div className="container">
-                    <div className="reveal" style={{ background: 'white', padding: '50px 30px', borderRadius: '30px', boxShadow: 'var(--shadow-lg)', border: '1px solid rgba(0,0,0,0.05)' }}>
+                    <div className="reveal" style={{ background: 'var(--bg-white)', padding: '50px 30px', borderRadius: '30px', boxShadow: 'var(--shadow-lg)', border: '1px solid rgba(0,0,0,0.05)' }}>
                         <div className="organogram-wrapper" style={{ overflowX: 'auto', paddingBottom: '20px' }}>
                             <div className="org-tree">
                                 <ul>

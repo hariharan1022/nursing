@@ -5,10 +5,10 @@ const Contact = () => {
         <div className="contact-page">
             {/* Inner Hero */}
             <div className="inner-hero">
-                <div className="container" style={{ animation: 'fadeInUp 1s ease-out' }}>
-                    <span className="estd-tag" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>GET IN TOUCH</span>
-                    <h1 style={{ fontSize: '3rem', margin: '20px 0' }}>Contact Our Campus</h1>
-                    <p style={{ maxWidth: '800px', margin: '0 auto', opacity: 0.9 }}>
+                <div className="container" data-reveal-init>
+                    <span className="estd-tag float-breathe" style={{ background: 'var(--accent)', color: 'var(--primary)', display: 'block', margin: '0 auto 35px', width: 'fit-content' }}>GET IN TOUCH</span>
+                    <h1 style={{ fontSize: '3rem', margin: '15px 0' }} className="reveal-skew">Contact Our Campus</h1>
+                    <p style={{ maxWidth: '800px', margin: '0 auto', opacity: 0.9 }} className="reveal-blur">
                         Have questions about our programs or the admission process? Our team is here to help you every step of the way.
                     </p>
                 </div>
@@ -21,7 +21,7 @@ const Contact = () => {
                     <div className="contact-grid">
 
                         {/* Left Column: Contact Details */}
-                        <div className="reveal">
+                        <div className="reveal-blur" data-reveal-init>
                             <h2 style={{ fontSize: '2.5rem', color: 'var(--primary)', marginBottom: '30px' }}>Reach Our Administration</h2>
 
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -77,11 +77,11 @@ const Contact = () => {
                                         <span style={{ fontSize: '1.2rem', fontWeight: 600, display: 'block' }}>9:00 AM - 5:00 PM</span>
                                         <span style={{ fontSize: '0.95rem', opacity: 0.85 }}>Monday to Saturday</span>
                                     </div>
-                                    <span className="timings-badge" style={{ 
-                                        marginLeft: 'auto', 
-                                        background: 'rgba(255,255,255,0.2)', 
-                                        padding: '5px 12px', 
-                                        borderRadius: '20px', 
+                                    <span className="timings-badge" style={{
+                                        marginLeft: 'auto',
+                                        background: 'rgba(255,255,255,0.2)',
+                                        padding: '5px 12px',
+                                        borderRadius: '20px',
                                         fontSize: '0.85rem',
                                         fontWeight: 600
                                     }}>
@@ -92,7 +92,7 @@ const Contact = () => {
                         </div>
 
                         {/* Right Column: Determine Campus Location */}
-                        <div className="reveal">
+                        <div className="reveal-zoom" data-reveal-init>
                             <div className="locate-card">
                                 <h3 style={{ fontSize: '1.8rem', color: 'var(--primary)', marginBottom: '10px' }}>Locate Our Campus</h3>
                                 <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', marginBottom: '25px', flexGrow: 0 }}>
@@ -122,7 +122,7 @@ const Contact = () => {
                                 </a>
                             </div>
                         </div>
-                    
+
                     </div>
                 </div>
             </section>
