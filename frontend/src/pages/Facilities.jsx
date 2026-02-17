@@ -1,11 +1,75 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { BookOpen, Bus, Coffee, Dumbbell, Home, Landmark, PlusCircle, Wifi } from 'lucide-react';
+
+// Import images
+import libraryImg1 from '../assets/facilites/library/library-1.jpeg';
+import libraryImg2 from '../assets/facilites/library/library-2.jpeg';
+import libraryImg3 from '../assets/facilites/library/library-3.jpeg';
+import libraryImg4 from '../assets/facilites/library/library-4.jpeg';
+import libraryImg5 from '../assets/facilites/library/library-5.jpeg';
+import libraryImg6 from '../assets/facilites/library/library-6.jpeg';
+import libraryImg7 from '../assets/facilites/library/library-7.jpeg';
+
+import hostelImg1 from '../assets/facilites/hostel/hostel-1.jpeg';
+import hostelImg2 from '../assets/facilites/hostel/hostel-2.jpeg';
+import hostelImg3 from '../assets/facilites/hostel/hostel-3.jpeg';
+
+import gymImg1 from '../assets/facilites/gym/gym-1.jpeg';
+
+import transportImg1 from '../assets/facilites/transport/transport-1.jpeg';
+import transportImg2 from '../assets/facilites/transport/transport-2.jpeg';
+import transportImg3 from '../assets/facilites/transport/transport-3.jpeg';
+import transportImg4 from '../assets/facilites/transport/transport-4.jpeg';
+
+import extraPlusImg1 from '../assets/facilites/extra-plus/extra-plus-1.jpeg';
+import extraPlusImg2 from '../assets/facilites/extra-plus/extra-plus-2.jpeg';
+
+const ImageGallery = ({ images }) => (
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
+        {images.map((img, index) => (
+            <div
+                key={index}
+                className="group relative overflow-hidden rounded-2xl shadow-md cursor-pointer transition-all duration-500 hover:shadow-xl hover:-translate-y-1 aspect-video animate-fade-in-scale"
+                style={{ animationDelay: `${index * 100}ms` }}
+            >
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+
+                <img
+                    src={img}
+                    alt={`Facility ${index + 1}`}
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out"
+                />
+
+                <div className="absolute inset-0 z-20 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100">
+                    <span className="text-white/90 text-xs font-bold tracking-wider uppercase bg-black/30 px-3 py-1.5 rounded-full backdrop-blur-sm border border-white/20">
+                        View
+                    </span>
+                </div>
+            </div>
+        ))}
+    </div>
+);
+
+const tabs = [
+    { id: 'library', label: 'Library', icon: BookOpen },
+    { id: 'hostel', label: 'Hostel', icon: Home },
+    { id: 'transport', label: 'Transport', icon: Bus },
+    { id: 'extra-plus', label: 'Extra-Plus', icon: PlusCircle },
+];
 
 const Facilities = () => {
+    const [activeTab, setActiveTab] = useState('library');
+
     useEffect(() => {
-        const observerOptions = { threshold: 0.1 };
+        const observerOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    if (entry.target.id) {
+                        setActiveTab(entry.target.id);
+                    }
+                }
             });
         }, observerOptions);
 
@@ -14,160 +78,286 @@ const Facilities = () => {
         return () => observer.disconnect();
     }, []);
 
-    const affiliations = [
-        { name: 'Government Medical College Hospital, Pudukkottai', capacity: '1200 Beds', spec: 'Medical Surgical, Child Health, Mental Health Nursing' },
-        { name: 'Government Ranee’s Maternity Hospital, Pudukkottai', capacity: '435 Beds', spec: 'OBG Nursing, Child Health Nursing' },
-        { name: 'Athma Mind Care Hospital, Trichy', capacity: '150 Beds', spec: 'Mental Health Nursing' },
-        { name: 'Harshamithra Oncology Hospital, Trichy', capacity: '50 Beds', spec: 'Oncology Nursing' }
-    ];
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setActiveTab(id);
+        }
+    };
 
-    const communityAreas = [
-        { name: 'Kamarajapuram', type: 'Rural', facility: 'Community Health Centre' },
-        { name: 'Natchanthupatti', type: 'Rural', facility: 'Community Health Centre' },
-        { name: 'Virachilai', type: 'Urban', facility: 'Primary Health Centre' }
-    ];
+    const libraryImages = [libraryImg1, libraryImg2, libraryImg3, libraryImg4, libraryImg5, libraryImg6, libraryImg7];
+    const hostelImages = [hostelImg1, hostelImg2, hostelImg3];
+    const transportImages = [transportImg1, transportImg2, transportImg3, transportImg4];
+    const extraPlusImages = [extraPlusImg1, extraPlusImg2];
+
+
+
+
 
     return (
-        <div className="facilities-page">
-            <div className="inner-hero" style={{ background: 'var(--primary)', color: 'white', textAlign: 'center' }}>
-                <div className="container">
-                    <span className="estd-tag" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>INFRASTRUCTURE & BEYOND</span>
-                    <h1 style={{ fontSize: '3rem', margin: '20px 0' }} className="reveal">Facilities & Ecosystem</h1>
-                    <p style={{ maxWidth: '800px', margin: '0 auto', opacity: 0.9 }}>
-                        We believe that the best learning happens in an environment that is well-equipped, safe, and nurturing.
+        <div className="min-h-screen bg-gray-50 text-gray-800 font-sans selection:bg-blue-100 selection:text-blue-900">
+
+            {/* Hero Section */}
+            {/* Hero Section */}
+            <div className="relative bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white py-32 overflow-hidden">
+                <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] animate-pulse"></div>
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-slate-900/50 via-transparent to-transparent"></div>
+                <div className="container mx-auto px-4 relative z-10 text-center">
+                    <span className="hero-tag-gold">
+                        Infrastructure & Beyond
+                    </span>
+                    <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-100 via-white to-blue-200 animate-fade-in-scale stagger-1 drop-shadow-2xl">
+                        Facilities & Ecosystem
+                    </h1>
+                    <p className="max-w-3xl mx-auto text-xl text-blue-100/90 leading-relaxed animate-fade-in-scale stagger-2 font-light drop-shadow-sm">
+                        Providing a holistic environment for academic excellence and personal growth.
                     </p>
                 </div>
             </div>
 
-            <section className="section" style={{ background: 'var(--bg-light)' }}>
-                <div className="container">
-                    {/* Academic Facilities */}
-                    <div className="reveal" style={{ marginBottom: '80px' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '30px' }}>
-                            <div style={{
-                                width: '70px', height: '70px', background: 'white', color: 'var(--accent)',
-                                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                borderRadius: '15px', fontSize: '2rem', boxShadow: 'var(--shadow-sm)'
-                            }}>
-                                <i className="fas fa-laptop-medical"></i>
-                            </div>
-                            <h2 style={{ color: 'var(--primary)', margin: 0 }}>Classrooms & Laboratories</h2>
-                        </div>
-                        <div style={{ background: 'white', padding: '40px', borderRadius: '20px', boxShadow: 'var(--shadow-lg)', borderLeft: '6px solid var(--primary)' }}>
-                            <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&q=80&w=1200" alt="Lab" style={{ width: '100%', objectFit: 'cover', borderRadius: '15px', marginBottom: '30px', maxHeight: '400px' }} />
-                            <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: '1.8' }}>
-                                Our classrooms are modern, well-equipped, and designed to provide an interactive learning experience. specialized laboratories for all nursing disciplines are equipped with high-fidelity mannequins and simulation tools.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Library */}
-                    <div className="reveal" style={{ marginBottom: '80px' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '30px' }}>
-                            <div style={{
-                                width: '70px', height: '70px', background: 'white', color: 'var(--accent)',
-                                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                borderRadius: '15px', fontSize: '2rem', boxShadow: 'var(--shadow-sm)'
-                            }}>
-                                <i className="fas fa-book-reader"></i>
-                            </div>
-                            <h2 style={{ color: 'var(--primary)', margin: 0 }}>Digital Library</h2>
-                        </div>
-                        <div style={{ background: 'white', padding: '40px', borderRadius: '20px', boxShadow: 'var(--shadow-lg)', borderLeft: '6px solid var(--primary)' }}>
-                            <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=1200" alt="Library" style={{ width: '100%', objectFit: 'cover', borderRadius: '15px', marginBottom: '30px', maxHeight: '400px' }} />
-                            <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: '1.8' }}>
-                                The library is a treasure trove of nursing literature and research journals. It features digital access for e-books and journals, quiet study spaces, and comprehensive resources for academic growth.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Clinical Affiliations */}
-                    <div className="reveal" style={{ marginBottom: '80px' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '30px' }}>
-                            <div style={{
-                                width: '70px', height: '70px', background: 'white', color: 'var(--accent)',
-                                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                borderRadius: '15px', fontSize: '2rem', boxShadow: 'var(--shadow-sm)'
-                            }}>
-                                <i className="fas fa-hospital-user"></i>
-                            </div>
-                            <h2 style={{ color: 'var(--primary)', margin: 0 }}>Clinical Affiliations</h2>
-                        </div>
-                        <div style={{ background: 'white', padding: '40px', borderRadius: '20px', boxShadow: 'var(--shadow-lg)', borderLeft: '6px solid var(--primary)' }}>
-                            <div style={{ overflowX: 'auto' }}>
-                                <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                                    <thead>
-                                        <tr style={{ background: 'var(--primary)', color: 'white' }}>
-                                            <th style={{ padding: '15px', textAlign: 'left' }}>Hospital Name</th>
-                                            <th style={{ padding: '15px', textAlign: 'left' }}>Strength</th>
-                                            <th style={{ padding: '15px', textAlign: 'left' }}>Specialization</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {affiliations.map((h, i) => (
-                                            <tr key={i} style={{ borderBottom: '1px solid #eee' }}>
-                                                <td style={{ padding: '15px', fontWeight: 600 }}>{h.name}</td>
-                                                <td style={{ padding: '15px' }}>{h.capacity}</td>
-                                                <td style={{ padding: '15px', color: 'var(--text-muted)', fontSize: '0.9rem' }}>{h.spec}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Community Outreach */}
-                    <div className="reveal" style={{ marginBottom: '80px' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '30px' }}>
-                            <div style={{
-                                width: '70px', height: '70px', background: 'white', color: 'var(--accent)',
-                                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                borderRadius: '15px', fontSize: '2rem', boxShadow: 'var(--shadow-sm)'
-                            }}>
-                                <i className="fas fa-users-cog"></i>
-                            </div>
-                            <h2 style={{ color: 'var(--primary)', margin: 0 }}>Community Outreach</h2>
-                        </div>
-                        <div style={{ background: 'white', padding: '40px', borderRadius: '20px', boxShadow: 'var(--shadow-lg)', borderLeft: '6px solid var(--primary)' }}>
-                            <div style={{ overflowX: 'auto' }}>
-                                <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                                    <thead>
-                                        <tr style={{ background: 'var(--primary)', color: 'white' }}>
-                                            <th style={{ padding: '15px', textAlign: 'left' }}>Area Name</th>
-                                            <th style={{ padding: '15px', textAlign: 'left' }}>Type</th>
-                                            <th style={{ padding: '15px', textAlign: 'left' }}>Facility</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {communityAreas.map((area, i) => (
-                                            <tr key={i} style={{ borderBottom: '1px solid #eee' }}>
-                                                <td style={{ padding: '15px', fontWeight: 600 }}>{area.name}</td>
-                                                <td style={{ padding: '15px' }}>{area.type}</td>
-                                                <td style={{ padding: '15px' }}>{area.facility}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px' }}>
-                        {[
-                            { title: 'Residences', icon: 'fa-home', text: 'Safe and secure hostel environment with modern amenities.' },
-                            { title: 'Sports', icon: 'fa-running', text: 'Dedicated spaces for physical fitness and teamwork.' },
-                            { title: 'Leisure', icon: 'fa-smile-beam', text: 'Spaces for relaxation and creative student activities.' }
-                        ].map((item, i) => (
-                            <div key={i} className="reveal hover-lift" style={{ background: 'white', padding: '40px', borderRadius: '20px', textAlign: 'center', boxShadow: 'var(--shadow-md)', borderTop: '4px solid var(--accent)' }}>
-                                <i className={`fas ${item.icon}`} style={{ fontSize: '2.5rem', color: 'var(--primary)', marginBottom: '20px' }}></i>
-                                <h3 style={{ color: 'var(--primary)', marginBottom: '15px' }}>{item.title}</h3>
-                                <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>{item.text}</p>
-                            </div>
-                        ))}
+            {/* Sticky Navigation */}
+            <div className="sticky top-[80px] z-40 bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm transition-all duration-300">
+                <div className="container mx-auto px-4 overflow-x-auto no-scrollbar">
+                    <div className="flex justify-center min-w-max space-x-2 md:space-x-8 py-4">
+                        {tabs.map((tab) => {
+                            const Icon = tab.icon;
+                            const isActive = activeTab === tab.id;
+                            return (
+                                <button
+                                    key={tab.id}
+                                    onClick={() => scrollToSection(tab.id)}
+                                    className={`flex items-center space-x-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 transform active:scale-95 ${isActive
+                                        ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 scale-105'
+                                        : 'text-gray-600 hover:bg-gray-100 hover:text-blue-600'
+                                        }`}
+                                >
+                                    <Icon className={`w-4 h-4 ${isActive ? 'animate-bounce' : ''}`} />
+                                    <span>{tab.label}</span>
+                                </button>
+                            );
+                        })}
                     </div>
                 </div>
-            </section>
+            </div>
+
+            <div className="container mx-auto px-4 py-12 max-w-6xl space-y-20">
+
+                {/* LIBRARY SECTION */}
+                <section id="library" className="reveal scroll-mt-32">
+                    <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-xl border border-white/50 relative overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-50 group-hover:scale-125 transition-transform duration-700"></div>
+
+                        <div className="relative z-10">
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="p-3 bg-blue-100 text-blue-600 rounded-2xl shadow-inner">
+                                    <BookOpen className="w-8 h-8" />
+                                </div>
+                                <h2 className="text-3xl font-bold text-gray-900">Digital Library</h2>
+                            </div>
+
+                            <div className="grid md:grid-cols-2 gap-12 text-gray-600 leading-relaxed">
+                                <div className="space-y-6">
+                                    <p className="first-letter:text-4xl first-letter:font-bold first-letter:text-blue-600 first-letter:mr-2 first-letter:float-left">
+                                        The Mount Zion Library is the primary resource for study, teaching, and research, catering to the ever-growing intellectual requirements of students and faculty.
+                                    </p>
+                                    <p>
+                                        With over 3,500 new volumes added annually, our collection includes 165 national and international journals, 45 magazines, and a vast digital repository of e-books accessible via the intranet.
+                                    </p>
+                                    <div className="bg-blue-50 p-6 rounded-2xl border-l-4 border-blue-500 shadow-sm">
+                                        <h4 className="font-semibold text-blue-800 mb-2 flex items-center gap-2">
+                                            <Wifi className="w-4 h-4" /> Member of IEEE & DELNET
+                                        </h4>
+                                        <p className="text-sm">
+                                            Access thousands of global research papers and digital resources anytime.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="space-y-8">
+                                    <div className="bg-gray-50 p-6 rounded-2xl">
+                                        <h3 className="text-lg font-bold text-gray-800 mb-4 border-b pb-2">Key Services</h3>
+                                        <ul className="space-y-3">
+                                            {['Inter-Library Loan (ILL)', 'Reference & Current Awareness', 'Book Bank & Reprographic', 'Audio-Video Digital Content'].map((item, i) => (
+                                                <li key={i} className="flex items-start gap-3 text-sm">
+                                                    <span className="w-1.5 h-1.5 mt-2 bg-blue-500 rounded-full flex-shrink-0"></span>
+                                                    {item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+
+                                    <div className="bg-gray-50 p-6 rounded-2xl">
+                                        <h3 className="text-lg font-bold text-gray-800 mb-4 border-b pb-2">E-Journals Access</h3>
+                                        <div className="flex flex-wrap gap-2">
+                                            {['Springerlink', 'Delnet', 'National Digital Library', 'E-ShodhSindhu'].map((badge, i) => (
+                                                <span key={i} className="px-3 py-1 bg-white text-blue-600 text-xs font-semibold rounded-full border border-blue-100 shadow-sm">
+                                                    {badge}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ImageGallery images={libraryImages} />
+                        </div>
+                    </div>
+                </section>
+
+                {/* HOSTEL SECTION */}
+                <section id="hostel" className="reveal scroll-mt-32">
+                    <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-xl border border-white/50 relative overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
+                        <div className="absolute top-0 left-0 w-64 h-64 bg-green-50 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2 opacity-50 group-hover:scale-125 transition-transform duration-700"></div>
+
+                        <div className="relative z-10">
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="p-3 bg-green-100 text-green-600 rounded-2xl shadow-inner">
+                                    <Home className="w-8 h-8" />
+                                </div>
+                                <h2 className="text-3xl font-bold text-gray-900">Residential Life</h2>
+                            </div>
+
+                            <div className="grid md:grid-cols-3 gap-8 mb-12">
+                                {[
+                                    { title: "Connectivity", desc: "High-speed Wi-Fi & computing facilities.", icon: Wifi },
+                                    { title: "Wellness", desc: "Pure RO Water & 24/7 Medical Care.", icon: PlusCircle },
+                                    { title: "Recreation", desc: "TV rooms, Indoor/Outdoor games.", icon: Coffee },
+                                ].map((card, i) => (
+                                    <div key={i} className="bg-green-50/50 p-6 rounded-xl hover:bg-green-50 transition-colors duration-300">
+                                        <card.icon className="w-8 h-8 text-green-600 mb-4" />
+                                        <h3 className="text-lg font-bold text-gray-800 mb-2">{card.title}</h3>
+                                        <p className="text-sm text-gray-600">{card.desc}</p>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <div className="bg-gray-900 text-white rounded-2xl overflow-hidden shadow-2xl mb-12">
+                                <div className="grid md:grid-cols-2">
+                                    <div className="p-8 md:p-12 flex flex-col justify-center">
+                                        <div className="flex items-center gap-3 text-green-400 mb-4">
+                                            <Dumbbell className="w-6 h-6" />
+                                            <span className="font-bold tracking-wider uppercase text-sm">Fitness Center</span>
+                                        </div>
+                                        <h3 className="text-2xl font-bold mb-4">State-of-the-Art Gymnasium</h3>
+                                        <p className="text-gray-400 mb-6">Fully equipped with dumb bells, cables, pulleys, pull-up bars, leg press machines, and more to keep you fit and healthy.</p>
+                                    </div>
+                                    <div className="h-64 md:h-auto relative">
+                                        <img src={gymImg1} alt="Gym" className="absolute inset-0 w-full h-full object-cover opacity-80" />
+                                        <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-gray-900 via-transparent to-transparent"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ImageGallery images={hostelImages} />
+                        </div>
+                    </div>
+                </section>
+
+                {/* TRANSPORT SECTION */}
+                <section id="transport" className="reveal scroll-mt-32">
+                    <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-xl border border-white/50 relative overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
+                        <div className="absolute bottom-0 right-0 w-80 h-80 bg-orange-50 rounded-full blur-3xl translate-y-1/3 translate-x-1/3 opacity-60"></div>
+
+                        <div className="relative z-10">
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="p-3 bg-orange-100 text-orange-600 rounded-2xl shadow-inner">
+                                    <Bus className="w-8 h-8" />
+                                </div>
+                                <h2 className="text-3xl font-bold text-gray-900">Transport Fleet</h2>
+                            </div>
+
+                            <div className="bg-orange-50 rounded-2xl p-8 mb-8 border border-orange-100">
+                                <h3 className="text-xl font-bold text-orange-900 mb-4">Extensive Connectivity</h3>
+                                <p className="text-orange-800/80 mb-6">
+                                    Our fleet of college buses connects major towns and cities including Melur, Karambakkudi, Pattukkottai, Karaikudi, Trichy, and more.
+                                    <span className="font-semibold block mt-2 text-orange-900">New routes are constantly added based on student needs.</span>
+                                </p>
+                                <div className="flex flex-wrap gap-2">
+                                    {['Melur', 'Trichy', 'Pudukkottai', 'Sivagangai', 'Karaikudi', 'Aranthangi'].map((city, i) => (
+                                        <span key={i} className="px-3 py-1 bg-white/60 backdrop-blur-sm text-orange-700 text-xs font-bold rounded-lg border border-orange-200">
+                                            {city}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <ImageGallery images={transportImages} />
+                        </div>
+                    </div>
+                </section>
+
+                {/* EXTRA-PLUS SECTION */}
+                <section id="extra-plus" className="reveal scroll-mt-32 pb-24">
+                    <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-xl border border-white/50 relative overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
+
+                        <div className="relative z-10">
+                            <div className="flex items-center gap-4 mb-10">
+                                <div className="p-3 bg-purple-100 text-purple-600 rounded-2xl shadow-inner">
+                                    <PlusCircle className="w-8 h-8" />
+                                </div>
+                                <h2 className="text-3xl font-bold text-gray-900">Campus Amenities</h2>
+                            </div>
+
+                            <div className="grid md:grid-cols-2 gap-8">
+
+                                {/* Banking Card */}
+                                <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border border-gray-100 hover:border-purple-200 transition-colors shadow-sm hover:shadow-md group/card">
+                                    <div className="flex items-center gap-3 mb-6">
+                                        <div className="p-3 bg-white shadow-sm rounded-xl text-purple-600 group-hover/card:bg-purple-600 group-hover/card:text-white transition-colors">
+                                            <Landmark className="w-6 h-6" />
+                                        </div>
+                                        <h3 className="text-xl font-bold text-gray-800">Banking & Finance</h3>
+                                    </div>
+                                    <ul className="space-y-3 text-sm text-gray-600">
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-purple-500 mt-1">●</span> Core banking branch of TMB on campus.
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-purple-500 mt-1">●</span> Tie-up with Corporation Bank.
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-purple-500 mt-1">●</span> Zero-transaction fee for student payments.
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                {/* Canteen Card */}
+                                <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl border border-gray-100 hover:border-yellow-200 transition-colors shadow-sm hover:shadow-md group/card">
+                                    <div className="flex items-center gap-3 mb-6">
+                                        <div className="p-3 bg-white shadow-sm rounded-xl text-yellow-600 group-hover/card:bg-yellow-500 group-hover/card:text-white transition-colors">
+                                            <Coffee className="w-6 h-6" />
+                                        </div>
+                                        <h3 className="text-xl font-bold text-gray-800">Dining Services</h3>
+                                    </div>
+                                    <ul className="space-y-3 text-sm text-gray-600">
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-yellow-500 mt-1">●</span> Hygienic, modern kitchen facilities.
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-yellow-500 mt-1">●</span> High-quality vegetarian menu planned by students.
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="text-yellow-500 mt-1">●</span> Non-vegetarian options available on request.
+                                        </li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                            <div className="mt-12">
+                                <h3 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
+                                    <Home className="w-5 h-5 text-gray-400" />
+                                    Additional Views
+                                </h3>
+                                <ImageGallery images={extraPlusImages} />
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+            </div>
         </div>
     );
 };

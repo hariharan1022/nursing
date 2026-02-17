@@ -181,52 +181,64 @@ const Navbar = () => {
                                     <li><Link to="/about#vision" onClick={closeMobileMenu}>Vision & Mission</Link></li>
                                     <li><Link to="/about#profile" onClick={closeMobileMenu}>Institutional Profile</Link></li>
                                     <li><Link to="/about#leadership" onClick={closeMobileMenu}>Leadership</Link></li>
-                                    <li><Link to="/about#organogram" onClick={closeMobileMenu}>Organogram</Link></li>
+                                    <li><Link to="/organogram" onClick={closeMobileMenu}>Organogram</Link></li>
                                 </ul>
                             </li>
 
-                            <li className={`reveal-item ${activeDropdown === 'course' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.2s' }}>
-                                <NavLink to="/course-details" onClick={(e) => toggleDropdown(e, 'course')}>
-                                    Course Details <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'course' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
+                            <li className={`reveal-item ${activeDropdown === 'campus' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.2s' }}>
+                                <NavLink to="/facilities" onClick={(e) => toggleDropdown(e, 'campus')}>
+                                    Campus Life <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'campus' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                                 </NavLink>
-                                <ul className={`dropdown ${activeDropdown === 'course' ? 'active-mobile' : ''}`}>
-                                    <li><Link to="/bsc-nursing" onClick={closeMobileMenu}>B.Sc. Nursing</Link></li>
-                                    <li><Link to="/facilities" onClick={closeMobileMenu}>Campus Facilities</Link></li>
-                                    <li><Link to="/faculty" onClick={closeMobileMenu}>Our Faculty</Link></li>
+                                <ul className={`dropdown ${activeDropdown === 'campus' ? 'active-mobile' : ''}`}>
+                                    <li><Link to="/facilities#library" onClick={closeMobileMenu}>Library</Link></li>
+                                    <li><Link to="/facilities#hostel" onClick={closeMobileMenu}>Hostel</Link></li>
+                                    <li><Link to="/facilities#gym" onClick={closeMobileMenu}>Gym</Link></li>
+                                    <li><Link to="/facilities#transport" onClick={closeMobileMenu}>Transport</Link></li>
+                                    <li><Link to="/facilities#extra-plus" onClick={closeMobileMenu}>Extra Plus</Link></li>
+                                    <li><Link to="/gallery" onClick={closeMobileMenu}>Gallery</Link></li>
                                 </ul>
                             </li>
 
-                            <li className={`reveal-item ${activeDropdown === 'clubs' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.25s' }}>
-                                <NavLink to="/clubs-and-cells" onClick={(e) => toggleDropdown(e, 'clubs')}>
-                                    Clubs & Cells <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'clubs' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
+                            <li className={`reveal-item ${activeDropdown === 'academics' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.25s' }}>
+                                <NavLink to="/course-details" onClick={(e) => toggleDropdown(e, 'academics')}>
+                                    Academics <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'academics' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                                 </NavLink>
-                                <ul className={`dropdown ${activeDropdown === 'clubs' ? 'active-mobile' : ''}`}>
-                                    <li><Link to="/clubs-and-cells#curriculum" onClick={closeMobileMenu}>Curriculum Committee</Link></li>
-                                    <li><Link to="/clubs-and-cells#anti-ragging" onClick={closeMobileMenu}>Anti-Ragging Committee</Link></li>
-                                    <li><Link to="/clubs-and-cells#student-welfare" onClick={closeMobileMenu}>Student's Welfare Committee</Link></li>
-                                    <li><Link to="/clubs-and-cells#grievance" onClick={closeMobileMenu}>Grievance Redressal Cell</Link></li>
-                                    <li><Link to="/clubs-and-cells#research" onClick={closeMobileMenu}>Research Committee</Link></li>
-                                    <li><Link to="/clubs-and-cells#sports" onClick={closeMobileMenu}>Sports Committee</Link></li>
-                                    <li><Link to="/clubs-and-cells#eco-friendly" onClick={closeMobileMenu}>Eco-Friendly Committee</Link></li>
-                                    <li><Link to="/clubs-and-cells#thought-flow" onClick={closeMobileMenu}>Rationalized Thought Flow</Link></li>
+                                <ul className={`dropdown ${activeDropdown === 'academics' ? 'active-mobile' : ''}`}>
+                                    <li><Link to="/course-details" onClick={closeMobileMenu}>Department</Link></li>
+                                    <li><Link to="/faculty" onClick={closeMobileMenu}>Faculty</Link></li>
                                 </ul>
                             </li>
 
-                            <li className={`reveal-item ${activeDropdown === 'info' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.3s' }}>
-                                <NavLink to="/info-corner" onClick={(e) => toggleDropdown(e, 'info')}>
-                                    Information Corner <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'info' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
+                            <li className={`reveal-item ${activeDropdown === 'updates' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.3s' }}>
+                                <NavLink to="/info-corner" onClick={(e) => toggleDropdown(e, 'updates')}>
+                                    Updates <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'updates' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                                 </NavLink>
-                                <ul className={`dropdown ${activeDropdown === 'info' ? 'active-mobile' : ''}`}>
+                                <ul className={`dropdown ${activeDropdown === 'updates' ? 'active-mobile' : ''}`}>
                                     <li><Link to="/info-corner#announcements" onClick={closeMobileMenu}>Announcements</Link></li>
                                     <li><Link to="/info-corner#news" onClick={closeMobileMenu}>News & Events</Link></li>
                                     <li><Link to="/info-corner#achievements" onClick={closeMobileMenu}>Rank Holders</Link></li>
                                     <li><Link to="/careers" onClick={closeMobileMenu}>Current Openings</Link></li>
                                     <li><Link to="/apply-job" onClick={closeMobileMenu}>Job Application</Link></li>
-                                    <li><Link to="/gallery" onClick={closeMobileMenu}>Gallery</Link></li>
                                 </ul>
                             </li>
 
-                            <li className={`reveal-item ${activeDropdown === 'admissions' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.35s' }}>
+                            <li className={`reveal-item ${activeDropdown === 'clubs' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.35s' }}>
+                                <NavLink to="/clubs-and-cells" onClick={(e) => toggleDropdown(e, 'clubs')}>
+                                    Clubs & Cells <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'clubs' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
+                                </NavLink>
+                                <ul className={`dropdown ${activeDropdown === 'clubs' ? 'active-mobile' : ''}`}>
+                                    <li><Link to="/clubs-and-cells#curriculum" onClick={closeMobileMenu}>Curriculum Committee</Link></li>
+                                    <li><Link to="/clubs-and-cells#anti-ragging" onClick={closeMobileMenu}>Anti Ragging Committee</Link></li>
+                                    <li><Link to="/clubs-and-cells#student-welfare" onClick={closeMobileMenu}>Students Welfare Committee</Link></li>
+                                    <li><Link to="/clubs-and-cells#grievance" onClick={closeMobileMenu}>Grievance Redressal Cell</Link></li>
+                                    <li><Link to="/clubs-and-cells#research" onClick={closeMobileMenu}>Research Committee</Link></li>
+                                    <li><Link to="/clubs-and-cells#sports" onClick={closeMobileMenu}>Sport Committee</Link></li>
+                                    <li><Link to="/clubs-and-cells#eco-friendly" onClick={closeMobileMenu}>Eco Friendly Committee</Link></li>
+                                    <li><Link to="/clubs-and-cells#thought-flow" onClick={closeMobileMenu}>Rationalized Thought Flow</Link></li>
+                                </ul>
+                            </li>
+
+                            <li className={`reveal-item ${activeDropdown === 'admissions' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.4s' }}>
                                 <NavLink to="/admissions" onClick={(e) => toggleDropdown(e, 'admissions')}>
                                     Admissions <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'admissions' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                                 </NavLink>
@@ -239,7 +251,8 @@ const Navbar = () => {
                                     <li><Link to="/admissions#apply" onClick={closeMobileMenu}>Start Application</Link></li>
                                 </ul>
                             </li>
-                            <li className={`reveal-item ${activeDropdown === 'contact' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.4s' }}>
+
+                            <li className={`reveal-item ${activeDropdown === 'contact' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.45s' }}>
                                 <NavLink to="/contact" onClick={(e) => toggleDropdown(e, 'contact')}>
                                     Contact <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'contact' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                                 </NavLink>
@@ -250,18 +263,20 @@ const Navbar = () => {
                                     <li><Link to="/contact#map" onClick={closeMobileMenu}>Find Us on Map</Link></li>
                                 </ul>
                             </li>
-                            <li className={`reveal-item ${activeDropdown === 'feedback' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.45s' }}>
+
+                            <li className={`reveal-item ${activeDropdown === 'feedback' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.5s' }}>
                                 <NavLink to="/feedback" onClick={(e) => toggleDropdown(e, 'feedback')}>
                                     Feedback <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'feedback' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                                 </NavLink>
                                 <ul className={`dropdown ${activeDropdown === 'feedback' ? 'active-mobile' : ''}`}>
-                                    <li><Link to="/feedback?tab=staff-student" onClick={closeMobileMenu}>Staff & Student</Link></li>
-                                    <li><Link to="/feedback?tab=general" onClick={closeMobileMenu}>General</Link></li>
-                                    <li><Link to="/feedback?tab=course" onClick={closeMobileMenu}>Course</Link></li>
-                                    <li><Link to="/feedback?tab=hostel" onClick={closeMobileMenu}>Hostel</Link></li>
-                                    <li><Link to="/feedback?tab=institutional" onClick={closeMobileMenu}>Institutional Quality</Link></li>
+                                    <li><Link to="/feedback?tab=general" onClick={closeMobileMenu}>General Feedback</Link></li>
+                                    <li><Link to="/feedback?tab=course" onClick={closeMobileMenu}>Course Feedback</Link></li>
+                                    <li><Link to="/feedback?tab=staff-student" onClick={closeMobileMenu}>Staff & Student Feedback</Link></li>
+                                    <li><Link to="/feedback?tab=hostel" onClick={closeMobileMenu}>Hostel Feedback</Link></li>
+                                    <li><Link to="/feedback?tab=institutional" onClick={closeMobileMenu}>Institutional Quality Feedback</Link></li>
                                 </ul>
                             </li>
+
                         </ul>
 
                         <button className="mobile-nav-toggle" onClick={toggleMobileMenu} aria-label="Toggle Menu">
