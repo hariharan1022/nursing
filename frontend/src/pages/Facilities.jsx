@@ -314,18 +314,25 @@ const Facilities = () => {
                                 <h2 className="text-3xl font-bold text-gray-900">Hostel</h2>
                             </div>
 
-                            <div className="grid md:grid-cols-3 gap-8 mb-12">
+                            <div className="grid md:grid-cols-3 gap-6 mb-12">
                                 {[
-                                    { title: "Connectivity", desc: "High-speed Wi-Fi & computing facilities.", icon: Wifi },
-                                    { title: "Wellness", desc: "Pure RO Water & 24/7 Medical Care.", icon: PlusCircle },
-                                    { title: "Recreation", desc: "TV rooms, Indoor/Outdoor games.", icon: Coffee },
+                                    { title: "Wi-Fi & Connectivity", desc: "High-speed internet and access to central computing facilities available on premises.", icon: Wifi },
+                                    { title: "Purified RO Water", desc: "1500 LPH RO water purification plant providing safe water for drinking and cooking.", icon: PlusCircle },
+                                    { title: "Recreation & TV", desc: "Television and recreation facilities are provided for residents during leisure hours.", icon: Coffee },
+                                    { title: "Games & Sports", desc: "Indoor and outdoor gaming equipment available with wardens upon request.", icon: Landmark },
+                                    { title: "Medical Care", desc: "Doctors are available 24/7 to attend to the health needs of hostel students.", icon: Home },
+                                    { title: "Communication", desc: "Telephone booths are available for regular communication with parents.", icon: Wifi },
                                 ].map((card, i) => (
-                                    <div key={i} className="bg-green-50/50 p-6 rounded-xl hover:bg-green-50 transition-colors duration-300">
-                                        <card.icon className="w-8 h-8 text-green-600 mb-4" />
-                                        <h3 className="text-lg font-bold text-gray-800 mb-2">{card.title}</h3>
-                                        <p className="text-sm text-gray-600">{card.desc}</p>
+                                    <div key={i} className="bg-green-50/50 p-6 rounded-2xl hover:bg-green-50 transition-all duration-300 border border-green-100/50">
+                                        <card.icon className="w-6 h-6 text-green-600 mb-4" />
+                                        <h3 className="text-md font-bold text-gray-800 mb-2">{card.title}</h3>
+                                        <p className="text-xs text-gray-600 leading-relaxed">{card.desc}</p>
                                     </div>
                                 ))}
+                            </div>
+
+                            <div className="bg-green-50 p-6 rounded-2xl border-l-4 border-green-500 mb-8 shadow-sm text-sm text-green-800">
+                                <p className="font-medium italic">"You can avail rooms with A/Cs at a nominal fee. Hostel Rules are to be strictly followed."</p>
                             </div>
 
                             <ImageGallery images={hostelImages} />
@@ -420,6 +427,15 @@ const Facilities = () => {
                                 <h2 className="text-3xl font-bold text-gray-900">Campus Amenities</h2>
                             </div>
 
+                            {/* Residential Description */}
+                            <div className="bg-purple-50/50 rounded-2xl p-8 mb-12 border border-purple-100 text-gray-600 space-y-4">
+                                <p className="text-lg font-medium text-purple-900">Extensive Residential System</p>
+                                <p>Mount Zion College offers an extensive residential system. The on-campus accommodation offers the infrastructure necessary for a student to feel at home as well as excel in their academic pursuits.</p>
+                                <p>Students who are from distant places or who prefer to spend more time studying than travelling can opt in for hostel accommodation. It supports a productive living and learning experience for students in Mount Zion College Hostel.</p>
+                                <p>Professional, full-time staff are available at each residential area to address questions or concerns regarding your room, your roommate, the neighborhood, or the College at large.</p>
+                                <p className="font-semibold text-purple-800">There are four hostels - 2 for girls and 2 for boys within the college campus. Inbuilt cupboards and shelves are provided for each room.</p>
+                            </div>
+
                             <div className="grid md:grid-cols-2 gap-8">
 
                                 {/* Banking Card */}
@@ -430,17 +446,20 @@ const Facilities = () => {
                                         </div>
                                         <h3 className="text-xl font-bold text-gray-800">Banking & Finance</h3>
                                     </div>
-                                    <ul className="space-y-3 text-sm text-gray-600">
-                                        <li className="flex items-start gap-2">
-                                            <span className="text-purple-500 mt-1">●</span> Core banking branch of TMB on campus.
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <span className="text-purple-500 mt-1">●</span> Tie-up with Corporation Bank.
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <span className="text-purple-500 mt-1">●</span> Zero-transaction fee for student payments.
-                                        </li>
-                                    </ul>
+                                    <div className="space-y-4 text-sm text-gray-600">
+                                        <p>TMB has a fully fledged branch with core banking network on campus. Mount Zion also has a tie-up with Corporation Bank.</p>
+                                        <ul className="space-y-2">
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-purple-500 mt-1">●</span> Co-branded debit cards provided to all students.
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-purple-500 mt-1">●</span> No transaction charges between students and college.
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-purple-500 mt-1">●</span> Forms for new accounts available at the Admin Office.
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
 
                                 {/* Canteen Card */}
@@ -451,17 +470,20 @@ const Facilities = () => {
                                         </div>
                                         <h3 className="text-xl font-bold text-gray-800">Dining Services</h3>
                                     </div>
-                                    <ul className="space-y-3 text-sm text-gray-600">
-                                        <li className="flex items-start gap-2">
-                                            <span className="text-yellow-500 mt-1">●</span> Hygienic, modern kitchen facilities.
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <span className="text-yellow-500 mt-1">●</span> High-quality vegetarian menu planned by students.
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <span className="text-yellow-500 mt-1">●</span> Non-vegetarian options available on request.
-                                        </li>
-                                    </ul>
+                                    <div className="space-y-4 text-sm text-gray-600">
+                                        <p>The Campus Dining Services provide meals for the Hostels through a hygienic mess with a modern kitchen.</p>
+                                        <ul className="space-y-2">
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-yellow-500 mt-1">●</span> High quality vegetarian food based on student menu.
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-yellow-500 mt-1">●</span> Non-vegetarian food is also provided on request.
+                                            </li>
+                                            <li className="flex items-start gap-2">
+                                                <span className="text-yellow-500 mt-1">●</span> Modern equipment ensuring quality and cleanliness.
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
 
                             </div>
