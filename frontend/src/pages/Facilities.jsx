@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { BookOpen, Bus, Coffee, Dumbbell, Home, Landmark, PlusCircle, Wifi } from 'lucide-react';
+import { createPortal } from 'react-dom';
+import { BookOpen, Bus, Coffee, Dumbbell, Home, Landmark, PlusCircle, Wifi, X, ZoomIn } from 'lucide-react';
+import '../styles/Gallery.css';
 
 // Import images
 import libraryImg1 from '../assets/facilites/library/library-1.jpeg';
@@ -24,35 +26,128 @@ import transportImg4 from '../assets/facilites/transport/transport-4.jpeg';
 import extraPlusImg1 from '../assets/facilites/extra-plus/extra-plus-1.jpeg';
 import extraPlusImg2 from '../assets/facilites/extra-plus/extra-plus-2.jpeg';
 
-const ImageGallery = ({ images }) => (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
-        {images.map((img, index) => (
-            <div
-                key={index}
-                className="group relative overflow-hidden rounded-2xl shadow-md cursor-pointer transition-all duration-500 hover:shadow-xl hover:-translate-y-1 aspect-video animate-fade-in-scale"
-                style={{ animationDelay: `${index * 100}ms` }}
-            >
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+const ImageGallery = ({ images }) => {
+    const [selectedImage, setSelectedImage] = React.useState(null);
+    const [currentIndex, setCurrentIndex] = React.useState(0);
 
-                <img
-                    src={img}
-                    alt={`Facility ${index + 1}`}
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out"
-                />
+    const openLightbox = (index) => {
+        setCurrentIndex(index);
+        setSelectedImage(images[index]);
+    };
 
-                <div className="absolute inset-0 z-20 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100">
-                    <span className="text-white/90 text-xs font-bold tracking-wider uppercase bg-black/30 px-3 py-1.5 rounded-full backdrop-blur-sm border border-white/20">
-                        View
-                    </span>
-                </div>
+    const closeLightbox = () => {
+        setSelectedImage(null);
+        setCurrentIndex(0);
+    };
+
+    const goToNext = (e) => {
+        if (e) e.stopPropagation();
+        const nextIndex = (currentIndex + 1) % images.length;
+        setCurrentIndex(nextIndex);
+        setSelectedImage(images[nextIndex]);
+    };
+
+    const goToPrev = (e) => {
+        if (e) e.stopPropagation();
+        const prevIndex = (currentIndex - 1 + images.length) % images.length;
+        setCurrentIndex(prevIndex);
+        setSelectedImage(images[prevIndex]);
+    };
+
+    React.useEffect(() => {
+        if (!selectedImage) return;
+
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape') {
+                setSelectedImage(null);
+                setCurrentIndex(0);
+            } else if (e.key === 'ArrowRight') {
+                const nextIndex = (currentIndex + 1) % images.length;
+                setCurrentIndex(nextIndex);
+                setSelectedImage(images[nextIndex]);
+            } else if (e.key === 'ArrowLeft') {
+                const prevIndex = (currentIndex - 1 + images.length) % images.length;
+                setCurrentIndex(prevIndex);
+                setSelectedImage(images[prevIndex]);
+            }
+        };
+
+        document.addEventListener('keydown', handleKeyDown);
+        document.body.style.overflow = 'hidden';
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+            document.body.style.overflow = 'unset';
+        };
+    }, [selectedImage, currentIndex, images]);
+
+    return (
+        <>
+            <div className="gallery-grid mt-8" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))' }}>
+                {images.map((img, index) => (
+                    <div
+                        key={index}
+                        className="gallery-card"
+                        onClick={() => openLightbox(index)}
+                        style={{ animationDelay: `${index * 100}ms` }}
+                    >
+                        <div className="card-image-wrapper">
+                            <img
+                                src={img}
+                                alt={`Facility ${index + 1}`}
+                                className="card-image"
+                                loading="lazy"
+                            />
+                            <div className="card-overlay">
+                                <div className="zoom-icon">
+                                    <ZoomIn size={20} />
+                                </div>
+                                <h3 className="card-title">Facility View</h3>
+                            </div>
+                        </div>
+                    </div>
+                ))}
             </div>
-        ))}
-    </div>
-);
+
+            {/* Lightbox Modal */}
+            {selectedImage && createPortal(
+                <div
+                    className="lightbox-overlay"
+                    onClick={closeLightbox}
+                >
+                    <button
+                        className="lightbox-close"
+                        onClick={closeLightbox}
+                    >
+                        <X size={24} />
+                    </button>
+
+                    <div
+                        className="lightbox-content-wrapper"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <img
+                            src={selectedImage}
+                            alt={`Facility ${currentIndex + 1}`}
+                            className="lightbox-image"
+                        />
+
+                        <div className="lightbox-info">
+                            <h3 className="lightbox-event">Facility Detail</h3>
+                            <p className="lightbox-meta">{currentIndex + 1} / {images.length}</p>
+                        </div>
+                    </div>
+                </div>,
+                document.body
+            )}
+        </>
+    );
+};
 
 const tabs = [
     { id: 'library', label: 'Library', icon: BookOpen },
     { id: 'hostel', label: 'Hostel', icon: Home },
+    { id: 'gym', label: 'Gym', icon: Dumbbell },
     { id: 'transport', label: 'Transport', icon: Bus },
     { id: 'extra-plus', label: 'Extra-Plus', icon: PlusCircle },
 ];
@@ -88,6 +183,7 @@ const Facilities = () => {
 
     const libraryImages = [libraryImg1, libraryImg2, libraryImg3, libraryImg4, libraryImg5, libraryImg6, libraryImg7];
     const hostelImages = [hostelImg1, hostelImg2, hostelImg3];
+    const gymImages = [gymImg1];
     const transportImages = [transportImg1, transportImg2, transportImg3, transportImg4];
     const extraPlusImages = [extraPlusImg1, extraPlusImg2];
 
@@ -215,7 +311,7 @@ const Facilities = () => {
                                 <div className="p-3 bg-green-100 text-green-600 rounded-2xl shadow-inner">
                                     <Home className="w-8 h-8" />
                                 </div>
-                                <h2 className="text-3xl font-bold text-gray-900">Residential Life</h2>
+                                <h2 className="text-3xl font-bold text-gray-900">Hostel</h2>
                             </div>
 
                             <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -232,24 +328,49 @@ const Facilities = () => {
                                 ))}
                             </div>
 
-                            <div className="bg-gray-900 text-white rounded-2xl overflow-hidden shadow-2xl mb-12">
-                                <div className="grid md:grid-cols-2">
-                                    <div className="p-8 md:p-12 flex flex-col justify-center">
-                                        <div className="flex items-center gap-3 text-green-400 mb-4">
-                                            <Dumbbell className="w-6 h-6" />
-                                            <span className="font-bold tracking-wider uppercase text-sm">Fitness Center</span>
-                                        </div>
-                                        <h3 className="text-2xl font-bold mb-4">State-of-the-Art Gymnasium</h3>
-                                        <p className="text-gray-400 mb-6">Fully equipped with dumb bells, cables, pulleys, pull-up bars, leg press machines, and more to keep you fit and healthy.</p>
+                            <ImageGallery images={hostelImages} />
+                        </div>
+                    </div>
+                </section>
+
+                {/* GYM SECTION */}
+                <section id="gym" className="reveal scroll-mt-32">
+                    <div className="bg-white/90 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-xl border border-white/50 relative overflow-hidden group hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-50 group-hover:scale-125 transition-transform duration-700"></div>
+
+                        <div className="relative z-10">
+                            <div className="flex items-center gap-4 mb-8">
+                                <div className="p-3 bg-blue-100 text-blue-600 rounded-2xl shadow-inner">
+                                    <Dumbbell className="w-8 h-8" />
+                                </div>
+                                <h2 className="text-3xl font-bold text-gray-900">Fitness Center</h2>
+                            </div>
+
+                            <div className="grid md:grid-cols-2 gap-12 text-gray-600 leading-relaxed mb-12">
+                                <div className="space-y-6">
+                                    <h3 className="text-2xl font-bold text-gray-800">State-of-the-Art Gymnasium</h3>
+                                    <p>
+                                        Our fitness center is fully equipped with high-quality weights, training machines, and aerobic equipment to ensure students maintain their physical health and vitality.
+                                    </p>
+                                    <div className="bg-blue-50 p-6 rounded-2xl border-l-4 border-blue-500 shadow-sm text-sm">
+                                        Professional trainers are available to guide students through their workout routines safely and effectively.
                                     </div>
-                                    <div className="h-64 md:h-auto relative">
-                                        <img src={gymImg1} alt="Gym" className="absolute inset-0 w-full h-full object-cover opacity-80" />
-                                        <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-gray-900 via-transparent to-transparent"></div>
-                                    </div>
+                                </div>
+
+                                <div className="bg-gray-50 p-6 rounded-2xl">
+                                    <h3 className="text-lg font-bold text-gray-800 mb-4 border-b pb-2">Equipment Available</h3>
+                                    <ul className="grid grid-cols-2 gap-3">
+                                        {['Dumbbells', 'Cables & Pulleys', 'Pull-up Bars', 'Leg Press', 'Benches', 'Cardio Gear'].map((item, i) => (
+                                            <li key={i} className="flex items-start gap-3 text-sm">
+                                                <span className="w-1.5 h-1.5 mt-2 bg-blue-500 rounded-full flex-shrink-0"></span>
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </div>
                             </div>
 
-                            <ImageGallery images={hostelImages} />
+                            <ImageGallery images={gymImages} />
                         </div>
                     </div>
                 </section>
