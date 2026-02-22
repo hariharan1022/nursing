@@ -1,6 +1,23 @@
 import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const Contact = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash) {
+            const id = location.hash.substring(1);
+            const element = document.getElementById(id);
+            if (element) {
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: element.offsetTop - 120,
+                        behavior: 'smooth'
+                    });
+                }, 100);
+            }
+        }
+    }, [location]);
     return (
         <div className="contact-page">
             {/* Inner Hero */}
@@ -46,7 +63,7 @@ const Contact = () => {
                                 </div>
 
                                 {/* Phone */}
-                                <div id="phone" className="contact-card hover-lift">
+                                <div id="numbers" className="contact-card hover-lift">
                                     <div className="contact-icon-box">
                                         <i className="fas fa-phone-volume"></i>
                                     </div>
@@ -99,7 +116,7 @@ const Contact = () => {
                         </div>
 
                         {/* Right Column: Determine Campus Location */}
-                        <div className="reveal-zoom" data-reveal-init>
+                        <div id="map" className="reveal-zoom" data-reveal-init>
                             <div className="locate-card">
                                 <h3 style={{ fontSize: '1.8rem', color: 'var(--primary)', marginBottom: '10px' }}>Locate Our Campus</h3>
                                 <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', marginBottom: '25px', flexGrow: 0 }}>

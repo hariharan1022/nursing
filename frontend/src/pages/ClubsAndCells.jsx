@@ -6,16 +6,18 @@ const ClubsAndCells = () => {
 
     useEffect(() => {
         if (location.hash) {
-            const element = document.getElementById(location.hash.substring(1));
+            const id = location.hash.substring(1);
+            const element = document.getElementById(id);
             if (element) {
-                const navHeight = 100;
-                window.scrollTo({
-                    top: element.offsetTop - navHeight,
-                    behavior: 'smooth'
-                });
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: element.offsetTop - 120,
+                        behavior: 'smooth'
+                    });
+                }, 100);
             }
         }
-    }, [location]);
+    }, [location.hash]);
 
     useEffect(() => {
         const observerOptions = { threshold: 0.1 };

@@ -6,12 +6,19 @@ const About = () => {
 
     useEffect(() => {
         if (location.hash) {
-            const element = document.getElementById(location.hash.substring(1));
+            const id = location.hash.substring(1);
+            const element = document.getElementById(id);
             if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
+                setTimeout(() => {
+                    const navHeight = 120;
+                    window.scrollTo({
+                        top: element.offsetTop - navHeight,
+                        behavior: 'smooth'
+                    });
+                }, 100);
             }
         }
-    }, [location]);
+    }, [location.hash]);
 
     useEffect(() => {
         const observerOptions = { threshold: 0.1 };

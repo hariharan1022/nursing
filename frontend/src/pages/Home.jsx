@@ -156,7 +156,7 @@ const Home = () => {
                             <div className="slide-content">
                                 {slide.estd && <span className="estd-tag float-breathe" style={{ display: 'block', margin: '0 auto 30px', width: 'fit-content' }}>ESTD 2009</span>}
                                 <h1><span className="reveal-skew">{slide.title}</span></h1>
-                                <p>{slide.desc}</p>
+                                <p style={{ color: 'var(--accent)' }}>{slide.desc}</p>
                                 {slide.cta && <Link to={slide.link} className="btn btn-primary magnetic" style={{ marginTop: '25px', padding: '12px 30px' }}>{slide.cta} &rarr;</Link>}
                             </div>
                         </div>
@@ -244,6 +244,19 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* Global Navigation CTA */}
+            <section className="section reveal-blur" style={{ background: 'var(--primary)', color: 'white' }} data-reveal-init>
+                <div className="container text-center">
+                    <h2 style={{ fontSize: '2.5rem', marginBottom: '20px' }} className="pulse-glow">Join the 2026 Batch</h2>
+                    <p style={{ fontSize: '1.1rem', color: 'var(--accent)', fontWeight: 600, maxWidth: '600px', margin: '0 auto 30px' }}>
+                        Step into a rewarding career in healthcare with one of the most prestigious nursing institutions in Pudukkottai District.
+                    </p>
+                    <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+                        <Link to="/contact" className="btn btn-outline" style={{ borderColor: 'white', color: 'white' }}>Contact Office</Link>
+                    </div>
+                </div>
+            </section>
+
             {/* Gallery Section */}
             <section className="section" style={{ background: 'var(--bg-white)' }} id="gallery">
                 <div className="container">
@@ -286,53 +299,8 @@ const Home = () => {
                 </div>
             )}
 
-            {/* Global Navigation CTA */}
-            <section className="section reveal-blur" style={{ background: 'var(--primary)', color: 'white' }} data-reveal-init>
-                <div className="container text-center">
-                    <h2 style={{ fontSize: '2.5rem', marginBottom: '20px' }} className="pulse-glow">Join the 2026 Batch</h2>
-                    <p style={{ fontSize: '1.1rem', opacity: 0.9, maxWidth: '600px', margin: '0 auto 30px' }}>
-                        Step into a rewarding career in healthcare with one of the most prestigious nursing institutions in Pudukkottai District.
-                    </p>
-                    <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
-                        <Link to="/contact" className="btn btn-outline" style={{ borderColor: 'white', color: 'white' }}>Contact Office</Link>
-                    </div>
-                </div>
-            </section>
 
-            {/* Quick Links Summary - Before Footer */}
-            <section className="section">
-                <div className="container">
-                    <div className="grid grid-cols-3 sm-grid-cols-1" style={{ gap: '40px' }}>
-                        <div>
-                            <h4 style={{ color: 'var(--primary)', marginBottom: '20px' }}>Resources</h4>
-                            <ul style={{ listStyle: 'none', padding: 0, lineHeight: 2.2 }}>
-                                <li><Link to="/about" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Institution Profile</Link></li>
-                                <li><Link to="/faculty" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Faculty Directory</Link></li>
-                                <li><Link to="/admissions" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Degree Requirements</Link></li>
-                                <li><Link to="/facilities#clinical" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>Clinical Affiliations</Link></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 style={{ color: 'var(--primary)', marginBottom: '20px' }}>Affiliations</h4>
-                            <ul style={{ listStyle: 'none', padding: 0, lineHeight: 2.2 }}>
-                                <li><a href="https://www.indiannursingcouncil.org/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>INC</a></li>
-                                <li><a href="https://tamilnadunursingcouncil.com/#/home" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>TNNMC</a></li>
-                                <li><a href="https://www.tnmgrmu.ac.in/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>The Tamil Nadu Dr. M.G.R. Medical University</a></li>
-                                <li><a href="https://tnhealth.tn.gov.in/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>TNHFW</a></li>
-                                <li><a href="https://tnmedicalselection.net/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-muted)', textDecoration: 'none' }}>DME Selection Committee</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 style={{ color: 'var(--primary)', marginBottom: '20px' }}>Contact</h4>
-                            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-                                Lena Vilakku, Pudukkottai - 622 507.<br />
-                                Phone: +91 75021 73000<br />
-                                Email: info@mzcn.in
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
         </div>
     );
 };

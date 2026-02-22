@@ -8,8 +8,26 @@ const Feedback = () => {
     useEffect(() => {
         const params = new URLSearchParams(location.search);
         const tab = params.get('tab');
-        if (tab === 'staff-student' || tab === 'course' || tab === 'hostel' || tab === 'general' || tab === 'institutional') {
-            setActiveTab(tab);
+        const hash = location.hash.replace('#', '');
+
+        const validTabs = ['staff-student', 'course', 'hostel', 'general', 'institutional', 'quality'];
+        const selectedTab = tab || hash;
+
+        if (selectedTab && validTabs.includes(selectedTab)) {
+            // Map 'quality' hash to 'institutional' tab if necessary
+            const tabToSet = selectedTab === 'quality' ? 'institutional' : selectedTab;
+            setActiveTab(tabToSet);
+
+            // Scroll to content
+            const element = document.querySelector('.feedback-content');
+            if (element) {
+                setTimeout(() => {
+                    window.scrollTo({
+                        top: element.offsetTop - 150,
+                        behavior: 'smooth'
+                    });
+                }, 100);
+            }
         }
     }, [location]);
 

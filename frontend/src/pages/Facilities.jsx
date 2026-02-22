@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
+import { useLocation } from 'react-router-dom';
 import { BookOpen, Bus, Coffee, Dumbbell, Home, Landmark, PlusCircle, Wifi, X, ZoomIn } from 'lucide-react';
 import '../styles/Gallery.css';
 
@@ -154,6 +155,25 @@ const tabs = [
 
 const Facilities = () => {
     const [activeTab, setActiveTab] = useState('library');
+    const location = useLocation();
+
+    // Handle initial hash scroll and hash changes
+    useEffect(() => {
+        const hash = location.hash.replace('#', '');
+        if (hash) {
+            const element = document.getElementById(hash);
+            if (element) {
+                setTimeout(() => {
+                    const navHeight = 120; // Exact height of the sticky header
+                    window.scrollTo({
+                        top: element.offsetTop - navHeight,
+                        behavior: 'smooth'
+                    });
+                    setActiveTab(hash);
+                }, 100);
+            }
+        }
+    }, [location.hash]);
 
     useEffect(() => {
         const observerOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
