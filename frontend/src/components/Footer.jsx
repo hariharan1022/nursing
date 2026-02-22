@@ -348,11 +348,11 @@ const Footer = () => {
                 <div style={{ marginTop: '20px', padding: '15px 0', borderTop: '1px solid rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
                     <div className="affiliation-container" style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', alignItems: 'center', justifyContent: 'center' }}>
                         <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.8rem', marginRight: '5px' }}>Our Affiliations:</span>
-                        <a href="#" className="affiliation-tag">INC</a>
-                        <a href="#" className="affiliation-tag">TNNMC</a>
-                        <a href="#" className="affiliation-tag">M.G.R. University</a>
-                        <a href="#" className="affiliation-tag">TNHFW</a>
-                        <a href="#" className="affiliation-tag">DME</a>
+                        <a href="https://www.indiannursingcouncil.org/" target="_blank" rel="noopener noreferrer" className="affiliation-tag">INC</a>
+                        <a href="https://www.tamilnadunursingcouncil.com/" target="_blank" rel="noopener noreferrer" className="affiliation-tag">TNNMC</a>
+                        <a href="https://www.tnmgrmu.ac.in/" target="_blank" rel="noopener noreferrer" className="affiliation-tag">M.G.R. University</a>
+                        <a href="https://tnhealth.tn.gov.in/" target="_blank" rel="noopener noreferrer" className="affiliation-tag">TNHFW</a>
+                        <a href="https://tnmedicalselection.org/" target="_blank" rel="noopener noreferrer" className="affiliation-tag">DME</a>
                     </div>
                 </div>
 
