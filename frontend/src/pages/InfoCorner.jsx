@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 
 // Import Featured Images
@@ -170,6 +170,25 @@ const InfoCorner = () => {
         }
     ];
 
+    const [selectedItem, setSelectedItem] = useState(null);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const openLightbox = (item) => {
+        setSelectedItem(item);
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeLightbox = () => {
+        setSelectedItem(null);
+        document.body.style.overflow = 'auto';
+    };
+
     return (
         <div className="info-corner-page">
             {/* Hero Section */}
@@ -222,87 +241,99 @@ const InfoCorner = () => {
 
                         {/* Content Area */}
                         <div className="info-content content-col">
-                            {/* Announcements */}
-                            <div id="announcements" style={{ marginBottom: '60px' }}>
-                                <h2 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                            {/* Announcements Section - Top */}
+                            <div id="announcements" style={{ marginBottom: '50px' }}>
+                                <h2 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px', borderBottom: '2px solid var(--accent)', paddingBottom: '10px' }}>
                                     <i className="fas fa-bullhorn" style={{ color: 'var(--accent)' }}></i> Announcements
                                 </h2>
 
-                                {/* Dynamic Announcements (Images only) */}
+                                {/* Dynamic Announcements Grid */}
                                 {updates.announcements.length > 0 && (
-                                    <div className="updates-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '20px', marginBottom: '30px' }}>
+                                    <div className="updates-sub-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '20px', marginBottom: '25px' }}>
                                         {updates.announcements.map((ann, idx) => (
-                                            <div key={`dyn-ann-${idx}`} className="update-card hover-lift reveal-blur" style={{ background: 'white', borderRadius: '15px', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
-                                                <div style={{ height: '180px', overflow: 'hidden' }}>
+                                            <div key={`dyn-ann-${idx}`}
+                                                className="update-card hover-lift cursor-pointer"
+                                                onClick={() => openLightbox({ ...ann, image: ann.src })}
+                                                style={{ background: 'white', borderRadius: '12px', overflow: 'hidden', boxShadow: 'var(--shadow-sm)', border: '1px solid #eee' }}>
+                                                <div style={{ height: '140px', overflow: 'hidden' }}>
                                                     <img src={ann.src} alt={ann.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                                 </div>
-                                                <div style={{ padding: '20px' }}>
-                                                    <span className="info-type-tag" style={{ background: 'rgba(212, 175, 55, 0.1)', color: 'var(--accent-dark)', marginBottom: '10px', fontSize: '0.7rem' }}>{ann.date}</span>
-                                                    <h4 style={{ color: 'var(--primary)', margin: '5px 0' }}>{ann.title}</h4>
+                                                <div style={{ padding: '15px' }}>
+                                                    <span className="info-type-tag" style={{ background: 'rgba(212, 175, 55, 0.1)', color: 'var(--accent-dark)', marginBottom: '8px', fontSize: '0.65rem' }}>{ann.date}</span>
+                                                    <h4 style={{ color: 'var(--primary)', margin: '4px 0', fontSize: '0.9rem', lineHeight: '1.4' }}>{ann.title}</h4>
                                                 </div>
                                             </div>
                                         ))}
                                     </div>
                                 )}
 
-                                {/* Static Announcements (Featured and Text) */}
-                                {staticAnnouncements.map((ann, idx) => (
-                                    <div key={idx} className={`info-card hover-lift reveal-blur ${ann.image ? 'featured-card' : ''}`} style={ann.image ? { padding: '0', overflow: 'hidden' } : {}}>
-                                        {ann.image && (
-                                            <div style={{ width: '100%', height: '400px', maxHeight: '50vh', overflow: 'hidden', position: 'relative' }}>
-                                                <img src={ann.image} alt={ann.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+                                {/* Static Featured Announcements */}
+                                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '25px' }}>
+                                    {staticAnnouncements.map((ann, idx) => (
+                                        <div key={idx}
+                                            className="info-card-compact hover-lift reveal-blur cursor-pointer"
+                                            onClick={() => openLightbox(ann)}
+                                            style={{ background: 'white', borderRadius: '15px', overflow: 'hidden', boxShadow: 'var(--shadow-md)', border: '1px solid #eee' }}>
+                                            {ann.image && (
+                                                <div style={{ width: '100%', height: '220px', overflow: 'hidden' }}>
+                                                    <img src={ann.image} alt={ann.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                                </div>
+                                            )}
+                                            <div style={{ padding: '20px' }}>
+                                                <span className="info-type-tag" style={{ background: 'var(--bg-light)', color: 'var(--primary)', fontSize: '0.7rem', padding: '4px 12px' }}>{ann.type}</span>
+                                                <h4 style={{ color: 'var(--primary)', margin: '12px 0', fontSize: '1.1rem' }}>{ann.title}</h4>
+                                                <p style={{ margin: 0, color: 'var(--text-muted)', lineHeight: '1.6', fontSize: '0.9rem' }}>{ann.text ? ann.text.substring(0, 180) + '...' : 'No description available.'}</p>
                                             </div>
-                                        )}
-                                        <div style={ann.image ? { padding: '30px' } : {}}>
-                                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px' }}>
-                                                <span className="info-type-tag" style={{ background: ann.image ? 'var(--primary)' : 'var(--bg-light)', color: ann.image ? 'white' : 'var(--primary)' }}>{ann.type}</span>
-                                            </div>
-                                            <h4 style={{ color: 'var(--primary)', marginBottom: '15px', fontSize: ann.image ? '1.5rem' : '1.2rem' }}>{ann.title}</h4>
-                                            <p style={{ margin: 0, color: 'var(--text-muted)', lineHeight: '1.8' }}>{ann.text}</p>
-                                            {ann.tags && <p style={{ marginTop: '15px', color: 'var(--accent)', fontSize: '0.85rem', fontWeight: 600 }}>{ann.tags}</p>}
                                         </div>
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
                             </div>
 
-                            {/* News & Events */}
-                            <div id="news" style={{ marginBottom: '60px' }}>
-                                <h2 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                            {/* News & Events Section - Bottom */}
+                            <div id="news" style={{ marginBottom: '50px' }}>
+                                <h2 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px', borderBottom: '2px solid var(--primary)', paddingBottom: '10px' }}>
                                     <i className="fas fa-newspaper" style={{ color: 'var(--accent)' }}></i> News & Events
                                 </h2>
 
-                                {/* Dynamic News (Images only) */}
+                                {/* Dynamic News Grid */}
                                 {updates.news.length > 0 && (
-                                    <div className="updates-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '20px', marginBottom: '30px' }}>
+                                    <div className="updates-sub-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '20px', marginBottom: '25px' }}>
                                         {updates.news.map((news, idx) => (
-                                            <div key={`dyn-news-${idx}`} className="update-card hover-lift reveal-blur" style={{ background: 'white', borderRadius: '15px', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
-                                                <div style={{ height: '180px', overflow: 'hidden' }}>
+                                            <div key={`dyn-news-${idx}`}
+                                                className="update-card hover-lift cursor-pointer"
+                                                onClick={() => openLightbox({ ...news, image: news.src })}
+                                                style={{ background: 'white', borderRadius: '12px', overflow: 'hidden', boxShadow: 'var(--shadow-sm)', border: '1px solid #eee' }}>
+                                                <div style={{ height: '140px', overflow: 'hidden' }}>
                                                     <img src={news.src} alt={news.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                                 </div>
-                                                <div style={{ padding: '20px' }}>
-                                                    <span className="info-type-tag" style={{ background: 'var(--primary)', color: 'white', marginBottom: '10px', fontSize: '0.7rem' }}>{news.date}</span>
-                                                    <h4 style={{ color: 'var(--primary)', margin: '5px 0' }}>{news.title}</h4>
+                                                <div style={{ padding: '15px' }}>
+                                                    <span className="info-type-tag" style={{ background: 'var(--primary)', color: 'white', marginBottom: '8px', fontSize: '0.65rem' }}>{news.date}</span>
+                                                    <h4 style={{ color: 'var(--primary)', margin: '4px 0', fontSize: '0.9rem', lineHeight: '1.4' }}>{news.title}</h4>
                                                 </div>
                                             </div>
                                         ))}
                                     </div>
                                 )}
 
-                                {staticNews.map((news, idx) => (
-                                    <div key={idx} className={`info-card hover-lift reveal-blur ${news.image ? 'featured-card' : ''}`} style={news.image ? { padding: '0', borderLeftColor: 'var(--accent)', overflow: 'hidden' } : { borderLeftColor: 'var(--primary)' }}>
-                                        {news.image && (
-                                            <div style={{ width: '100%', height: '400px', maxHeight: '50vh', overflow: 'hidden', position: 'relative' }}>
-                                                <img src={news.image} alt={news.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+                                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '25px' }}>
+                                    {staticNews.map((news, idx) => (
+                                        <div key={idx}
+                                            className="info-card-compact hover-lift reveal-blur cursor-pointer"
+                                            onClick={() => openLightbox(news)}
+                                            style={{ background: 'white', borderRadius: '15px', overflow: 'hidden', boxShadow: 'var(--shadow-md)', border: '1px solid #eee' }}>
+                                            {news.image && (
+                                                <div style={{ width: '100%', height: '220px', overflow: 'hidden' }}>
+                                                    <img src={news.image} alt={news.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                                </div>
+                                            )}
+                                            <div style={{ padding: '20px' }}>
+                                                <span className="info-type-tag" style={{ background: 'var(--primary)', color: 'white', fontSize: '0.7rem', padding: '4px 12px' }}>{news.type}</span>
+                                                <h4 style={{ color: 'var(--primary)', margin: '12px 0', fontSize: '1.1rem' }}>{news.title}</h4>
+                                                <p style={{ margin: 0, color: 'var(--text-muted)', lineHeight: '1.6', fontSize: '0.9rem' }}>{news.text ? news.text.substring(0, 180) + '...' : 'No description available.'}</p>
                                             </div>
-                                        )}
-                                        <div style={news.image ? { padding: '30px' } : {}}>
-                                            <span className="info-type-tag" style={{ background: 'var(--primary)', color: 'white', marginBottom: '15px' }}>{news.type}</span>
-                                            <h4 style={{ color: 'var(--primary)', margin: '10px 0 15px', fontSize: news.image ? '1.5rem' : '1.2rem' }}>{news.title}</h4>
-                                            <p style={{ margin: 0, color: 'var(--text-muted)', lineHeight: '1.8' }}>{news.text}</p>
-                                            {news.tags && <p style={{ marginTop: '15px', color: 'var(--accent)', fontSize: '0.85rem', fontWeight: 600 }}>{news.tags}</p>}
                                         </div>
-                                    </div>
-                                ))}
+                                    ))}
+                                </div>
                             </div>
 
                             {/* Rank Holders */}
@@ -359,6 +390,201 @@ const InfoCorner = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Premium Info Lightbox */}
+            {selectedItem && (
+                <div className="lightbox-overlay" style={{
+                    position: 'fixed',
+                    inset: 0,
+                    background: 'rgba(0, 15, 30, 0.9)',
+                    zIndex: 10000,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '24px',
+                    backdropFilter: 'blur(15px)',
+                    WebkitBackdropFilter: 'blur(15px)',
+                    animation: 'fadeIn 0.4s ease-out'
+                }} onClick={closeLightbox}>
+                    {/* Visual Close Button */}
+                    <button onClick={closeLightbox} className="lightbox-close-btn" style={{
+                        position: 'absolute',
+                        top: '30px',
+                        right: '30px',
+                        width: '56px',
+                        height: '56px',
+                        borderRadius: '50%',
+                        background: 'rgba(255, 255, 255, 0.1)',
+                        border: '1px solid rgba(255, 255, 255, 0.2)',
+                        color: 'white',
+                        fontSize: '1.5rem',
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        zIndex: 10002,
+                        backdropFilter: 'blur(10px)',
+                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    }}>
+                        <i className="fas fa-times"></i>
+                    </button>
+
+                    <div
+                        className="lightbox-card-premium"
+                        style={{
+                            background: 'white',
+                            maxWidth: '1100px',
+                            width: '100%',
+                            borderRadius: '32px',
+                            overflow: 'hidden',
+                            display: 'flex',
+                            flexDirection: windowWidth < 900 ? 'column' : 'row',
+                            maxHeight: '85vh',
+                            boxShadow: '0 40px 100px -20px rgba(0,0,0,0.6)',
+                            position: 'relative',
+                            opacity: 1,
+                            transform: 'scale(1)',
+                            zIndex: 10001,
+                            animation: 'fadeInScale 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+                        }}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Image Showcase Section */}
+                        <div style={{
+                            flex: '1.2',
+                            minHeight: windowWidth < 900 ? '250px' : '500px',
+                            background: '#001c30',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            position: 'relative',
+                            overflow: 'hidden'
+                        }}>
+                            {/* Blurred background for depth */}
+                            <div style={{
+                                position: 'absolute',
+                                inset: -20,
+                                backgroundImage: `url(${selectedItem.image})`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                                filter: 'blur(40px) brightness(0.4)',
+                                opacity: 0.6
+                            }}></div>
+
+                            <img src={selectedItem.image} alt={selectedItem.title}
+                                style={{
+                                    maxWidth: '92%',
+                                    maxHeight: '92%',
+                                    objectFit: 'contain',
+                                    position: 'relative',
+                                    zIndex: 2,
+                                    boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
+                                    borderRadius: '8px'
+                                }} />
+                        </div>
+
+                        {/* Details Content Section */}
+                        <div style={{
+                            flex: '1',
+                            padding: windowWidth < 600 ? '30px 24px' : '50px',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            overflowY: 'auto',
+                            background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)'
+                        }}>
+                            <div className="reveal-blur active">
+                                <span style={{
+                                    background: 'var(--primary)',
+                                    color: 'white',
+                                    padding: '6px 16px',
+                                    borderRadius: '50px',
+                                    fontSize: '0.75rem',
+                                    fontWeight: 800,
+                                    letterSpacing: '1px',
+                                    textTransform: 'uppercase',
+                                    boxShadow: '0 4px 12px rgba(0, 43, 91, 0.2)'
+                                }}>{selectedItem.type || selectedItem.date}</span>
+
+                                <h2 style={{
+                                    color: 'var(--primary)',
+                                    marginTop: '24px',
+                                    marginBottom: '16px',
+                                    fontSize: windowWidth < 600 ? '1.5rem' : '2.2rem',
+                                    fontWeight: 800,
+                                    lineHeight: '1.2',
+                                    letterSpacing: '-0.5px',
+                                    fontFamily: 'Outfit, sans-serif'
+                                }}>{selectedItem.title}</h2>
+
+                                <div style={{
+                                    width: '60px',
+                                    height: '4px',
+                                    background: 'var(--accent)',
+                                    borderRadius: '2px',
+                                    marginBottom: '24px'
+                                }}></div>
+
+                                <p style={{
+                                    color: '#475569',
+                                    lineHeight: '1.8',
+                                    fontSize: '1.05rem',
+                                    marginBottom: '30px',
+                                    fontWeight: '400'
+                                }}>
+                                    {selectedItem.text || "View the official announcement image for full details regarding this update."}
+                                </p>
+
+                                {selectedItem.tags && selectedItem.tags.length > 0 && (
+                                    <div style={{
+                                        display: 'flex',
+                                        flexWrap: 'wrap',
+                                        gap: '12px',
+                                        paddingTop: '20px',
+                                        borderTop: '1px solid #e2e8f0'
+                                    }}>
+                                        {selectedItem.tags.split(' ').map((tag, i) => (
+                                            <span key={i} style={{
+                                                color: 'var(--primary)',
+                                                background: 'rgba(0, 43, 91, 0.05)',
+                                                padding: '4px 12px',
+                                                borderRadius: '6px',
+                                                fontWeight: 600,
+                                                fontSize: '0.85rem'
+                                            }}>{tag}</span>
+                                        ))}
+                                    </div>
+                                )}
+
+                                <button
+                                    onClick={closeLightbox}
+                                    style={{
+                                        marginTop: '40px',
+                                        width: '100%',
+                                        padding: '16px',
+                                        borderRadius: '16px',
+                                        background: 'var(--primary)',
+                                        color: 'white',
+                                        border: 'none',
+                                        fontWeight: 800,
+                                        fontSize: '0.95rem',
+                                        letterSpacing: '1.5px',
+                                        cursor: 'pointer',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        gap: '10px',
+                                        boxShadow: '0 12px 24px -8px rgba(0, 43, 91, 0.4)',
+                                        transition: 'all 0.3s ease'
+                                    }}
+                                    className="btn-hover-glow"
+                                >
+                                    DISMISS <i className="fas fa-arrow-right" style={{ fontSize: '0.8rem' }}></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

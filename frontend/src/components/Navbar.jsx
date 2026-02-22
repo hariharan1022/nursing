@@ -21,8 +21,14 @@ const Navbar = () => {
         { title: 'Organogram', path: '/about#organogram', keywords: 'organogram structure organization' },
         { title: 'Course Details', path: '/course-details', keywords: 'course details curriculum' },
         { title: 'B.Sc. Nursing', path: '/bsc-nursing', keywords: 'bsc nursing degree program' },
-        { title: 'Campus Facilities', path: '/facilities', keywords: 'campus facilities infrastructure lab library' },
+        { title: 'Academic Infrastructure', path: '/facilities#academic', keywords: 'classrooms seminar hall infrastructure' },
+        { title: 'Library & Resources', path: '/facilities#library', keywords: 'library books journals e-library research' },
+        { title: 'Specialized Laboratories', path: '/facilities#laboratories', keywords: 'labs clinical nursing simulation' },
+        { title: 'Campus Environment', path: '/facilities#campus', keywords: 'campus environment green eco-friendly gym' },
+        { title: 'Hostel & Amenities', path: '/facilities#hostel', keywords: 'hostel staying accommodation canteen atm' },
+        { title: 'Transport & Connectivity', path: '/facilities#transport', keywords: 'transport bus railway connectivity' },
         { title: 'Our Faculty', path: '/faculty', keywords: 'faculty teachers professors staff' },
+
         { title: 'Clubs & Cells', path: '/clubs-and-cells', keywords: 'clubs cells activities extracurricular' },
         { title: 'Information Corner', path: '/info-corner', keywords: 'info corner information news' },
         { title: 'Announcements', path: '/info-corner#announcements', keywords: 'announcements notice' },
@@ -214,12 +220,13 @@ const Navbar = () => {
                                     Campus Life <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'campus' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                                 </NavLink>
                                 <ul className={`dropdown ${activeDropdown === 'campus' ? 'active-mobile' : ''}`}>
+                                    <li><Link to="/facilities#academic" onClick={closeMobileMenu}><i className="fas fa-university"></i> Academic</Link></li>
                                     <li><Link to="/facilities#library" onClick={closeMobileMenu}><i className="fas fa-book"></i> Library</Link></li>
-                                    <li><Link to="/facilities#hostel" onClick={closeMobileMenu}><i className="fas fa-home"></i> Hostel</Link></li>
-                                    <li><Link to="/facilities#gym" onClick={closeMobileMenu}><i className="fas fa-dumbbell"></i> Gym</Link></li>
+                                    <li><Link to="/facilities#laboratories" onClick={closeMobileMenu}><i className="fas fa-flask"></i> Laboratories</Link></li>
+                                    <li><Link to="/facilities#campus" onClick={closeMobileMenu}><i className="fas fa-campground"></i> Campus Environment</Link></li>
+                                    <li><Link to="/facilities#hostel" onClick={closeMobileMenu}><i className="fas fa-bed"></i> Hostel & Amenities</Link></li>
                                     <li><Link to="/facilities#transport" onClick={closeMobileMenu}><i className="fas fa-bus"></i> Transport</Link></li>
-                                    <li><Link to="/facilities#extra-plus" onClick={closeMobileMenu}><i className="fas fa-plus-circle"></i> Extra Plus</Link></li>
-                                    <li><Link to="/gallery" onClick={closeMobileMenu}><i className="fas fa-images"></i> Gallery</Link></li>
+
                                 </ul>
                             </li>
 
