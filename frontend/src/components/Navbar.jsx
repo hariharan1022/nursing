@@ -315,7 +315,6 @@ const Navbar = () => {
                                 <ul className={`dropdown ${activeDropdown === 'portals' ? 'active-mobile' : ''}`}>
                                     <li><a href="http://betanet.mzcet.in:8080/" target="_blank" rel="noopener noreferrer"><i className="fas fa-user-graduate" style={{ width: '20px', color: 'var(--accent)' }}></i> Student Portal</a></li>
                                     <li><a href="https://mail.google.com/a/mzcn.in" target="_blank" rel="noopener noreferrer"><i className="fas fa-envelope-open-text" style={{ width: '20px', color: 'var(--accent)' }}></i> Web Mail</a></li>
-                                    <li><Link to="/contact#helpdesk" onClick={closeMobileMenu}><i className="fas fa-headset" style={{ width: '20px', color: 'var(--accent)' }}></i> Helpdesk</Link></li>
                                 </ul>
                             </li>
                         </ul>
