@@ -1835,13 +1835,19 @@ nav#navbar {
 
 @media (max-width: 768px) {
     .slider-container {
-        height: 550px;
-        /* Further increased for content breathing room */
-        margin-bottom: 30px;
+        height: 480px;
+        margin-bottom: 25px;
     }
 
     .slide-content .btn {
         display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider-container {
+        height: 380px;
+        /* Even more compact for 480px and below */
     }
 }
 
@@ -1894,11 +1900,11 @@ nav#navbar {
     position: absolute;
     text-align: center;
     color: white;
-    max-width: 90%;
-    /* Better for mobile */
-    padding: 20px;
+    max-width: 85%;
+    /* Narrower for better centering */
+    padding: 15px;
     z-index: 10;
-    transform: translateY(30px) scale(0.98);
+    transform: translateY(20px) scale(0.98);
     transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
     opacity: 0;
     will-change: transform, opacity;
@@ -1998,12 +2004,30 @@ nav#navbar {
 
 @media (max-width: 768px) {
     .slide-content h1 {
-        font-size: 1.8rem;
-        margin-bottom: 10px;
+        font-size: 1.6rem;
+        /* Smaller for better fit */
+        margin-bottom: 8px;
     }
 
     .slide-content p {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        /* Slightly smaller */
+        line-height: 1.4;
+    }
+
+    .slider-dots {
+        bottom: 15px;
+        /* Moved up slightly */
+        gap: 8px;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .dot.active {
+        width: 20px;
     }
 }
 
@@ -2268,35 +2292,24 @@ footer a:hover {
 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 12px !important;
+        /* Smaller gap */
+        padding: 0 10px;
         margin-top: 20px;
-        /* Added positive margin to stop 'cutting' the banner */
     }
 
-    .about-img {
-        order: 2;
+    .stat-card {
+        padding: 20px 15px !important;
+        /* Reduced padding */
     }
 
-    .about-text {
-        order: 1;
-        text-align: center;
+    .stat-card h3 {
+        font-size: 1.6rem !important;
+        /* Smaller text */
     }
 
-    .about-text .grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    .form-container {
-        order: 1;
-    }
-
-    .contact-info {
-        order: 2;
-        text-align: center;
-    }
-
-    .contact-info>div {
-        align-items: center;
-        text-align: left;
+    .stat-card p {
+        font-size: 0.75rem !important;
     }
 }
 
