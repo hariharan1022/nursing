@@ -15,27 +15,19 @@ const Admissions = () => {
         return () => observer.disconnect();
     }, []);
 
-    const documents = [
-        '10th & 12th Mark Sheets', 'Transfer Certificate', 'Community Certificate',
-        'Aadhar Card Xerox', 'Passport Size Photos (5)', 'Migration Certificate*',
-        'Income Certificate', 'Physical Fitness Certificate'
-    ];
-
     return (
-        <div className="admissions-page">
+        <div className="admissions-page overflow-x-hidden">
             {/* Hero Section */}
-            <div className="relative bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white py-32 overflow-hidden">
-                <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] animate-pulse"></div>
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-slate-900/50 via-transparent to-transparent"></div>
-                <div className="container mx-auto px-4 relative z-10 text-center">
-                    <span className="hero-tag-gold">
+            <div className="inner-hero">
+                <div className="container relative z-10 text-center">
+                    <span className="hero-tag-gold reveal-zoom" data-reveal-init>
                         ADMISSION PORTAL
                     </span>
-                    <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-100 via-white to-blue-200 animate-fade-in-scale stagger-1 drop-shadow-2xl">
+                    <h1 className="reveal-skew stagger-1" data-reveal-init style={{ color: 'white' }}>
                         Join the Future of Nursing
                     </h1>
-                    <p className="max-w-3xl mx-auto text-xl text-blue-100/90 leading-relaxed animate-fade-in-scale stagger-2 font-light drop-shadow-sm">
-                        Welcome to the Admission Portal of Mount Zion College of Nursing. Begin your journey toward a rewarding career in healthcare.
+                    <p className="reveal-blur stagger-2" data-reveal-init style={{ color: 'rgba(255,255,255,0.9)', maxWidth: '800px', margin: '0 auto' }}>
+                        Admission to the B.Sc. Nursing Programme for the academic year {new Date().getFullYear()} is governed by Indian Nursing Council norms.
                     </p>
                 </div>
             </div>
@@ -44,127 +36,243 @@ const Admissions = () => {
                 <div className="container">
                     <div className="page-grid reverse">
                         <div className="admission-main content-col">
-                            {/* Eligibility */}
-                            <div id="eligibility" className="admission-card reveal-flip" data-reveal-init>
-                                <h3 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
-                                    <i className="fas fa-user-graduate" style={{ color: 'var(--accent)' }}></i>
-                                    Eligibility Criteria
+                            {/* General Eligibility */}
+                            <div id="general-eligibility" className="admission-card reveal-skew" data-reveal-init>
+                                <h3 className="section-title-premium">
+                                    <i className="fas fa-graduation-cap"></i>
+                                    General Eligibility Criteria
                                 </h3>
+                                <p className="mb-8 italic text-muted text-lg border-b pb-4">Applicable to All Categories</p>
 
-                                <h4 style={{ color: 'var(--primary)', marginBottom: '15px' }}>1. Local Candidates (B.Sc. Nursing)</h4>
-                                <ul style={{ listStyle: 'none', padding: 0 }}>
-                                    {['Passed 10+2 with Science (Physics, Chemistry, Biology) and English (Core/Elective).', 'Minimum aggregate of 45% marks from a recognized board (CBSE, ICSE, SSCE, etc.).', 'Candidate should be an Indian citizen and native of Tamil Nadu.'].map((item, i) => (
-                                        <li key={i} style={{ position: 'relative', paddingLeft: '30px', marginBottom: '12px', color: 'var(--text-muted)' }}>
-                                            <i className="fas fa-check-circle" style={{ position: 'absolute', left: 0, color: 'var(--accent)', top: '4px' }}></i>
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
+                                <div className="space-y-12">
+                                    <div className="eligibility-item">
+                                        <h4 className="flex items-center gap-4 text-primary text-xl font-bold mb-6">
+                                            <span className="eligibility-marker">1</span>
+                                            Age Limit
+                                        </h4>
+                                        <ul className="custom-list">
+                                            <li>Minimum age: 17 years on or before 31st December of the year of admission.</li>
+                                            <li>Maximum age: 35 years.</li>
+                                            <li>Upper age relaxation of 5 years for candidates with disability (as per norms).</li>
+                                        </ul>
+                                    </div>
 
-                                <h4 style={{ color: 'var(--primary)', margin: '30px 0 15px' }}>2. NRI Candidates</h4>
-                                <ul style={{ listStyle: 'none', padding: 0 }}>
-                                    {['12th-grade diploma or equivalent with 50% aggregate in PCB & English.', 'Photocopy of Passport and Visa required.', 'HIV/AIDS/COVID-19 test report from WHO recognized institution.'].map((item, i) => (
-                                        <li key={i} style={{ position: 'relative', paddingLeft: '30px', marginBottom: '12px', color: 'var(--text-muted)' }}>
-                                            <i className="fas fa-check-circle" style={{ position: 'absolute', left: 0, color: 'var(--accent)', top: '4px' }}></i>
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+                                    <div className="eligibility-item">
+                                        <h4 className="flex items-center gap-4 text-primary text-xl font-bold mb-6">
+                                            <span className="eligibility-marker">2</span>
+                                            Educational Qualification
+                                        </h4>
+                                        <ul className="custom-list">
+                                            <li>Passed 10+2 (Higher Secondary) with Physics, Chemistry, Biology, and English.</li>
+                                            <li className="mt-4">
+                                                <div className="p-4 bg-gray-50 rounded-2xl inline-block border border-gray-100">
+                                                    <strong className="text-secondary block mb-2">Minimum PCB Aggregate:</strong>
+                                                    <div className="flex gap-8">
+                                                        <span>General: <strong>45%</strong></span>
+                                                        <span>SC/ST/OBC: <strong>40%</strong></span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li className="mt-4">English must be passed individually.</li>
+                                            <li>Open School candidates (State Govt/NIOS) with Science & English are eligible.</li>
+                                        </ul>
+                                    </div>
 
-                            {/* Age Limit */}
-                            <div id="age-limit" className="admission-card reveal-blur" data-reveal-init>
-                                <h3 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
-                                    <i className="fas fa-calendar-alt" style={{ color: 'var(--accent)' }}></i>
-                                    Age Limit
-                                </h3>
-                                <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>Minimum age: 17 years completed by 31st December of the admission year.</p>
-                                <div style={{ overflowX: 'auto' }}>
-                                    <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                                        <thead>
-                                            <tr style={{ background: 'var(--bg-light)' }}>
-                                                <th style={{ padding: '15px', textAlign: 'left' }}>Category</th>
-                                                <th style={{ padding: '15px', textAlign: 'left' }}>Maximum Age</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr style={{ borderBottom: '1px solid #eee' }}>
-                                                <td style={{ padding: '15px' }}>OC / BC / MBC / DNC</td>
-                                                <td style={{ padding: '15px', fontWeight: 700 }}>30 Years</td>
-                                            </tr>
-                                            <tr style={{ borderBottom: '1px solid #eee' }}>
-                                                <td style={{ padding: '15px' }}>SC / SCA / ST</td>
-                                                <td style={{ padding: '15px', fontWeight: 700 }}>35 Years</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-
-                            {/* Documents */}
-                            <div id="documents" className="admission-card reveal-skew" data-reveal-init>
-                                <h3 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
-                                    <i className="fas fa-id-card" style={{ color: 'var(--accent)' }}></i>
-                                    Required Documents
-                                </h3>
-                                <div className="doc-grid">
-                                    {documents.map(doc => (
-                                        <div key={doc} className="doc-item">
-                                            <i className="fas fa-file-alt" style={{ marginRight: '10px', color: 'var(--accent)' }}></i> {doc}
+                                    <div className="eligibility-item">
+                                        <h4 className="flex items-center gap-4 text-primary text-xl font-bold mb-6">
+                                            <span className="eligibility-marker">3</span>
+                                            Entrance Examination
+                                        </h4>
+                                        <p className="mb-6 text-muted font-medium">Selection is strictly based on institutional excellence through our merit-based entrance test.</p>
+                                        <div className="blue-box-premium p-6 rounded-3xl mb-6 shadow-lg">
+                                            <h5 className="font-extrabold text-white mb-4 flex items-center gap-2">
+                                                <i className="fas fa-pen-nib text-accent"></i> Entrance Test Pattern (100 Marks)
+                                            </h5>
+                                            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+                                                {['Aptitude: 20', 'Physics: 20', 'Chemistry: 20', 'Biology: 20', 'English: 20'].map(m => (
+                                                    <div key={m} className="bg-white/10 backdrop-blur-md p-3 text-center rounded-xl border border-white/20 text-[10px] font-black uppercase tracking-wider text-white">{m}</div>
+                                                ))}
+                                            </div>
                                         </div>
-                                    ))}
+
+                                        <h5 className="font-bold text-sm text-primary uppercase mb-3 letter-spacing-1">Minimum Qualifying Percentiles:</h5>
+                                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                            <div className="p-3 bg-white border border-gray-100 rounded-xl text-center">
+                                                <p className="text-[10px] opacity-60 uppercase mb-1">General</p>
+                                                <p className="font-bold">50th</p>
+                                            </div>
+                                            <div className="p-3 bg-white border border-gray-100 rounded-xl text-center">
+                                                <p className="text-[10px] opacity-60 uppercase mb-1">SC/ST/OBC</p>
+                                                <p className="font-bold">40th</p>
+                                            </div>
+                                            <div className="p-3 bg-white border border-gray-100 rounded-xl text-center">
+                                                <p className="text-[10px] opacity-60 uppercase mb-1">Gen-PwD</p>
+                                                <p className="font-bold">45th</p>
+                                            </div>
+                                            <div className="p-3 bg-white border border-gray-100 rounded-xl text-center">
+                                                <p className="text-[10px] opacity-60 uppercase mb-1">Res-PwD</p>
+                                                <p className="font-bold">40th</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <p style={{ fontSize: '0.8rem', color: '#888', marginTop: '20px' }}>* Required for other state or NRI candidates.</p>
-                            </div>
 
-                            {/* Scholarship */}
-                            <div id="scholarships" className="admission-card reveal-zoom" data-reveal-init>
-                                <h3 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
-                                    <i className="fas fa-hand-holding-usd" style={{ color: 'var(--accent)' }}></i>
-                                    Scholarships
-                                </h3>
-                                <ul style={{ listStyle: 'none', padding: 0 }}>
-                                    <li style={{ marginBottom: '15px' }}>
-                                        <strong style={{ color: 'var(--primary)' }}>First Graduate Scholarship:</strong>
-                                        <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>Tuition fee concessions for students who are the first in their family to pursue a degree.</p>
-                                    </li>
-                                    <li>
-                                        <strong style={{ color: 'var(--primary)' }}>Government BC/MBC/SC/ST Scholarships:</strong>
-                                        <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>Eligible students can apply for state-sponsored scholarships as per government norms.</p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+                                    <div className="p-6 bg-gradient-to-br from-white to-blue-50/30 rounded-3xl border border-blue-50 shadow-sm">
+                                        <h4 className="text-primary font-bold mb-3 flex items-center gap-3">
+                                            <i className="fas fa-stethoscope text-accent"></i> Medical Fitness
+                                        </h4>
+                                        <p className="text-sm text-muted leading-relaxed font-medium">Candidates must be medically fit. Colour blind students are eligible if corrected with official aids.</p>
+                                    </div>
+                                    <div className="p-6 bg-gradient-to-br from-white to-blue-50/30 rounded-3xl border border-blue-50 shadow-sm">
+                                        <h4 className="text-primary font-bold mb-3 flex items-center gap-3">
+                                            <i className="fas fa-heart text-accent"></i> Marital Status
+                                        </h4>
+                                        <p className="text-sm text-muted leading-relaxed font-medium">Married candidates are legally eligible to apply for the B.Sc. Nursing programme.</p>
+                                    </div>
+                                </div>
 
-                        <div className="admission-sidebar sidebar-col">
-                            {/* Process */}
-                            <div id="selection" className="about-nav-card reveal-zoom" data-reveal-init style={{ marginBottom: '30px' }}>
-                                <h4 style={{ color: 'var(--primary)', marginBottom: '20px' }}>Selection Process</h4>
-                                <div className="process-steps">
-                                    {[
-                                        { step: '01', title: 'Application', desc: 'Apply online or visit our office' },
-                                        { step: '02', title: 'Entrance', desc: 'Institutional entrance examination' },
-                                        { step: '03', title: 'Interview', desc: 'Personal evaluation & Counseling' },
-                                        { step: '04', title: 'Fitness', desc: 'Medical clearance & Admission' }
-                                    ].map(item => (
-                                        <div key={item.step} className="process-step-item">
-                                            <span className="step-number">{item.step}</span>
+                                <div className="mt-12 blue-box-premium admission-timeline-box reveal-blur" data-reveal-init>
+                                    <div className="flex flex-col md:flex-row justify-between items-center gap-8 relative z-10">
+                                        <div className="flex items-center gap-4">
+                                            <i className="fas fa-clock text-4xl text-accent"></i>
                                             <div>
-                                                <h5 style={{ color: 'var(--primary)', margin: 0 }}>{item.title}</h5>
-                                                <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', margin: 0 }}>{item.desc}</p>
+                                                <h4 className="font-black text-2xl uppercase tracking-tight text-white">Admission Timeline</h4>
+                                                <p className="text-white/70 text-sm">Strict adherence to academic windows is required.</p>
+                                            </div>
+                                        </div>
+                                        <div className="flex gap-10">
+                                            <div className="text-center">
+                                                <p className="text-[10px] uppercase font-bold text-accent mb-1">Classes Start</p>
+                                                <p className="text-xl font-bold">1st August</p>
+                                            </div>
+                                            <div className="text-center">
+                                                <p className="text-[10px] uppercase font-bold text-accent mb-1">Final Cut-off</p>
+                                                <p className="text-xl font-bold">30th Sept</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Category Wise */}
+                            <div id="categories" className="admission-card reveal-left" data-reveal-init>
+                                <h3 className="section-title-premium">
+                                    <i className="fas fa-map-marked-alt"></i>
+                                    Category-wise Criteria
+                                </h3>
+
+                                <div className="space-y-8 mt-10">
+                                    <div className="category-block p-8 rounded-3xl bg-white border border-gray-100 shadow-sm border-l-[6px] border-accent">
+                                        <h4 className="text-primary font-black text-xl mb-5">Tamil Nadu Residents</h4>
+                                        <ul className="custom-list">
+                                            <li>Must be a domicile of Tamil Nadu state.</li>
+                                            <li>Reservation follows TN Government norms (SC/ST/OBC/MBC/EWS/PwD).</li>
+                                            <li>5% seats reserved for loco-motor disability (40%–50% of lower extremity).</li>
+                                            <li><strong>Mandatory:</strong> Community certificate issued by competent state authority.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="category-block p-8 rounded-3xl bg-white border border-gray-100 shadow-sm border-l-[6px] border-blue-500">
+                                        <h4 className="text-primary font-black text-xl mb-5">Other Indian Residents</h4>
+                                        <ul className="custom-list">
+                                            <li>Candidates from all other Indian states are eligible.</li>
+                                            <li>Must have valid 10+2 from a recognized Central/State board.</li>
+                                            <li>Reservation applicable as per prevailing Central Government norms.</li>
+                                            <li>Migration & Transfer Certificates are mandatory during counseling.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div className="category-block p-8 rounded-3xl bg-white border border-gray-100 shadow-sm border-l-[6px] border-orange-500">
+                                        <h4 className="text-primary font-black text-xl mb-5">Foreign Nationals</h4>
+                                        <ul className="custom-list italic">
+                                            <li>Must obtain <strong>Equivalency certificate</strong> from AIU, New Delhi.</li>
+                                            <li>Valid Student Visa and Passport are mandatory for all registrations.</li>
+                                            <li>Selection subject to University and SNRC verification of foreign credentials.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Reservation Policy */}
+                            <div id="reservation" className="admission-card reveal-right" data-reveal-init>
+                                <h3 className="section-title-premium">
+                                    <i className="fas fa-balance-scale-left"></i>
+                                    Reservation Policy
+                                </h3>
+                                <div className="p-8 bg-gray-50 rounded-3xl border border-gray-100">
+                                    <ul className="custom-list space-y-4">
+                                        <li>Sanctioned intake strictly governs reservation quotas.</li>
+                                        <li><strong>Eligibility Relaxation:</strong> 40% aggregate in PCB for SC/ST/OBC candidates.</li>
+                                        <li>5% seats reserved for loco-motor disability (40–50% disability range).</li>
+                                        <li>Certification must be authorized by the official State Medical Board.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            {/* Admission Committee */}
+                            <div id="committee" className="admission-card reveal-zoom" data-reveal-init>
+                                <h3 className="section-title-premium">
+                                    <i className="fas fa-shield-alt"></i>
+                                    Admission Committee
+                                </h3>
+                                <p className="mb-8 text-muted font-medium">The college leadership committee ensures total transparency and adherence to institutional excellence.</p>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    {[
+                                        { role: 'Principal', pos: 'Chairperson' },
+                                        { role: 'Vice-Principal', pos: 'Member' },
+                                        { role: 'Professor', pos: 'Member' },
+                                        { role: 'Chief Nursing Officer', pos: 'Member' }
+                                    ].map(member => (
+                                        <div key={member.role} className="flex items-center gap-4 p-5 bg-white border border-gray-100 rounded-2xl shadow-sm">
+                                            <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg">
+                                                <i className="fas fa-user-tie"></i>
+                                            </div>
+                                            <div>
+                                                <p className="font-black text-primary leading-tight">{member.role}</p>
+                                                <p className="text-[10px] text-accent font-bold uppercase tracking-widest">{member.pos}</p>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
                             </div>
+                        </div>
 
-                            {/* Action */}
-                            <div id="apply" className="apply-card reveal-blur" data-reveal-init>
-                                <div style={{ position: 'relative', zIndex: 2 }}>
-                                    <h3 style={{ color: 'white', marginBottom: '15px' }} className="pulse-glow">Start Your Application</h3>
-                                    <p style={{ fontSize: '0.9rem', opacity: 0.8, marginBottom: '25px' }}>Inquiries are now open for the {new Date().getFullYear()}-{new Date().getFullYear() + 1} academic year.</p>
-                                    <Link to="/contact" className="btn" style={{ background: 'var(--accent)', color: 'var(--primary)', width: '100%', fontWeight: 800, textDecoration: 'none', display: 'inline-block', textAlign: 'center' }}>INQUIRE NOW</Link>
-                                    <p style={{ fontSize: '0.8rem', marginTop: '20px', opacity: 0.6 }}>Selection based on eligibility and performance.</p>
+                        {/* Sidebar */}
+                        <div className="admission-sidebar sidebar-col">
+                            <div className="sticky top-24 space-y-8">
+                                <div className="bg-white p-8 rounded-[40px] shadow-premium border border-blue-50 reveal-blur" data-reveal-init>
+                                    <h4 className="text-primary font-black text-lg mb-6 border-b pb-3 border-gray-100">Navigate Portal</h4>
+                                    <div className="flex flex-col gap-3">
+                                        {[
+                                            { id: 'general-eligibility', label: 'Eligibility Criteria' },
+                                            { id: 'categories', label: 'Category Sourcing' },
+                                            { id: 'reservation', label: 'Reservation Rules' },
+                                            { id: 'committee', label: 'Admission Board' }
+                                        ].map(link => (
+                                            <a key={link.id} href={`#${link.id}`} className="p-4 rounded-2xl bg-gray-50 text-primary text-sm font-bold hover:bg-primary hover:text-white transition-all transform hover:scale-[1.02] shadow-sm">
+                                                {link.label}
+                                            </a>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className="blue-box-premium premium-sidebar-box reveal-zoom group" data-reveal-init>
+                                    <div className="absolute top-0 right-0 w-32 h-32 bg-accent opacity-10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700"></div>
+
+                                    <h3 className="text-3xl font-black mb-6 leading-tight">Start Your<br />Journey Today</h3>
+                                    <p className="text-blue-100 text-sm mb-8 leading-relaxed font-medium">
+                                        Applications for the current academic session are evaluated on a rolling merit basis. Secure your place in healthcare excellence.
+                                    </p>
+
+                                    <Link to="/contact" className="w-full py-5 bg-accent text-primary font-black rounded-2xl flex items-center justify-center gap-3 hover:bg-white transition-all shadow-xl">
+                                        INQUIRE NOW <i className="fas fa-arrow-right"></i>
+                                    </Link>
+
+                                    <div className="mt-8 pt-8 border-t border-white/10 text-center">
+                                        <p className="text-[10px] uppercase font-bold opacity-60 tracking-widest mb-2">Admission Helpdesk</p>
+                                        <p className="text-2xl font-black text-accent">+91 75021 73000</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

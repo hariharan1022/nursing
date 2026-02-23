@@ -20,28 +20,28 @@ const Home = () => {
             link: "/about"
         },
         {
-            img: `${import.meta.env.BASE_URL}photo/p5_files/banner2.jpg`,
+            img: `${import.meta.env.BASE_URL}photo/p5_files/banner2.jpeg`,
             title: "State-of-the-art Clinical Facilities",
             desc: "Real-world training in our 500-bed multi-speciality hospital.",
             cta: "View Facilities",
             link: "/facilities"
         },
         {
-            img: `${import.meta.env.BASE_URL}photo/p5_files/banner3.jpg`,
+            img: `${import.meta.env.BASE_URL}photo/p5_files/banner3.jpeg`,
             title: "Empowering Future Nurses",
             desc: "Comprehensive curriculum approved by INC and TNNMC Council.",
             cta: "Our Programs",
             link: "/bsc-nursing"
         },
         {
-            img: `${import.meta.env.BASE_URL}photo/p5_files/banner4.jpg`,
+            img: `${import.meta.env.BASE_URL}photo/p5_files/banner4.jpeg`,
             title: "Admissions Open 2026",
             desc: "Join the premier nursing college in Pudukkottai District.",
             cta: "Apply Now",
             link: "/admissions"
         },
         {
-            img: `${import.meta.env.BASE_URL}photo/p5_files/banner5.jpg`,
+            img: `${import.meta.env.BASE_URL}photo/p5_files/banner5.jpeg`,
             title: "Advanced Research Labs",
             desc: "Fostering innovation and scientific enquiry in healthcare.",
             cta: "Discover More",
@@ -245,14 +245,20 @@ const Home = () => {
             </section>
 
             {/* Global Navigation CTA */}
-            <section className="section reveal-blur" style={{ background: 'var(--primary)', color: 'white' }} data-reveal-init>
-                <div className="container text-center">
-                    <h2 style={{ fontSize: '2.5rem', marginBottom: '20px' }} className="pulse-glow">Join the 2026 Batch</h2>
-                    <p style={{ fontSize: '1.1rem', color: 'var(--accent)', fontWeight: 600, maxWidth: '600px', margin: '0 auto 30px' }}>
-                        Step into a rewarding career in healthcare with one of the most prestigious nursing institutions in Pudukkottai District.
-                    </p>
-                    <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
-                        <Link to="/contact" className="btn btn-outline" style={{ borderColor: 'white', color: 'white' }}>Contact Office</Link>
+            <section className="section reveal-blur" style={{ padding: '80px 0', background: 'var(--bg-light)' }} data-reveal-init>
+                <div className="container">
+                    <div className="inner-hero" style={{ margin: '0', borderRadius: '50px', padding: '120px 40px', boxShadow: '0 40px 80px rgba(0, 0, 0, 0.4)' }}>
+                        <div className="text-center">
+                            <span className="hero-tag-gold float-breathe">Join the 2026 Batch</span>
+                            <h2 style={{ fontSize: '3.8rem', marginBottom: '20px', color: 'white', fontWeight: 800, textShadow: '0 10px 30px rgba(0,0,0,0.4)' }} className="reveal-skew">Empowering Excellence</h2>
+                            <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.95)', fontWeight: 500, maxWidth: '800px', margin: '0 auto 40px' }}>
+                                Step into a rewarding career in healthcare with one of the most prestigious nursing institutions in Pudukkottai District.
+                            </p>
+                            <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                                <Link to="/admissions" className="btn btn-primary magnetic" style={{ padding: '18px 45px', fontSize: '1rem' }}>Apply For Admission &rarr;</Link>
+                                <Link to="/contact" className="btn btn-outline" style={{ borderColor: 'white', color: 'white', padding: '18px 45px', fontSize: '1rem' }}>Contact Office</Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>

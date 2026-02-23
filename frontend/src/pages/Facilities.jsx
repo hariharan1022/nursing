@@ -215,17 +215,15 @@ const Facilities = () => {
         <div className="min-h-screen bg-gray-50 text-gray-800 font-sans selection:bg-blue-100 selection:text-blue-900">
 
             {/* Hero Section */}
-            <div className="relative bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white py-32 overflow-hidden">
-                <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] animate-pulse"></div>
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-slate-900/50 via-transparent to-transparent"></div>
+            <div className="inner-hero">
                 <div className="container mx-auto px-4 relative z-10 text-center">
-                    <span className="hero-tag-gold animate-fade-in">
+                    <span className="hero-tag-gold reveal-zoom" data-reveal-init>
                         Excellence in Infrastructure
                     </span>
-                    <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-100 via-white to-blue-200 animate-fade-in-scale stagger-1 drop-shadow-2xl">
+                    <h1 className="reveal-skew stagger-1" data-reveal-init style={{ color: 'white' }}>
                         Physical Facilities
                     </h1>
-                    <p className="max-w-3xl mx-auto text-xl text-blue-100/90 leading-relaxed animate-fade-in-scale stagger-2 font-light drop-shadow-sm">
+                    <p className="reveal-blur stagger-2" data-reveal-init style={{ color: 'rgba(255,255,255,0.9)' }}>
                         Providing a comprehensive, student-friendly, and professionally enriched learning environment for global healthcare leaders.
                     </p>
                 </div>
@@ -273,15 +271,15 @@ const Facilities = () => {
 
                             <div className="grid md:grid-cols-2 gap-8">
                                 <div className="space-y-6">
-                                    <div className="bg-blue-50/40 p-6 rounded-2xl border border-blue-100 group hover:bg-blue-50 transition-colors">
-                                        <h3 className="text-xl font-bold text-blue-900 mb-3">Modern Classrooms</h3>
-                                        <p className="text-gray-700 leading-relaxed text-sm">
+                                    <div className="blue-box-premium p-6 rounded-2xl group transition-all hover:shadow-2xl">
+                                        <h3 className="text-xl font-bold text-white mb-3">Modern Classrooms</h3>
+                                        <p className="text-white/80 leading-relaxed text-sm">
                                             Five spacious, well-ventilated classrooms equipped with modern projected and non-projected audio-visual aids to facilitate interactive and outcome-based learning.
                                         </p>
                                     </div>
-                                    <div className="bg-indigo-50/40 p-6 rounded-2xl border border-indigo-100 group hover:bg-indigo-50 transition-colors">
-                                        <h3 className="text-xl font-bold text-indigo-900 mb-3">Seminar Hall</h3>
-                                        <p className="text-gray-700 leading-relaxed text-sm">
+                                    <div className="blue-box-premium p-6 rounded-2xl group transition-all hover:shadow-2xl">
+                                        <h3 className="text-xl font-bold text-white mb-3">Seminar Hall</h3>
+                                        <p className="text-white/80 leading-relaxed text-sm">
                                             A fully equipped seminar hall with smart board technology, ideal for academic programs, workshops, conferences, CNE programs, and guest lectures.
                                         </p>
                                     </div>
@@ -341,14 +339,14 @@ const Facilities = () => {
                                     </div>
                                 </div>
 
-                                <div className="bg-indigo-50/50 p-8 rounded-3xl border border-indigo-100 group">
-                                    <h3 className="text-lg font-bold text-indigo-900 mb-4 flex items-center gap-2">
-                                        <Wifi size={18} className="text-indigo-600" /> Digital Infrastructure
+                                <div className="blue-box-premium p-8 rounded-3xl group shadow-lg">
+                                    <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                                        <Wifi size={18} className="text-blue-300" /> Digital Infrastructure
                                     </h3>
-                                    <ul className="space-y-4 text-xs font-semibold text-indigo-900/80">
-                                        <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-indigo-500 rounded-full"></div> Digital / Virtual Library Access</li>
-                                        <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-indigo-500 rounded-full"></div> Barcode Management System</li>
-                                        <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-indigo-500 rounded-full"></div> Member of IEEE & DELNET</li>
+                                    <ul className="space-y-4 text-xs font-semibold text-blue-100/90">
+                                        <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-accent rounded-full"></div> Digital / Virtual Library Access</li>
+                                        <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-accent rounded-full"></div> Barcode Management System</li>
+                                        <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-accent rounded-full"></div> Member of IEEE & DELNET</li>
                                     </ul>
                                 </div>
                             </div>

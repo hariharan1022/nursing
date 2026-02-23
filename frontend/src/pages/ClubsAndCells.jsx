@@ -339,17 +339,15 @@ const ClubsAndCells = () => {
     return (
         <div className="clubs-cells-page">
             {/* Hero Section */}
-            <div className="relative bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white py-32 overflow-hidden">
-                <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] animate-pulse"></div>
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-slate-900/50 via-transparent to-transparent"></div>
-                <div className="container mx-auto px-4 relative z-10 text-center">
-                    <span className="hero-tag-gold">
+            <div className="inner-hero">
+                <div className="container relative z-10 text-center">
+                    <span className="hero-tag-gold reveal-zoom" data-reveal-init>
                         COMMITTEES & CELLS
                     </span>
-                    <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-100 via-white to-blue-200 animate-fade-in-scale stagger-1 drop-shadow-2xl">
+                    <h1 className="reveal-skew stagger-1" data-reveal-init style={{ color: 'white' }}>
                         Empowering Excellence
                     </h1>
-                    <p className="max-w-3xl mx-auto text-xl text-blue-100/90 leading-relaxed animate-fade-in-scale stagger-2 font-light drop-shadow-sm">
+                    <p className="reveal-blur stagger-2" data-reveal-init style={{ color: 'rgba(255,255,255,0.9)', maxWidth: '800px', margin: '0 auto' }}>
                         Our various committees and cells ensure a balanced, safe, and progressive environment for academic and personal growth.
                     </p>
                 </div>
@@ -375,29 +373,29 @@ const ClubsAndCells = () => {
                         {/* Committee Content */}
                         <div className="committees-list content-col">
                             {committees.map((c, idx) => (
-                                <div key={c.id} id={c.id} className="club-card reveal">
+                                <div key={c.id} id={c.id} className="club-card blue-box-premium reveal">
                                     <div className="club-header">
                                         <div className="club-icon-box">
                                             <i className={`fas ${c.icon}`}></i>
                                         </div>
-                                        <h2 style={{ color: 'var(--primary)', margin: 0 }}>{c.title}</h2>
+                                        <h2 style={{ color: 'white', margin: 0 }}>{c.title}</h2>
                                     </div>
-                                    <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', fontSize: '1.05rem', marginBottom: '30px' }}>{c.desc}</p>
+                                    <p style={{ color: 'white', opacity: 0.9, lineHeight: '1.8', fontSize: '1.05rem', marginBottom: '30px' }}>{c.desc}</p>
 
                                     <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '40px' }}>
                                         <div>
-                                            <h4 style={{ color: 'var(--primary)', marginBottom: '15px' }}>Key Objectives:</h4>
+                                            <h4 style={{ color: 'white', marginBottom: '15px' }}>Key Objectives:</h4>
                                             <ul className="club-objectives-list" style={{ listStyle: 'none', padding: 0 }}>
                                                 {c.objectives.map((obj, i) => (
-                                                    <li key={i}>
-                                                        <i className="fas fa-check-circle"></i>
+                                                    <li key={i} style={{ color: 'white', opacity: 0.85 }}>
+                                                        <i className="fas fa-check-circle" style={{ color: 'var(--accent)' }}></i>
                                                         {obj}
                                                     </li>
                                                 ))}
                                             </ul>
                                             {c.extra && (
                                                 <div style={{ marginTop: '25px' }}>
-                                                    <h4 style={{ color: 'var(--primary)', marginBottom: '15px' }}>{c.extra.title}:</h4>
+                                                    <h4 style={{ color: 'white', marginBottom: '15px' }}>{c.extra.title}:</h4>
                                                     <ul className="club-objectives-list" style={{ listStyle: 'none', padding: 0 }}>
                                                         {c.extra.list.map((item, i) => (
                                                             <li key={i}>
@@ -410,7 +408,7 @@ const ClubsAndCells = () => {
                                             )}
                                         </div>
                                         <div>
-                                            <h4 style={{ color: 'var(--primary)', marginBottom: '15px' }}>Committee Members:</h4>
+                                            <h4 style={{ color: 'white', marginBottom: '15px' }}>Committee Members:</h4>
                                             <div style={{ overflowX: 'auto' }}>
                                                 <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
                                                     <thead>
@@ -422,13 +420,13 @@ const ClubsAndCells = () => {
                                                     </thead>
                                                     <tbody>
                                                         {c.members.map((m, i) => (
-                                                            <tr key={i} style={{ borderBottom: '1px solid #f9f9f9' }}>
-                                                                <td style={{ padding: '10px 0', fontWeight: 600 }}>{m.n}</td>
-                                                                <td style={{ padding: '10px 0', color: 'var(--text-muted)' }}>{m.d}</td>
+                                                            <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                                                                <td style={{ padding: '10px 0', fontWeight: 600, color: 'white' }}>{m.n}</td>
+                                                                <td style={{ padding: '10px 0', color: 'rgba(255,255,255,0.7)' }}>{m.d}</td>
                                                                 <td style={{ padding: '10px 0', fontSize: '0.8rem' }}>
                                                                     {m.e && <div style={{ color: 'var(--accent)' }}><i className="fas fa-envelope" style={{ width: '15px' }}></i> {m.e}</div>}
-                                                                    {m.p && <div style={{ color: 'var(--text-muted)' }}><i className="fas fa-phone" style={{ width: '15px' }}></i> {m.p}</div>}
-                                                                    {!m.e && !m.p && '-'}
+                                                                    {m.p && <div style={{ color: 'rgba(255,255,255,0.6)' }}><i className="fas fa-phone" style={{ width: '15px' }}></i> {m.p}</div>}
+                                                                    {!m.e && !m.p && <span style={{ color: 'white' }}>-</span>}
                                                                 </td>
                                                             </tr>
                                                         ))}

@@ -41,6 +41,9 @@ const Navbar = () => {
         { title: 'Contact', path: '/contact', keywords: 'contact us phone email address' },
         { title: 'Feedback', path: '/feedback', keywords: 'feedback review comments' },
         { title: 'Gallery', path: '/gallery', keywords: 'gallery photos images pictures' },
+        { title: 'Clinical & Community Affiliations', path: '/affiliations', keywords: 'affiliations clinical community hospitals training inc university' },
+        { title: 'Academic Calendar', path: '/academic-calendar', keywords: 'academic calendar schedule events session' },
+        { title: 'Research & Development', path: '/research', keywords: 'research development projects publications ethics' },
     ];
 
     // Handle Scroll for sticky navbar
@@ -233,6 +236,9 @@ const Navbar = () => {
                                 <ul className={`dropdown ${activeDropdown === 'academics' ? 'active-mobile' : ''}`}>
                                     <li><Link to="/course-details" onClick={closeMobileMenu}><i className="fas fa-book-open"></i> Department</Link></li>
                                     <li><Link to="/faculty" onClick={closeMobileMenu}><i className="fas fa-chalkboard-teacher"></i> Faculty</Link></li>
+                                    <li><Link to="/affiliations" onClick={closeMobileMenu}><i className="fas fa-handshake"></i> Clinical & Community Affiliations</Link></li>
+                                    <li><Link to="/academic-calendar" onClick={closeMobileMenu}><i className="fas fa-calendar-alt"></i> Academic Calendar</Link></li>
+                                    <li><Link to="/research" onClick={closeMobileMenu}><i className="fas fa-microscope"></i> Research & Development</Link></li>
                                 </ul>
                             </li>
 

@@ -192,17 +192,15 @@ const InfoCorner = () => {
     return (
         <div className="info-corner-page">
             {/* Hero Section */}
-            <div className="relative bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white py-32 overflow-hidden">
-                <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] animate-pulse"></div>
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-slate-900/50 via-transparent to-transparent"></div>
-                <div className="container mx-auto px-4 relative z-10 text-center">
-                    <span className="hero-tag-gold">
+            <div className="inner-hero">
+                <div className="container relative z-10 text-center">
+                    <span className="hero-tag-gold reveal-zoom" data-reveal-init>
                         LATEST UPDATES
                     </span>
-                    <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-100 via-white to-blue-200 animate-fade-in-scale stagger-1 drop-shadow-2xl">
+                    <h1 className="reveal-skew stagger-1" data-reveal-init style={{ color: 'white' }}>
                         Information Corner
                     </h1>
-                    <p className="max-w-3xl mx-auto text-xl text-blue-100/90 leading-relaxed animate-fade-in-scale stagger-2 font-light drop-shadow-sm">
+                    <p className="reveal-blur stagger-2" data-reveal-init style={{ color: 'rgba(255,255,255,0.9)', maxWidth: '800px', margin: '0 auto' }}>
                         Stay updated with the latest circulars, professional milestones, and academic achievements at Mount Zion College of Nursing.
                     </p>
                 </div>
@@ -342,7 +340,7 @@ const InfoCorner = () => {
                                     <i className="fas fa-trophy" style={{ color: 'var(--accent)' }}></i> Rank Holders
                                 </h2>
                                 {rankHolders.map((group, idx) => (
-                                    <div key={idx} className="rank-card reveal-flip">
+                                    <div key={idx} className="rank-card blue-box-premium reveal-flip">
                                         <h4 style={{ color: 'var(--primary)', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                                             <i className="fas fa-medal" style={{ color: 'var(--accent)' }}></i> {group.year}
                                         </h4>

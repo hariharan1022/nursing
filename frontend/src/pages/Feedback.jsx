@@ -55,17 +55,15 @@ const Feedback = () => {
     return (
         <div className="feedback-page">
             {/* Hero Section */}
-            <div className="relative bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 text-white py-32 overflow-hidden">
-                <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] animate-pulse"></div>
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-slate-900/50 via-transparent to-transparent"></div>
+            <div className="inner-hero">
                 <div className="container mx-auto px-4 relative z-10 text-center">
-                    <span className="hero-tag-gold">
+                    <span className="hero-tag-gold reveal-zoom" data-reveal-init>
                         VOICE YOUR THOUGHTS
                     </span>
-                    <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-100 via-white to-blue-200 animate-fade-in-scale stagger-1 drop-shadow-2xl">
+                    <h1 className="reveal-skew stagger-1" data-reveal-init style={{ color: 'white' }}>
                         Feedback System
                     </h1>
-                    <p className="max-w-3xl mx-auto text-xl text-blue-100/90 leading-relaxed animate-fade-in-scale stagger-2 font-light drop-shadow-sm">
+                    <p className="reveal-blur stagger-2" data-reveal-init style={{ color: 'rgba(255,255,255,0.9)' }}>
                         Your feedback helps us grow and improve our standards. Please choose the relevant category below.
                     </p>
                 </div>

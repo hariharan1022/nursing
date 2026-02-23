@@ -1,5 +1,5 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import HeaderLogo from '../assets/logo.webp';
 
 const Footer = () => {
     return (
@@ -173,10 +173,20 @@ const Footer = () => {
                         gap: 8px;
                     }
                     .m-admission-box {
-                        background: rgba(212, 175, 55, 0.08) !important;
-                        padding: 10px !important;
-                        border-radius: 8px !important;
-                        border: 1px dashed rgba(212, 175, 55, 0.4) !important;
+                        background: linear-gradient(135deg, #001C30 0%, #003366 100%);
+                        padding: 15px !important;
+                        border-radius: 12px !important;
+                        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+                        position: relative;
+                        overflow: hidden;
+                    }
+                    .m-admission-box::before {
+                        content: '';
+                        position: absolute;
+                        inset: 0;
+                        background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+                        opacity: 0.1;
+                        pointer-events: none;
                     }
                     .m-admission-box i {
                         display: none;
@@ -201,6 +211,53 @@ const Footer = () => {
                         display: none !important;
                     }
                 }
+                .admission-blue-box {
+                    background: linear-gradient(135deg, #050b1a 0%, #1e1b4b 50%, #050b1a 100%);
+                    padding: 30px !important;
+                    border-radius: 25px !important;
+                    position: relative;
+                    overflow: hidden;
+                    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+                    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+                    text-align: center;
+                    width: 100%;
+                    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+                }
+                .admission-blue-box::before {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+                    opacity: 0.15;
+                    pointer-events: none;
+                }
+                .admission-blue-box:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+                }
+                .admission-tag-small {
+                    background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
+                    color: #001C30;
+                    padding: 4px 12px;
+                    border-radius: 50px;
+                    font-size: 0.7rem;
+                    font-weight: 800;
+                    display: inline-block;
+                    margin-bottom: 8px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    position: relative;
+                    z-index: 2;
+                }
+                .admission-num-white {
+                    color: white;
+                    font-size: 1.2rem;
+                    font-weight: 900;
+                    margin: 0;
+                    position: relative;
+                    z-index: 2;
+                    letter-spacing: 1px;
+                }
                 `}
             </style>
 
@@ -208,7 +265,7 @@ const Footer = () => {
                 {/* Desktop Version */}
                 <div className="desktop-grid grid grid-cols-4 md-grid-cols-2" style={{ gap: '40px' }}>
                     <div>
-                        <img src={`${import.meta.env.BASE_URL}logo.webp`} alt="MZCN Logo" style={{ height: '70px', marginBottom: '25px' }} />
+                        <img src={HeaderLogo} alt="MZCN Logo" style={{ height: '80px', width: 'auto', marginBottom: '25px', borderRadius: '8px' }} />
                         <p style={{ color: 'rgba(255,255,255,0.86)', lineHeight: 1.8, marginBottom: '25px', fontSize: '0.95rem' }}>
                             To Make Man Whole. Providing world-class nursing education with clinical excellence for over <span className="animated-text">17 years</span>.
                         </p>
@@ -265,11 +322,9 @@ const Footer = () => {
                                 <p style={{ margin: 0, fontSize: '0.72rem', opacity: 0.6 }}><i className="far fa-clock" style={{ marginRight: '4px' }}></i>9 a.m. - 5 p.m.</p>
                             </div>
                         </div>
-                        <div className="f-contact-item" style={{ background: 'rgba(212, 175, 55, 0.1)', padding: '15px', borderRadius: '12px', border: '1px dashed #D4AF37', transition: 'all 0.3s ease' }}>
-                            <div style={{ width: '100%' }}>
-                                <p style={{ margin: 0, fontSize: '0.75rem', fontWeight: 700, color: '#D4AF37', textTransform: 'uppercase', textAlign: 'center' }}>Admission Enquiry</p>
-                                <p style={{ margin: '5px 0', fontSize: '1.15rem', fontWeight: 900, textAlign: 'center', letterSpacing: '1px' }}>+91 75021 73000</p>
-                            </div>
+                        <div className="admission-blue-box">
+                            <span className="admission-tag-small">Admission Enquiry</span>
+                            <p className="admission-num-white">+91 75021 73000</p>
                         </div>
                     </div>
                 </div>
@@ -278,7 +333,7 @@ const Footer = () => {
                 <div className="mobile-only">
                     {/* Brand Row */}
                     <div className="mobile-brand-row">
-                        <img src={`${import.meta.env.BASE_URL}logo.webp`} alt="MZCN Logo" className="m-logo" />
+                        <img src={HeaderLogo} alt="MZCN Logo" className="m-logo" style={{ height: '60px', width: 'auto', borderRadius: '6px' }} />
                         <p className="m-brand-text">
                             To Make Man Whole. Providing world-class nursing education with clinical excellence for over <span className="animated-text">17 years</span>.
                         </p>
@@ -335,10 +390,9 @@ const Footer = () => {
                         </div>
                         <div>
                             <h4 className="f-title">Admission</h4>
-                            <div className="m-admission-box" style={{ textAlign: 'center' }}>
-                                <p style={{ margin: 0, fontSize: '0.7rem', fontWeight: 700, color: '#D4AF37', textTransform: 'uppercase' }}>Call Now</p>
-                                <p style={{ margin: '3px 0', fontSize: '0.95rem', fontWeight: 900, color: '#D4AF37' }}>+91 75021 73000</p>
-                                <p style={{ margin: 0, fontSize: '0.6rem', opacity: 0.7 }}>24/7 Support</p>
+                            <div className="m-admission-box">
+                                <span className="admission-tag-small" style={{ fontSize: '0.6rem', padding: '2px 8px' }}>Admission Enquiry</span>
+                                <p className="admission-num-white" style={{ fontSize: '1rem' }}>+91 75021 73000</p>
                             </div>
                         </div>
                     </div>
