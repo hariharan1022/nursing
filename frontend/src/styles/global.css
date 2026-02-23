@@ -1040,9 +1040,24 @@ nav#navbar {
 }
 
 .logo img {
-    height: 48px;
-    /* Slightly smaller to save space */
+    height: 55px;
+    /* Increased slightly for better visibility */
     width: auto;
+    object-fit: contain;
+}
+
+.nav-main-logo {
+    height: 70px !important;
+    /* Larger height for the new combined logo */
+    max-width: 350px;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .nav-main-logo {
+        height: 50px !important;
+        max-width: 250px;
+    }
 }
 
 .logo-text h2 {

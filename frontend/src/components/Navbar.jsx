@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
+import HeaderLogo from '../assets/mountzion logo.jpeg';
 
 const Navbar = () => {
     const [isSticky, setIsSticky] = useState(false);
@@ -140,11 +141,7 @@ const Navbar = () => {
                 <div className="main-header">
                     <div className="container header-container">
                         <Link to="/" className={`logo ${isMobileMenuOpen ? 'mobile-menu-open' : ''}`} onClick={closeMobileMenu}>
-                            <img src={`${import.meta.env.BASE_URL}logo.webp`} alt="MZCN Logo" />
-                            <div className="logo-text">
-                                <h2>MOUNT ZION</h2>
-                                <p>COLLEGE OF NURSING</p>
-                            </div>
+                            <img src={HeaderLogo} alt="MZCN Logo" className="nav-main-logo" />
                         </Link>
 
                         <div className="header-actions">
