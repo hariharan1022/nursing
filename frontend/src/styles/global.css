@@ -1817,10 +1817,24 @@ nav#navbar {
 
 @media (max-width: 768px) {
     .inner-hero {
-        padding: 60px 0 40px;
-        border-bottom-left-radius: 25px;
-        border-bottom-right-radius: 25px;
+        padding: 50px 0 30px;
+        /* Compact padding for landscape feel */
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
         margin-bottom: 2rem;
+        min-height: 200px;
+        /* Enforce landscape proportion */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .inner-hero {
+        padding: 40px 0 20px;
+        min-height: 180px;
+        /* Tighter for small mobile */
     }
 }
 
@@ -3701,6 +3715,16 @@ footer a:hover {
     padding: 80px 0;
     position: relative;
     overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .program-hero {
+        padding: 50px 0 30px;
+        min-height: 180px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
 .program-stats {
