@@ -1046,14 +1046,14 @@ nav#navbar {
 }
 
 .logo-text h2 {
-    font-size: 1.05rem;
-    line-height: 1;
-    color: #001C30;
-    /* Precise Navy Blue from Top Bar */
+    font-size: 1.15rem;
+    line-height: 1.1;
+    color: #001C30 !important;
+    /* Enforced Navy Blue */
     margin: 0;
-    font-family: "Cooper Black", "Ultra", serif;
-    letter-spacing: -0.2px;
-    font-weight: 400;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.5px;
+    font-weight: 800;
 }
 
 .logo-text p {
@@ -1829,13 +1829,15 @@ nav#navbar {
     height: 600px;
     width: 100%;
     overflow: hidden;
-    background: #000;
+    background: linear-gradient(135deg, #001C30 0%, #002B5B 100%);
+    /* Fallback Navy instead of black */
 }
 
 @media (max-width: 768px) {
     .slider-container {
-        height: 350px;
-        /* Proper mobile size */
+        height: 550px;
+        /* Further increased for content breathing room */
+        margin-bottom: 30px;
     }
 
     .slide-content .btn {
@@ -1882,20 +1884,24 @@ nav#navbar {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.7);
+    object-position: 50% 20%;
+    /* Focus on the upper-middle part of the banner images */
+    filter: brightness(0.65);
+    display: block;
 }
 
 .slide-content {
     position: absolute;
     text-align: center;
     color: white;
-    max-width: 1200px;
-    padding: 0 20px;
+    max-width: 90%;
+    /* Better for mobile */
+    padding: 20px;
     z-index: 10;
-    transform: translateY(50px) scale(0.95);
+    transform: translateY(30px) scale(0.98);
     transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
     opacity: 0;
-    filter: blur(8px);
+    will-change: transform, opacity;
 }
 
 .slide.active .slide-content {
@@ -2262,7 +2268,8 @@ footer a:hover {
 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
-        margin-top: -30px;
+        margin-top: 20px;
+        /* Added positive margin to stop 'cutting' the banner */
     }
 
     .about-img {

@@ -131,7 +131,6 @@ const Navbar = () => {
                             <div className="top-utility-links">
                                 <a href="http://betanet.mzcet.in:8080/" target="_blank" rel="noopener noreferrer"><i className="fas fa-user-graduate" style={{ fontSize: '0.75rem' }}></i> Student Portal</a>
                                 <a href="https://mail.google.com/a/mzcn.in" target="_blank" rel="noopener noreferrer"><i className="fas fa-envelope" style={{ fontSize: '0.75rem' }}></i> Web Mail</a>
-                                <Link to="/contact"><i className="fas fa-info-circle" style={{ fontSize: '0.75rem' }}></i> Helpdesk</Link>
                             </div>
                         </div>
                     </div>
