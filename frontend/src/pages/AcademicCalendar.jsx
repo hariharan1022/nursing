@@ -1,9 +1,22 @@
 import React, { useEffect } from 'react';
 
+// Import Calendar Images
+import cal1 from '../assets/AcademicCalendar/WhatsApp Image 2026-02-23 at 9.52.34 PM.jpeg';
+import cal2 from '../assets/AcademicCalendar/WhatsApp Image 2026-02-23 at 9.52.34 PM (1).jpeg';
+import cal3 from '../assets/AcademicCalendar/WhatsApp Image 2026-02-23 at 9.52.35 PM.jpeg';
+import cal4 from '../assets/AcademicCalendar/WhatsApp Image 2026-02-23 at 9.52.35 PM (1).jpeg';
+import cal5 from '../assets/AcademicCalendar/WhatsApp Image 2026-02-23 at 9.52.35 PM (2).jpeg';
+import cal6 from '../assets/AcademicCalendar/WhatsApp Image 2026-02-23 at 9.52.36 PM.jpeg';
+import cal7 from '../assets/AcademicCalendar/WhatsApp Image 2026-02-23 at 9.52.36 PM (1).jpeg';
+import cal8 from '../assets/AcademicCalendar/WhatsApp Image 2026-02-23 at 9.55.47 PM.jpeg';
+import cal9 from '../assets/AcademicCalendar/WhatsApp Image 2026-02-23 at 9.55.48 PM.jpeg';
+
 const AcademicCalendar = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const calendarPages = [cal1, cal2, cal3, cal4, cal5, cal6, cal7, cal8, cal9];
 
     return (
         <div className="academic-calendar-page">
@@ -29,7 +42,7 @@ const AcademicCalendar = () => {
                             <i className="fas fa-calendar-alt text-7xl text-accent mb-8"></i>
                             <h2 className="text-4xl font-black mb-6 uppercase tracking-tighter">Academic Session 2025-26</h2>
                             <p className="text-xl text-white/70 mb-10 leading-relaxed">
-                                Our comprehensive academic calendar for the upcoming session is currently being finalized in accordance with the university guidelines.
+                                Our comprehensive academic calendar for the upcoming session is now available for reference.
                             </p>
 
                             <div className="grid grid-cols-3 sm:grid-cols-1 gap-6 mb-12">
@@ -47,13 +60,38 @@ const AcademicCalendar = () => {
                                 </div>
                             </div>
 
-                            <div className="inline-flex items-center gap-4 py-4 px-8 bg-accent text-primary font-black rounded-full text-lg shadow-lg hover:bg-white transition-all cursor-pointer">
-                                <i className="fas fa-file-pdf"></i>
-                                DOWNLOAD PDF CALENDAR (COMING SOON)
+                            <a href="#visual-calendar" className="inline-flex items-center gap-4 py-4 px-8 bg-accent text-primary font-black rounded-full text-lg shadow-lg hover:bg-white transition-all cursor-pointer no-underline">
+                                <i className="fas fa-eye"></i>
+                                VIEW FULL CALENDAR BELOW
+                            </a>
+                        </div>
+
+                        {/* Visual Calendar Images */}
+                        <div id="visual-calendar" className="mt-20 space-y-12">
+                            <div className="text-center mb-10">
+                                <h3 className="text-3xl font-black text-primary mb-4">Official Calendar Pages</h3>
+                                <div className="w-20 h-1 bg-accent mx-auto"></div>
+                            </div>
+
+                            <div className="grid grid-cols-1 gap-12">
+                                {calendarPages.map((img, idx) => (
+                                    <div key={idx} className="reveal active shadow-2xl rounded-2xl overflow-hidden border-4 border-white bg-white">
+                                        <div className="bg-primary text-white py-2 px-6 text-sm font-bold flex justify-between items-center">
+                                            <span>Page {idx + 1}</span>
+                                            <span className="text-accent">Academic Session 2025-26</span>
+                                        </div>
+                                        <img
+                                            src={img}
+                                            alt={`Academic Calendar Page ${idx + 1}`}
+                                            className="w-full h-auto block"
+                                            loading="lazy"
+                                        />
+                                    </div>
+                                ))}
                             </div>
                         </div>
 
-                        <div className="mt-16 bg-white p-12 rounded-3xl shadow-sm border border-gray-100 reveal active">
+                        <div className="mt-20 bg-white p-12 rounded-3xl shadow-sm border border-gray-100 reveal active">
                             <h3 className="text-2xl font-black text-primary mb-8 border-b-4 border-accent inline-block">Institutional Highlights</h3>
                             <div className="space-y-6">
                                 {[
@@ -78,3 +116,4 @@ const AcademicCalendar = () => {
 };
 
 export default AcademicCalendar;
+
