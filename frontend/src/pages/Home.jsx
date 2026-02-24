@@ -191,7 +191,7 @@ const Home = () => {
                         <p>Practical Classes</p>
                     </div>
                     <div className="stat-card interactive-card glow-card">
-                        <h3>100%</h3>
+                        <h3>96%</h3>
                         <p>Result Oriented</p>
                     </div>
                     <div className="stat-card interactive-card glow-card" style={{ borderRight: 'none' }}>
