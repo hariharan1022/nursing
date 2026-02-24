@@ -2,157 +2,187 @@ import React, { useEffect } from 'react';
 
 const Faculty = () => {
     useEffect(() => {
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
-        }, observerOptions);
-
-        const elements = document.querySelectorAll('.reveal');
-        elements.forEach(el => observer.observe(el));
-        return () => observer.disconnect();
+        window.scrollTo(0, 0);
     }, []);
 
     const departments = [
         {
-            name: 'Child Health (Pediatric) Nursing',
+            name: '1. Child Health Nursing',
             staff: [
-                { name: 'Dr. H.M. Jasmine Sheela', qual: 'PhD. Nursing', post: 'Principal', spec: 'Child Health' },
-                { name: 'Mrs. Sathiya', qual: 'M.Sc. Nursing', post: 'Professor', spec: 'Child Health' },
-                { name: 'Mrs. Aarthika', qual: 'B.Sc. Nursing', post: 'Tutor', spec: 'General' }
+                { name: 'Prof. Dr. Jasmine Sheela H. M.', qual: 'M.Sc. (N), Ph.D., R.N.R.M.', post: 'Professor cum Principal' },
+                { name: 'Prof. Sathiyaa N.', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Professor & Head of the Department' },
+                { name: 'Mrs. Anthonyasha J.', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Assistant Professor' }
             ]
         },
         {
-            name: 'Mental Health (Psychiatric) Nursing',
+            name: '2. Mental Health Nursing',
             staff: [
-                { name: 'Dr. Jerin Kumar. J', qual: 'Ph.D. Nursing', post: 'Vice Principal', spec: 'Psychiatric' },
-                { name: 'Mrs. Unaisy Vinolini', qual: 'M.Sc. Nursing', post: 'Associate Professor', spec: 'Psychiatric' },
-                { name: 'Mrs. Prithika', qual: 'B.Sc. Nursing', post: 'Tutor', spec: 'General' }
+                { name: 'Prof. Dr. Jerin Kumar J.', qual: 'M.Sc. (N), Ph.D., M.Sc. (Psy.Tpy & Cou)., R.N.R.M.', post: 'Professor cum Vice Principal & Head of the Department' },
+                { name: 'Prof. Unaisy Vinolin', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Professor' },
+                { name: 'Ms. Devakirubai Daniya P.', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor' }
             ]
         },
         {
-            name: 'Medical and Surgical Nursing',
+            name: '3. Adult Health Nursing',
             staff: [
-                { name: 'Mrs. Nagajothi', qual: 'M.Sc. Nursing', post: 'Assistant Professor', spec: 'Medical & Surgical' },
-                { name: 'Ms. Haripriya', qual: 'B.Sc. Nursing', post: 'Tutor', spec: 'General' },
-                { name: 'Ms. Yogeshwari. R', qual: 'B.Sc. Nursing', post: 'Tutor', spec: 'General' }
+                { name: 'Mrs. Nagajothi K.', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Associate Professor & Head of the Department' },
+                { name: 'Mr. Sundar V.', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Senior Tutor' },
+                { name: 'Ms. Yogeshwari R.', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor' },
+                { name: 'Ms. Anitha P.', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor' }
             ]
         },
         {
-            name: 'Fundamentals of Nursing',
+            name: '4. Fundamentals of Nursing',
             staff: [
-                { name: 'Mrs. Sivakami. G', qual: 'M.Sc. Nursing', post: 'Assistant Professor', spec: 'Medical & Surgical' },
-                { name: 'Ms. Viveka. C', qual: 'B.Sc. Nursing', post: 'Tutor', spec: 'General' },
-                { name: 'Mrs. Sumithra', qual: 'B.Sc. Nursing', post: 'Tutor', spec: 'General' }
+                { name: 'Mrs. Sivakami G.', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Assistant Professor & Head of the Department' },
+                { name: 'Mrs. Prithika R.', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor' },
+                { name: 'Mrs. Balasundari D.', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor' },
+                { name: 'Mrs. Viveka M.', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor' }
             ]
         },
         {
-            name: 'Community Health Nursing',
+            name: '5. Community Health Nursing',
             staff: [
-                { name: 'Mrs. Saraswathy', qual: 'M.Sc. Nursing', post: 'Assistant Professor', spec: 'Community Health' },
-                { name: 'Mr. Ebinesar. J', qual: 'B.Sc. Nursing', post: 'Tutor', spec: 'General' },
-                { name: 'Mrs. Mariyammal', qual: 'B.Sc. Nursing', post: 'Tutor', spec: 'General' }
+                { name: 'Mrs. Saraswathy K.', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Assistant Professor & Head of the Department' },
+                { name: 'Mrs. Mariammal K.', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor' },
+                { name: 'Mr. Jabez Monison J.', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor' }
             ]
         },
         {
-            name: 'Obstetric & Gynecological Nursing',
+            name: '6. Obstetrics & Gynaecological Nursing',
             staff: [
-                { name: 'Mrs. Sutha', qual: 'M.Sc. Nursing', post: 'Assistant Professor', spec: 'OBG' },
-                { name: 'Mrs. Balasundari', qual: 'B.Sc. Nursing', post: 'Tutor', spec: 'General' },
-                { name: 'Ms. Priscilla Jancy', qual: 'B.Sc. Nursing', post: 'Tutor', spec: 'OBG' }
+                { name: 'Mrs. Sutha P.', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Assistant Professor & Head of the Department' },
+                { name: 'Mrs. Rajeswari', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor' }
             ]
         }
     ];
 
     return (
-        <div className="faculty-page">
+        <div className="faculty-page overflow-x-hidden">
             {/* Hero Section */}
             <div className="inner-hero">
-                <div className="container mx-auto px-4 relative z-10 text-center">
-                    <span className="hero-tag-gold reveal-zoom" data-reveal-init>
-                        ACADEMIC TEAM
+                <div className="container relative z-10 text-center">
+                    <span className="hero-tag-glass reveal-zoom" data-reveal-init>
+                        ACADEMIC EXCELLENCE
                     </span>
-                    <h1 className="reveal-skew stagger-1" data-reveal-init style={{ color: 'white' }}>
-                        Department Faculty
+                    <h1 className="reveal-skew stagger-1" data-reveal-init>
+                        Faculty Profile
                     </h1>
-                    <p className="reveal-blur stagger-2" data-reveal-init style={{ color: 'rgba(255,255,255,0.9)' }}>
-                        Our team of dedicated and qualified nursing professionals committed to academic excellence.
+                    <p className="reveal-blur stagger-2" data-reveal-init style={{ maxWidth: '800px', margin: '0 auto' }}>
+                        Qualified and experienced faculty team across all core nursing specialties as per statutory norms.
                     </p>
                 </div>
             </div>
 
             <section className="section" style={{ background: 'var(--bg-light)' }}>
                 <div className="container">
-                    {/* Leadership Bio - Principal */}
-                    <div className="reveal grid grid-cols-2 md-grid-cols-1" style={{
-                        gridTemplateColumns: 'minmax(250px, 1fr) 2fr', gap: '40px',
-                        background: 'white', padding: '40px', borderRadius: '30px',
-                        boxShadow: 'var(--shadow-lg)', marginBottom: '40px', borderLeft: '10px solid var(--accent)'
-                    }}>
-                        <div style={{ textAlign: 'center' }}>
-                            <div style={{ padding: '10px', border: '5px solid var(--bg-light)', borderRadius: '20px', marginBottom: '15px' }}>
-                                <img src={`${import.meta.env.BASE_URL}photo/PRINCIPAL.png`} alt="Principal" style={{ width: '100%', borderRadius: '12px' }} />
-                            </div>
-                            <h4 style={{ color: 'var(--primary)', marginBottom: '5px' }}>Prof. Dr. Jasmine Sheela</h4>
-                            <span style={{ color: 'var(--accent)', fontWeight: 800, fontSize: '0.8rem' }}>PRINCIPAL, Ph.D.</span>
-                        </div>
-                        <div>
-                            <h3 style={{ color: 'var(--primary)', marginBottom: '20px', fontSize: '1.8rem' }}>Principal's Perspective</h3>
-                            <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', textAlign: 'justify', fontSize: '0.95rem' }}>
-                                Prof. Dr. Jasmine Sheela embarked on her remarkable nursing journey as a Registered Nurse and Midwife (RN RM) in 1990. With 8 years of clinical expertise and 20 years of teaching experience, she has served as the Principal of Mount Zion College of Nursing for 14 years. Her expertise includes curriculum planning, policy development, and integrating innovative teaching methodologies into nursing education.
+                    {/* Intro Card */}
+                    <div className="reveal-up mb-16" data-reveal-init>
+                        <div className="blue-box-premium p-10 md:p-14 rounded-[40px] shadow-2xl">
+                            <h2 className="text-2xl md:text-3xl font-black text-primary mb-6 uppercase tracking-tight">Departmental Distribution</h2>
+                            <p className="text-lg text-slate-600 leading-relaxed font-medium">
+                                Mount Zion College of Nursing maintains a qualified and experienced faculty team across all core nursing specialties to ensure academic excellence, research development, and quality clinical training as per the requirements of <span className="text-primary font-bold">Indian Nursing Council</span> and <span className="text-primary font-bold">Tamil Nadu Dr. M.G.R. Medical University</span>.
                             </p>
+                            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="flex items-center gap-3 p-4 bg-white/50 rounded-2xl border border-white/20">
+                                    <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-primary"><i className="fas fa-check text-xs"></i></div>
+                                    <span className="text-sm font-bold text-slate-700">Optimal Teacher-Student Ratio</span>
+                                </div>
+                                <div className="flex items-center gap-3 p-4 bg-white/50 rounded-2xl border border-white/20">
+                                    <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-primary"><i className="fas fa-check text-xs"></i></div>
+                                    <span className="text-sm font-bold text-slate-700">Qualified Specialty Supervisors</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Leadership Bio - Principal */}
+                    <div className="reveal-left bg-white rounded-[40px] shadow-premium overflow-hidden border border-gray-100 mb-12" data-reveal-init>
+                        <div className="flex flex-col lg:flex-row items-stretch">
+                            <div className="lg:w-1/3 bg-slate-50 p-10 text-center flex flex-col items-center justify-center border-r border-gray-100">
+                                <div className="w-48 h-48 rounded-[32px] overflow-hidden border-4 border-white shadow-xl mb-6 transform hover:scale-105 transition-transform">
+                                    <img src={`${import.meta.env.BASE_URL}photo/PRINCIPAL.png`} alt="Principal" className="w-full h-full object-cover" />
+                                </div>
+                                <h4 className="text-2xl font-black text-primary mb-1">Prof. Dr. Jasmine Sheela</h4>
+                                <span className="px-4 py-1 bg-accent text-primary text-[10px] font-black rounded-full uppercase tracking-widest leading-none">Principal & Professor</span>
+                                <p className="text-xs text-slate-500 font-bold mt-2">M.Sc. (N), Ph.D., R.N.R.M.</p>
+                            </div>
+                            <div className="lg:w-2/3 p-10 md:p-14">
+                                <h3 className="text-3xl font-black text-primary mb-6 flex items-center gap-4">
+                                    <span className="w-1.5 h-8 bg-accent rounded-full"></span>
+                                    Principal's Perspective
+                                </h3>
+                                <p className="text-slate-600 leading-relaxed text-lg font-medium text-justify">
+                                    Prof. Dr. Jasmine Sheela embarked on her remarkable nursing journey as a Registered Nurse and Midwife (RN RM) in 1990. With clinical expertise and extensive teaching experience, she has served as the Principal of Mount Zion College of Nursing for 14 years. Her leadership ensures the integration of innovative teaching methodologies and core nursing values into the educational curriculum.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
                     {/* Leadership Bio - Vice Principal */}
-                    <div className="reveal grid grid-cols-2 md-grid-cols-1" style={{
-                        gridTemplateColumns: 'minmax(250px, 1fr) 2fr', gap: '40px',
-                        background: 'white', padding: '40px', borderRadius: '30px',
-                        boxShadow: 'var(--shadow-lg)', marginBottom: '60px', borderLeft: '10px solid var(--accent)'
-                    }}>
-                        <div style={{ textAlign: 'center' }}>
-                            <div style={{ padding: '10px', border: '5px solid var(--bg-light)', borderRadius: '20px', marginBottom: '15px' }}>
-                                <img src={`${import.meta.env.BASE_URL}photo/Vice%20Principal.png`} alt="Vice Principal" style={{ width: '100%', borderRadius: '12px' }} />
+                    <div className="reveal-right bg-white rounded-[40px] shadow-premium overflow-hidden border border-gray-100 mb-24" data-reveal-init>
+                        <div className="flex flex-col lg:flex-row-reverse items-stretch">
+                            <div className="lg:w-1/3 bg-slate-50 p-10 text-center flex flex-col items-center justify-center border-l border-gray-100">
+                                <div className="w-48 h-48 rounded-[32px] overflow-hidden border-4 border-white shadow-xl mb-6 transform hover:scale-105 transition-transform">
+                                    <img src={`${import.meta.env.BASE_URL}photo/Vice%20Principal.png`} alt="Vice Principal" className="w-full h-full object-cover" />
+                                </div>
+                                <h4 className="text-2xl font-black text-primary mb-1">Prof. Dr. Jerin Kumar J</h4>
+                                <span className="px-4 py-1 bg-accent text-primary text-[10px] font-black rounded-full uppercase tracking-widest leading-none">Vice Principal & Professor</span>
+                                <p className="text-xs text-slate-500 font-bold mt-2">M.Sc. (N), Ph.D., M.Sc. (Psy.Tpy)., R.N.R.M.</p>
                             </div>
-                            <h4 style={{ color: 'var(--primary)', marginBottom: '5px' }}>Prof. Dr. Jerin Kumar J</h4>
-                            <span style={{ color: 'var(--accent)', fontWeight: 800, fontSize: '0.8rem' }}>VICE PRINCIPAL, Ph.D.</span>
-                        </div>
-                        <div>
-                            <h3 style={{ color: 'var(--primary)', marginBottom: '20px', fontSize: '1.8rem' }}>Vice Principal's Perspective</h3>
-                            <p style={{ color: 'var(--text-muted)', lineHeight: '1.8', textAlign: 'justify', fontSize: '0.95rem' }}>
-                                Prof. Dr. Jerin Kumar J serves as the Vice Principal with over 15 years of teaching experience. He holds a Ph.D. in Nursing and Master's degrees in both Mental Health Nursing and Counseling & Psychotherapy. His work focuses on mental health, suicide prevention, and innovative nursing practices, contributing significantly through research papers in reputed journals.
-                            </p>
+                            <div className="lg:w-2/3 p-10 md:p-14">
+                                <h3 className="text-3xl font-black text-primary mb-6 flex items-center gap-4">
+                                    <span className="w-1.5 h-8 bg-accent rounded-full"></span>
+                                    Vice Principal's Perspective
+                                </h3>
+                                <p className="text-slate-600 leading-relaxed text-lg font-medium text-justify">
+                                    Prof. Dr. Jerin Kumar J serves as the Vice Principal with over 15 years of academic leadership. He holds a Ph.D. in Nursing and specialized Master's degrees in Mental Health Nursing and Counseling. His work focuses on mental health advocacy and innovative clinical practices, contributing significantly through research development and professional training.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
-                    <h2 style={{ color: 'var(--primary)', textAlign: 'center', fontSize: '2.5rem', marginBottom: '50px' }} className="reveal">Departmental Faculty</h2>
+                    <div className="text-center mb-16 reveal-up" data-reveal-init>
+                        <h2 className="section-title-premium inline-block">Specialty Departments</h2>
+                        <p className="text-slate-500 font-bold mt-4 uppercase tracking-widest text-sm">Faculty Distribution & Expertise</p>
+                    </div>
 
-                    {/* Department Tables */}
-                    <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(100%, 1fr))', gap: '30px' }}>
+                    {/* Department Grids */}
+                    <div className="grid grid-cols-1 gap-12">
                         {departments.map((dept, idx) => (
-                            <div key={idx} className="reveal" style={{
-                                background: 'white', padding: '30px', borderRadius: '20px',
-                                boxShadow: 'var(--shadow-md)', borderTop: '5px solid var(--primary)'
-                            }}>
-                                <h3 style={{ color: 'var(--primary)', marginBottom: '20px', borderBottom: '2px solid var(--accent)', display: 'inline-block' }}>{dept.name}</h3>
-                                <div style={{ overflowX: 'auto' }}>
-                                    <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                                        <thead style={{ background: 'var(--bg-light)', color: 'var(--primary)' }}>
-                                            <tr>
-                                                <th style={{ padding: '15px', textAlign: 'left' }}>S.No</th>
-                                                <th style={{ padding: '15px', textAlign: 'left' }}>Name</th>
-                                                <th style={{ padding: '15px', textAlign: 'left' }}>Qualification</th>
-                                                <th style={{ padding: '15px', textAlign: 'left' }}>Designation</th>
+                            <div key={idx} className="reveal-up bg-white rounded-[40px] shadow-premium border border-gray-100 overflow-hidden" data-reveal-init style={{ transitionDelay: `${idx * 0.1}s` }}>
+                                <div className="bg-primary p-8 text-white flex justify-between items-center relative overflow-hidden">
+                                    <div className="relative z-10">
+                                        <h3 className="text-2xl font-black uppercase tracking-tight">{dept.name}</h3>
+                                        <div className="w-12 h-1 bg-accent mt-2 rounded-full"></div>
+                                    </div>
+                                    <i className="fas fa-users-crown text-6xl text-white/10 absolute -right-2 -bottom-2"></i>
+                                </div>
+                                <div className="p-2 md:p-8 overflow-x-auto">
+                                    <table className="w-full text-left">
+                                        <thead>
+                                            <tr className="border-b-2 border-slate-50">
+                                                <th className="px-6 py-4 text-xs font-black text-slate-400 uppercase tracking-widest">No.</th>
+                                                <th className="px-6 py-4 text-xs font-black text-slate-400 uppercase tracking-widest">Faculty Name</th>
+                                                <th className="px-6 py-4 text-xs font-black text-slate-400 uppercase tracking-widest">Qualification</th>
+                                                <th className="px-6 py-4 text-xs font-black text-slate-400 uppercase tracking-widest">Designation</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody className="divide-y divide-slate-50">
                                             {dept.staff.map((s, i) => (
-                                                <tr key={i} style={{ borderBottom: '1px solid #eee' }}>
-                                                    <td style={{ padding: '15px', color: 'var(--text-muted)' }}>{i + 1}</td>
-                                                    <td style={{ padding: '15px', fontWeight: 600 }}>{s.name}</td>
-                                                    <td style={{ padding: '15px', color: 'var(--text-muted)' }}>{s.qual}</td>
-                                                    <td style={{ padding: '15px', color: 'var(--primary-light)', fontWeight: 700 }}>{s.post}</td>
+                                                <tr key={i} className="hover:bg-slate-50 transition-colors group">
+                                                    <td className="px-6 py-5 text-sm font-black text-primary/30">0{i + 1}</td>
+                                                    <td className="px-6 py-5">
+                                                        <div className="font-bold text-primary text-base group-hover:translate-x-1 transition-transform">{s.name}</div>
+                                                    </td>
+                                                    <td className="px-6 py-5">
+                                                        <span className="text-sm font-bold text-slate-500">{s.qual}</span>
+                                                    </td>
+                                                    <td className="px-6 py-5">
+                                                        <span className="px-4 py-1.5 bg-blue-50 text-primary text-[10px] font-black rounded-lg uppercase tracking-wider group-hover:bg-accent group-hover:text-primary transition-colors">
+                                                            {s.post}
+                                                        </span>
+                                                    </td>
                                                 </tr>
                                             ))}
                                         </tbody>
@@ -160,6 +190,26 @@ const Faculty = () => {
                                 </div>
                             </div>
                         ))}
+                    </div>
+
+                    {/* Institutional Commitments */}
+                    <div className="mt-24 reveal-up" data-reveal-init>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {[
+                                { title: "Optimal Ratio", desc: "Adequate faculty-student ratio as per norms.", icon: "fa-users-class" },
+                                { title: "Qualified Staff", desc: "Qualified faculty in all core nursing specialties.", icon: "fa-user-graduate" },
+                                { title: "Leadership", desc: "Structured leadership with HODs for each wing.", icon: "fa-vial-circle-check" },
+                                { title: "CNE Activities", desc: "Continuous development (FDP) & Workshops.", icon: "fa-microscope" }
+                            ].map((item, idx) => (
+                                <div key={idx} className="p-8 bg-white rounded-[32px] shadow-sm border border-gray-100 text-center hover:shadow-xl transition-all">
+                                    <div className="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6">
+                                        <i className={`fas ${item.icon} text-2xl text-accent`}></i>
+                                    </div>
+                                    <h4 className="font-black text-primary mb-3 text-lg leading-tight uppercase tracking-tighter">{item.title}</h4>
+                                    <p className="text-sm text-slate-500 font-bold leading-relaxed">{item.desc}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </section>
