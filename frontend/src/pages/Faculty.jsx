@@ -171,7 +171,7 @@ const Faculty = () => {
                                         <tbody className="divide-y divide-slate-50">
                                             {dept.staff.map((s, i) => (
                                                 <tr key={i} className="hover:bg-slate-50 transition-colors group">
-                                                    <td className="px-6 py-5 text-sm font-black text-primary/30">0{i + 1}</td>
+                                                    <td className="px-6 py-5 text-sm font-black text-slate-300">0{i + 1}</td>
                                                     <td className="px-6 py-5">
                                                         <div className="font-bold text-primary text-base group-hover:translate-x-1 transition-transform">{s.name}</div>
                                                     </td>
@@ -179,7 +179,7 @@ const Faculty = () => {
                                                         <span className="text-sm font-bold text-slate-500">{s.qual}</span>
                                                     </td>
                                                     <td className="px-6 py-5">
-                                                        <span className="px-4 py-1.5 bg-blue-50 text-primary text-[10px] font-black rounded-lg uppercase tracking-wider group-hover:bg-accent group-hover:text-primary transition-colors">
+                                                        <span className="px-4 py-1.5 bg-blue-50 text-indigo-900 text-[10px] font-black rounded-lg uppercase tracking-wider group-hover:bg-accent group-hover:text-primary transition-colors">
                                                             {s.post}
                                                         </span>
                                                     </td>

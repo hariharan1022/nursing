@@ -178,18 +178,18 @@ const Research = () => {
                             <div className="blue-box-premium p-10 md:p-14 rounded-[50px] shadow-2xl h-full">
                                 <h3 className="text-3xl font-black mb-12 text-primary uppercase tracking-tighter">Research Output Summary</h3>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    <div className="p-8 bg-white/40 backdrop-blur-md rounded-[32px] border border-white/30 text-center">
+                                    <div className="p-8 bg-slate-50 rounded-[32px] border border-blue-100 text-center">
                                         <div className="text-6xl font-black text-primary mb-2">54</div>
                                         <p className="text-xs font-black uppercase tracking-widest text-slate-500">Studies Completed</p>
-                                        <p className="text-[10px] text-primary/40 font-bold mt-1">(2013-2025 Accumulated)</p>
+                                        <p className="text-[10px] text-slate-400 font-bold mt-1">(2013-2025 Accumulated)</p>
                                     </div>
-                                    <div className="p-8 bg-white/40 backdrop-blur-md rounded-[32px] border border-white/30 text-center">
+                                    <div className="p-8 bg-slate-50 rounded-[32px] border border-blue-100 text-center">
                                         <div className="text-6xl font-black text-primary mb-2">04</div>
                                         <p className="text-xs font-black uppercase tracking-widest text-slate-500">Ongoing Projects</p>
-                                        <p className="text-[10px] text-primary/40 font-bold mt-1">(2025-2026 Session)</p>
+                                        <p className="text-[10px] text-slate-400 font-bold mt-1">(2025-2026 Session)</p>
                                     </div>
                                 </div>
-                                <div className="mt-10 p-8 bg-primary/5 rounded-3xl border border-primary/10">
+                                <div className="mt-10 p-8 bg-blue-50/30 rounded-3xl border border-blue-100">
                                     <p className="text-slate-600 font-bold text-center leading-relaxed">
                                         Focus on preventive, promotive, and rehabilitative healthcare research integrated across Government Hospitals, Primary Health Centers, Schools, and Rural Communities.
                                     </p>
