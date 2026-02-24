@@ -119,10 +119,10 @@ const BScNursing = () => {
                     <span className="hero-tag-gold reveal-zoom" data-reveal-init>
                         Bachelor of Science
                     </span>
-                    <h1 className="reveal-skew stagger-1" data-reveal-init style={{ color: 'white' }}>
+                    <h1 className="reveal-skew stagger-1" data-reveal-init>
                         B.Sc. Nursing
                     </h1>
-                    <p className="reveal-blur stagger-2" data-reveal-init style={{ color: 'rgba(255,255,255,0.9)' }}>
+                    <p className="reveal-blur stagger-2" data-reveal-init>
                         A comprehensive four-year program preparing graduates for clinical excellence and professional leadership in nursing and midwifery.
                     </p>
                 </div>
@@ -285,11 +285,11 @@ const BScNursing = () => {
                 <div className="container">
                     <div className="apply-card">
                         <div style={{ position: 'relative', zIndex: 2 }}>
-                            <h2 style={{ color: 'var(--accent)', marginBottom: '20px' }} className="pulse-glow">Ready to start your nursing career?</h2>
-                            <p style={{ fontSize: '1.2rem', marginBottom: '40px', opacity: 0.9 }}>Join Mount Zion College of Nursing and become a qualified professional nurse.</p>
+                            <h2 style={{ color: 'var(--primary)', marginBottom: '25px', fontWeight: 900, fontSize: '2.8rem' }} className="pulse-glow">Ready to start your nursing career?</h2>
+                            <p style={{ fontSize: '1.25rem', marginBottom: '45px', color: 'var(--text-muted)', fontWeight: 600 }}>Join Mount Zion College of Nursing and become a qualified professional nurse.</p>
                             <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
-                                <Link to="/admissions" className="btn btn-primary" style={{ background: 'var(--accent)', color: 'var(--primary)', padding: '15px 40px' }}>ADMISSION INFO</Link>
-                                <Link to="/contact" className="btn btn-outline" style={{ borderColor: 'white', color: 'white', padding: '15px 40px' }}>CONTACT US</Link>
+                                <Link to="/admissions" className="btn btn-primary" style={{ padding: '18px 45px', fontWeight: 900 }}>ADMISSION INFO</Link>
+                                <Link to="/contact" className="btn btn-outline" style={{ padding: '18px 45px', fontWeight: 900 }}>CONTACT US</Link>
                             </div>
                         </div>
                     </div>

@@ -197,10 +197,10 @@ const InfoCorner = () => {
                     <span className="hero-tag-gold reveal-zoom" data-reveal-init>
                         LATEST UPDATES
                     </span>
-                    <h1 className="reveal-skew stagger-1" data-reveal-init style={{ color: 'white' }}>
+                    <h1 className="reveal-skew stagger-1" data-reveal-init>
                         Information Corner
                     </h1>
-                    <p className="reveal-blur stagger-2" data-reveal-init style={{ color: 'rgba(255,255,255,0.9)', maxWidth: '800px', margin: '0 auto' }}>
+                    <p className="reveal-blur stagger-2" data-reveal-init style={{ maxWidth: '800px', margin: '0 auto' }}>
                         Stay updated with the latest circulars, professional milestones, and academic achievements at Mount Zion College of Nursing.
                     </p>
                 </div>
@@ -373,12 +373,12 @@ const InfoCorner = () => {
                                 </h2>
                                 <div className="apply-card reveal-zoom">
                                     <div style={{ position: 'relative', zIndex: 2 }}>
-                                        <h3 style={{ color: 'white', marginBottom: '15px' }}>Join Our Faculty</h3>
-                                        <p style={{ opacity: 0.9, marginBottom: '25px' }}>We are looking for dedicated Nursing Tutors and Assistant Professors to join our esteemed institution.</p>
-                                        <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
-                                            <Link to="/careers" className="btn" style={{ background: 'var(--accent)', color: 'var(--primary)', fontWeight: 800, textDecoration: 'none' }}>APPLY NOW</Link>
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                                <i className="fas fa-envelope"></i> <span>jobs@mzcn.in</span>
+                                        <h3 style={{ color: 'var(--primary)', marginBottom: '20px', fontWeight: 900, fontSize: '2.5rem' }}>Join Our Faculty</h3>
+                                        <p style={{ color: 'var(--text-muted)', fontWeight: 600, marginBottom: '35px', fontSize: '1.2rem' }}>We are looking for dedicated Nursing Tutors and Assistant Professors to join our esteemed institution.</p>
+                                        <div style={{ display: 'flex', justifyContent: 'center', gap: '25px', flexWrap: 'wrap', alignItems: 'center' }}>
+                                            <Link to="/careers" className="btn btn-primary" style={{ padding: '18px 45px', fontWeight: 900 }}>APPLY NOW</Link>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--primary)', fontWeight: 800 }}>
+                                                <i className="fas fa-envelope" style={{ color: 'var(--accent)' }}></i> <span>jobs@mzcn.in</span>
                                             </div>
                                         </div>
                                     </div>

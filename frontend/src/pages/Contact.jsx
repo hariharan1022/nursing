@@ -27,10 +27,10 @@ const Contact = () => {
                     <span className="hero-tag-gold reveal-zoom" data-reveal-init>
                         GET IN TOUCH
                     </span>
-                    <h1 className="reveal-skew stagger-1" data-reveal-init style={{ color: 'white' }}>
+                    <h1 className="reveal-skew stagger-1" data-reveal-init>
                         Contact Our Campus
                     </h1>
-                    <p className="reveal-blur stagger-2" data-reveal-init style={{ color: 'rgba(255,255,255,0.9)' }}>
+                    <p className="reveal-blur stagger-2" data-reveal-init>
                         Have questions about our programs or the admission process? Our team is here to help you every step of the way.
                     </p>
                 </div>
@@ -96,7 +96,7 @@ const Contact = () => {
                                 <div className="timings-content">
                                     <i className="far fa-clock" style={{ fontSize: '1.5rem', opacity: 0.9 }}></i>
                                     <div>
-                                        <span style={{ fontSize: '1.2rem', fontWeight: 600, display: 'block' }}>9:00 AM - 5:00 PM</span>
+                                        <span style={{ fontSize: '1.2rem', fontWeight: 600, display: 'block' }}>9:00 AM – 4:30 PM</span>
                                         <span style={{ fontSize: '0.95rem', opacity: 0.85 }}>Monday to Saturday</span>
                                     </div>
                                     <span className="timings-badge" style={{

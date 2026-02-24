@@ -217,14 +217,14 @@ const Facilities = () => {
             {/* Hero Section */}
             <div className="inner-hero">
                 <div className="container mx-auto px-4 relative z-10 text-center">
-                    <span className="hero-tag-gold reveal-zoom" data-reveal-init>
-                        Excellence in Infrastructure
+                    <span className="hero-tag-glass reveal-zoom" data-reveal-init>
+                        INFRASTRUCTURE & BEYOND
                     </span>
                     <h1 className="reveal-skew stagger-1" data-reveal-init style={{ color: 'white' }}>
-                        Physical Facilities
+                        Facilities & Ecosystem
                     </h1>
                     <p className="reveal-blur stagger-2" data-reveal-init style={{ color: 'rgba(255,255,255,0.9)' }}>
-                        Providing a comprehensive, student-friendly, and professionally enriched learning environment for global healthcare leaders.
+                        Providing a holistic environment for academic excellence and personal growth.
                     </p>
                 </div>
             </div>
@@ -269,36 +269,36 @@ const Facilities = () => {
                                 <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Academic Infrastructure</h2>
                             </div>
 
-                            <div className="grid md:grid-cols-2 gap-8">
+                            <div className="grid md-grid-cols-2 gap-8">
                                 <div className="space-y-6">
-                                    <div className="blue-box-premium p-6 rounded-2xl group transition-all hover:shadow-2xl">
-                                        <h3 className="text-xl font-bold text-white mb-3">Modern Classrooms</h3>
-                                        <p className="text-white/80 leading-relaxed text-sm">
+                                    <div className="blue-box-premium p-10 reveal-left" data-reveal-init>
+                                        <h3 className="text-2xl font-bold text-primary mb-4">Modern Classrooms</h3>
+                                        <p className="text-slate-600 leading-relaxed text-lg font-medium">
                                             Five spacious, well-ventilated classrooms equipped with modern projected and non-projected audio-visual aids to facilitate interactive and outcome-based learning.
                                         </p>
                                     </div>
-                                    <div className="blue-box-premium p-6 rounded-2xl group transition-all hover:shadow-2xl">
-                                        <h3 className="text-xl font-bold text-white mb-3">Seminar Hall</h3>
-                                        <p className="text-white/80 leading-relaxed text-sm">
+                                    <div className="blue-box-premium p-10 reveal-left" data-reveal-init>
+                                        <h3 className="text-2xl font-bold text-primary mb-4">Seminar Hall</h3>
+                                        <p className="text-slate-600 leading-relaxed text-lg font-medium">
                                             A fully equipped seminar hall with smart board technology, ideal for academic programs, workshops, conferences, CNE programs, and guest lectures.
                                         </p>
                                     </div>
                                 </div>
                                 <div className="space-y-6">
-                                    <div className="bg-slate-50/40 p-8 rounded-2xl border border-slate-200">
-                                        <h3 className="text-xl font-bold text-slate-900 mb-4">Multipurpose Facilities</h3>
-                                        <p className="text-gray-700 leading-relaxed text-sm mb-4">
+                                    <div className="premium-card reveal-right" data-reveal-init>
+                                        <h3 className="text-2xl font-bold text-slate-900 mb-6">Multipurpose Facilities</h3>
+                                        <p className="text-gray-700 leading-relaxed text-lg mb-6">
                                             Three spacious multipurpose halls with modern projection systems suitable for academic, cultural, and professional development activities.
                                         </p>
-                                        <div className="flex gap-2">
-                                            <span className="px-3 py-1 bg-white text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200 uppercase">Academic</span>
-                                            <span className="px-3 py-1 bg-white text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200 uppercase">Cultural</span>
-                                            <span className="px-3 py-1 bg-white text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200 uppercase">CNE</span>
+                                        <div className="flex gap-3">
+                                            <span className="px-4 py-2 bg-slate-100 text-slate-600 text-xs font-black rounded-xl border border-slate-200 uppercase tracking-widest">Academic</span>
+                                            <span className="px-4 py-2 bg-slate-100 text-slate-600 text-xs font-black rounded-xl border border-slate-200 uppercase tracking-widest">Cultural</span>
+                                            <span className="px-4 py-2 bg-slate-100 text-slate-600 text-xs font-black rounded-xl border border-slate-200 uppercase tracking-widest">Growth</span>
                                         </div>
                                     </div>
-                                    <div className="p-6">
-                                        <p className="text-sm italic text-gray-500 border-l-2 border-blue-400 pl-4 font-medium">
-                                            Infrastructure thoughtfully designed to foster clinical brilliance and holistic development.
+                                    <div className="interaction-box reveal-right" data-reveal-init>
+                                        <p className="text-lg italic text-slate-600 border-l-4 border-blue-500 pl-6 font-semibold">
+                                            "Infrastructure thoughtfully designed to foster clinical brilliance and holistic development."
                                         </p>
                                     </div>
                                 </div>
@@ -309,44 +309,44 @@ const Facilities = () => {
 
                 {/* LIBRARY SECTION */}
                 <section id="library" className="reveal scroll-mt-32">
-                    <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 relative overflow-hidden">
-                        <div className="relative z-10">
-                            <div className="flex items-center gap-4 mb-8">
-                                <div className="p-3 bg-indigo-100 text-indigo-600 rounded-2xl shadow-inner">
+                    <div className="premium-card" style={{ padding: '0', border: 'none' }}>
+                        <div className="p-8 md:p-12 relative overflow-hidden">
+                            <div className="flex items-center gap-4 mb-10">
+                                <div className="club-icon-box shadow-lg" style={{ background: 'var(--primary)', color: 'white' }}>
                                     <BookOpen className="w-8 h-8" />
                                 </div>
-                                <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Library & Resources</h2>
+                                <h2 className="text-4xl font-bold text-gray-900 tracking-tight">Library & Resources</h2>
                             </div>
 
-                            <div className="grid md:grid-cols-2 gap-12 text-gray-600 leading-relaxed mb-10">
-                                <div className="space-y-6">
-                                    <p className="first-letter:text-4xl first-letter:font-bold first-letter:text-indigo-600 first-letter:mr-2">
+                            <div className="grid md:grid-cols-2 gap-12 text-gray-600 leading-relaxed mb-12">
+                                <div className="space-y-8">
+                                    <p className="text-2xl font-medium text-slate-700 leading-relaxed">
                                         Our well-established library serves as the academic heart, providing a quiet, resource-rich environment encouraging research and lifelong learning.
                                     </p>
-                                    <div className="grid grid-cols-3 gap-4">
-                                        <div className="bg-slate-50 p-4 rounded-xl text-center border border-slate-100 shadow-sm">
-                                            <div className="text-xl font-black text-indigo-900">3,500+</div>
-                                            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-tighter">Books</div>
+                                    <div className="grid grid-cols-3 gap-6">
+                                        <div className="interaction-box text-center shadow-sm">
+                                            <div className="text-3xl font-black text-primary">3,500+</div>
+                                            <div className="text-[12px] uppercase font-black text-slate-500 tracking-widest mt-2">Books</div>
                                         </div>
-                                        <div className="bg-slate-50 p-4 rounded-xl text-center border border-slate-100 shadow-sm">
-                                            <div className="text-xl font-black text-indigo-900">1,500+</div>
-                                            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-tighter">Titles</div>
+                                        <div className="interaction-box text-center shadow-sm">
+                                            <div className="text-3xl font-black text-primary">1,500+</div>
+                                            <div className="text-[12px] uppercase font-black text-slate-500 tracking-widest mt-2">Titles</div>
                                         </div>
-                                        <div className="bg-slate-50 p-4 rounded-xl text-center border border-slate-100 shadow-sm">
-                                            <div className="text-xl font-black text-indigo-900">12</div>
-                                            <div className="text-[10px] uppercase font-bold text-slate-500 tracking-tighter">Journals</div>
+                                        <div className="interaction-box text-center shadow-sm">
+                                            <div className="text-3xl font-black text-primary">12</div>
+                                            <div className="text-[12px] uppercase font-black text-slate-500 tracking-widest mt-2">Journals</div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="blue-box-premium p-8 rounded-3xl group shadow-lg">
-                                    <h3 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                                        <Wifi size={18} className="text-blue-300" /> Digital Infrastructure
+                                <div className="blue-box-premium reveal-zoom" data-reveal-init>
+                                    <h3 className="text-2xl font-bold text-primary mb-6 flex items-center gap-3">
+                                        <Wifi size={24} className="text-blue-600" /> Digital Infrastructure
                                     </h3>
-                                    <ul className="space-y-4 text-xs font-semibold text-blue-100/90">
-                                        <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-accent rounded-full"></div> Digital / Virtual Library Access</li>
-                                        <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-accent rounded-full"></div> Barcode Management System</li>
-                                        <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-accent rounded-full"></div> Member of IEEE & DELNET</li>
+                                    <ul className="space-y-6 text-sm font-bold text-slate-600">
+                                        <li className="flex items-center gap-4"><div className="w-2 h-2 bg-blue-600 rounded-full shadow-[0_0_10px_rgba(0,43,91,0.2)]"></div> Digital / Virtual Library Access</li>
+                                        <li className="flex items-center gap-4"><div className="w-2 h-2 bg-blue-600 rounded-full shadow-[0_0_10px_rgba(0,43,91,0.2)]"></div> Barcode Management System</li>
+                                        <li className="flex items-center gap-4"><div className="w-2 h-2 bg-blue-600 rounded-full shadow-[0_0_10px_rgba(0,43,91,0.2)]"></div> Member of IEEE & DELNET</li>
                                     </ul>
                                 </div>
                             </div>
@@ -363,24 +363,24 @@ const Facilities = () => {
 
                         <div className="relative z-10">
                             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-                                <div className="max-w-2xl">
-                                    <div className="flex items-center gap-4 mb-6">
-                                        <div className="p-3 bg-emerald-100 text-emerald-600 rounded-2xl shadow-inner border border-emerald-200">
-                                            <PlusCircle className="w-8 h-8" />
+                                <div className="max-w-3xl">
+                                    <div className="flex items-center gap-4 mb-8">
+                                        <div className="club-icon-box shadow-lg" style={{ background: '#10b981', color: 'white' }}>
+                                            <Microscope className="w-8 h-8" />
                                         </div>
-                                        <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Specialized Clinical Laboratories</h2>
+                                        <h2 className="text-4xl font-bold text-gray-900 tracking-tight">Specialized Clinical Laboratories</h2>
                                     </div>
-                                    <p className="text-gray-600 text-sm leading-relaxed font-medium">
+                                    <p className="text-slate-600 text-lg leading-relaxed font-medium">
                                         High-fidelity simulation units architected to bridge the gap between theoretical pedagogy and real-world clinical dexterity. Each laboratory is equipped with advanced manikins, specialized hardware, and outcome-based diagnostic tools.
                                     </p>
                                 </div>
                                 <div className="hidden lg:block text-right">
-                                    <div className="text-4xl font-black text-emerald-600">10</div>
-                                    <div className="text-[10px] font-black uppercase text-slate-400 tracking-[0.2em]">Clinical Units</div>
+                                    <div className="text-6xl font-black text-emerald-600 opacity-20">10+</div>
+                                    <div className="text-[12px] font-black uppercase text-slate-500 tracking-[0.3em] mt-2">Clinical Units</div>
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-stagger" data-reveal-init>
                                 {[
                                     { t: "Nursing Foundation", d: "Core clinical skill rehearsals and basic nursing procedures on high-fidelity manikins.", icon: Stethoscope },
                                     { t: "Adult Health Nursing", d: "Sophisticated simulation of intensive care and advanced medical-surgical protocols.", icon: Activity },
@@ -393,16 +393,16 @@ const Facilities = () => {
                                     { t: "Anatomy & Physiology", d: "An exhaustive museum of biological specimens, intricate models, and skeletal systems.", icon: Landmark },
                                     { t: "Advanced Computer Lab", d: "Training in Hospital Management Systems (HMS) and digital medical record analysis.", icon: Monitor }
                                 ].map((lab, i) => (
-                                    <div key={i} className="group/lab bg-slate-50/50 p-6 rounded-2xl border border-slate-100 transition-all hover:bg-white hover:shadow-xl hover:-translate-y-1 duration-300">
-                                        <div className="flex items-start gap-4">
-                                            <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center bg-white rounded-xl shadow-sm border border-slate-100 group-hover/lab:bg-emerald-600 group-hover/lab:text-white transition-all duration-300">
-                                                <lab.icon size={20} className="transition-transform group-hover/lab:scale-110" />
+                                    <div key={i} className="premium-card shine-effect group transition-all duration-300">
+                                        <div className="flex flex-col gap-6">
+                                            <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center bg-slate-50 rounded-2xl border border-slate-100 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm">
+                                                <lab.icon size={30} className="transition-transform group-hover:scale-110" />
                                             </div>
                                             <div>
-                                                <h3 className="text-sm font-black text-slate-900 uppercase tracking-tight mb-2">
+                                                <h3 className="text-xl font-black text-slate-900 uppercase tracking-tight mb-4">
                                                     {lab.t}
                                                 </h3>
-                                                <p className="text-[12px] text-slate-500 font-medium leading-relaxed">
+                                                <p className="text-slate-500 font-medium leading-relaxed">
                                                     {lab.d}
                                                 </p>
                                             </div>
@@ -561,45 +561,45 @@ const Facilities = () => {
 
                 {/* TRANSPORT SECTION */}
                 <section id="transport" className="reveal scroll-mt-32">
-                    <div className="bg-indigo-900 text-white rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500 rounded-full blur-[100px] opacity-20 -translate-y-1/2 translate-x-1/2"></div>
+                    <div className="premium-card rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-80 h-80 bg-blue-50 rounded-full blur-[100px] opacity-20 -translate-y-1/2 translate-x-1/2"></div>
                         <div className="relative z-10">
                             <div className="flex items-center gap-4 mb-10">
-                                <div className="p-3 bg-white/10 backdrop-blur-md rounded-2xl shadow-inner">
-                                    <Bus className="w-8 h-8 text-blue-300" />
+                                <div className="p-3 bg-blue-100 rounded-2xl shadow-inner">
+                                    <Bus className="w-8 h-8 text-blue-600" />
                                 </div>
-                                <h2 className="text-3xl font-bold tracking-tight">Transport & Connectivity</h2>
+                                <h2 className="text-3xl font-bold tracking-tight text-slate-900">Transport & Connectivity</h2>
                             </div>
 
                             <div className="grid md:grid-cols-2 gap-10 mb-12">
                                 <div className="space-y-6">
-                                    <div className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10 shadow-xl">
-                                        <h3 className="text-xl font-bold text-blue-300 mb-6 uppercase tracking-widest text-xs">Campus Connectivity</h3>
+                                    <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-sm">
+                                        <h3 className="text-xl font-bold text-blue-600 mb-6 uppercase tracking-widest text-xs">Campus Connectivity</h3>
                                         <div className="space-y-8">
                                             <div className="flex items-start gap-5">
-                                                <div className="p-4 bg-white/10 rounded-2xl"><Landmark size={24} className="text-blue-200" /></div>
+                                                <div className="p-4 bg-white rounded-2xl border border-slate-100"><Landmark size={24} className="text-blue-600" /></div>
                                                 <div>
-                                                    <h4 className="font-bold text-white mb-1">Railway Proximity</h4>
-                                                    <p className="text-sm text-blue-100/70">Close proximity to Nachanthupatti Railway Station.</p>
+                                                    <h4 className="font-bold text-slate-900 mb-1">Railway Proximity</h4>
+                                                    <p className="text-sm text-slate-600">Close proximity to Nachanthupatti Railway Station.</p>
                                                 </div>
                                             </div>
                                             <div className="flex items-start gap-5">
-                                                <div className="p-4 bg-white/10 rounded-2xl"><PlusCircle size={24} className="text-blue-200" /></div>
+                                                <div className="p-4 bg-white rounded-2xl border border-slate-100"><PlusCircle size={24} className="text-blue-600" /></div>
                                                 <div>
-                                                    <h4 className="font-bold text-white mb-1">Aviation Access</h4>
-                                                    <p className="text-sm text-blue-100/70">Tiruchirappalli International Airport (56 KM).</p>
+                                                    <h4 className="font-bold text-slate-900 mb-1">Aviation Access</h4>
+                                                    <p className="text-sm text-slate-600">Tiruchirappalli International Airport (56 KM).</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className="bg-white/5 backdrop-blur-sm p-10 rounded-3xl border border-white/10 space-y-6">
-                                    <h3 className="text-xl font-bold text-indigo-300">Regional Coverage</h3>
-                                    <p className="text-blue-100/70 text-sm leading-relaxed"> Extensive bus facilities with convenient access from nearby locations including Melur, Karambakkudi, Pattukkottai, Karaikudi, and Trichy. </p>
+                                <div className="bg-slate-50 p-10 rounded-3xl border border-slate-100 space-y-6">
+                                    <h3 className="text-xl font-bold text-indigo-900">Regional Coverage</h3>
+                                    <p className="text-slate-600 text-sm leading-relaxed font-medium"> Extensive bus facilities with convenient access from nearby locations including Melur, Karambakkudi, Pattukkottai, Karaikudi, and Trichy. </p>
                                     <div className="flex flex-wrap gap-2 pt-4">
                                         {['TRICHY', 'PUDUKKOTTAI', 'KARAIKUDI', 'MELUR'].map((city, i) => (
-                                            <span key={i} className="px-5 py-2 bg-blue-600/30 text-blue-100 text-[10px] font-black tracking-widest rounded-xl border border-white/10">
+                                            <span key={i} className="px-5 py-2 bg-blue-100 text-blue-800 text-[10px] font-black tracking-widest rounded-xl border border-blue-200">
                                                 {city}
                                             </span>
                                         ))}

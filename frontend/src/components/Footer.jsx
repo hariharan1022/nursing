@@ -184,7 +184,6 @@ const Footer = () => {
                         content: '';
                         position: absolute;
                         inset: 0;
-                        background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
                         opacity: 0.1;
                         pointer-events: none;
                     }
@@ -227,7 +226,6 @@ const Footer = () => {
                     content: '';
                     position: absolute;
                     inset: 0;
-                    background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
                     opacity: 0.15;
                     pointer-events: none;
                 }
@@ -311,7 +309,7 @@ const Footer = () => {
                             <div>
                                 <p style={{ margin: 0, fontSize: '0.82rem', fontWeight: 700, color: '#D4AF37', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Principal</p>
                                 <p style={{ margin: '2px 0', fontSize: '0.92rem', fontWeight: 600 }}>+91 99655 20316</p>
-                                <p style={{ margin: 0, fontSize: '0.72rem', opacity: 0.6 }}><i className="far fa-clock" style={{ marginRight: '4px' }}></i>9 a.m. - 5 p.m.</p>
+                                <p style={{ margin: 0, fontSize: '0.72rem', opacity: 0.6 }}><i className="far fa-clock" style={{ marginRight: '4px' }}></i>9:00 AM – 4:30 PM</p>
                             </div>
                         </div>
                         <div className="f-contact-item" style={{ marginBottom: '20px', background: 'rgba(255,255,255,0.03)', padding: '10px', borderRadius: '8px' }}>
@@ -319,7 +317,7 @@ const Footer = () => {
                             <div>
                                 <p style={{ margin: 0, fontSize: '0.82rem', fontWeight: 700, color: '#D4AF37', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Vice Principal</p>
                                 <p style={{ margin: '2px 0', fontSize: '0.92rem', fontWeight: 600 }}>+91 99655 66664</p>
-                                <p style={{ margin: 0, fontSize: '0.72rem', opacity: 0.6 }}><i className="far fa-clock" style={{ marginRight: '4px' }}></i>9 a.m. - 5 p.m.</p>
+                                <p style={{ margin: 0, fontSize: '0.72rem', opacity: 0.6 }}><i className="far fa-clock" style={{ marginRight: '4px' }}></i>9:00 AM – 4:30 PM</p>
                             </div>
                         </div>
                         <div className="admission-blue-box">
@@ -377,14 +375,14 @@ const Footer = () => {
                                 <div>
                                     <span style={{ fontWeight: 700, color: '#D4AF37' }}>Principal:</span><br />
                                     +91 99655 20316<br />
-                                    <span style={{ opacity: 0.6, fontSize: '0.6rem' }}>9 am - 5 pm</span>
+                                    <span style={{ opacity: 0.6, fontSize: '0.6rem' }}>9:00 AM – 4:30 PM</span>
                                 </div>
                             </div>
                             <div className="f-contact-item" style={{ fontSize: '0.7rem' }}>
                                 <div>
                                     <span style={{ fontWeight: 700, color: '#D4AF37' }}>Vice Principal:</span><br />
                                     +91 99655 66664<br />
-                                    <span style={{ opacity: 0.6, fontSize: '0.6rem' }}>9 am - 5 pm</span>
+                                    <span style={{ opacity: 0.6, fontSize: '0.6rem' }}>9 am - 4:30 pm</span>
                                 </div>
                             </div>
                         </div>
@@ -404,7 +402,7 @@ const Footer = () => {
                         <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.8rem', marginRight: '5px' }}>Our Affiliations:</span>
                         <a href="https://www.indiannursingcouncil.org/" target="_blank" rel="noopener noreferrer" className="affiliation-tag">INC</a>
                         <a href="https://www.tamilnadunursingcouncil.com/" target="_blank" rel="noopener noreferrer" className="affiliation-tag">TNNMC</a>
-                        <a href="https://www.tnmgrmu.ac.in/" target="_blank" rel="noopener noreferrer" className="affiliation-tag">M.G.R. University</a>
+                        <a href="https://www.tnmgrmu.ac.in/" target="_blank" rel="noopener noreferrer" className="affiliation-tag">The Tamil Nadu Dr. M.G.R. Medical University</a>
                         <a href="https://tnhealth.tn.gov.in/" target="_blank" rel="noopener noreferrer" className="affiliation-tag">TNHFW</a>
                         <a href="https://tnmedicalselection.org/" target="_blank" rel="noopener noreferrer" className="affiliation-tag">DME</a>
                     </div>
@@ -416,7 +414,7 @@ const Footer = () => {
                         © 2026 Mount Zion College of Nursing. All Rights Reserved.
                     </p>
                     <p style={{ margin: 0, fontSize: '0.8rem' }}>
-                        Designed and Maintained by <span className="animated-text">Dept. of IT - MZCET</span>
+                        Designed and Maintained by <span className="animated-text">Dept. of IT AIDS - MZCET</span>
                     </p>
                 </div>
             </div>

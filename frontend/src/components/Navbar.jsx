@@ -83,11 +83,12 @@ const Navbar = () => {
     };
 
     const toggleDropdown = (e, name) => {
-        // Prevent default navigation when toggling dropdown on mobile
         if (window.innerWidth <= 1100) {
-            if (e && e.preventDefault) e.preventDefault();
-            if (e && e.stopPropagation) e.stopPropagation();
-            setActiveDropdown(activeDropdown === name ? null : name);
+            if (e) {
+                if (e.preventDefault) e.preventDefault();
+                if (e.stopPropagation) e.stopPropagation();
+            }
+            setActiveDropdown(prev => prev === name ? null : name);
         }
     };
 

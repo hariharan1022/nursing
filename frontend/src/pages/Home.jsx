@@ -181,20 +181,20 @@ const Home = () => {
 
             {/* Stats Section */}
             <div className="container" style={{ position: 'relative', zIndex: 10 }} data-reveal-init>
-                <div className="stats-grid reveal-skew">
-                    <div className="stat-card interactive-card glow-card">
+                <div className="stats-grid reveal-stagger">
+                    <div className="stat-card interactive-card glow-card shine-effect">
                         <h3>100%</h3>
                         <p>Placement Rate</p>
                     </div>
-                    <div className="stat-card interactive-card glow-card">
+                    <div className="stat-card interactive-card glow-card shine-effect">
                         <h3>80%</h3>
                         <p>Practical Classes</p>
                     </div>
-                    <div className="stat-card interactive-card glow-card">
+                    <div className="stat-card interactive-card glow-card shine-effect">
                         <h3>96%</h3>
                         <p>Result Oriented</p>
                     </div>
-                    <div className="stat-card interactive-card glow-card" style={{ borderRight: 'none' }}>
+                    <div className="stat-card interactive-card glow-card shine-effect" style={{ borderRight: 'none' }}>
                         <h3>17+</h3>
                         <p>Years of Service</p>
                     </div>
@@ -247,16 +247,16 @@ const Home = () => {
             {/* Global Navigation CTA */}
             <section className="section reveal-blur" style={{ padding: '80px 0', background: 'var(--bg-light)' }} data-reveal-init>
                 <div className="container">
-                    <div className="inner-hero" style={{ margin: '0', borderRadius: '50px', padding: '120px 40px', boxShadow: '0 40px 80px rgba(0, 0, 0, 0.4)' }}>
+                    <div className="apply-card" style={{ padding: '100px 40px', borderRadius: '40px' }}>
                         <div className="text-center">
-                            <span className="hero-tag-gold float-breathe">Join the 2026 Batch</span>
-                            <h2 style={{ fontSize: '3.8rem', marginBottom: '20px', color: 'white', fontWeight: 800, textShadow: '0 10px 30px rgba(0,0,0,0.4)' }} className="reveal-skew">Empowering Excellence</h2>
-                            <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.95)', fontWeight: 500, maxWidth: '800px', margin: '0 auto 40px' }}>
+                            <span className="hero-tag-glass float-breathe">Join the 2026 Batch</span>
+                            <h2 style={{ fontSize: '3.8rem', marginBottom: '25px', color: 'white', fontWeight: 900, textShadow: '0 4px 15px rgba(0,0,0,0.2)' }} className="reveal-skew">Empowering Excellence</h2>
+                            <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.9)', fontWeight: 600, maxWidth: '850px', margin: '0 auto 45px' }}>
                                 Step into a rewarding career in healthcare with one of the most prestigious nursing institutions in Pudukkottai District.
                             </p>
-                            <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                                <Link to="/admissions" className="btn btn-primary magnetic" style={{ padding: '18px 45px', fontSize: '1rem' }}>Apply For Admission &rarr;</Link>
-                                <Link to="/contact" className="btn btn-outline" style={{ borderColor: 'white', color: 'white', padding: '18px 45px', fontSize: '1rem' }}>Contact Office</Link>
+                            <div style={{ display: 'flex', gap: '25px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                                <Link to="/admissions" className="btn btn-primary magnetic" style={{ padding: '18px 45px', fontSize: '1rem', fontWeight: 900 }}>Apply For Admission &rarr;</Link>
+                                <Link to="/contact" className="btn btn-outline" style={{ padding: '18px 45px', fontSize: '1rem', fontWeight: 900 }}>Contact Office</Link>
                             </div>
                         </div>
                     </div>
@@ -270,7 +270,7 @@ const Home = () => {
                         <span className="estd-tag float-breathe" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>GALLERY</span>
                         <h2 style={{ fontSize: '3rem', color: 'var(--primary)', marginTop: '15px' }}>Capturing Excellence</h2>
                         <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '15px auto' }}>
-                            A glimpse into the clinical training, academic events, and student life at Mount Zion.
+                            Highlights from the 17th Induction Program, clinical training, and student life at Mount Zion.
                         </p>
                     </div>
 

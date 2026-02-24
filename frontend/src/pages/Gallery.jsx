@@ -24,7 +24,8 @@ const Gallery = () => {
             // Check if the parent folder is a year (e.g. gallery/2025/EventName/image.jpg)
             if (/^\d{4}$/.test(parentFolder)) {
                 year = parentFolder;
-                event = folderName.replace(/_/g, ' '); // Replace underscores with spaces if any
+                event = folderName.replace(/_/g, ' ');
+                if (event.toLowerCase().includes('induction program')) event = '17th Induction Program';
             }
             // Check if the folder itself is a year (e.g. gallery/2025/image.jpg)
             else if (/^\d{4}$/.test(folderName)) {
@@ -104,7 +105,7 @@ const Gallery = () => {
             {/* Hero Section */}
             <div className="inner-hero">
                 <div className="container mx-auto px-4 relative z-10 text-center">
-                    <span className="hero-tag-gold reveal-zoom" data-reveal-init>
+                    <span className="hero-tag-glass reveal-zoom" data-reveal-init>
                         Visual Journey
                     </span>
                     <h1 className="reveal-skew stagger-1" data-reveal-init style={{ color: 'white' }}>

@@ -38,13 +38,13 @@ const About = () => {
             {/* Hero Section */}
             <div className="inner-hero">
                 <div className="container relative z-10 text-center">
-                    <span className="hero-tag-gold reveal-zoom" data-reveal-init>
+                    <span className="hero-tag-glass reveal-zoom" data-reveal-init>
                         PREMIER INSTITUTION
                     </span>
-                    <h1 className="reveal-skew stagger-1" data-reveal-init style={{ color: 'white' }}>
+                    <h1 className="reveal-skew stagger-1" data-reveal-init>
                         About Our Institution
                     </h1>
-                    <p className="reveal-blur stagger-2" data-reveal-init style={{ color: 'rgba(255,255,255,0.9)', maxWidth: '800px', margin: '0 auto' }}>
+                    <p className="reveal-blur stagger-2" data-reveal-init style={{ maxWidth: '800px', margin: '0 auto' }}>
                         Mount Zion College of Nursing is committed to nurturing future nursing professionals with excellence, compassion, and spiritual leadership.
                     </p>
                 </div>
@@ -84,89 +84,96 @@ const About = () => {
                             </div>
 
                             <div id="vision" style={{ marginBottom: '60px', paddingTop: '20px' }} className="reveal-skew" data-reveal-init>
-                                <h3 style={{ color: 'var(--primary)', marginBottom: '20px', borderBottom: '2px solid var(--accent)', display: 'inline-block' }}>
+                                <h3 style={{ color: 'var(--primary)', marginBottom: '30px', borderBottom: '2px solid var(--accent)', display: 'inline-block', fontSize: '1.8rem' }}>
                                     Vision & Mission
                                 </h3>
-                                <div style={{ marginBottom: '30px', background: 'white', padding: '30px', borderRadius: '15px', borderLeft: '4px solid var(--primary)' }}>
-                                    <h4 style={{ color: 'var(--primary)' }}>Vision</h4>
-                                    <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)' }}>Mount Zion Institutions will be the preferred choice of all those who aspire for excellence.</p>
+                                <div style={{ marginBottom: '40px', background: 'linear-gradient(135deg, white 0%, var(--bg-light) 100%)', padding: '40px', borderRadius: '24px', borderLeft: '6px solid var(--primary)', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
+                                    <h4 style={{ color: 'var(--primary)', fontSize: '1.5rem', marginBottom: '15px' }}>Our Vision</h4>
+                                    <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', lineHeight: '1.8', fontStyle: 'italic' }}>"Mount Zion Institutions will be the preferred choice of all those who aspire for excellence."</p>
                                 </div>
-                                <div>
-                                    <h4 style={{ color: 'var(--primary)', marginBottom: '15px' }}>Mission</h4>
-                                    <ul className="mission-list">
-                                        <li><i className="fas fa-check"></i> Provide education of the highest quality.</li>
-                                        <li><i className="fas fa-check"></i> Empower students to meet global healthcare challenges.</li>
-                                        <li><i className="fas fa-check"></i> Foster attitudes for a sustainable environment.</li>
-                                        <li><i className="fas fa-check"></i> Focus on mental, physical, and spiritual holistic excellence.</li>
-                                        <li><i className="fas fa-check"></i> Synergize excellence through a wholesome ambience.</li>
-                                        <li><i className="fas fa-check"></i> Train for competence and selfless service.</li>
+                                <div className="premium-card">
+                                    <h4 style={{ color: 'var(--primary)', marginBottom: '25px', fontSize: '1.5rem' }}>Our Mission</h4>
+                                    <ul className="mission-list" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', listStyle: 'none', padding: 0 }}>
+                                        {[
+                                            "Provide education of the highest quality.",
+                                            "Empower students to meet global healthcare challenges.",
+                                            "Foster attitudes for a sustainable environment.",
+                                            "Focus on mental, physical, and spiritual holistic excellence.",
+                                            "Synergize excellence through a wholesome ambience.",
+                                            "Train for competence and selfless service."
+                                        ].map((item, i) => (
+                                            <li key={i} className="interaction-box" style={{ padding: '15px', display: 'flex', alignItems: 'center', gap: '15px', color: 'var(--primary)', fontWeight: 600 }}>
+                                                <i className="fas fa-check-circle" style={{ color: 'var(--accent)', fontSize: '1.2rem' }}></i>
+                                                {item}
+                                            </li>
+                                        ))}
                                     </ul>
                                 </div>
                             </div>
 
                             <div id="idp" style={{ marginBottom: '60px', paddingTop: '20px' }} className="reveal-flip" data-reveal-init>
-                                <h3 style={{ color: 'var(--primary)', marginBottom: '20px', borderBottom: '2px solid var(--accent)', display: 'inline-block' }}>
+                                <h3 style={{ color: 'var(--primary)', marginBottom: '30px', borderBottom: '2px solid var(--accent)', display: 'inline-block', fontSize: '1.8rem' }}>
                                     Institutional Development Plan (IDP)
                                 </h3>
                                 <div className="idp-grid">
-                                    <div className="idp-card">
-                                        <i className="fas fa-hospital"></i>
-                                        <h4 style={{ color: 'var(--primary)', marginBottom: '10px' }}>MZ Multispecialty Hospital</h4>
-                                        <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Developing a 150-bedded hospital with specialized palliative care.</p>
+                                    <div className="premium-card">
+                                        <div className="club-icon-box" style={{ width: '50px', height: '50px', fontSize: '1.2rem', marginBottom: '20px' }}>
+                                            <i className="fas fa-hospital"></i>
+                                        </div>
+                                        <h4 style={{ color: 'var(--primary)', marginBottom: '15px', fontSize: '1.3rem' }}>MZ Multispecialty Hospital</h4>
+                                        <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: '1.6' }}>Developing a 150-bedded hospital with specialized palliative care.</p>
                                     </div>
-                                    <div className="idp-card">
-                                        <i className="fas fa-graduation-cap"></i>
-                                        <h4 style={{ color: 'var(--primary)', marginBottom: '10px' }}>Academic Autonomy</h4>
-                                        <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Strategizing to achieve autonomous status by the year 2030.</p>
+                                    <div className="premium-card">
+                                        <div className="club-icon-box" style={{ width: '50px', height: '50px', fontSize: '1.2rem', marginBottom: '20px' }}>
+                                            <i className="fas fa-graduation-cap"></i>
+                                        </div>
+                                        <h4 style={{ color: 'var(--primary)', marginBottom: '15px', fontSize: '1.3rem' }}>Academic Autonomy</h4>
+                                        <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: '1.6' }}>Strategizing to achieve autonomous status by the year 2030.</p>
                                     </div>
-                                    <div className="idp-card">
-                                        <i className="fas fa-vial"></i>
-                                        <h4 style={{ color: 'var(--primary)', marginBottom: '10px' }}>Centers of Excellence</h4>
-                                        <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>High-fidelity simulation labs for advanced clinical skills.</p>
+                                    <div className="premium-card">
+                                        <div className="club-icon-box" style={{ width: '50px', height: '50px', fontSize: '1.2rem', marginBottom: '20px' }}>
+                                            <i className="fas fa-vial"></i>
+                                        </div>
+                                        <h4 style={{ color: 'var(--primary)', marginBottom: '15px', fontSize: '1.3rem' }}>Centers of Excellence</h4>
+                                        <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: '1.6' }}>High-fidelity simulation labs for advanced clinical skills.</p>
                                     </div>
-                                    <div className="idp-card">
-                                        <i className="fas fa-medal"></i>
-                                        <h4 style={{ color: 'var(--primary)', marginBottom: '10px' }}>NAAC Excellence</h4>
-                                        <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>Working towards an "A" grade in the NAAC accreditation.</p>
+                                    <div className="premium-card">
+                                        <div className="club-icon-box" style={{ width: '50px', height: '50px', fontSize: '1.2rem', marginBottom: '20px' }}>
+                                            <i className="fas fa-medal"></i>
+                                        </div>
+                                        <h4 style={{ color: 'var(--primary)', marginBottom: '15px', fontSize: '1.3rem' }}>NAAC Excellence</h4>
+                                        <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: '1.6' }}>Working towards an "A" grade in the NAAC accreditation.</p>
                                     </div>
                                 </div>
                             </div>
 
                             <div id="organogram" style={{ marginBottom: '60px', paddingTop: '20px' }} className="reveal-zoom" data-reveal-init>
-                                <h3 style={{ color: 'var(--primary)', marginBottom: '20px', borderBottom: '2px solid var(--accent)', display: 'inline-block' }}>
+                                <h3 style={{ color: 'var(--primary)', marginBottom: '30px', borderBottom: '2px solid var(--accent)', display: 'inline-block', fontSize: '1.8rem' }}>
                                     Organogram
                                 </h3>
-                                <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>
+                                <p style={{ color: 'var(--text-muted)', marginBottom: '30px', fontSize: '1.1rem', lineHeight: '1.8' }}>
                                     The organizational structure of Mount Zion College of Nursing follows a systematic hierarchy to ensure effective administration and academic excellence.
                                 </p>
-                                <div className="organogram-entrance-card reveal-skew" data-reveal-init style={{
-                                    background: 'white',
-                                    padding: '60px 40px',
-                                    borderRadius: '24px',
-                                    boxShadow: '0 15px 35px rgba(0,0,0,0.05)',
-                                    border: '1px dashed rgba(0, 28, 48, 0.2)',
-                                    textAlign: 'center'
+                                <div className="blue-box-premium reveal-skew" data-reveal-init style={{
+                                    textAlign: 'center',
+                                    padding: '80px 40px'
                                 }}>
-                                    <div style={{
-                                        width: '80px',
-                                        height: '80px',
-                                        background: 'var(--bg-light)',
-                                        color: 'var(--primary)',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        borderRadius: '50%',
-                                        margin: '0 auto 25px',
-                                        fontSize: '2rem'
+                                    <div className="club-icon-box shadow-lg float-breathe" style={{
+                                        margin: '0 auto 30px',
+                                        width: '100px',
+                                        height: '100px',
+                                        fontSize: '3rem',
+                                        background: 'linear-gradient(135deg, white 0%, #f0f0f0 100%)',
+                                        color: 'var(--primary)'
                                     }}>
                                         <i className="fas fa-sitemap"></i>
                                     </div>
-                                    <h3 style={{ fontSize: '1.5rem', color: 'var(--primary)', marginBottom: '15px' }}>View Organizational Chart</h3>
-                                    <p style={{ color: 'var(--text-muted)', marginBottom: '30px', maxWidth: '500px', margin: '0 auto 30px' }}>
+                                    <h3 style={{ fontSize: '2.5rem', color: 'var(--primary)', marginBottom: '20px', fontWeight: 800 }}>View Organizational Chart</h3>
+                                    <p style={{ color: 'var(--text-muted)', marginBottom: '40px', maxWidth: '600px', margin: '0 auto 40px', fontSize: '1.2rem', fontWeight: 500 }}>
                                         Explore the detailed administrative and academic structure of our institution in a dedicated interactive view.
                                     </p>
-                                    <Link to="/organogram" className="btn btn-primary magnetic" style={{ padding: '15px 40px', textTransform: 'uppercase', letterSpacing: '1px', fontWeight: 800 }}>
-                                        Open Full Organogram
+                                    <Link to="/organogram" className="btn btn-primary magnetic" style={{ padding: '20px 60px', textTransform: 'uppercase', letterSpacing: '2px', fontWeight: 800, fontSize: '1.1rem' }}>
+                                        Open Full Organogram &rarr;
                                     </Link>
                                 </div>
                             </div>

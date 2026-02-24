@@ -1,7 +1,25 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Admissions = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash) {
+            const id = location.hash.substring(1);
+            const element = document.getElementById(id);
+            if (element) {
+                setTimeout(() => {
+                    const rect = element.getBoundingClientRect();
+                    const absoluteTop = rect.top + window.pageYOffset;
+                    window.scrollTo({
+                        top: absoluteTop - 120,
+                        behavior: 'smooth'
+                    });
+                }, 150);
+            }
+        }
+    }, [location.hash]);
     useEffect(() => {
         const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
@@ -20,13 +38,13 @@ const Admissions = () => {
             {/* Hero Section */}
             <div className="inner-hero">
                 <div className="container relative z-10 text-center">
-                    <span className="hero-tag-gold reveal-zoom" data-reveal-init>
+                    <span className="hero-tag-glass reveal-zoom" data-reveal-init>
                         ADMISSION PORTAL
                     </span>
-                    <h1 className="reveal-skew stagger-1" data-reveal-init style={{ color: 'white' }}>
+                    <h1 className="reveal-skew stagger-1" data-reveal-init>
                         Join the Future of Nursing
                     </h1>
-                    <p className="reveal-blur stagger-2" data-reveal-init style={{ color: 'rgba(255,255,255,0.9)', maxWidth: '800px', margin: '0 auto' }}>
+                    <p className="reveal-blur stagger-2" data-reveal-init style={{ maxWidth: '800px', margin: '0 auto' }}>
                         Admission to the B.Sc. Nursing Programme for the academic year {new Date().getFullYear()} is governed by Indian Nursing Council norms.
                     </p>
                 </div>
@@ -37,7 +55,7 @@ const Admissions = () => {
                     <div className="page-grid reverse">
                         <div className="admission-main content-col">
                             {/* General Eligibility */}
-                            <div id="general-eligibility" className="admission-card reveal-skew" data-reveal-init>
+                            <div id="eligibility" className="admission-card reveal-skew" data-reveal-init>
                                 <h3 className="section-title-premium">
                                     <i className="fas fa-graduation-cap"></i>
                                     General Eligibility Criteria
@@ -48,7 +66,7 @@ const Admissions = () => {
                                     <div className="eligibility-item">
                                         <h4 className="flex items-center gap-4 text-primary text-xl font-bold mb-6">
                                             <span className="eligibility-marker">1</span>
-                                            Age Limit
+                                            <span id="age-limit">Age Limit</span>
                                         </h4>
                                         <ul className="custom-list">
                                             <li>Minimum age: 17 years on or before 31st December of the year of admission.</li>
@@ -84,13 +102,16 @@ const Admissions = () => {
                                             Entrance Examination
                                         </h4>
                                         <p className="mb-6 text-muted font-medium">Selection is strictly based on institutional excellence through our merit-based entrance test.</p>
-                                        <div className="blue-box-premium p-6 rounded-3xl mb-6 shadow-lg">
-                                            <h5 className="font-extrabold text-white mb-4 flex items-center gap-2">
+                                        <div className="blue-box-premium p-10 rounded-3xl mb-6 shadow-sm border border-slate-100">
+                                            <h5 className="font-extrabold text-primary mb-6 flex items-center gap-4 text-2xl">
                                                 <i className="fas fa-pen-nib text-accent"></i> Entrance Test Pattern (100 Marks)
                                             </h5>
-                                            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+                                            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                                                 {['Aptitude: 20', 'Physics: 20', 'Chemistry: 20', 'Biology: 20', 'English: 20'].map(m => (
-                                                    <div key={m} className="bg-white/10 backdrop-blur-md p-3 text-center rounded-xl border border-white/20 text-[10px] font-black uppercase tracking-wider text-white">{m}</div>
+                                                    <div key={m} className="bg-slate-50 border border-slate-100 p-4 text-center rounded-2xl">
+                                                        <p className="text-[10px] font-black uppercase text-slate-400 tracking-widest mb-1">{m.split(':')[0]}</p>
+                                                        <p className="font-black text-primary text-xl">{m.split(':')[1]}</p>
+                                                    </div>
                                                 ))}
                                             </div>
                                         </div>
@@ -137,21 +158,37 @@ const Admissions = () => {
                                         <div className="flex items-center gap-4">
                                             <i className="fas fa-clock text-4xl text-accent"></i>
                                             <div>
-                                                <h4 className="font-black text-2xl uppercase tracking-tight text-white">Admission Timeline</h4>
-                                                <p className="text-white/70 text-sm">Strict adherence to academic windows is required.</p>
+                                                <h4 className="font-black text-2xl uppercase tracking-tight text-primary">Admission Timeline</h4>
+                                                <p className="text-slate-500 text-sm font-bold">Strict adherence to academic windows is required.</p>
                                             </div>
                                         </div>
                                         <div className="flex gap-10">
                                             <div className="text-center">
-                                                <p className="text-[10px] uppercase font-bold text-accent mb-1">Classes Start</p>
-                                                <p className="text-xl font-bold">1st August</p>
+                                                <p className="text-[10px] uppercase font-bold text-accent mb-1 tracking-widest">Classes Start</p>
+                                                <p className="text-2xl font-black text-primary">1st August</p>
                                             </div>
                                             <div className="text-center">
-                                                <p className="text-[10px] uppercase font-bold text-accent mb-1">Final Cut-off</p>
-                                                <p className="text-xl font-bold">30th Sept</p>
+                                                <p className="text-[10px] uppercase font-bold text-accent mb-1 tracking-widest">Final Cut-off</p>
+                                                <p className="text-2xl font-black text-primary">30th Sept</p>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+
+                            {/* Selection Process */}
+                            <div id="selection" className="admission-card reveal-zoom" data-reveal-init>
+                                <h3 className="section-title-premium">
+                                    <i className="fas fa-user-check"></i>
+                                    Selection Process
+                                </h3>
+                                <div className="p-8 bg-white border border-gray-100 rounded-3xl shadow-sm">
+                                    <ul className="custom-list">
+                                        <li>Merit List based on +2 PCB Aggregate (Physics, Chemistry, Biology).</li>
+                                        <li>Performance in the Institutional Entrance test.</li>
+                                        <li>Personal interview and aptitude assessment.</li>
+                                        <li>Final selection subject to medical fitness and document verification.</li>
+                                    </ul>
                                 </div>
                             </div>
 
@@ -220,9 +257,7 @@ const Admissions = () => {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     {[
                                         { role: 'Principal', pos: 'Chairperson' },
-                                        { role: 'Vice-Principal', pos: 'Member' },
-                                        { role: 'Professor', pos: 'Member' },
-                                        { role: 'Chief Nursing Officer', pos: 'Member' }
+                                        { role: 'Vice-Principal', pos: 'Member Secretary' }
                                     ].map(member => (
                                         <div key={member.role} className="flex items-center gap-4 p-5 bg-white border border-gray-100 rounded-2xl shadow-sm">
                                             <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg">
@@ -236,6 +271,60 @@ const Admissions = () => {
                                     ))}
                                 </div>
                             </div>
+
+                            {/* Required Documents */}
+                            <div id="documents" className="admission-card reveal-left" data-reveal-init>
+                                <h3 className="section-title-premium">
+                                    <i className="fas fa-file-invoice"></i>
+                                    Required Documents
+                                </h3>
+                                <div className="p-8 bg-white border border-gray-100 rounded-3xl shadow-sm">
+                                    <ul className="custom-list grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <li>SSC / 10th Original Mark Sheet</li>
+                                        <li>HSC / 12th Original Mark Sheet</li>
+                                        <li>Transfer Certificate (TC)</li>
+                                        <li>Conduct Certificate</li>
+                                        <li>Community Certificate</li>
+                                        <li>Migration Certificate (for Non-TN)</li>
+                                        <li>Eligibility Certificate (from University)</li>
+                                        <li>Physical Fitness Certificate</li>
+                                        <li>Aadhaar Card Copy</li>
+                                        <li>Passport Size Photos (10 Nos)</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            {/* Scholarship */}
+                            <div id="scholarships" className="admission-card reveal-right" data-reveal-init>
+                                <h3 className="section-title-premium">
+                                    <i className="fas fa-hand-holding-usd"></i>
+                                    Scholarships
+                                </h3>
+                                <div className="p-8 bg-blue-50/30 border border-blue-100 rounded-3xl">
+                                    <p className="mb-6 text-primary font-bold">We support student excellence through various government and institutional schemes:</p>
+                                    <ul className="custom-list space-y-3">
+                                        <li><strong>SC / ST / SCC Special Scholarship:</strong> Full support for eligible candidates.</li>
+                                        <li><strong>Minority Scholarship:</strong> For Christian, Muslim, and other minority students.</li>
+                                        <li><strong>First Graduate Scholarship:</strong> As per Tamil Nadu Government norms.</li>
+                                        <li><strong>Merit Scholarship:</strong> Awarded to top rankers in institutional entrance tests.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            {/* Start Application */}
+                            <div id="apply" className="admission-card reveal-up" data-reveal-init>
+                                <h3 className="section-title-premium text-accent">
+                                    <i className="fas fa-edit"></i>
+                                    Apply Now
+                                </h3>
+                                <div className="blue-box-premium p-10 rounded-3xl text-center">
+                                    <h4 className="text-2xl font-black text-primary mb-4">Ready to Begin?</h4>
+                                    <p className="text-muted mb-8 font-medium">Download the prospectus or fill out our online inquiry form to get started with your application process.</p>
+                                    <div className="flex flex-wrap gap-4 justify-center">
+                                        <Link to="/contact" className="btn btn-primary magnetic px-8 py-4">Inquire Online</Link>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         {/* Sidebar */}
@@ -245,12 +334,21 @@ const Admissions = () => {
                                     <h4 className="text-primary font-black text-lg mb-6 border-b pb-3 border-gray-100">Navigate Portal</h4>
                                     <div className="flex flex-col gap-3">
                                         {[
-                                            { id: 'general-eligibility', label: 'Eligibility Criteria' },
-                                            { id: 'categories', label: 'Category Sourcing' },
-                                            { id: 'reservation', label: 'Reservation Rules' },
-                                            { id: 'committee', label: 'Admission Board' }
+                                            { id: 'eligibility', label: 'Eligibility' },
+                                            { id: 'selection', label: 'Selection Process' },
+                                            { id: 'categories', label: 'Categories' },
+                                            { id: 'committee', label: 'Admission Board' },
+                                            { id: 'documents', label: 'Required Documents' },
+                                            { id: 'scholarships', label: 'Scholarships' },
+                                            { id: 'apply', label: 'How to Register' }
                                         ].map(link => (
-                                            <a key={link.id} href={`#${link.id}`} className="p-4 rounded-2xl bg-gray-50 text-primary text-sm font-bold hover:bg-primary hover:text-white transition-all transform hover:scale-[1.02] shadow-sm">
+                                            <a key={link.id} href={`#${link.id}`}
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    const el = document.getElementById(link.id);
+                                                    if (el) window.scrollTo({ top: el.offsetTop - 120, behavior: 'smooth' });
+                                                }}
+                                                className="p-4 rounded-2xl bg-gray-50 text-primary text-sm font-bold hover:bg-primary hover:text-white transition-all transform hover:scale-[1.02] shadow-sm">
                                                 {link.label}
                                             </a>
                                         ))}
@@ -258,20 +356,18 @@ const Admissions = () => {
                                 </div>
 
                                 <div className="blue-box-premium premium-sidebar-box reveal-zoom group" data-reveal-init>
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-accent opacity-10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-700"></div>
-
-                                    <h3 className="text-3xl font-black mb-6 leading-tight">Start Your<br />Journey Today</h3>
-                                    <p className="text-blue-100 text-sm mb-8 leading-relaxed font-medium">
+                                    <h3 className="text-3xl font-black mb-6 leading-tight text-primary">Start Your<br />Journey Today</h3>
+                                    <p className="text-slate-500 text-sm mb-8 leading-relaxed font-bold">
                                         Applications for the current academic session are evaluated on a rolling merit basis. Secure your place in healthcare excellence.
                                     </p>
 
-                                    <Link to="/contact" className="w-full py-5 bg-accent text-primary font-black rounded-2xl flex items-center justify-center gap-3 hover:bg-white transition-all shadow-xl">
+                                    <Link to="/contact" className="w-full py-5 bg-primary text-white font-black rounded-2xl flex items-center justify-center gap-3 hover:bg-accent hover:text-primary transition-all shadow-xl">
                                         INQUIRE NOW <i className="fas fa-arrow-right"></i>
                                     </Link>
 
-                                    <div className="mt-8 pt-8 border-t border-white/10 text-center">
-                                        <p className="text-[10px] uppercase font-bold opacity-60 tracking-widest mb-2">Admission Helpdesk</p>
-                                        <p className="text-2xl font-black text-accent">+91 75021 73000</p>
+                                    <div className="mt-8 pt-8 border-t border-slate-100 text-center">
+                                        <p className="text-[10px] uppercase font-black text-slate-400 tracking-widest mb-2">Admission Helpdesk</p>
+                                        <p className="text-2xl font-black text-primary">+91 75021 73000</p>
                                     </div>
                                 </div>
                             </div>

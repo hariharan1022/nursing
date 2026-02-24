@@ -260,7 +260,7 @@ const ClubsAndCells = () => {
             ],
             members: [
                 { n: 'Dr. H. M. Jasmine Sheela', d: 'Principal' },
-                { n: 'Mr. Selva Kannan', d: 'Physical Director' },
+                { n: 'Physical Director', d: 'PT Sir' },
                 { n: 'Student Representative', d: 'Member' }
             ]
         },
@@ -302,7 +302,7 @@ const ClubsAndCells = () => {
             ],
             members: [
                 { n: 'Prof. Dr. H. M. Jasmine Sheela', d: 'Principal' },
-                { n: 'Mrs. Sivogami', d: 'Assistant Professor' },
+                { n: 'Mrs. Sivagami', d: 'Assistant Professor' },
                 { n: 'Staff Representative', d: 'Member' }
             ]
         },
@@ -344,10 +344,10 @@ const ClubsAndCells = () => {
                     <span className="hero-tag-gold reveal-zoom" data-reveal-init>
                         COMMITTEES & CELLS
                     </span>
-                    <h1 className="reveal-skew stagger-1" data-reveal-init style={{ color: 'white' }}>
+                    <h1 className="reveal-skew stagger-1" data-reveal-init>
                         Empowering Excellence
                     </h1>
-                    <p className="reveal-blur stagger-2" data-reveal-init style={{ color: 'rgba(255,255,255,0.9)', maxWidth: '800px', margin: '0 auto' }}>
+                    <p className="reveal-blur stagger-2" data-reveal-init style={{ maxWidth: '800px', margin: '0 auto' }}>
                         Our various committees and cells ensure a balanced, safe, and progressive environment for academic and personal growth.
                     </p>
                 </div>
@@ -362,9 +362,16 @@ const ClubsAndCells = () => {
                             <ul style={{ listStyle: 'none', padding: 0 }}>
                                 {committees.map(c => (
                                     <li key={c.id} style={{ marginBottom: '15px' }}>
-                                        <a href={`#${c.id}`} style={{ textDecoration: 'none', color: 'var(--text-muted)', fontSize: '0.9rem', fontWeight: 600, display: 'block', transition: 'color 0.3s' }} className="hover-primary">
+                                        <button
+                                            onClick={() => {
+                                                const el = document.getElementById(c.id);
+                                                if (el) window.scrollTo({ top: el.offsetTop - 120, behavior: 'smooth' });
+                                            }}
+                                            style={{ background: 'none', border: 'none', padding: 0, textAlign: 'left', cursor: 'pointer', color: 'var(--text-muted)', fontSize: '0.9rem', fontWeight: 600, display: 'block', transition: 'color 0.3s' }}
+                                            className="hover-primary"
+                                        >
                                             {c.title}
-                                        </a>
+                                        </button>
                                     </li>
                                 ))}
                             </ul>
@@ -373,33 +380,37 @@ const ClubsAndCells = () => {
                         {/* Committee Content */}
                         <div className="committees-list content-col">
                             {committees.map((c, idx) => (
-                                <div key={c.id} id={c.id} className="club-card blue-box-premium reveal">
+                                <div key={c.id} id={c.id} className="club-card blue-box-premium shine-effect reveal">
                                     <div className="club-header">
-                                        <div className="club-icon-box">
+                                        <div className="club-icon-box shadow-lg">
                                             <i className={`fas ${c.icon}`}></i>
                                         </div>
-                                        <h2 style={{ color: 'white', margin: 0 }}>{c.title}</h2>
+                                        <h2 style={{ color: 'var(--primary)', fontSize: '2.2rem', fontWeight: 800 }}>{c.title}</h2>
                                     </div>
-                                    <p style={{ color: 'white', opacity: 0.9, lineHeight: '1.8', fontSize: '1.05rem', marginBottom: '30px' }}>{c.desc}</p>
+                                    <p style={{ color: 'var(--text-muted)', lineHeight: '2', fontSize: '1.15rem', marginBottom: '45px', fontWeight: 500 }}>{c.desc}</p>
 
-                                    <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '40px' }}>
+                                    <div className="grid md-grid-cols-1" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '50px' }}>
                                         <div>
-                                            <h4 style={{ color: 'white', marginBottom: '15px' }}>Key Objectives:</h4>
+                                            <h4 style={{ color: 'var(--primary)', marginBottom: '25px', textTransform: 'uppercase', letterSpacing: '2px', fontWeight: 900, fontSize: '0.9rem' }}>
+                                                <i className="fas fa-bullseye" style={{ color: 'var(--accent)', marginRight: '10px' }}></i> Key Objectives
+                                            </h4>
                                             <ul className="club-objectives-list" style={{ listStyle: 'none', padding: 0 }}>
                                                 {c.objectives.map((obj, i) => (
-                                                    <li key={i} style={{ color: 'white', opacity: 0.85 }}>
+                                                    <li key={i} style={{ color: 'var(--primary)', fontWeight: 600, marginBottom: '15px' }}>
                                                         <i className="fas fa-check-circle" style={{ color: 'var(--accent)' }}></i>
                                                         {obj}
                                                     </li>
                                                 ))}
                                             </ul>
                                             {c.extra && (
-                                                <div style={{ marginTop: '25px' }}>
-                                                    <h4 style={{ color: 'white', marginBottom: '15px' }}>{c.extra.title}:</h4>
+                                                <div style={{ marginTop: '40px' }}>
+                                                    <h4 style={{ color: 'var(--primary)', marginBottom: '25px', textTransform: 'uppercase', letterSpacing: '2px', fontWeight: 900, fontSize: '0.9rem' }}>
+                                                        <i className={`fas ${c.extra.icon || 'fa-plus-circle'}`} style={{ color: 'var(--accent)', marginRight: '10px' }}></i> {c.extra.title}
+                                                    </h4>
                                                     <ul className="club-objectives-list" style={{ listStyle: 'none', padding: 0 }}>
                                                         {c.extra.list.map((item, i) => (
-                                                            <li key={i}>
-                                                                <i className={`fas ${c.extra.icon || 'fa-plus-circle'}`} style={{ color: 'var(--accent)' }}></i>
+                                                            <li key={i} style={{ color: 'var(--primary)', fontWeight: 600, marginBottom: '15px' }}>
+                                                                <i className="fas fa-arrow-right" style={{ color: 'var(--accent)', fontSize: '0.8rem' }}></i>
                                                                 {item}
                                                             </li>
                                                         ))}
@@ -408,25 +419,27 @@ const ClubsAndCells = () => {
                                             )}
                                         </div>
                                         <div>
-                                            <h4 style={{ color: 'white', marginBottom: '15px' }}>Committee Members:</h4>
+                                            <h4 style={{ color: 'var(--primary)', marginBottom: '25px', textTransform: 'uppercase', letterSpacing: '2px', fontWeight: 900, fontSize: '0.9rem' }}>
+                                                <i className="fas fa-users" style={{ color: 'var(--accent)', marginRight: '10px' }}></i> Committee Members
+                                            </h4>
                                             <div style={{ overflowX: 'auto' }}>
-                                                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.9rem' }}>
+                                                <table>
                                                     <thead>
-                                                        <tr style={{ textAlign: 'left', borderBottom: '1px solid #eee' }}>
-                                                            <th style={{ padding: '10px 0' }}>Name</th>
-                                                            <th style={{ padding: '10px 0' }}>Position</th>
-                                                            <th style={{ padding: '10px 0' }}>Contact</th>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Position</th>
+                                                            <th>Contact</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         {c.members.map((m, i) => (
-                                                            <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                                                                <td style={{ padding: '10px 0', fontWeight: 600, color: 'white' }}>{m.n}</td>
-                                                                <td style={{ padding: '10px 0', color: 'rgba(255,255,255,0.7)' }}>{m.d}</td>
-                                                                <td style={{ padding: '10px 0', fontSize: '0.8rem' }}>
-                                                                    {m.e && <div style={{ color: 'var(--accent)' }}><i className="fas fa-envelope" style={{ width: '15px' }}></i> {m.e}</div>}
-                                                                    {m.p && <div style={{ color: 'rgba(255,255,255,0.6)' }}><i className="fas fa-phone" style={{ width: '15px' }}></i> {m.p}</div>}
-                                                                    {!m.e && !m.p && <span style={{ color: 'white' }}>-</span>}
+                                                            <tr key={i}>
+                                                                <td style={{ fontWeight: 800, color: 'var(--primary)' }}>{m.n}</td>
+                                                                <td style={{ color: 'var(--text-muted)', fontWeight: 600 }}>{m.d}</td>
+                                                                <td>
+                                                                    {m.e && <div style={{ color: 'var(--primary)', fontWeight: 500 }}><i className="fas fa-envelope" style={{ width: '15px', color: 'var(--accent)' }}></i> {m.e}</div>}
+                                                                    {m.p && <div style={{ color: 'var(--text-muted)', fontWeight: 500 }}><i className="fas fa-phone" style={{ width: '15px', color: 'var(--accent)' }}></i> {m.p}</div>}
+                                                                    {!m.e && !m.p && <span>-</span>}
                                                                 </td>
                                                             </tr>
                                                         ))}
@@ -435,10 +448,10 @@ const ClubsAndCells = () => {
                                             </div>
 
                                             {(c.email || c.phone || c.note) && (
-                                                <div style={{ marginTop: '20px', padding: '15px', background: 'var(--bg-light)', borderRadius: '10px', fontSize: '0.9rem' }}>
-                                                    {c.email && <div style={{ marginBottom: '5px' }}><strong><i className="fas fa-envelope" style={{ marginRight: '8px', color: 'var(--accent)' }}></i>Email:</strong> {c.email}</div>}
-                                                    {c.phone && <div style={{ marginBottom: '5px' }}><strong><i className="fas fa-info-circle" style={{ marginRight: '8px', color: 'var(--accent)' }}></i>Notice:</strong> {c.phone}</div>}
-                                                    {c.note && <div><strong><i className="fas fa-clock" style={{ marginRight: '8px', color: 'var(--accent)' }}></i>Note:</strong> {c.note}</div>}
+                                                <div className="interaction-box" style={{ marginTop: '40px' }}>
+                                                    {c.email && <div style={{ marginBottom: '12px', color: 'var(--primary)', fontWeight: 600 }}><i className="fas fa-envelope" style={{ marginRight: '15px', color: 'var(--accent)' }}></i><strong>Email:</strong> {c.email}</div>}
+                                                    {c.phone && <div style={{ marginBottom: '12px', color: 'var(--primary)', fontWeight: 600 }}><i className="fas fa-info-circle" style={{ marginRight: '15px', color: 'var(--accent)' }}></i><strong>Notice:</strong> {c.phone}</div>}
+                                                    {c.note && <div style={{ color: 'var(--primary)', fontWeight: 600 }}><i className="fas fa-clock" style={{ marginRight: '15px', color: 'var(--accent)' }}></i><strong>Note:</strong> {c.note}</div>}
                                                 </div>
                                             )}
                                         </div>
