@@ -12,7 +12,6 @@ const Navbar = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    // Search data - pages that can be searched
     const searchablePages = [
         { title: 'Home', path: '/', keywords: 'home main landing' },
         { title: 'About Us', path: '/about', keywords: 'about us institution college' },
