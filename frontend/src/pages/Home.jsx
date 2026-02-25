@@ -156,7 +156,7 @@ const Home = () => {
                             <div className="slide-content">
                                 {slide.estd && <span className="estd-tag float-breathe" style={{ display: 'block', margin: '0 auto 30px', width: 'fit-content' }}>ESTD 2009</span>}
                                 <h1><span className="reveal-skew">{slide.title}</span></h1>
-                                <p style={{ color: 'var(--accent)' }}>{slide.desc}</p>
+                                <p style={{ color: 'white' }}>{slide.desc}</p>
                                 {slide.cta && <Link to={slide.link} className="btn btn-primary magnetic" style={{ marginTop: '25px', padding: '12px 30px' }}>{slide.cta} &rarr;</Link>}
                             </div>
                         </div>
