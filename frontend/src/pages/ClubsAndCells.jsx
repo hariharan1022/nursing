@@ -27,7 +27,7 @@ const ClubsAndCells = () => {
             });
         }, observerOptions);
 
-        const elements = document.querySelectorAll('.reveal');
+        const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom, .reveal-rotate, .reveal-skew, .reveal-blur, .reveal-flip, .reveal-up, .reveal-stagger');
         elements.forEach(el => observer.observe(el));
         return () => observer.disconnect();
     }, []);
@@ -355,30 +355,10 @@ const ClubsAndCells = () => {
 
             <section className="section" style={{ background: 'var(--bg-light)' }}>
                 <div className="container">
-                    <div className="page-grid">
-                        {/* Interactive Sidebar */}
-                        <aside className="about-nav-card reveal sidebar-col" style={{ top: '120px' }}>
-                            <h4 style={{ color: 'var(--primary)', marginBottom: '20px', borderBottom: '2px solid var(--accent)', paddingBottom: '10px' }}>Quick Navigation</h4>
-                            <ul style={{ listStyle: 'none', padding: 0 }}>
-                                {committees.map(c => (
-                                    <li key={c.id} style={{ marginBottom: '15px' }}>
-                                        <button
-                                            onClick={() => {
-                                                const el = document.getElementById(c.id);
-                                                if (el) window.scrollTo({ top: el.offsetTop - 120, behavior: 'smooth' });
-                                            }}
-                                            style={{ background: 'none', border: 'none', padding: 0, textAlign: 'left', cursor: 'pointer', color: 'var(--text-muted)', fontSize: '0.9rem', fontWeight: 600, display: 'block', transition: 'color 0.3s' }}
-                                            className="hover-primary"
-                                        >
-                                            {c.title}
-                                        </button>
-                                    </li>
-                                ))}
-                            </ul>
-                        </aside>
+                    <div>
 
                         {/* Committee Content */}
-                        <div className="committees-list content-col">
+                        <div className="committees-list">
                             {committees.map((c, idx) => (
                                 <div key={c.id} id={c.id} className="club-card blue-box-premium shine-effect reveal">
                                     <div className="club-header">

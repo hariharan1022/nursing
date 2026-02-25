@@ -12,7 +12,7 @@ const BScNursing = () => {
             });
         }, observerOptions);
 
-        const elements = document.querySelectorAll('.reveal, .reveal-stagger, .reveal-skew, .reveal-blur, .reveal-flip, .reveal-zoom');
+        const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom, .reveal-rotate, .reveal-skew, .reveal-blur, .reveal-flip, .reveal-up, .reveal-stagger');
         elements.forEach(el => observer.observe(el));
         return () => observer.disconnect();
     }, [activeSem]);
