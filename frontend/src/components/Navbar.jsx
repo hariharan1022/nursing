@@ -133,10 +133,7 @@ const Navbar = () => {
                         </div>
 
                         <div className="top-bar-right">
-                            <div className="top-utility-links">
-                                <a href="http://betanet.mzcet.in:8080/" target="_blank" rel="noopener noreferrer"><i className="fas fa-user-graduate" style={{ fontSize: '0.75rem' }}></i> Student Portal</a>
-                                <a href="https://mail.google.com/a/mzcn.in" target="_blank" rel="noopener noreferrer"><i className="fas fa-envelope" style={{ fontSize: '0.75rem' }}></i> Web Mail</a>
-                            </div>
+                            {/* Utility links removed */}
                         </div>
                     </div>
                 </div>
@@ -287,14 +284,8 @@ const Navbar = () => {
 
                             <li className={`reveal-item ${activeDropdown === 'contact' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.4s' }}>
                                 <NavLink to="/contact" onClick={(e) => toggleDropdown(e, 'contact')}>
-                                    Contact <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'contact' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
+                                    Contact
                                 </NavLink>
-                                <ul className={`dropdown ${activeDropdown === 'contact' ? 'active-mobile' : ''}`}>
-                                    <li><Link to="/contact#address" onClick={closeMobileMenu}><i className="fas fa-map-marker-alt"></i> Campus Address</Link></li>
-                                    <li><Link to="/contact#numbers" onClick={closeMobileMenu}><i className="fas fa-phone-alt"></i> Contact Numbers</Link></li>
-                                    <li><Link to="/contact#email" onClick={closeMobileMenu}><i className="fas fa-envelope"></i> Email Support</Link></li>
-                                    <li><Link to="/contact#map" onClick={closeMobileMenu}><i className="fas fa-map-marked-alt"></i> Find Us on Map</Link></li>
-                                </ul>
                             </li>
 
                             <li className={`reveal-item ${activeDropdown === 'feedback' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.45s' }}>
