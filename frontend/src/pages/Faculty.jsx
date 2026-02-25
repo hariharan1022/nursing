@@ -196,14 +196,14 @@ const Faculty = () => {
                     <div className="mt-24 reveal-up" data-reveal-init>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                             {[
-                                { title: "Optimal Ratio", desc: "Adequate faculty-student ratio as per norms.", icon: "fa-users-class" },
+                                { title: "Optimal Ratio", desc: "Adequate faculty-student ratio as per norms.", icon: "fa-users" },
                                 { title: "Qualified Staff", desc: "Qualified faculty in all core nursing specialties.", icon: "fa-user-graduate" },
-                                { title: "Leadership", desc: "Structured leadership with HODs for each wing.", icon: "fa-vial-circle-check" },
-                                { title: "CNE Activities", desc: "Continuous development (FDP) & Workshops.", icon: "fa-microscope" }
+                                { title: "Leadership", desc: "Structured leadership with HODs for each wing.", icon: "fa-sitemap" },
+                                { title: "CNE Activities", desc: "Continuous development (FDP) & Workshops.", icon: "fa-chalkboard-teacher" }
                             ].map((item, idx) => (
                                 <div key={idx} className="p-8 bg-white rounded-[32px] shadow-sm border border-gray-100 text-center hover:shadow-xl transition-all">
-                                    <div className="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6">
-                                        <i className={`fas ${item.icon} text-2xl text-accent`}></i>
+                                    <div className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-6" style={{ background: 'rgba(0, 43, 91, 0.05)' }}>
+                                        <i className={`fas ${item.icon} text-2xl`} style={{ color: 'var(--accent)' }}></i>
                                     </div>
                                     <h4 className="font-black mb-3 text-lg leading-tight uppercase tracking-tighter" style={{ color: 'var(--primary)' }}>{item.title}</h4>
                                     <p className="text-sm text-slate-500 font-bold leading-relaxed">{item.desc}</p>
