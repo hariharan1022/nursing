@@ -278,7 +278,7 @@ const Navbar = () => {
                                 </NavLink>
                                 <ul className={`dropdown ${activeDropdown === 'admissions' ? 'active-mobile' : ''}`}>
                                     <li><Link to="/admissions#eligibility" onClick={closeMobileMenu}><i className="fas fa-check-circle"></i> Eligibility Criteria</Link></li>
-                                    <li><Link to="/admissions#age-limit" onClick={closeMobileMenu}><i className="fas fa-user-clock"></i> Age Limit</Link></li>
+
                                     <li><Link to="/admissions#documents" onClick={closeMobileMenu}><i className="fas fa-file-alt"></i> Required Documents</Link></li>
                                     <li><Link to="/admissions#scholarships" onClick={closeMobileMenu}><i className="fas fa-graduation-cap"></i> Scholarships</Link></li>
                                     <li><Link to="/admissions#selection" onClick={closeMobileMenu}><i className="fas fa-user-check"></i> Selection Process</Link></li>
