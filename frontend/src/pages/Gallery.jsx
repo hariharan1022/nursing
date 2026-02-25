@@ -105,7 +105,7 @@ const Gallery = () => {
             {/* Hero Section */}
             <div className="inner-hero">
                 <div className="container mx-auto px-4 relative z-10 text-center">
-                    <span className="hero-tag-glass reveal-zoom" data-reveal-init>
+                    <span className="hero-tag-gold float-breathe reveal-zoom" data-reveal-init>
                         Visual Journey
                     </span>
                     <h1 className="reveal-skew stagger-1" data-reveal-init style={{ color: 'white' }}>

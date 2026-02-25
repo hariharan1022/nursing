@@ -249,7 +249,7 @@ const Home = () => {
                 <div className="container">
                     <div className="apply-card" style={{ padding: '100px 40px', borderRadius: '40px' }}>
                         <div className="text-center">
-                            <span className="hero-tag-glass float-breathe">Join the 2026 Batch</span>
+                            <span className="hero-tag-gold float-breathe">Join the 2026 Batch</span>
                             <h2 style={{ fontSize: '3.8rem', marginBottom: '25px', color: 'white', fontWeight: 900, textShadow: '0 4px 15px rgba(0,0,0,0.2)' }} className="reveal-skew">Empowering Excellence</h2>
                             <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.9)', fontWeight: 600, maxWidth: '850px', margin: '0 auto 45px' }}>
                                 Step into a rewarding career in healthcare with one of the most prestigious nursing institutions in Pudukkottai District.

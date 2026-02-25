@@ -38,7 +38,7 @@ const AcademicCalendar = () => {
             {/* Hero Section */}
             <div className="inner-hero">
                 <div className="container relative z-10 text-center">
-                    <span className="hero-tag-glass reveal-zoom" data-reveal-init>
+                    <span className="hero-tag-gold float-breathe reveal-zoom" data-reveal-init>
                         PLANNING & SCHEDULE
                     </span>
                     <h1 className="reveal-skew stagger-1" data-reveal-init>

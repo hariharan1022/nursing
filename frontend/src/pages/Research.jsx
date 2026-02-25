@@ -72,7 +72,7 @@ const Research = () => {
             {/* Hero Section */}
             <div className="inner-hero">
                 <div className="container relative z-10 text-center">
-                    <span className="hero-tag-glass reveal-zoom" data-reveal-init>
+                    <span className="hero-tag-gold reveal-zoom" data-reveal-init>
                         SCIENTIFIC INQUIRY
                     </span>
                     <h1 className="reveal-skew stagger-1" data-reveal-init>
