@@ -79,17 +79,17 @@ const Faculty = () => {
                     {/* Intro Card */}
                     <div className="reveal-up mb-16" data-reveal-init>
                         <div className="blue-box-premium p-10 md:p-14 rounded-[40px] shadow-2xl">
-                            <h2 className="text-2xl md:text-3xl font-black text-primary mb-6 uppercase tracking-tight">Departmental Distribution</h2>
+                            <h2 className="text-2xl md:text-3xl font-black mb-6 uppercase tracking-tight" style={{ color: 'var(--primary)' }}>Departmental Distribution</h2>
                             <p className="text-lg text-slate-600 leading-relaxed font-medium">
                                 Mount Zion College of Nursing maintains a qualified and experienced faculty team across all core nursing specialties to ensure academic excellence, research development, and quality clinical training as per the requirements of <span className="text-primary font-bold">Indian Nursing Council</span> and <span className="text-primary font-bold">Tamil Nadu Dr. M.G.R. Medical University</span>.
                             </p>
                             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="flex items-center gap-3 p-4 bg-white/50 rounded-2xl border border-white/20">
-                                    <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-primary"><i className="fas fa-check text-xs"></i></div>
+                                    <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: 'var(--accent)', color: 'var(--primary)' }}><i className="fas fa-check text-xs"></i></div>
                                     <span className="text-sm font-bold text-slate-700">Optimal Teacher-Student Ratio</span>
                                 </div>
                                 <div className="flex items-center gap-3 p-4 bg-white/50 rounded-2xl border border-white/20">
-                                    <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-primary"><i className="fas fa-check text-xs"></i></div>
+                                    <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ background: 'var(--accent)', color: 'var(--primary)' }}><i className="fas fa-check text-xs"></i></div>
                                     <span className="text-sm font-bold text-slate-700">Qualified Specialty Supervisors</span>
                                 </div>
                             </div>
@@ -103,13 +103,13 @@ const Faculty = () => {
                                 <div className="w-48 h-48 rounded-[32px] overflow-hidden border-4 border-white shadow-xl mb-6 transform hover:scale-105 transition-transform">
                                     <img src={`${import.meta.env.BASE_URL}photo/PRINCIPAL.png`} alt="Principal" className="w-full h-full object-cover" />
                                 </div>
-                                <h4 className="text-2xl font-black text-primary mb-1">Prof. Dr. Jasmine Sheela</h4>
-                                <span className="px-4 py-1 bg-accent text-primary text-[10px] font-black rounded-full uppercase tracking-widest leading-none">Principal & Professor</span>
+                                <h4 className="text-2xl font-black mb-1" style={{ color: 'var(--primary)' }}>Prof. Dr. Jasmine Sheela</h4>
+                                <span className="px-4 py-1 text-[10px] font-black rounded-full uppercase tracking-widest leading-none" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>Principal & Professor</span>
                                 <p className="text-xs text-slate-500 font-bold mt-2">M.Sc. (N), Ph.D., R.N.R.M.</p>
                             </div>
                             <div className="lg:w-2/3 p-10 md:p-14">
-                                <h3 className="text-3xl font-black text-primary mb-6 flex items-center gap-4">
-                                    <span className="w-1.5 h-8 bg-accent rounded-full"></span>
+                                <h3 className="text-3xl font-black mb-6 flex items-center gap-4" style={{ color: 'var(--primary)' }}>
+                                    <span className="w-1.5 h-8 rounded-full" style={{ background: 'var(--accent)' }}></span>
                                     Principal's Perspective
                                 </h3>
                                 <p className="text-slate-600 leading-relaxed text-lg font-medium text-justify">
@@ -126,13 +126,13 @@ const Faculty = () => {
                                 <div className="w-48 h-48 rounded-[32px] overflow-hidden border-4 border-white shadow-xl mb-6 transform hover:scale-105 transition-transform">
                                     <img src={`${import.meta.env.BASE_URL}photo/Vice%20Principal.png`} alt="Vice Principal" className="w-full h-full object-cover" />
                                 </div>
-                                <h4 className="text-2xl font-black text-primary mb-1">Prof. Dr. Jerin Kumar J</h4>
-                                <span className="px-4 py-1 bg-accent text-primary text-[10px] font-black rounded-full uppercase tracking-widest leading-none">Vice Principal & Professor</span>
+                                <h4 className="text-2xl font-black mb-1" style={{ color: 'var(--primary)' }}>Prof. Dr. Jerin Kumar J</h4>
+                                <span className="px-4 py-1 text-[10px] font-black rounded-full uppercase tracking-widest leading-none" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>Vice Principal & Professor</span>
                                 <p className="text-xs text-slate-500 font-bold mt-2">M.Sc. (N), Ph.D., M.Sc. (Psy.Tpy)., R.N.R.M.</p>
                             </div>
                             <div className="lg:w-2/3 p-10 md:p-14">
-                                <h3 className="text-3xl font-black text-primary mb-6 flex items-center gap-4">
-                                    <span className="w-1.5 h-8 bg-accent rounded-full"></span>
+                                <h3 className="text-3xl font-black mb-6 flex items-center gap-4" style={{ color: 'var(--primary)' }}>
+                                    <span className="w-1.5 h-8 rounded-full" style={{ background: 'var(--accent)' }}></span>
                                     Vice Principal's Perspective
                                 </h3>
                                 <p className="text-slate-600 leading-relaxed text-lg font-medium text-justify">
@@ -151,10 +151,10 @@ const Faculty = () => {
                     <div className="grid grid-cols-1 gap-12">
                         {departments.map((dept, idx) => (
                             <div key={idx} className="reveal-up bg-white rounded-[40px] shadow-premium border border-gray-100 overflow-hidden" data-reveal-init style={{ transitionDelay: `${idx * 0.1}s` }}>
-                                <div className="bg-primary p-8 text-white flex justify-between items-center relative overflow-hidden">
+                                <div className="p-8 text-white flex justify-between items-center relative overflow-hidden" style={{ background: 'var(--primary)' }}>
                                     <div className="relative z-10">
-                                        <h3 className="text-2xl font-black uppercase tracking-tight">{dept.name}</h3>
-                                        <div className="w-12 h-1 bg-accent mt-2 rounded-full"></div>
+                                        <h3 className="text-2xl font-black uppercase tracking-tight text-white">{dept.name}</h3>
+                                        <div className="w-12 h-1 mt-2 rounded-full" style={{ background: 'var(--accent)' }}></div>
                                     </div>
                                     <i className="fas fa-users-crown text-6xl text-white/10 absolute -right-2 -bottom-2"></i>
                                 </div>
@@ -173,7 +173,7 @@ const Faculty = () => {
                                                 <tr key={i} className="hover:bg-slate-50 transition-colors group">
                                                     <td className="px-6 py-5 text-sm font-black text-slate-300">0{i + 1}</td>
                                                     <td className="px-6 py-5">
-                                                        <div className="font-bold text-primary text-base group-hover:translate-x-1 transition-transform">{s.name}</div>
+                                                        <div className="font-bold text-base group-hover:translate-x-1 transition-transform" style={{ color: 'var(--primary)' }}>{s.name}</div>
                                                     </td>
                                                     <td className="px-6 py-5">
                                                         <span className="text-sm font-bold text-slate-500">{s.qual}</span>
@@ -205,7 +205,7 @@ const Faculty = () => {
                                     <div className="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center text-primary mx-auto mb-6">
                                         <i className={`fas ${item.icon} text-2xl text-accent`}></i>
                                     </div>
-                                    <h4 className="font-black text-primary mb-3 text-lg leading-tight uppercase tracking-tighter">{item.title}</h4>
+                                    <h4 className="font-black mb-3 text-lg leading-tight uppercase tracking-tighter" style={{ color: 'var(--primary)' }}>{item.title}</h4>
                                     <p className="text-sm text-slate-500 font-bold leading-relaxed">{item.desc}</p>
                                 </div>
                             ))}
