@@ -28,34 +28,19 @@ import extraPlusImg1 from '../assets/facilites/extra-plus/extra-plus-1.jpeg';
 import extraPlusImg2 from '../assets/facilites/extra-plus/extra-plus-2.jpeg';
 
 // Adult Health Nursing
-import adultHealth1 from '../assets/facilites/Laboratories/Adult Health Nursing/WhatsApp Image 2026-02-25 at 6.55.57 AM.jpeg';
-import adultHealth2 from '../assets/facilites/Laboratories/Adult Health Nursing/WhatsApp Image 2026-02-25 at 6.55.58 AM (1).jpeg';
-import adultHealth3 from '../assets/facilites/Laboratories/Adult Health Nursing/WhatsApp Image 2026-02-25 at 6.55.58 AM.jpeg';
-import adultHealth4 from '../assets/facilites/Laboratories/Adult Health Nursing/WhatsApp Image 2026-02-25 at 6.55.59 AM (1).jpeg';
-import adultHealth5 from '../assets/facilites/Laboratories/Adult Health Nursing/WhatsApp Image 2026-02-25 at 6.55.59 AM.jpeg';
-import adultHealth6 from '../assets/facilites/Laboratories/Adult Health Nursing/WhatsApp Image 2026-02-25 at 6.56.00 AM (1).jpeg';
-import adultHealth7 from '../assets/facilites/Laboratories/Adult Health Nursing/WhatsApp Image 2026-02-25 at 6.56.00 AM.jpeg';
-import adultHealth8 from '../assets/facilites/Laboratories/Adult Health Nursing/WhatsApp Image 2026-02-25 at 6.56.01 AM (1).jpeg';
-import adultHealth9 from '../assets/facilites/Laboratories/Adult Health Nursing/WhatsApp Image 2026-02-25 at 6.56.01 AM.jpeg';
+import adultHealth1 from '../assets/facilites/Laboratories/Adult Health Nursing/WhatsApp Image 2026-02-25 at 8.36.19 AM.jpeg';
+import adultHealth2 from '../assets/facilites/Laboratories/Adult Health Nursing/WhatsApp Image 2026-02-25 at 8.36.20 AM (1).jpeg';
+import adultHealth3 from '../assets/facilites/Laboratories/Adult Health Nursing/WhatsApp Image 2026-02-25 at 8.36.20 AM.jpeg';
 
 // Anatomy and Physiology Museum
-import anatomy1 from '../assets/facilites/Laboratories/Anatomy and Physiology Museum/WhatsApp Image 2026-02-25 at 7.02.40 AM.jpeg';
-import anatomy2 from '../assets/facilites/Laboratories/Anatomy and Physiology Museum/WhatsApp Image 2026-02-25 at 7.02.41 AM (1).jpeg';
-import anatomy3 from '../assets/facilites/Laboratories/Anatomy and Physiology Museum/WhatsApp Image 2026-02-25 at 7.02.41 AM.jpeg';
-import anatomy4 from '../assets/facilites/Laboratories/Anatomy and Physiology Museum/WhatsApp Image 2026-02-25 at 7.02.42 AM (1).jpeg';
-import anatomy5 from '../assets/facilites/Laboratories/Anatomy and Physiology Museum/WhatsApp Image 2026-02-25 at 7.02.42 AM.jpeg';
-import anatomy6 from '../assets/facilites/Laboratories/Anatomy and Physiology Museum/WhatsApp Image 2026-02-25 at 7.02.43 AM (1).jpeg';
-import anatomy7 from '../assets/facilites/Laboratories/Anatomy and Physiology Museum/WhatsApp Image 2026-02-25 at 7.02.43 AM.jpeg';
+import anatomy1 from '../assets/facilites/Laboratories/Anatomy and Physiology Museum/WhatsApp Image 2026-02-25 at 8.34.59 AM (1).jpeg';
+import anatomy2 from '../assets/facilites/Laboratories/Anatomy and Physiology Museum/WhatsApp Image 2026-02-25 at 8.34.59 AM.jpeg';
 
 // Child Health Nursing
-import childHealth1 from '../assets/facilites/Laboratories/Child Health Nursing/WhatsApp Image 2026-02-25 at 7.01.27 AM (1).jpeg';
-import childHealth2 from '../assets/facilites/Laboratories/Child Health Nursing/WhatsApp Image 2026-02-25 at 7.01.27 AM.jpeg';
-import childHealth3 from '../assets/facilites/Laboratories/Child Health Nursing/WhatsApp Image 2026-02-25 at 7.01.28 AM (1).jpeg';
-import childHealth4 from '../assets/facilites/Laboratories/Child Health Nursing/WhatsApp Image 2026-02-25 at 7.01.28 AM.jpeg';
-import childHealth5 from '../assets/facilites/Laboratories/Child Health Nursing/WhatsApp Image 2026-02-25 at 7.01.29 AM (1).jpeg';
-import childHealth6 from '../assets/facilites/Laboratories/Child Health Nursing/WhatsApp Image 2026-02-25 at 7.01.29 AM.jpeg';
-import childHealth7 from '../assets/facilites/Laboratories/Child Health Nursing/WhatsApp Image 2026-02-25 at 7.01.30 AM (1).jpeg';
-import childHealth8 from '../assets/facilites/Laboratories/Child Health Nursing/WhatsApp Image 2026-02-25 at 7.01.30 AM.jpeg';
+import childHealth1 from '../assets/facilites/Laboratories/Child Health Nursing/WhatsApp Image 2026-02-25 at 8.35.42 AM (1).jpeg';
+import childHealth2 from '../assets/facilites/Laboratories/Child Health Nursing/WhatsApp Image 2026-02-25 at 8.35.42 AM.jpeg';
+import childHealth3 from '../assets/facilites/Laboratories/Child Health Nursing/WhatsApp Image 2026-02-25 at 8.35.43 AM (1).jpeg';
+import childHealth4 from '../assets/facilites/Laboratories/Child Health Nursing/WhatsApp Image 2026-02-25 at 8.35.43 AM.jpeg';
 
 // Community Health Nursing
 import communityHealth1 from '../assets/facilites/Laboratories/Community Health Nursing/WhatsApp Image 2026-02-25 at 7.02.02 AM (1).jpeg';
@@ -273,9 +258,9 @@ const Facilities = () => {
     const transportImages = [transportImg1, transportImg2, transportImg3, transportImg4];
     const extraPlusImages = [extraPlusImg1, extraPlusImg2];
 
-    const adultHealthImages = [adultHealth1, adultHealth2, adultHealth3, adultHealth4, adultHealth5, adultHealth6, adultHealth7, adultHealth8, adultHealth9];
-    const anatomyImages = [anatomy1, anatomy2, anatomy3, anatomy4, anatomy5, anatomy6, anatomy7];
-    const childHealthImages = [childHealth1, childHealth2, childHealth3, childHealth4, childHealth5, childHealth6, childHealth7, childHealth8];
+    const adultHealthImages = [adultHealth1, adultHealth2, adultHealth3];
+    const anatomyImages = [anatomy1, anatomy2];
+    const childHealthImages = [childHealth1, childHealth2, childHealth3, childHealth4];
     const communityHealthImages = [communityHealth1, communityHealth2, communityHealth3, communityHealth4, communityHealth5, communityHealth6];
     const mentalHealthImages = [mentalHealth1, mentalHealth2, mentalHealth3, mentalHealth4, mentalHealth5];
     const nutritionImages = [nutrition1, nutrition2, nutrition3, nutrition4, nutrition5, nutrition6, nutrition7, nutrition8];
