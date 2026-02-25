@@ -9,9 +9,12 @@ const Footer = () => {
                 .footer-section {
                     background: #001C30;
                     color: white;
-                    padding: 80px 0 30px;
+                    padding: 100px 0 30px;
                     position: relative;
                     overflow: hidden;
+                    border-top-left-radius: 60px;
+                    border-top-right-radius: 60px;
+                    font-family: 'Outfit', sans-serif;
                 }
                 .footer-section::before {
                     content: '';
@@ -94,10 +97,10 @@ const Footer = () => {
                     font-weight: 700;
                 }
                 .affiliation-tag {
-                    padding: 6px 12px;
+                    padding: 6px 15px;
                     background: rgba(255,255,255,0.05);
                     border: 1px solid rgba(255,255,255,0.1);
-                    border-radius: 6px;
+                    border-radius: 50px;
                     font-size: 0.8rem;
                     color: rgba(255,255,255,0.7);
                     transition: all 0.3s ease;
@@ -201,7 +204,8 @@ const Footer = () => {
                     <div>
                         <img src={HeaderLogo} alt="MZCN Logo" style={{ height: '80px', width: 'auto', marginBottom: '25px', borderRadius: '8px' }} />
                         <p style={{ color: 'rgba(255,255,255,0.86)', lineHeight: 1.8, marginBottom: '25px', fontSize: '0.95rem' }}>
-                            To Make Man Whole. Providing world-class nursing education with clinical excellence for over <span className="animated-text">17 years</span>.
+                            <span style={{ fontFamily: "'Playfair Display', serif", fontStyle: 'italic', fontWeight: 700, color: '#D4AF37', display: 'block', fontSize: '1.15rem', marginBottom: '8px' }}>"To Make Man Whole."</span>
+                            Providing world-class nursing education with clinical excellence for over <span className="animated-text">17 years</span>.
                         </p>
                         <div style={{ display: 'flex', gap: '15px' }}>
                             <a href="https://www.facebook.com/share/17Few28nzE/" target="_blank" rel="noopener noreferrer" className="social-icon"><i className="fab fa-facebook-f"></i></a>
@@ -273,7 +277,8 @@ const Footer = () => {
                     <div className="mobile-brand-row">
                         <img src={HeaderLogo} alt="MZCN Logo" className="m-logo" style={{ height: '60px', width: 'auto', borderRadius: '6px' }} />
                         <p className="m-brand-text">
-                            To Make Man Whole. Providing world-class nursing education with clinical excellence for over <span className="animated-text">17 years</span>.
+                            <span style={{ fontFamily: "'Playfair Display', serif", fontStyle: 'italic', fontWeight: 700, color: '#D4AF37', display: 'block', fontSize: '0.95rem', marginBottom: '4px' }}>"To Make Man Whole."</span>
+                            Providing world-class nursing education with clinical excellence for over <span className="animated-text">17 years</span>.
                         </p>
                     </div>
 
