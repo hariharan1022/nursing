@@ -40,7 +40,7 @@ const Home = () => {
         },
         {
             img: `${import.meta.env.BASE_URL}photo/p5_files/banner4.jpeg`,
-            title: "Admissions Open 2026",
+            title: "Admissions Open " + new Date().getFullYear(),
             desc: "Join the premier nursing college in Pudukkottai District.",
             cta: "Apply Now",
             link: "/admissions"
@@ -250,7 +250,7 @@ const Home = () => {
                 <div className="container">
                     <div className="apply-card home-cta-card" style={{ padding: '86px 34px', borderRadius: '34px', maxWidth: '1460px', margin: '0 auto' }}>
                         <div className="text-center">
-                            <span className="hero-tag-gold float-breathe">Join the 2026 Batch</span>
+                            <span className="hero-tag-gold float-breathe">Join the {new Date().getFullYear()} Batch</span>
                             <h2 style={{ fontSize: '3.8rem', marginBottom: '25px', color: 'white', fontWeight: 800, textShadow: '0 4px 15px rgba(0,0,0,0.2)', fontFamily: "'Playfair Display', serif", letterSpacing: '-1px' }} className="reveal-skew">Empowering Excellence</h2>
                             <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.9)', fontWeight: 600, maxWidth: '850px', margin: '0 auto 45px' }}>
                                 Step into a rewarding career in healthcare with one of the most prestigious nursing institutions in Pudukkottai District.

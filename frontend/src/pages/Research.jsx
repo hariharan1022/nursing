@@ -148,7 +148,7 @@ const Research = () => {
                     <div className="mb-24">
                         <div className="text-center mb-16 reveal-up" data-reveal-init>
                             <h2 className="section-title-premium inline-block">Research Domains</h2>
-                            <p className="text-slate-500 font-bold mt-4 uppercase tracking-widest text-sm">Historical Scientific Output (2013 – 2025)</p>
+                            <p className="text-slate-500 font-bold mt-4 uppercase tracking-widest text-sm">Historical Scientific Output (2013 – {new Date().getFullYear() - 1})</p>
                         </div>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                             {researchAreas.map((area, idx) => (
@@ -181,12 +181,12 @@ const Research = () => {
                                     <div className="p-8 bg-slate-50 rounded-[32px] border border-blue-100 text-center">
                                         <div className="text-6xl font-black text-primary mb-2">54</div>
                                         <p className="text-xs font-black uppercase tracking-widest text-slate-500">Studies Completed</p>
-                                        <p className="text-[10px] text-slate-400 font-bold mt-1">(2013-2025 Accumulated)</p>
+                                        <p className="text-[10px] text-slate-400 font-bold mt-1">(2013-{new Date().getFullYear() - 1} Accumulated)</p>
                                     </div>
                                     <div className="p-8 bg-slate-50 rounded-[32px] border border-blue-100 text-center">
                                         <div className="text-6xl font-black text-primary mb-2">04</div>
                                         <p className="text-xs font-black uppercase tracking-widest text-slate-500">Ongoing Projects</p>
-                                        <p className="text-[10px] text-slate-400 font-bold mt-1">(2025-2026 Session)</p>
+                                        <p className="text-[10px] text-slate-400 font-bold mt-1">({new Date().getFullYear() - 1}-{new Date().getFullYear()} Session)</p>
                                     </div>
                                 </div>
                                 <div className="mt-10 p-8 bg-blue-50/30 rounded-3xl border border-blue-100">

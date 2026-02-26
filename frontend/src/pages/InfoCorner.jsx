@@ -14,6 +14,7 @@ import badmintonImg from '../assets/updates/news/badminton-champions-2024.jpg';
 import alumniSivaImg from '../assets/updates/Alumni/WhatsApp Image 2026-02-26 at 1.58.20 PM.jpeg';
 
 const InfoCorner = () => {
+    const currentYear = new Date().getFullYear();
     const location = useLocation();
 
     // Dynamic Image Loading for generic updates
@@ -26,8 +27,8 @@ const InfoCorner = () => {
                 const fileName = path.split('/').pop().split('.')[0];
                 // Skip if it's one of our hardcoded featured ones to avoid duplication
                 const featured = [
-                    'lamp-lighting-2026',
-                    'pongal 2026',
+                    `lamp-lighting-${currentYear}`,
+                    `pongal ${currentYear}`,
                     '12th graduation',
                     'founders day 2025',
                     '16th lamp lighting 2025',
@@ -87,15 +88,15 @@ const InfoCorner = () => {
     const staticAnnouncements = [
         {
             type: 'Featured Event',
-            title: '17th Lamp Lighting Ceremony 2026 🪔',
-            text: 'Mount Zion College of Nursing proudly conducted the 17th Lamp Lighting Ceremony 2026 — a sacred tradition symbolizing compassion ❤️, dedication 🤝, and the noble spirit of nursing 👩⚕️👨⚕️. The ceremony was graced by our respected Chairperson, Chief Guest, Guest of Honour, faculty members, and well-wishers 🎓. A proud and inspiring beginning for our future nurses as they step into a lifelong journey of service and care 🌟✨.',
-            tags: '#MountZionCollegeOfNursing #LampLightingCeremony2026 #FutureNurses #NursingProfession #ProudMoment',
+            title: `17th Lamp Lighting Ceremony ${currentYear} 🪔`,
+            text: `Mount Zion College of Nursing proudly conducted the 17th Lamp Lighting Ceremony ${currentYear} — a sacred tradition symbolizing compassion ❤️, dedication 🤝, and the noble spirit of nursing 👩⚕️👨⚕️. The ceremony was graced by our respected Chairperson, Chief Guest, Guest of Honour, faculty members, and well-wishers 🎓. A proud and inspiring beginning for our future nurses as they step into a lifelong journey of service and care 🌟✨.`,
+            tags: `#MountZionCollegeOfNursing #LampLightingCeremony${currentYear} #FutureNurses #NursingProfession #ProudMoment`,
             image: lampLightingImg
         },
         {
             type: 'Cultural Celebration',
-            title: 'Pongal Celebration 2026 🌾✨',
-            text: 'Celebrating the spirit of Tamil heritage and the vibrant essence of nature, Mount Zion College of Nursing proudly hosted Pongal Celebration 2026 under the theme Thamilan Who Lived with Nature. The event was a symphony of culture and tradition, featuring beautiful rhyming poems, soulful traditional dances, and an engaging skit reflecting the harmony between humans and nature. Students relived the charm of old traditional games like tug-of-war, showcasing the strength of unity and camaraderie. Through every activity, from the aromatic preparation of Pongal to heartfelt greetings and cultural expressions, we rejoiced in recalling the beauty of Tamil culture - a timeless connection to our roots. Here is to cherishing tradition and celebrating togetherness! 🌿🌞 Happy Pongal to all! 🪷🎉',
+            title: `Pongal Celebration ${currentYear} 🌾✨`,
+            text: `Celebrating the spirit of Tamil heritage and the vibrant essence of nature, Mount Zion College of Nursing proudly hosted Pongal Celebration ${currentYear} under the theme Thamilan Who Lived with Nature. The event was a symphony of culture and tradition, featuring beautiful rhyming poems, soulful traditional dances, and an engaging skit reflecting the harmony between humans and nature. Students relived the charm of old traditional games like tug-of-war, showcasing the strength of unity and camaraderie. Through every activity, from the aromatic preparation of Pongal to heartfelt greetings and cultural expressions, we rejoiced in recalling the beauty of Tamil culture - a timeless connection to our roots. Here is to cherishing tradition and celebrating togetherness! 🌿🌞 Happy Pongal to all! 🪷🎉`,
             tags: '#MZCN #PongalCelebration #ThamilanWithNature #TraditionsAlive',
             image: pongal2026Img
         },
@@ -126,8 +127,8 @@ const InfoCorner = () => {
     const staticNews = [
         {
             type: 'Top Story',
-            title: 'Republic Day 2026 Achievement 🎉',
-            text: 'On this Republic Day 2026, Mount Zion College of Nursing celebrates with immense pride the remarkable achievement of Mr Rajiv Gandhi R, Fifth Batch B.Sc. Nursing alumnus. He was honoured by Mrs K. Porkodi, I.A.S., District Collector of Sivaganga District, in recognition of his exemplary and dedicated service as a Nursing Officer in Sivaganga District, Tamil Nadu. 👏 We congratulate him on this well-deserved recognition and wish him continued success in serving society with excellence and humanity. Proud Alumni | Proud Institution | Proud Nation |',
+            title: `Republic Day ${currentYear} Achievement 🎉`,
+            text: `On this Republic Day ${currentYear}, Mount Zion College of Nursing celebrates with immense pride the remarkable achievement of Mr Rajiv Gandhi R, Fifth Batch B.Sc. Nursing alumnus. He was honoured by Mrs K. Porkodi, I.A.S., District Collector of Sivaganga District, in recognition of his exemplary and dedicated service as a Nursing Officer in Sivaganga District, Tamil Nadu. 👏 We congratulate him on this well-deserved recognition and wish him continued success in serving society with excellence and humanity. Proud Alumni | Proud Institution | Proud Nation |`,
             image: republicDayImg
         },
         {

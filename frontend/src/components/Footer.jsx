@@ -350,7 +350,7 @@ const Footer = () => {
                 {/* Bottom Bar */}
                 <div className="footer-bottom">
                     <p style={{ opacity: 0.6, fontSize: '0.8rem', margin: 0 }}>
-                        © 2026 Mount Zion College of Nursing. All Rights Reserved.
+                        © {new Date().getFullYear()} Mount Zion College of Nursing. All Rights Reserved.
                     </p>
                     <p style={{ margin: 0, fontSize: '0.8rem' }}>
                         Designed and Maintained by <span className="animated-text">Dept. of IT AIDS - MZCET</span>
