@@ -257,7 +257,9 @@ const Admissions = () => {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     {[
                                         { role: 'Principal' },
-                                        { role: 'Vice-Principal' }
+                                        { role: 'Vice-Principal' },
+                                        { role: 'Professor' },
+                                        { role: 'Chief Nursing Officer / Nursing Superintendent' }
                                     ].map(member => (
                                         <div key={member.role} className="flex items-center gap-4 p-5 bg-white border border-gray-100 rounded-2xl shadow-sm">
                                             <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg">
