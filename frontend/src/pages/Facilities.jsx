@@ -437,7 +437,7 @@ const Facilities = () => {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-stagger" data-reveal-init>
                                 {[
-                                    { t: "Nursing Foundation", d: "Core clinical skill rehearsals and basic nursing procedures on high-fidelity manikins.", icon: Stethoscope },
+                                    { t: "Fundamentals of Nursing", d: "Core clinical skill rehearsals and basic nursing procedures on high-fidelity manikins.", icon: Stethoscope },
                                     { t: "Adult Health Nursing", d: "Sophisticated simulation of intensive care and advanced medical-surgical protocols.", icon: Activity, imgs: adultHealthImages },
                                     { t: "Child Health Nursing", d: "Neonatal resuscitation modules and pediatric specialty care simulation units.", icon: Baby, imgs: childHealthImages },
                                     { t: "OBG Laboratory", d: "Maternity and midwifery simulations focused on labor, delivery and postnatal support.", icon: HeartPulse, imgs: obgImages },
