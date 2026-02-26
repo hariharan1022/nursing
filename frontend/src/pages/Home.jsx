@@ -7,7 +7,7 @@ import gallery2 from '../assets/gallery/2026/17th Lamp Lighting Ceremony 2026/Wh
 import gallery3 from '../assets/gallery/2026/17th Lamp Lighting Ceremony 2026/WhatsApp Image 2026-02-15 at 6.03.05 PM.jpeg';
 
 const STAT_ITEMS = [
-    { value: 100, suffix: '%', label: 'Placement Rate' },
+    { value: 96, suffix: '%', label: 'Placement Rate' },
     { value: 80, suffix: '%', label: 'Practical Classes' },
     { value: 96, suffix: '%', label: 'Result Oriented' },
     { value: 17, suffix: '+', label: 'Years of Service' }
