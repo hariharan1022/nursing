@@ -34,6 +34,7 @@ const Navbar = () => {
         { title: 'Announcements', path: '/info-corner#announcements', keywords: 'announcements notice' },
         { title: 'News & Events', path: '/info-corner#news', keywords: 'news events happenings' },
         { title: 'Rank Holders', path: '/info-corner#achievements', keywords: 'rank holders achievements toppers' },
+        { title: 'Alumni Voices', path: '/info-corner#alumni', keywords: 'alumni voices success stories testimonials' },
         { title: 'Current Openings', path: '/careers', keywords: 'careers jobs recruitment vacancy current openings' },
         { title: 'Job Application', path: '/apply-job', keywords: 'job application apply work' },
         { title: 'Admissions', path: '/admissions', keywords: 'admissions apply enrollment' },
@@ -251,6 +252,7 @@ const Navbar = () => {
                                     <li><Link to="/info-corner#announcements" onClick={closeMobileMenu}><i className="fas fa-bullhorn"></i> Announcements</Link></li>
                                     <li><Link to="/info-corner#news" onClick={closeMobileMenu}><i className="fas fa-newspaper"></i> News & Events</Link></li>
                                     <li><Link to="/info-corner#achievements" onClick={closeMobileMenu}><i className="fas fa-trophy"></i> Rank Holders</Link></li>
+                                    <li><Link to="/info-corner#alumni" onClick={closeMobileMenu}><i className="fas fa-user-graduate"></i> Alumni Voices</Link></li>
                                     <li><Link to="/careers" onClick={closeMobileMenu}><i className="fas fa-briefcase"></i> Current Openings</Link></li>
                                     <li><Link to="/apply-job" onClick={closeMobileMenu}><i className="fas fa-id-card"></i> Job Application</Link></li>
                                 </ul>
