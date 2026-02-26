@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Admissions = () => {
@@ -37,25 +37,25 @@ const Admissions = () => {
         <div className="admissions-page overflow-x-hidden">
             {/* Hero Section */}
             <div className="inner-hero">
-                <div className="container relative z-10 text-center">
+                <div className="w-full px-6 lg:px-16 relative z-10 text-center">
                     <span className="hero-tag-gold float-breathe reveal-zoom" data-reveal-init>
                         ADMISSION PORTAL
                     </span>
                     <h1 className="reveal-skew stagger-1" data-reveal-init>
                         Join the Future of Nursing
                     </h1>
-                    <p className="reveal-blur stagger-2" data-reveal-init style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <p className="reveal-blur stagger-2" data-reveal-init style={{ margin: '0 auto' }}>
                         Admission to the B.Sc. Nursing Programme for the academic year {new Date().getFullYear()} is governed by Indian Nursing Council norms.
                     </p>
                 </div>
             </div>
 
-            <section className="section" style={{ background: 'var(--bg-light)' }}>
-                <div className="container">
-                    <div className="page-grid reverse">
-                        <div className="admission-main content-col">
+            <section className="w-full bg-[var(--bg-light)] py-16" style={{ background: 'var(--bg-light)' }}>
+                <div className="w-full px-6 lg:px-16">
+                    <div className="w-full">
+                        <div className="admission-main w-full">
                             {/* General Eligibility */}
-                            <div id="eligibility" className="admission-card reveal-skew" data-reveal-init>
+                            <div id="eligibility" className="admission-card w-full reveal-skew" data-reveal-init>
                                 <h3 className="section-title-premium">
                                     <i className="fas fa-graduation-cap"></i>
                                     General Eligibility Criteria
@@ -256,8 +256,8 @@ const Admissions = () => {
                                 <p className="mb-8 text-muted font-medium">The college leadership committee ensures total transparency and adherence to institutional excellence.</p>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     {[
-                                        { role: 'Principal', pos: 'Chairperson' },
-                                        { role: 'Vice-Principal', pos: 'Member Secretary' }
+                                        { role: 'Principal' },
+                                        { role: 'Vice-Principal' }
                                     ].map(member => (
                                         <div key={member.role} className="flex items-center gap-4 p-5 bg-white border border-gray-100 rounded-2xl shadow-sm">
                                             <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg">
@@ -327,51 +327,7 @@ const Admissions = () => {
                             </div>
                         </div>
 
-                        {/* Sidebar */}
-                        <div className="admission-sidebar sidebar-col">
-                            <div className="sticky top-24 space-y-8">
-                                <div className="bg-white p-8 rounded-[40px] shadow-premium border border-blue-50 reveal-blur" data-reveal-init>
-                                    <h4 className="text-primary font-black text-lg mb-6 border-b pb-3 border-gray-100">Navigate Portal</h4>
-                                    <div className="flex flex-col gap-3">
-                                        {[
-                                            { id: 'eligibility', label: 'Eligibility' },
-                                            { id: 'selection', label: 'Selection Process' },
-                                            { id: 'categories', label: 'Categories' },
-                                            { id: 'committee', label: 'Admission Board' },
-                                            { id: 'documents', label: 'Required Documents' },
-                                            { id: 'scholarships', label: 'Scholarships' },
-                                            { id: 'apply', label: 'How to Register' }
-                                        ].map(link => (
-                                            <a key={link.id} href={`#${link.id}`}
-                                                onClick={(e) => {
-                                                    e.preventDefault();
-                                                    const el = document.getElementById(link.id);
-                                                    if (el) window.scrollTo({ top: el.offsetTop - 120, behavior: 'smooth' });
-                                                }}
-                                                className="p-4 rounded-2xl bg-gray-50 text-primary text-sm font-bold hover:bg-primary hover:text-white transition-all transform hover:scale-[1.02] shadow-sm">
-                                                {link.label}
-                                            </a>
-                                        ))}
-                                    </div>
-                                </div>
 
-                                <div className="blue-box-premium premium-sidebar-box reveal-zoom group" data-reveal-init>
-                                    <h3 className="text-3xl font-black mb-6 leading-tight text-primary">Start Your<br />Journey Today</h3>
-                                    <p className="text-slate-500 text-sm mb-8 leading-relaxed font-bold">
-                                        Applications for the current academic session are evaluated on a rolling merit basis. Secure your place in healthcare excellence.
-                                    </p>
-
-                                    <Link to="/contact" className="w-full py-5 bg-primary text-white font-black rounded-2xl flex items-center justify-center gap-3 hover:bg-accent hover:text-primary transition-all shadow-xl">
-                                        INQUIRE NOW <i className="fas fa-arrow-right"></i>
-                                    </Link>
-
-                                    <div className="mt-8 pt-8 border-t border-slate-100 text-center">
-                                        <p className="text-[10px] uppercase font-black text-slate-400 tracking-widest mb-2">Admission Helpdesk</p>
-                                        <p className="text-2xl font-black text-primary">+91 75021 73000</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>

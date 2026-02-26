@@ -71,3 +71,6 @@ html {
 .stagger-4 {
     transition-delay: 400ms;
 }
+.admission-card {
+   width: 100%;
+}
