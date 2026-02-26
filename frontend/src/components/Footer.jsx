@@ -7,9 +7,9 @@ const Footer = () => {
             <style>
                 {`
                 .footer-section {
-                    background: #001C30;
+                    background: #001f4d;
                     color: white;
-                    padding: 80px 0 30px;
+                    padding: 100px 0 30px;
                     position: relative;
                     overflow: hidden;
                 }
@@ -20,20 +20,16 @@ const Footer = () => {
                     left: 0;
                     width: 100%;
                     height: 5px;
-                    background: linear-gradient(90deg, #D4AF37, #B8860B, #D4AF37);
-                    background-size: 200% auto;
-                    animation: shimmer 4s linear infinite;
-                }
-                @keyframes shimmer {
-                    to { background-position: 200% center; }
+                    background: #F5CD02;
                 }
                 .f-title {
-                    color: #D4AF37;
+                    color: #F5CD02;
                     font-size: 1.2rem;
                     font-weight: 700;
                     margin-bottom: 25px;
                     position: relative;
                     padding-bottom: 10px;
+                    font-family: 'Manrope', sans-serif;
                 }
                 .f-title::after {
                     content: '';
@@ -42,7 +38,7 @@ const Footer = () => {
                     left: 0;
                     width: 40px;
                     height: 2px;
-                    background: #D4AF37;
+                    background: #F5CD02;
                 }
                 .f-link {
                     color: rgba(255,255,255,0.7);
@@ -51,9 +47,10 @@ const Footer = () => {
                     display: block;
                     margin-bottom: 10px;
                     font-size: 0.92rem;
+                    font-family: 'Manrope', sans-serif;
                 }
                 .f-link:hover {
-                    color: #D4AF37;
+                    color: #F5CD02;
                     transform: translateX(5px);
                 }
                 .f-contact-item {
@@ -64,7 +61,7 @@ const Footer = () => {
                     color: rgba(255,255,255,0.8);
                 }
                 .f-contact-icon {
-                    color: #D4AF37;
+                    color: #F5CD02;
                     font-size: 1rem;
                     margin-top: 3px;
                 }
@@ -72,7 +69,8 @@ const Footer = () => {
                     width: 38px;
                     height: 38px;
                     border-radius: 50%;
-                    background: rgba(255,255,255,0.05);
+                    background: rgba(255,255,255,0.08);
+                    border: 1px solid rgba(255,255,255,0.18);
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -81,31 +79,27 @@ const Footer = () => {
                     text-decoration: none;
                 }
                 .social-icon:hover {
-                    background: #D4AF37;
-                    transform: translateY(-5px);
-                    color: #001C30;
+                    background: #F5CD02;
+                    transform: none;
+                    color: #001739;
                 }
                 .animated-text {
-                    background: linear-gradient(90deg, #ffffff, #D4AF37, #ffffff);
-                    background-size: 200% auto;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    animation: shimmer 6s linear infinite;
+                    color: #F5CD02;
                     font-weight: 700;
                 }
                 .affiliation-tag {
-                    padding: 6px 12px;
+                    padding: 6px 15px;
                     background: rgba(255,255,255,0.05);
                     border: 1px solid rgba(255,255,255,0.1);
-                    border-radius: 6px;
+                    border-radius: 50px;
                     font-size: 0.8rem;
                     color: rgba(255,255,255,0.7);
                     transition: all 0.3s ease;
                     text-decoration: none;
                 }
                 .affiliation-tag:hover {
-                    border-color: #D4AF37;
-                    color: #D4AF37;
+                    border-color: #F5CD02;
+                    color: #F5CD02;
                 }
                 .footer-bottom {
                     margin-top: 40px;
@@ -172,24 +166,6 @@ const Footer = () => {
                         margin-bottom: 10px;
                         gap: 8px;
                     }
-                    .m-admission-box {
-                        background: linear-gradient(135deg, #001C30 0%, #003366 100%);
-                        padding: 15px !important;
-                        border-radius: 12px !important;
-                        border: 1px solid rgba(255, 255, 255, 0.1) !important;
-                        position: relative;
-                        overflow: hidden;
-                    }
-                    .m-admission-box::before {
-                        content: '';
-                        position: absolute;
-                        inset: 0;
-                        opacity: 0.1;
-                        pointer-events: none;
-                    }
-                    .m-admission-box i {
-                        display: none;
-                    }
                     .affiliation-container {
                         justify-content: center !important;
                         gap: 8px !important;
@@ -210,52 +186,6 @@ const Footer = () => {
                         display: none !important;
                     }
                 }
-                .admission-blue-box {
-                    background: linear-gradient(135deg, #050b1a 0%, #1e1b4b 50%, #050b1a 100%);
-                    padding: 30px !important;
-                    border-radius: 25px !important;
-                    position: relative;
-                    overflow: hidden;
-                    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-                    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-                    text-align: center;
-                    width: 100%;
-                    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-                }
-                .admission-blue-box::before {
-                    content: '';
-                    position: absolute;
-                    inset: 0;
-                    opacity: 0.15;
-                    pointer-events: none;
-                }
-                .admission-blue-box:hover {
-                    transform: translateY(-3px);
-                    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-                }
-                .admission-tag-small {
-                    background: linear-gradient(135deg, #FFD700 0%, #D4AF37 100%);
-                    color: #001C30;
-                    padding: 4px 12px;
-                    border-radius: 50px;
-                    font-size: 0.7rem;
-                    font-weight: 800;
-                    display: inline-block;
-                    margin-bottom: 8px;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    position: relative;
-                    z-index: 2;
-                }
-                .admission-num-white {
-                    color: white;
-                    font-size: 1.2rem;
-                    font-weight: 900;
-                    margin: 0;
-                    position: relative;
-                    z-index: 2;
-                    letter-spacing: 1px;
-                }
                 `}
             </style>
 
@@ -265,7 +195,8 @@ const Footer = () => {
                     <div>
                         <img src={HeaderLogo} alt="MZCN Logo" style={{ height: '80px', width: 'auto', marginBottom: '25px', borderRadius: '8px' }} />
                         <p style={{ color: 'rgba(255,255,255,0.86)', lineHeight: 1.8, marginBottom: '25px', fontSize: '0.95rem' }}>
-                            To Make Man Whole. Providing world-class nursing education with clinical excellence for over <span className="animated-text">17 years</span>.
+                            <span style={{ fontFamily: "'Playfair Display', serif", fontStyle: 'italic', fontWeight: 700, color: '#D4AF37', display: 'block', fontSize: '1.15rem', marginBottom: '8px' }}>"To Make Man Whole."</span>
+                            Providing world-class nursing education with clinical excellence for over <span className="animated-text">17 years</span>.
                         </p>
                         <div style={{ display: 'flex', gap: '15px' }}>
                             <a href="https://www.facebook.com/share/17Few28nzE/" target="_blank" rel="noopener noreferrer" className="social-icon"><i className="fab fa-facebook-f"></i></a>
@@ -276,7 +207,7 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <h4 className="f-title">Quick Links</h4>
+                        <h4 className="f-title">Explore MZCN</h4>
                         <Link to="/" className="f-link">Home</Link>
                         <Link to="/about" className="f-link">About Us</Link>
                         <Link to="/course-details" className="f-link">Course Details</Link>
@@ -307,7 +238,7 @@ const Footer = () => {
                         <div className="f-contact-item" style={{ marginBottom: '15px', background: 'rgba(255,255,255,0.03)', padding: '10px', borderRadius: '8px' }}>
                             <i className="fas fa-user-tie f-contact-icon"></i>
                             <div>
-                                <p style={{ margin: 0, fontSize: '0.82rem', fontWeight: 700, color: '#D4AF37', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Principal</p>
+                                <p style={{ margin: 0, fontSize: '0.82rem', fontWeight: 700, color: '#F5CD02', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Principal</p>
                                 <p style={{ margin: '2px 0', fontSize: '0.92rem', fontWeight: 600 }}>+91 99655 20316</p>
                                 <p style={{ margin: 0, fontSize: '0.72rem', opacity: 0.6 }}><i className="far fa-clock" style={{ marginRight: '4px' }}></i>9:00 AM – 4:30 PM</p>
                             </div>
@@ -315,14 +246,18 @@ const Footer = () => {
                         <div className="f-contact-item" style={{ marginBottom: '20px', background: 'rgba(255,255,255,0.03)', padding: '10px', borderRadius: '8px' }}>
                             <i className="fas fa-user-shield f-contact-icon"></i>
                             <div>
-                                <p style={{ margin: 0, fontSize: '0.82rem', fontWeight: 700, color: '#D4AF37', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Vice Principal</p>
+                                <p style={{ margin: 0, fontSize: '0.82rem', fontWeight: 700, color: '#F5CD02', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Vice Principal</p>
                                 <p style={{ margin: '2px 0', fontSize: '0.92rem', fontWeight: 600 }}>+91 99655 66664</p>
                                 <p style={{ margin: 0, fontSize: '0.72rem', opacity: 0.6 }}><i className="far fa-clock" style={{ marginRight: '4px' }}></i>9:00 AM – 4:30 PM</p>
                             </div>
                         </div>
-                        <div className="admission-blue-box">
-                            <span className="admission-tag-small">Admission Enquiry</span>
-                            <p className="admission-num-white">+91 75021 73000</p>
+                        <div className="f-contact-item" style={{ background: 'rgba(255,255,255,0.03)', padding: '10px', borderRadius: '8px' }}>
+                            <i className="fas fa-headset f-contact-icon"></i>
+                            <div>
+                                <p style={{ margin: 0, fontSize: '0.82rem', fontWeight: 700, color: '#F5CD02', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Admission Enquiry</p>
+                                <p style={{ margin: '2px 0', fontSize: '0.92rem', fontWeight: 600 }}>+91 75021 73000</p>
+                                <p style={{ margin: 0, fontSize: '0.72rem', opacity: 0.6 }}><i className="fas fa-info-circle" style={{ marginRight: '4px' }}></i>Course & Enrollment</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -333,7 +268,8 @@ const Footer = () => {
                     <div className="mobile-brand-row">
                         <img src={HeaderLogo} alt="MZCN Logo" className="m-logo" style={{ height: '60px', width: 'auto', borderRadius: '6px' }} />
                         <p className="m-brand-text">
-                            To Make Man Whole. Providing world-class nursing education with clinical excellence for over <span className="animated-text">17 years</span>.
+                            <span style={{ fontFamily: "'Playfair Display', serif", fontStyle: 'italic', fontWeight: 700, color: '#D4AF37', display: 'block', fontSize: '0.95rem', marginBottom: '4px' }}>"To Make Man Whole."</span>
+                            Providing world-class nursing education with clinical excellence for over <span className="animated-text">17 years</span>.
                         </p>
                     </div>
 
@@ -345,10 +281,10 @@ const Footer = () => {
                         <a href="https://in.linkedin.com/school/mount-zion-college-of-engineering-and-technology/" target="_blank" rel="noopener noreferrer" className="social-icon"><i className="fab fa-linkedin-in"></i></a>
                     </div>
 
-                    {/* Grid Row 1: Quick Links & Contact Us */}
+                    {/* Grid Row 1: Explore & Contact Us */}
                     <div className="m-2col-grid">
                         <div>
-                            <h4 className="f-title">Quick Links</h4>
+                            <h4 className="f-title">Explore MZCN</h4>
                             <Link to="/" className="f-link">Home</Link>
                             <Link to="/about" className="f-link">About Us</Link>
                             <Link to="/course-details" className="f-link">Course Details</Link>
@@ -373,14 +309,14 @@ const Footer = () => {
                             <h4 className="f-title">Support</h4>
                             <div className="f-contact-item" style={{ fontSize: '0.7rem', marginBottom: '8px' }}>
                                 <div>
-                                    <span style={{ fontWeight: 700, color: '#D4AF37' }}>Principal:</span><br />
+                                    <span style={{ fontWeight: 700, color: '#F5CD02' }}>Principal:</span><br />
                                     +91 99655 20316<br />
                                     <span style={{ opacity: 0.6, fontSize: '0.6rem' }}>9:00 AM – 4:30 PM</span>
                                 </div>
                             </div>
                             <div className="f-contact-item" style={{ fontSize: '0.7rem' }}>
                                 <div>
-                                    <span style={{ fontWeight: 700, color: '#D4AF37' }}>Vice Principal:</span><br />
+                                    <span style={{ fontWeight: 700, color: '#F5CD02' }}>Vice Principal:</span><br />
                                     +91 99655 66664<br />
                                     <span style={{ opacity: 0.6, fontSize: '0.6rem' }}>9 am - 4:30 pm</span>
                                 </div>
@@ -388,9 +324,12 @@ const Footer = () => {
                         </div>
                         <div>
                             <h4 className="f-title">Admission</h4>
-                            <div className="m-admission-box">
-                                <span className="admission-tag-small" style={{ fontSize: '0.6rem', padding: '2px 8px' }}>Admission Enquiry</span>
-                                <p className="admission-num-white" style={{ fontSize: '1rem' }}>+91 75021 73000</p>
+                            <div className="f-contact-item" style={{ fontSize: '0.7rem' }}>
+                                <div>
+                                    <span style={{ fontWeight: 700, color: '#F5CD02' }}>Admission Enquiry:</span><br />
+                                    +91 75021 73000<br />
+                                    <span style={{ opacity: 0.6, fontSize: '0.6rem' }}>Course & Enrollment</span>
+                                </div>
                             </div>
                         </div>
                     </div>

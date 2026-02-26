@@ -27,6 +27,53 @@ import transportImg4 from '../assets/facilites/transport/transport-4.jpeg';
 import extraPlusImg1 from '../assets/facilites/extra-plus/extra-plus-1.jpeg';
 import extraPlusImg2 from '../assets/facilites/extra-plus/extra-plus-2.jpeg';
 
+// Adult Health Nursing
+import adultHealth1 from '../assets/facilites/Laboratories/Adult Health Nursing/WhatsApp Image 2026-02-25 at 8.36.19 AM.jpeg';
+import adultHealth2 from '../assets/facilites/Laboratories/Adult Health Nursing/WhatsApp Image 2026-02-25 at 8.36.20 AM (1).jpeg';
+import adultHealth3 from '../assets/facilites/Laboratories/Adult Health Nursing/WhatsApp Image 2026-02-25 at 8.36.20 AM.jpeg';
+
+// Anatomy and Physiology Museum
+import anatomy1 from '../assets/facilites/Laboratories/Anatomy and Physiology Museum/WhatsApp Image 2026-02-25 at 8.34.59 AM (1).jpeg';
+import anatomy2 from '../assets/facilites/Laboratories/Anatomy and Physiology Museum/WhatsApp Image 2026-02-25 at 8.34.59 AM.jpeg';
+
+// Child Health Nursing
+import childHealth1 from '../assets/facilites/Laboratories/Child Health Nursing/WhatsApp Image 2026-02-25 at 8.35.42 AM (1).jpeg';
+import childHealth2 from '../assets/facilites/Laboratories/Child Health Nursing/WhatsApp Image 2026-02-25 at 8.35.42 AM.jpeg';
+import childHealth3 from '../assets/facilites/Laboratories/Child Health Nursing/WhatsApp Image 2026-02-25 at 8.35.43 AM (1).jpeg';
+import childHealth4 from '../assets/facilites/Laboratories/Child Health Nursing/WhatsApp Image 2026-02-25 at 8.35.43 AM.jpeg';
+
+// Community Health Nursing
+import communityHealth1 from '../assets/facilites/Laboratories/Community Health Nursing/WhatsApp Image 2026-02-25 at 7.02.02 AM (1).jpeg';
+import communityHealth2 from '../assets/facilites/Laboratories/Community Health Nursing/WhatsApp Image 2026-02-25 at 7.02.02 AM.jpeg';
+import communityHealth3 from '../assets/facilites/Laboratories/Community Health Nursing/WhatsApp Image 2026-02-25 at 7.02.03 AM (1).jpeg';
+import communityHealth4 from '../assets/facilites/Laboratories/Community Health Nursing/WhatsApp Image 2026-02-25 at 7.02.03 AM.jpeg';
+import communityHealth5 from '../assets/facilites/Laboratories/Community Health Nursing/WhatsApp Image 2026-02-25 at 7.02.04 AM (1).jpeg';
+import communityHealth6 from '../assets/facilites/Laboratories/Community Health Nursing/WhatsApp Image 2026-02-25 at 7.02.04 AM.jpeg';
+
+// Mental Health Nursing
+import mentalHealth1 from '../assets/facilites/Laboratories/Mental Health Nursing/WhatsApp Image 2026-02-25 at 8.36.48 AM (1).jpeg';
+import mentalHealth2 from '../assets/facilites/Laboratories/Mental Health Nursing/WhatsApp Image 2026-02-25 at 8.36.48 AM (2).jpeg';
+import mentalHealth3 from '../assets/facilites/Laboratories/Mental Health Nursing/WhatsApp Image 2026-02-25 at 8.36.48 AM.jpeg';
+import mentalHealth4 from '../assets/facilites/Laboratories/Mental Health Nursing/WhatsApp Image 2026-02-25 at 8.36.49 AM (1).jpeg';
+import mentalHealth5 from '../assets/facilites/Laboratories/Mental Health Nursing/WhatsApp Image 2026-02-25 at 8.36.49 AM.jpeg';
+
+// Nutrition Laboratory
+import nutrition1 from '../assets/facilites/Laboratories/Nutrition Laboratory/WhatsApp Image 2026-02-25 at 7.00.50 AM.jpeg';
+import nutrition2 from '../assets/facilites/Laboratories/Nutrition Laboratory/WhatsApp Image 2026-02-25 at 7.00.51 AM (1).jpeg';
+import nutrition3 from '../assets/facilites/Laboratories/Nutrition Laboratory/WhatsApp Image 2026-02-25 at 7.00.51 AM.jpeg';
+import nutrition4 from '../assets/facilites/Laboratories/Nutrition Laboratory/WhatsApp Image 2026-02-25 at 7.00.52 AM (1).jpeg';
+import nutrition5 from '../assets/facilites/Laboratories/Nutrition Laboratory/WhatsApp Image 2026-02-25 at 7.00.52 AM (2).jpeg';
+import nutrition6 from '../assets/facilites/Laboratories/Nutrition Laboratory/WhatsApp Image 2026-02-25 at 7.00.52 AM.jpeg';
+import nutrition7 from '../assets/facilites/Laboratories/Nutrition Laboratory/WhatsApp Image 2026-02-25 at 7.00.53 AM (1).jpeg';
+import nutrition8 from '../assets/facilites/Laboratories/Nutrition Laboratory/WhatsApp Image 2026-02-25 at 7.00.53 AM.jpeg';
+
+// Obstetrics and Gynaecological Nursing
+import obg1 from '../assets/facilites/Laboratories/Obstetrics and Gynaecological Nursing/WhatsApp Image 2026-02-25 at 8.37.41 AM.jpeg';
+import obg2 from '../assets/facilites/Laboratories/Obstetrics and Gynaecological Nursing/WhatsApp Image 2026-02-25 at 8.37.42 AM (1).jpeg';
+import obg3 from '../assets/facilites/Laboratories/Obstetrics and Gynaecological Nursing/WhatsApp Image 2026-02-25 at 8.37.42 AM.jpeg';
+import obg4 from '../assets/facilites/Laboratories/Obstetrics and Gynaecological Nursing/WhatsApp Image 2026-02-25 at 8.37.43 AM (1).jpeg';
+import obg5 from '../assets/facilites/Laboratories/Obstetrics and Gynaecological Nursing/WhatsApp Image 2026-02-25 at 8.37.43 AM.jpeg';
+
 const ImageGallery = ({ images }) => {
     const [selectedImage, setSelectedImage] = React.useState(null);
     const [currentIndex, setCurrentIndex] = React.useState(0);
@@ -189,7 +236,7 @@ const Facilities = () => {
             });
         }, observerOptions);
 
-        const elements = document.querySelectorAll('.reveal');
+        const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom, .reveal-rotate, .reveal-skew, .reveal-blur, .reveal-flip, .reveal-up, .reveal-stagger');
         elements.forEach(el => observer.observe(el));
         return () => observer.disconnect();
     }, []);
@@ -210,6 +257,14 @@ const Facilities = () => {
     const hostelImages = [hostelImg1, hostelImg2, hostelImg3];
     const transportImages = [transportImg1, transportImg2, transportImg3, transportImg4];
     const extraPlusImages = [extraPlusImg1, extraPlusImg2];
+
+    const adultHealthImages = [adultHealth1, adultHealth2, adultHealth3];
+    const anatomyImages = [anatomy1, anatomy2];
+    const childHealthImages = [childHealth1, childHealth2, childHealth3, childHealth4];
+    const communityHealthImages = [communityHealth1, communityHealth2, communityHealth3, communityHealth4, communityHealth5, communityHealth6];
+    const mentalHealthImages = [mentalHealth1, mentalHealth2, mentalHealth3, mentalHealth4, mentalHealth5];
+    const nutritionImages = [nutrition1, nutrition2, nutrition3, nutrition4, nutrition5, nutrition6, nutrition7, nutrition8];
+    const obgImages = [obg1, obg2, obg3, obg4, obg5];
 
     return (
         <div className="min-h-screen bg-gray-50 text-gray-800 font-sans selection:bg-blue-100 selection:text-blue-900">
@@ -383,18 +438,18 @@ const Facilities = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-stagger" data-reveal-init>
                                 {[
                                     { t: "Nursing Foundation", d: "Core clinical skill rehearsals and basic nursing procedures on high-fidelity manikins.", icon: Stethoscope },
-                                    { t: "Adult Health Nursing", d: "Sophisticated simulation of intensive care and advanced medical-surgical protocols.", icon: Activity },
-                                    { t: "Child Health Nursing", d: "Neonatal resuscitation modules and pediatric specialty care simulation units.", icon: Baby },
-                                    { t: "OBG Laboratory", d: "Maternity and midwifery simulations focused on labor, delivery and postnatal support.", icon: HeartPulse },
-                                    { t: "Community Health", d: "Simulation of rural and urban primary healthcare setups for public health training.", icon: Users },
-                                    { t: "Mental Health Unit", d: "Dedicated environment for therapeutic communication and behavioral health observation.", icon: Brain },
-                                    { t: "Nutrition & Dietetics", d: "Scientific food preparation, dietary calculation, and therapeutic meal mapping.", icon: Utensils },
+                                    { t: "Adult Health Nursing", d: "Sophisticated simulation of intensive care and advanced medical-surgical protocols.", icon: Activity, imgs: adultHealthImages },
+                                    { t: "Child Health Nursing", d: "Neonatal resuscitation modules and pediatric specialty care simulation units.", icon: Baby, imgs: childHealthImages },
+                                    { t: "OBG Laboratory", d: "Maternity and midwifery simulations focused on labor, delivery and postnatal support.", icon: HeartPulse, imgs: obgImages },
+                                    { t: "Community Health", d: "Simulation of rural and urban primary healthcare setups for public health training.", icon: Users, imgs: communityHealthImages },
+                                    { t: "Mental Health Unit", d: "Dedicated environment for therapeutic communication and behavioral health observation.", icon: Brain, imgs: mentalHealthImages },
+                                    { t: "Nutrition & Dietetics", d: "Scientific food preparation, dietary calculation, and therapeutic meal mapping.", icon: Utensils, imgs: nutritionImages },
                                     { t: "Microbiology Lab", d: "Clinical pathology, staining techniques, and advanced diagnostic microscopy.", icon: Microscope },
-                                    { t: "Anatomy & Physiology", d: "An exhaustive museum of biological specimens, intricate models, and skeletal systems.", icon: Landmark },
+                                    { t: "Anatomy & Physiology", d: "An exhaustive museum of biological specimens, intricate models, and skeletal systems.", icon: Landmark, imgs: anatomyImages },
                                     { t: "Advanced Computer Lab", d: "Training in Hospital Management Systems (HMS) and digital medical record analysis.", icon: Monitor }
                                 ].map((lab, i) => (
-                                    <div key={i} className="premium-card shine-effect group transition-all duration-300">
-                                        <div className="flex flex-col gap-6">
+                                    <div key={i} className="premium-card shine-effect group transition-all duration-300 flex flex-col">
+                                        <div className="flex flex-col gap-6 flex-grow">
                                             <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center bg-slate-50 rounded-2xl border border-slate-100 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm">
                                                 <lab.icon size={30} className="transition-transform group-hover:scale-110" />
                                             </div>
@@ -402,11 +457,28 @@ const Facilities = () => {
                                                 <h3 className="text-xl font-black text-slate-900 uppercase tracking-tight mb-4">
                                                     {lab.t}
                                                 </h3>
-                                                <p className="text-slate-500 font-medium leading-relaxed">
+                                                <p className="text-slate-500 font-medium leading-relaxed mb-6">
                                                     {lab.d}
                                                 </p>
                                             </div>
                                         </div>
+
+                                        {lab.imgs && (
+                                            <div className="mt-auto pt-6 border-t border-slate-50">
+                                                <details className="group/gallery">
+                                                    <summary className="flex items-center justify-between cursor-pointer list-none py-2 px-4 bg-slate-50 rounded-xl hover:bg-emerald-50 transition-colors">
+                                                        <span className="text-xs font-black text-slate-700 uppercase tracking-widest flex items-center gap-2">
+                                                            <i className="fas fa-images text-emerald-600"></i>
+                                                            View Laboratory Photos
+                                                        </span>
+                                                        <i className="fas fa-chevron-down text-[10px] text-slate-400 group-open/gallery:rotate-180 transition-transform"></i>
+                                                    </summary>
+                                                    <div className="pt-4 overflow-hidden">
+                                                        <ImageGallery images={lab.imgs} />
+                                                    </div>
+                                                </details>
+                                            </div>
+                                        )}
                                     </div>
                                 ))}
                             </div>

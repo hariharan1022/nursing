@@ -1,11 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
 // Gallery Images (Imported from src/assets)
 import gallery1 from '../assets/gallery/2026/17th Lamp Lighting Ceremony 2026/WhatsApp Image 2026-02-15 at 6.03.02 PM.jpeg';
 import gallery2 from '../assets/gallery/2026/17th Lamp Lighting Ceremony 2026/WhatsApp Image 2026-02-15 at 6.03.04 PM.jpeg';
 import gallery3 from '../assets/gallery/2026/17th Lamp Lighting Ceremony 2026/WhatsApp Image 2026-02-15 at 6.03.05 PM.jpeg';
-import gallery4 from '../assets/gallery/2026/17th Lamp Lighting Ceremony 2026/WhatsApp Image 2026-02-15 at 6.03.06 PM.jpeg';
+
+const STAT_ITEMS = [
+    { value: 100, suffix: '%', label: 'Placement Rate' },
+    { value: 80, suffix: '%', label: 'Practical Classes' },
+    { value: 96, suffix: '%', label: 'Result Oriented' },
+    { value: 17, suffix: '+', label: 'Years of Service' }
+];
 
 const Home = () => {
     // Slider State
@@ -21,8 +27,8 @@ const Home = () => {
         },
         {
             img: `${import.meta.env.BASE_URL}photo/p5_files/banner2.jpeg`,
-            title: "State-of-the-art Clinical Facilities",
-            desc: "Real-world training in our 500-bed multi-speciality hospital.",
+            title: "Advanced Clinical Learning Spaces",
+            desc: "Comprehensive clinical exposure and simulation-based learning guided by experienced mentors.",
             cta: "View Facilities",
             link: "/facilities"
         },
@@ -63,45 +69,6 @@ const Home = () => {
         return () => clearInterval(interval);
     }, [slides.length]);
 
-    // 3D Tilt Effect Logic
-    useEffect(() => {
-        const cards = document.querySelectorAll('.interactive-card');
-
-        const handleMouseMove = (e) => {
-            const card = e.currentTarget;
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const midX = rect.width / 2;
-            const midY = rect.height / 2;
-            const rotateX = ((y - midY) / midY) * 10; // Max rotation 10deg
-            const rotateY = ((midX - x) / midX) * 10;
-
-            // Apply transform with no transition for instant feel during move
-            card.style.transition = 'none';
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
-        };
-
-        const handleMouseLeave = (e) => {
-            const card = e.currentTarget;
-            // Re-enable smooth transition for reset
-            card.style.transition = 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
-            card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
-        };
-
-        cards.forEach(card => {
-            card.addEventListener('mousemove', handleMouseMove);
-            card.addEventListener('mouseleave', handleMouseLeave);
-        });
-
-        return () => {
-            cards.forEach(card => {
-                card.removeEventListener('mousemove', handleMouseMove);
-                card.removeEventListener('mouseleave', handleMouseLeave);
-            });
-        };
-    }, []);
-
     const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
     const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
     const goToSlide = (index) => setCurrentSlide(index);
@@ -109,6 +76,9 @@ const Home = () => {
     // Lightbox State
     const [lightboxOpen, setLightboxOpen] = useState(false);
     const [lightboxImage, setLightboxImage] = useState('');
+    const [displayStats, setDisplayStats] = useState(STAT_ITEMS.map(() => 0));
+    const hasCountedRef = useRef(false);
+    const statsSectionRef = useRef(null);
 
     useEffect(() => {
         const observerOptions = { threshold: 0.1 };
@@ -120,19 +90,62 @@ const Home = () => {
             });
         }, observerOptions);
 
-        const elements = document.querySelectorAll('.reveal, .reveal-stagger');
+        const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom, .reveal-rotate, .reveal-skew, .reveal-blur, .reveal-flip, .reveal-up, .reveal-stagger');
         elements.forEach(el => observer.observe(el));
 
         return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
+        let animationFrameId = null;
+        const section = statsSectionRef.current;
+        if (!section) return undefined;
+
+        const runCounterAnimation = () => {
+            if (hasCountedRef.current) return;
+            hasCountedRef.current = true;
+            const duration = 1600;
+            const start = performance.now();
+
+            const tick = (now) => {
+                const progress = Math.min((now - start) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                setDisplayStats(STAT_ITEMS.map((item) => Math.round(item.value * eased)));
+                if (progress < 1) {
+                    animationFrameId = window.requestAnimationFrame(tick);
+                } else {
+                    setDisplayStats(STAT_ITEMS.map((item) => item.value));
+                }
+            };
+
+            animationFrameId = window.requestAnimationFrame(tick);
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            const [entry] = entries;
+            if (entry.isIntersecting) {
+                runCounterAnimation();
+                observer.unobserve(section);
+            }
+        }, { threshold: 0.2 });
+
+        observer.observe(section);
+
+        return () => {
+            observer.disconnect();
+            if (animationFrameId) {
+                window.cancelAnimationFrame(animationFrameId);
+            }
+        };
     }, []);
 
     // Gallery Images
     const galleryImages = [
         gallery1,
         gallery2,
-        gallery3,
-        gallery4
+        gallery3
     ];
+    const previewGalleryImages = galleryImages;
 
     const openLightbox = (src) => {
         setLightboxImage(src);
@@ -180,29 +193,19 @@ const Home = () => {
             </section>
 
             {/* Stats Section */}
-            <div className="container" style={{ position: 'relative', zIndex: 10 }} data-reveal-init>
+            <div className="container" style={{ position: 'relative', zIndex: 10 }} data-reveal-init ref={statsSectionRef}>
                 <div className="stats-grid reveal-stagger">
-                    <div className="stat-card interactive-card glow-card shine-effect">
-                        <h3>100%</h3>
-                        <p>Placement Rate</p>
-                    </div>
-                    <div className="stat-card interactive-card glow-card shine-effect">
-                        <h3>80%</h3>
-                        <p>Practical Classes</p>
-                    </div>
-                    <div className="stat-card interactive-card glow-card shine-effect">
-                        <h3>96%</h3>
-                        <p>Result Oriented</p>
-                    </div>
-                    <div className="stat-card interactive-card glow-card shine-effect" style={{ borderRight: 'none' }}>
-                        <h3>17+</h3>
-                        <p>Years of Service</p>
-                    </div>
+                    {STAT_ITEMS.map((item, index) => (
+                        <div key={item.label} className="stat-card stat-card-counter">
+                            <h3>{displayStats[index]}{item.suffix}</h3>
+                            <p>{item.label}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
 
             {/* About Us Section */}
-            <section className="section reveal-blur" style={{ background: 'var(--bg-white)' }} data-reveal-init>
+            <section className="section reveal-blur home-about-section" style={{ background: 'var(--bg-white)' }} data-reveal-init>
                 <div className="container text-center">
                     <span className="estd-tag float-breathe" style={{ background: 'var(--accent)', color: 'var(--primary)', display: 'block', margin: '0 auto 35px', width: 'fit-content' }}>ESTD 2009</span>
                     <h2 style={{ fontSize: '3rem', color: 'var(--primary)', margin: '20px 0' }} className="reveal-skew">To Make Man Whole</h2>
@@ -210,35 +213,35 @@ const Home = () => {
                         Mount Zion College of Nursing is a premier institution dedicated to nurturing future nursing
                         professionals with a focus on compassion, excellence, and spiritual integrity.
                     </p>
-                    <Link to="/about" className="btn btn-primary magnetic" style={{ padding: '15px 40px' }}>Explore Our Institution →</Link>
+                    <Link to="/about" className="btn btn-primary magnetic home-primary-box-btn home-about-action-btn" style={{ padding: '15px 40px' }}>Explore Our Institution →</Link>
                 </div>
             </section>
 
             {/* Core Pillars */}
-            <section className="section" style={{ background: 'var(--bg-light)' }}>
+            <section className="section" style={{ background: 'var(--bg-light)', paddingTop: '70px', paddingBottom: '70px' }}>
                 <div className="container">
-                    <div className="grid grid-cols-2 sm-grid-cols-1" style={{ gap: '40px' }} data-reveal-init>
+                    <div className="grid grid-cols-2 sm-grid-cols-1 core-pillar-grid" style={{ gap: '26px', maxWidth: '1120px', margin: '0 auto' }} data-reveal-init>
                         {/* Programs Card */}
-                        <div className="stat-card interactive-card glow-card reveal-flip" style={{ textAlign: 'left', padding: '40px', background: 'white', borderRadius: '20px', boxShadow: 'var(--shadow-md)' }}>
-                            <div className="float-breathe" style={{ width: '60px', height: '60px', background: 'var(--primary)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '12px', marginBottom: '25px' }}>
-                                <i className="fas fa-graduation-cap" style={{ fontSize: '1.5rem' }}></i>
+                        <div className="core-pillar-card reveal-flip" style={{ textAlign: 'left', padding: '30px', background: 'white', borderRadius: '14px', boxShadow: 'var(--shadow-md)' }}>
+                            <div className="core-pillar-icon" style={{ width: '52px', height: '52px', background: 'var(--primary)', color: 'var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', marginBottom: '20px' }}>
+                                <i className="fas fa-graduation-cap" style={{ fontSize: '1.25rem' }}></i>
                             </div>
-                            <h3 style={{ color: 'var(--primary)', marginBottom: '15px' }}>Nursing Programs</h3>
-                            <p style={{ color: 'var(--text-muted)', marginBottom: '25px', lineHeight: 1.6 }}>
+                            <h3 className="core-pillar-title" style={{ color: 'var(--primary)', marginBottom: '12px' }}>Nursing Programs</h3>
+                            <p style={{ color: 'var(--text-muted)', marginBottom: '18px', lineHeight: 1.5, fontSize: '1rem' }}>
                                 From B.Sc. to advanced leadership roles, our curriculum is designed to meet global healthcare standards and empower students.
                             </p>
-                            <Link to="/bsc-nursing" className="magnetic" style={{ fontWeight: 700, color: 'var(--primary)', textDecoration: 'none', display: 'inline-block' }}>View All Programs →</Link>
+                            <Link to="/bsc-nursing" className="core-pillar-link" style={{ fontWeight: 700, color: 'var(--primary)', textDecoration: 'none', display: 'inline-block' }}>View All Programs →</Link>
                         </div>
                         {/* Facilities Card */}
-                        <div className="stat-card interactive-card glow-card reveal-flip" style={{ textAlign: 'left', padding: '40px', background: 'white', borderRadius: '20px', boxShadow: 'var(--shadow-md)' }}>
-                            <div className="float-breathe" style={{ width: '60px', height: '60px', background: 'var(--accent)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '12px', marginBottom: '25px' }}>
-                                <i className="fas fa-hospital" style={{ fontSize: '1.5rem' }}></i>
+                        <div className="core-pillar-card reveal-flip" style={{ textAlign: 'left', padding: '30px', background: 'white', borderRadius: '14px', boxShadow: 'var(--shadow-md)' }}>
+                            <div className="core-pillar-icon" style={{ width: '52px', height: '52px', background: 'var(--primary)', color: 'var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', marginBottom: '20px' }}>
+                                <i className="fas fa-hospital" style={{ fontSize: '1.25rem' }}></i>
                             </div>
-                            <h3 style={{ color: 'var(--primary)', marginBottom: '15px' }}>World-Class Infrastructure</h3>
-                            <p style={{ color: 'var(--text-muted)', marginBottom: '25px', lineHeight: 1.6 }}>
+                            <h3 className="core-pillar-title" style={{ color: 'var(--primary)', marginBottom: '12px' }}>World-Class Infrastructure</h3>
+                            <p style={{ color: 'var(--text-muted)', marginBottom: '18px', lineHeight: 1.5, fontSize: '1rem' }}>
                                 Experience clinical training in our 500-bed multi-specialty hospital and state-of-the-art simulation laboratories.
                             </p>
-                            <Link to="/facilities" className="magnetic" style={{ fontWeight: 700, color: 'var(--primary)', textDecoration: 'none', display: 'inline-block' }}>Explore Facilities →</Link>
+                            <Link to="/facilities" className="core-pillar-link" style={{ fontWeight: 700, color: 'var(--primary)', textDecoration: 'none', display: 'inline-block' }}>Explore Facilities →</Link>
                         </div>
                     </div>
                 </div>
@@ -247,16 +250,16 @@ const Home = () => {
             {/* Global Navigation CTA */}
             <section className="section reveal-blur" style={{ padding: '80px 0', background: 'var(--bg-light)' }} data-reveal-init>
                 <div className="container">
-                    <div className="apply-card" style={{ padding: '100px 40px', borderRadius: '40px' }}>
+                    <div className="apply-card home-cta-card" style={{ padding: '86px 34px', borderRadius: '34px', maxWidth: '1460px', margin: '0 auto' }}>
                         <div className="text-center">
                             <span className="hero-tag-gold float-breathe">Join the 2026 Batch</span>
-                            <h2 style={{ fontSize: '3.8rem', marginBottom: '25px', color: 'white', fontWeight: 900, textShadow: '0 4px 15px rgba(0,0,0,0.2)' }} className="reveal-skew">Empowering Excellence</h2>
+                            <h2 style={{ fontSize: '3.8rem', marginBottom: '25px', color: 'white', fontWeight: 800, textShadow: '0 4px 15px rgba(0,0,0,0.2)', fontFamily: "'Playfair Display', serif", letterSpacing: '-1px' }} className="reveal-skew">Empowering Excellence</h2>
                             <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.9)', fontWeight: 600, maxWidth: '850px', margin: '0 auto 45px' }}>
                                 Step into a rewarding career in healthcare with one of the most prestigious nursing institutions in Pudukkottai District.
                             </p>
-                            <div style={{ display: 'flex', gap: '25px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                                <Link to="/admissions" className="btn btn-primary magnetic" style={{ padding: '18px 45px', fontSize: '1rem', fontWeight: 900 }}>Apply For Admission &rarr;</Link>
-                                <Link to="/contact" className="btn btn-outline" style={{ padding: '18px 45px', fontSize: '1rem', fontWeight: 900 }}>Contact Office</Link>
+                            <div className="home-cta-btn-group" style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                                <Link to="/admissions" className="btn btn-outline home-cta-btn" style={{ padding: '15px 38px', fontSize: '0.94rem', fontWeight: 900, minWidth: '300px' }}>Apply For Admission</Link>
+                                <Link to="/contact" className="btn btn-outline home-cta-btn" style={{ padding: '15px 38px', fontSize: '0.94rem', fontWeight: 900, minWidth: '300px' }}>Contact Office</Link>
                             </div>
                         </div>
                     </div>
@@ -274,24 +277,17 @@ const Home = () => {
                         </p>
                     </div>
 
-                    <div className="gallery-grid reveal-stagger">
-                        {galleryImages.map((src, index) => (
+                    <div className="gallery-grid reveal-stagger home-gallery-grid">
+                        {previewGalleryImages.map((src, index) => (
                             <div key={index} className="gallery-item" onClick={() => openLightbox(src)}>
                                 <img src={src} alt={`MZCN Gallery ${index + 1}`} />
                                 <div className="gallery-overlay"><i className="fas fa-search-plus"></i></div>
                             </div>
                         ))}
-
-                        <Link to="/gallery" className="gallery-item-link" style={{ textDecoration: 'none' }}>
-                            <div className="gallery-item" style={{ position: 'relative' }}>
-                                <img src={gallery4} alt="MZCN Gallery 4" />
-                                <div className="gallery-overlay" style={{ opacity: 1, background: 'rgba(0, 43, 91, 0.8)' }}>
-                                    <div style={{ textAlign: 'center' }}>
-                                        <i className="fas fa-images" style={{ display: 'block', marginBottom: '15px', fontSize: '2.2rem', color: 'var(--accent)' }}></i>
-                                        <span style={{ color: 'white', fontWeight: 800, fontSize: '1.1rem', textTransform: 'uppercase', letterSpacing: '1px' }}>View Full Gallery</span>
-                                    </div>
-                                </div>
-                            </div>
+                    </div>
+                    <div className="home-gallery-cta-row">
+                        <Link to="/gallery" className="home-gallery-cta-link">
+                            <span className="home-gallery-cta-btn">View Full Gallery →</span>
                         </Link>
                     </div>
                 </div>

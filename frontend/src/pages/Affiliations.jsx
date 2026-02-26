@@ -203,15 +203,15 @@ const Affiliations = () => {
                             </table>
                         </div>
 
-                        <div className="blue-box-premium p-10 reveal active">
-                            <h3 className="text-2xl font-black mb-8 border-b-2 border-accent pb-4 flex items-center gap-3">
-                                <i className="fas fa-search-location"></i> Scope of Community Health Training
+                        <div style={{ background: 'linear-gradient(135deg, var(--primary) 0%, #1a3a6b 100%)', padding: '40px', borderRadius: '24px', boxShadow: '0 20px 40px rgba(0,43,91,0.2)' }}>
+                            <h3 style={{ fontSize: '1.5rem', fontWeight: 800, marginBottom: '30px', borderBottom: '2px solid var(--accent)', paddingBottom: '16px', display: 'flex', alignItems: 'center', gap: '12px', color: 'white', fontFamily: "'Playfair Display', serif" }}>
+                                <i className="fas fa-search-location" style={{ color: 'var(--accent)' }}></i> Scope of Community Health Training
                             </h3>
-                            <div className="grid grid-cols-2 md:grid-cols-1 gap-6">
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '16px' }}>
                                 {communityScope.map((item, idx) => (
-                                    <div key={idx} className="flex items-center gap-4 bg-white/5 p-4 rounded-lg hover:bg-white/10 transition-all border border-white/5">
-                                        <i className="fas fa-check-circle text-accent"></i>
-                                        <span className="font-bold text-white/90">{item}</span>
+                                    <div key={idx} style={{ display: 'flex', alignItems: 'center', gap: '14px', background: 'rgba(255,255,255,0.07)', padding: '16px 20px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', transition: 'all 0.3s ease' }}>
+                                        <i className="fas fa-check-circle" style={{ color: 'var(--accent)', fontSize: '1.1rem', flexShrink: 0 }}></i>
+                                        <span style={{ fontWeight: 600, color: 'rgba(255,255,255,0.92)', fontSize: '0.95rem' }}>{item}</span>
                                     </div>
                                 ))}
                             </div>
