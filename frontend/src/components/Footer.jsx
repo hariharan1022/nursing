@@ -7,11 +7,12 @@ const Footer = () => {
             <style>
                 {`
                 .footer-section {
-                    background: #001C30;
+                    background: #001f4d;
                     color: white;
                     padding: 80px 0 30px;
                     position: relative;
                     overflow: hidden;
+                    font-family: 'Manrope', sans-serif;
                 }
                 .footer-section::before {
                     content: '';
@@ -20,20 +21,16 @@ const Footer = () => {
                     left: 0;
                     width: 100%;
                     height: 5px;
-                    background: linear-gradient(90deg, #D4AF37, #B8860B, #D4AF37);
-                    background-size: 200% auto;
-                    animation: shimmer 4s linear infinite;
-                }
-                @keyframes shimmer {
-                    to { background-position: 200% center; }
+                    background: #F5CD02;
                 }
                 .f-title {
-                    color: #D4AF37;
+                    color: #F5CD02;
                     font-size: 1.2rem;
                     font-weight: 700;
                     margin-bottom: 25px;
                     position: relative;
                     padding-bottom: 10px;
+                    font-family: 'Manrope', sans-serif;
                 }
                 .f-title::after {
                     content: '';
@@ -42,7 +39,7 @@ const Footer = () => {
                     left: 0;
                     width: 40px;
                     height: 2px;
-                    background: #D4AF37;
+                    background: #F5CD02;
                 }
                 .f-link {
                     color: rgba(255,255,255,0.7);
@@ -51,9 +48,10 @@ const Footer = () => {
                     display: block;
                     margin-bottom: 10px;
                     font-size: 0.92rem;
+                    font-family: 'Manrope', sans-serif;
                 }
                 .f-link:hover {
-                    color: #D4AF37;
+                    color: #F5CD02;
                     transform: translateX(5px);
                 }
                 .f-contact-item {
@@ -64,7 +62,7 @@ const Footer = () => {
                     color: rgba(255,255,255,0.8);
                 }
                 .f-contact-icon {
-                    color: #D4AF37;
+                    color: #F5CD02;
                     font-size: 1rem;
                     margin-top: 3px;
                 }
@@ -72,7 +70,8 @@ const Footer = () => {
                     width: 38px;
                     height: 38px;
                     border-radius: 50%;
-                    background: rgba(255,255,255,0.05);
+                    background: rgba(255,255,255,0.08);
+                    border: 1px solid rgba(255,255,255,0.18);
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -81,16 +80,12 @@ const Footer = () => {
                     text-decoration: none;
                 }
                 .social-icon:hover {
-                    background: #D4AF37;
-                    transform: translateY(-5px);
-                    color: #001C30;
+                    background: #F5CD02;
+                    transform: none;
+                    color: #001739;
                 }
                 .animated-text {
-                    background: linear-gradient(90deg, #ffffff, #D4AF37, #ffffff);
-                    background-size: 200% auto;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    animation: shimmer 6s linear infinite;
+                    color: #F5CD02;
                     font-weight: 700;
                 }
                 .affiliation-tag {
@@ -104,8 +99,8 @@ const Footer = () => {
                     text-decoration: none;
                 }
                 .affiliation-tag:hover {
-                    border-color: #D4AF37;
-                    color: #D4AF37;
+                    border-color: #F5CD02;
+                    color: #F5CD02;
                 }
                 .footer-bottom {
                     margin-top: 40px;
@@ -212,7 +207,7 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <h4 className="f-title">Quick Links</h4>
+                        <h4 className="f-title">Explore MZCN</h4>
                         <Link to="/" className="f-link">Home</Link>
                         <Link to="/about" className="f-link">About Us</Link>
                         <Link to="/course-details" className="f-link">Course Details</Link>
@@ -243,7 +238,7 @@ const Footer = () => {
                         <div className="f-contact-item" style={{ marginBottom: '15px', background: 'rgba(255,255,255,0.03)', padding: '10px', borderRadius: '8px' }}>
                             <i className="fas fa-user-tie f-contact-icon"></i>
                             <div>
-                                <p style={{ margin: 0, fontSize: '0.82rem', fontWeight: 700, color: '#D4AF37', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Principal</p>
+                                <p style={{ margin: 0, fontSize: '0.82rem', fontWeight: 700, color: '#F5CD02', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Principal</p>
                                 <p style={{ margin: '2px 0', fontSize: '0.92rem', fontWeight: 600 }}>+91 99655 20316</p>
                                 <p style={{ margin: 0, fontSize: '0.72rem', opacity: 0.6 }}><i className="far fa-clock" style={{ marginRight: '4px' }}></i>9:00 AM – 4:30 PM</p>
                             </div>
@@ -251,7 +246,7 @@ const Footer = () => {
                         <div className="f-contact-item" style={{ marginBottom: '20px', background: 'rgba(255,255,255,0.03)', padding: '10px', borderRadius: '8px' }}>
                             <i className="fas fa-user-shield f-contact-icon"></i>
                             <div>
-                                <p style={{ margin: 0, fontSize: '0.82rem', fontWeight: 700, color: '#D4AF37', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Vice Principal</p>
+                                <p style={{ margin: 0, fontSize: '0.82rem', fontWeight: 700, color: '#F5CD02', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Vice Principal</p>
                                 <p style={{ margin: '2px 0', fontSize: '0.92rem', fontWeight: 600 }}>+91 99655 66664</p>
                                 <p style={{ margin: 0, fontSize: '0.72rem', opacity: 0.6 }}><i className="far fa-clock" style={{ marginRight: '4px' }}></i>9:00 AM – 4:30 PM</p>
                             </div>
@@ -259,7 +254,7 @@ const Footer = () => {
                         <div className="f-contact-item" style={{ background: 'rgba(255,255,255,0.03)', padding: '10px', borderRadius: '8px' }}>
                             <i className="fas fa-headset f-contact-icon"></i>
                             <div>
-                                <p style={{ margin: 0, fontSize: '0.82rem', fontWeight: 700, color: '#D4AF37', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Admission Enquiry</p>
+                                <p style={{ margin: 0, fontSize: '0.82rem', fontWeight: 700, color: '#F5CD02', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Admission Enquiry</p>
                                 <p style={{ margin: '2px 0', fontSize: '0.92rem', fontWeight: 600 }}>+91 75021 73000</p>
                                 <p style={{ margin: 0, fontSize: '0.72rem', opacity: 0.6 }}><i className="fas fa-info-circle" style={{ marginRight: '4px' }}></i>Course & Enrollment</p>
                             </div>
@@ -285,10 +280,10 @@ const Footer = () => {
                         <a href="https://in.linkedin.com/school/mount-zion-college-of-engineering-and-technology/" target="_blank" rel="noopener noreferrer" className="social-icon"><i className="fab fa-linkedin-in"></i></a>
                     </div>
 
-                    {/* Grid Row 1: Quick Links & Contact Us */}
+                    {/* Grid Row 1: Explore & Contact Us */}
                     <div className="m-2col-grid">
                         <div>
-                            <h4 className="f-title">Quick Links</h4>
+                            <h4 className="f-title">Explore MZCN</h4>
                             <Link to="/" className="f-link">Home</Link>
                             <Link to="/about" className="f-link">About Us</Link>
                             <Link to="/course-details" className="f-link">Course Details</Link>
@@ -313,14 +308,14 @@ const Footer = () => {
                             <h4 className="f-title">Support</h4>
                             <div className="f-contact-item" style={{ fontSize: '0.7rem', marginBottom: '8px' }}>
                                 <div>
-                                    <span style={{ fontWeight: 700, color: '#D4AF37' }}>Principal:</span><br />
+                                    <span style={{ fontWeight: 700, color: '#F5CD02' }}>Principal:</span><br />
                                     +91 99655 20316<br />
                                     <span style={{ opacity: 0.6, fontSize: '0.6rem' }}>9:00 AM – 4:30 PM</span>
                                 </div>
                             </div>
                             <div className="f-contact-item" style={{ fontSize: '0.7rem' }}>
                                 <div>
-                                    <span style={{ fontWeight: 700, color: '#D4AF37' }}>Vice Principal:</span><br />
+                                    <span style={{ fontWeight: 700, color: '#F5CD02' }}>Vice Principal:</span><br />
                                     +91 99655 66664<br />
                                     <span style={{ opacity: 0.6, fontSize: '0.6rem' }}>9 am - 4:30 pm</span>
                                 </div>
@@ -330,7 +325,7 @@ const Footer = () => {
                             <h4 className="f-title">Admission</h4>
                             <div className="f-contact-item" style={{ fontSize: '0.7rem' }}>
                                 <div>
-                                    <span style={{ fontWeight: 700, color: '#D4AF37' }}>Admission Enquiry:</span><br />
+                                    <span style={{ fontWeight: 700, color: '#F5CD02' }}>Admission Enquiry:</span><br />
                                     +91 75021 73000<br />
                                     <span style={{ opacity: 0.6, fontSize: '0.6rem' }}>Course & Enrollment</span>
                                 </div>

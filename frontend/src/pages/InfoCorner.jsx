@@ -488,7 +488,7 @@ const InfoCorner = () => {
                             display: 'flex',
                             flexDirection: 'column',
                             overflowY: 'auto',
-                            background: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)'
+                            background: '#ffffff'
                         }}>
                             <div className="reveal-blur active">
                                 <span style={{

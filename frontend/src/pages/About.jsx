@@ -61,14 +61,6 @@ const About = () => {
                                 <h4 style={{ fontSize: '1.5rem', marginBottom: '10px' }}>Our Motto</h4>
                                 <p style={{ fontSize: '1.2rem', fontStyle: 'italic', opacity: 0.9, textAlign: 'center' }}>"To make man whole."</p>
                             </div>
-                            <div className="quick-links-card">
-                                <h4 style={{ color: 'var(--primary)', marginBottom: '15px' }}>Quick Links</h4>
-                                <ul className="quick-links-list">
-                                    <li><Link to="/about#leadership" onClick={() => document.getElementById('leadership').scrollIntoView({ behavior: 'smooth' })}>Our Leadership <i className="fas fa-chevron-right"></i></Link></li>
-                                    <li><Link to="/about#vision" onClick={() => document.getElementById('vision').scrollIntoView({ behavior: 'smooth' })}>Vision & Mission <i className="fas fa-chevron-right"></i></Link></li>
-                                    <li><Link to="/about#idp" onClick={() => document.getElementById('idp').scrollIntoView({ behavior: 'smooth' })}>Development Plan <i className="fas fa-chevron-right"></i></Link></li>
-                                </ul>
-                            </div>
                         </div>
 
                         <div className="about-content">
@@ -87,7 +79,7 @@ const About = () => {
                                 <h3 style={{ color: 'var(--primary)', marginBottom: '30px', borderBottom: '2px solid var(--accent)', display: 'inline-block', fontSize: '1.8rem' }}>
                                     Vision & Mission
                                 </h3>
-                                <div style={{ marginBottom: '40px', background: 'linear-gradient(135deg, white 0%, var(--bg-light) 100%)', padding: '40px', borderRadius: '24px', borderLeft: '6px solid var(--primary)', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
+                                <div style={{ marginBottom: '40px', background: 'white', padding: '40px', borderRadius: '24px', borderLeft: '6px solid var(--primary)', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
                                     <h4 style={{ color: 'var(--primary)', fontSize: '1.5rem', marginBottom: '15px' }}>Our Vision</h4>
                                     <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', lineHeight: '1.8', fontStyle: 'italic' }}>"Mount Zion Institutions will be the preferred choice of all those who aspire for excellence."</p>
                                 </div>
@@ -163,7 +155,7 @@ const About = () => {
                                         width: '100px',
                                         height: '100px',
                                         fontSize: '3rem',
-                                        background: 'linear-gradient(135deg, white 0%, #f0f0f0 100%)',
+                                        background: '#ffffff',
                                         color: 'var(--primary)'
                                     }}>
                                         <i className="fas fa-sitemap"></i>
