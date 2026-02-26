@@ -445,8 +445,7 @@ const Facilities = () => {
                                     { t: "Mental Health Unit", d: "Dedicated environment for therapeutic communication and behavioral health observation.", icon: Brain, imgs: mentalHealthImages },
                                     { t: "Nutrition & Dietetics", d: "Scientific food preparation, dietary calculation, and therapeutic meal mapping.", icon: Utensils, imgs: nutritionImages },
                                     { t: "Microbiology Lab", d: "Clinical pathology, staining techniques, and advanced diagnostic microscopy.", icon: Microscope },
-                                    { t: "Anatomy & Physiology", d: "An exhaustive museum of biological specimens, intricate models, and skeletal systems.", icon: Landmark, imgs: anatomyImages },
-                                    { t: "Advanced Computer Lab", d: "Training in Hospital Management Systems (HMS) and digital medical record analysis.", icon: Monitor }
+                                    { t: "Anatomy & Physiology", d: "An exhaustive museum of biological specimens, intricate models, and skeletal systems.", icon: Landmark, imgs: anatomyImages }
                                 ].map((lab, i) => (
                                     <div key={i} className="premium-card shine-effect group transition-all duration-300 flex flex-col">
                                         <div className="flex flex-col gap-6 flex-grow">
@@ -465,18 +464,9 @@ const Facilities = () => {
 
                                         {lab.imgs && (
                                             <div className="mt-auto pt-6 border-t border-slate-50">
-                                                <details className="group/gallery">
-                                                    <summary className="flex items-center justify-between cursor-pointer list-none py-2 px-4 bg-slate-50 rounded-xl hover:bg-emerald-50 transition-colors">
-                                                        <span className="text-xs font-black text-slate-700 uppercase tracking-widest flex items-center gap-2">
-                                                            <i className="fas fa-images text-emerald-600"></i>
-                                                            View Laboratory Photos
-                                                        </span>
-                                                        <i className="fas fa-chevron-down text-[10px] text-slate-400 group-open/gallery:rotate-180 transition-transform"></i>
-                                                    </summary>
-                                                    <div className="pt-4 overflow-hidden">
-                                                        <ImageGallery images={lab.imgs} />
-                                                    </div>
-                                                </details>
+                                                <div className="pt-4">
+                                                    <ImageGallery images={lab.imgs} />
+                                                </div>
                                             </div>
                                         )}
                                     </div>
