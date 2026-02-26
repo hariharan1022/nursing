@@ -5725,16 +5725,23 @@ strong {
     font-weight: 700 !important;
 }
 
-.home-cta-btn-group .home-cta-btn {
-    background: #ffffff !important;
+.home-cta-btn-group .home-cta-btn,
+.home-hero-cta-btn {
+    background: var(--accent) !important;
     color: var(--primary) !important;
-    border: 1px solid #d7dde7 !important;
+    border: 1px solid var(--accent-dark) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 24px rgba(212, 175, 55, 0.28) !important;
+    text-transform: uppercase;
 }
 
-.home-cta-btn-group .home-cta-btn:hover {
-    background: #ffffff !important;
-    color: var(--primary-light) !important;
-    border-color: var(--primary-light) !important;
+.home-cta-btn-group .home-cta-btn:hover,
+.home-hero-cta-btn:hover {
+    background: #f5cd02 !important;
+    color: var(--primary) !important;
+    border-color: #e2bc00 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 14px 30px rgba(212, 175, 55, 0.34) !important;
 }
 
 .home-gallery-grid {

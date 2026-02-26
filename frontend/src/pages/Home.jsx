@@ -7,7 +7,7 @@ import gallery2 from '../assets/gallery/2026/17th Lamp Lighting Ceremony 2026/Wh
 import gallery3 from '../assets/gallery/2026/17th Lamp Lighting Ceremony 2026/WhatsApp Image 2026-02-15 at 6.03.05 PM.jpeg';
 
 const STAT_ITEMS = [
-    { value: 100, suffix: '%', label: 'Placement Rate' },
+    { value: 96, suffix: '%', label: 'Placement Rate' },
     { value: 80, suffix: '%', label: 'Practical Classes' },
     { value: 96, suffix: '%', label: 'Result Oriented' },
     { value: 17, suffix: '+', label: 'Years of Service' }
@@ -170,7 +170,7 @@ const Home = () => {
                                 {slide.estd && <span className="estd-tag float-breathe" style={{ display: 'block', margin: '0 auto 30px', width: 'fit-content' }}>ESTD 2009</span>}
                                 <h1 className="reveal-skew">{slide.title}</h1>
                                 <p style={{ color: 'white' }}>{slide.desc}</p>
-                                {slide.cta && <Link to={slide.link} className="btn btn-primary magnetic" style={{ marginTop: '25px', padding: '12px 30px' }}>{slide.cta} &rarr;</Link>}
+                                {slide.cta && <Link to={slide.link} className="btn btn-primary magnetic home-hero-cta-btn" style={{ marginTop: '25px', padding: '12px 30px' }}>{slide.cta} &rarr;</Link>}
                             </div>
                         </div>
                     ))}
