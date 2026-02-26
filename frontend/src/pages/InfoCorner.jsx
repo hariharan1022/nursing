@@ -11,6 +11,7 @@ import republicDayImg from '../assets/updates/news/rajiv-gandhi-republic-day.jpg
 import antonyAmisImg from '../assets/updates/news/antony-amis-silver-medal.jpg';
 import mahayagavanImg from '../assets/updates/news/mahayagavan-m-bronze-medal.jpg';
 import badmintonImg from '../assets/updates/news/badminton-champions-2024.jpg';
+import alumniSivaImg from '../assets/updates/Alumni/WhatsApp Image 2026-02-26 at 1.58.20 PM.jpeg';
 
 const InfoCorner = () => {
     const location = useLocation();
@@ -167,6 +168,17 @@ const InfoCorner = () => {
                 { name: 'Ms. Snowlin', subject: 'Med Surg I' },
                 { name: 'Ms. Reena', subject: 'Pharmacology, Pathology' }
             ]
+        }
+    ];
+
+    const alumniVoices = [
+        {
+            name: 'Mr. Sivashanmugam',
+            batch: '2020 - 2025',
+            designation: 'Cath Lab Scrub Nurse',
+            hospital: 'Dr. Rela Institute and Medical Centre, Chennai',
+            image: alumniSivaImg,
+            quote: 'My journey at MZCN from 2020 to 2025 has been one of growth, learning, and unforgettable memories. The supportive faculty and disciplined academic environment shaped both my professional skills and personal values. Clinical exposure and hands-on training at MZ gave me the confidence to face real-world challenges. Beyond academics, friendships and campus life made these years truly special. Today, I, Sivashanmugam, working as a Cath Lab Scrub Nurse at Dr. Rela Institute and Medical Centre, Chennai, proudly carry the lessons learned at MZCN. MZ will always remain the foundation of my nursing career and success.'
         }
     ];
 
@@ -338,6 +350,88 @@ const InfoCorner = () => {
                                     </div>
                                 ))}
                             </div>
+
+                            {/* Alumni Voices */}
+                            <div id="alumni" style={{ marginBottom: '60px' }}>
+                                <h2 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                                    <i className="fas fa-user-graduate" style={{ color: 'var(--accent)' }}></i> Alumni Voices
+                                </h2>
+                                <div className="grid grid-cols-1 gap-8">
+                                    {alumniVoices.map((alumni, idx) => (
+                                        <div key={idx} className="alumni-voice-card reveal-zoom" style={{
+                                            background: 'white',
+                                            borderRadius: '24px',
+                                            overflow: 'hidden',
+                                            boxShadow: 'var(--shadow-lg)',
+                                            display: 'flex',
+                                            flexDirection: windowWidth < 768 ? 'column' : 'row',
+                                            border: '1px solid #f0f0f0'
+                                        }}>
+                                            <div style={{
+                                                flex: '0 0 300px',
+                                                height: windowWidth < 768 ? '300px' : 'auto',
+                                                background: '#f8fafc',
+                                                position: 'relative',
+                                                overflow: 'hidden'
+                                            }}>
+                                                <img src={alumni.image} alt={alumni.name} style={{
+                                                    width: '100%',
+                                                    height: '100%',
+                                                    objectFit: 'cover'
+                                                }} />
+                                                <div style={{
+                                                    position: 'absolute',
+                                                    bottom: 0,
+                                                    left: 0,
+                                                    right: 0,
+                                                    padding: '20px',
+                                                    background: 'linear-gradient(transparent, rgba(0,0,0,0.8))',
+                                                    color: 'white'
+                                                }}>
+                                                    <h4 style={{ margin: 0, fontSize: '1.2rem', fontWeight: 800 }}>{alumni.name}</h4>
+                                                    <p style={{ margin: 0, fontSize: '0.85rem', opacity: 0.9 }}>Batch {alumni.batch}</p>
+                                                </div>
+                                            </div>
+                                            <div style={{
+                                                flex: 1,
+                                                padding: windowWidth < 600 ? '30px 20px' : '40px',
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                justifyContent: 'center'
+                                            }}>
+                                                <i className="fas fa-quote-left" style={{
+                                                    fontSize: '2rem',
+                                                    color: 'var(--accent)',
+                                                    opacity: 0.3,
+                                                    marginBottom: '10px'
+                                                }}></i>
+                                                <p style={{
+                                                    fontSize: '1.1rem',
+                                                    lineHeight: '1.8',
+                                                    color: 'var(--text-dark)',
+                                                    fontStyle: 'italic',
+                                                    marginBottom: '20px',
+                                                    position: 'relative',
+                                                    zIndex: 2
+                                                }}>
+                                                    "{alumni.quote}"
+                                                </p>
+                                                <div style={{
+                                                    paddingTop: '15px',
+                                                    borderTop: '1px solid #f0f0f0',
+                                                    display: 'flex',
+                                                    flexDirection: 'column',
+                                                    gap: '2px'
+                                                }}>
+                                                    <span style={{ fontWeight: 800, color: 'var(--primary)', fontSize: '1rem' }}>{alumni.designation}</span>
+                                                    <span style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>{alumni.hospital}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
 
                             {/* Job Openings */}
                             <div id="jobs">
