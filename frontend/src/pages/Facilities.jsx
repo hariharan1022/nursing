@@ -27,6 +27,11 @@ import transportImg4 from '../assets/facilites/transport/transport-4.jpeg';
 import extraPlusImg1 from '../assets/facilites/extra-plus/extra-plus-1.jpeg';
 import extraPlusImg2 from '../assets/facilites/extra-plus/extra-plus-2.jpeg';
 
+// Fundamentals of Nursing
+import fundamentals1 from '../assets/facilites/Laboratories/Fundamentals of Nursing/WhatsApp Image 2026-02-25 at 8.37.18 AM (1).jpeg';
+import fundamentals2 from '../assets/facilites/Laboratories/Fundamentals of Nursing/WhatsApp Image 2026-02-25 at 8.37.18 AM.jpeg';
+import fundamentals3 from '../assets/facilites/Laboratories/Fundamentals of Nursing/WhatsApp Image 2026-02-25 at 8.37.19 AM.jpeg';
+
 // Adult Health Nursing
 import adultHealth1 from '../assets/facilites/Laboratories/Adult Health Nursing/WhatsApp Image 2026-02-25 at 8.36.19 AM.jpeg';
 import adultHealth2 from '../assets/facilites/Laboratories/Adult Health Nursing/WhatsApp Image 2026-02-25 at 8.36.20 AM (1).jpeg';
@@ -258,6 +263,7 @@ const Facilities = () => {
     const transportImages = [transportImg1, transportImg2, transportImg3, transportImg4];
     const extraPlusImages = [extraPlusImg1, extraPlusImg2];
 
+    const fundamentalsImages = [fundamentals1, fundamentals2, fundamentals3];
     const adultHealthImages = [adultHealth1, adultHealth2, adultHealth3];
     const anatomyImages = [anatomy1, anatomy2];
     const childHealthImages = [childHealth1, childHealth2, childHealth3, childHealth4];
@@ -437,7 +443,7 @@ const Facilities = () => {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-stagger" data-reveal-init>
                                 {[
-                                    { t: "Fundamentals of Nursing", d: "Core clinical skill rehearsals and basic nursing procedures on high-fidelity manikins.", icon: Stethoscope },
+                                    { t: "Fundamentals of Nursing", d: "Core clinical skill rehearsals and basic nursing procedures on high-fidelity manikins.", icon: Stethoscope, imgs: fundamentalsImages },
                                     { t: "Adult Health Nursing", d: "Sophisticated simulation of intensive care and advanced medical-surgical protocols.", icon: Activity, imgs: adultHealthImages },
                                     { t: "Child Health Nursing", d: "Neonatal resuscitation modules and pediatric specialty care simulation units.", icon: Baby, imgs: childHealthImages },
                                     { t: "OBG Laboratory", d: "Maternity and midwifery simulations focused on labor, delivery and postnatal support.", icon: HeartPulse, imgs: obgImages },
