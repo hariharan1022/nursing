@@ -19,7 +19,6 @@ const Home = () => {
     const slides = [
         {
             img: `${import.meta.env.BASE_URL}photo/p5_files/banner1.jpg`,
-            estd: true,
             title: "Excellence in Nursing Education",
             desc: "Training compassionate healthcare leaders for a better tomorrow.",
             cta: "Explore Our Vision",
@@ -167,7 +166,6 @@ const Home = () => {
                         <div key={index} className={`slide ${index === currentSlide ? 'active' : ''}`}>
                             <img src={slide.img} alt={`Institutional Banner ${index + 1}`} />
                             <div className="slide-content">
-                                {slide.estd && <span className="estd-tag float-breathe" style={{ display: 'block', margin: '0 auto 30px', width: 'fit-content' }}>ESTD 2009</span>}
                                 <h1 className="reveal-skew">{slide.title}</h1>
                                 <p style={{ color: 'white' }}>{slide.desc}</p>
                                 {slide.cta && <Link to={slide.link} className="btn btn-primary magnetic home-hero-cta-btn" style={{ marginTop: '25px', padding: '12px 30px' }}>{slide.cta} &rarr;</Link>}
