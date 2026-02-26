@@ -28,7 +28,7 @@ const About = () => {
             });
         }, observerOptions);
 
-        const elements = document.querySelectorAll('.reveal');
+        const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom, .reveal-rotate, .reveal-skew, .reveal-blur, .reveal-flip, .reveal-up, .reveal-stagger');
         elements.forEach(el => observer.observe(el));
         return () => observer.disconnect();
     }, []);
@@ -59,13 +59,13 @@ const About = () => {
                             <h2 style={{ color: 'var(--primary)', marginBottom: '20px' }}>Identity</h2>
                             <div className="motto-card">
                                 <h4 style={{ fontSize: '1.5rem', marginBottom: '10px' }}>Our Motto</h4>
-                                <p style={{ fontSize: '1.2rem', fontStyle: 'italic', opacity: 0.9, textAlign: 'center' }}>"To make man whole."</p>
+                                <p className="motto-text" style={{ fontSize: '1.4rem', textAlign: 'center', display: 'block' }}>"To make man whole."</p>
                             </div>
                         </div>
 
                         <div className="about-content">
                             <div id="profile" style={{ marginBottom: '60px' }} className="reveal-blur" data-reveal-init>
-                                <span className="estd-tag" style={{ background: 'var(--primary)', color: 'white' }}>ESTABLISHED 2009</span>
+                                <span className="estd-tag">ESTABLISHED 2009</span>
                                 <h2 style={{ fontSize: '2.5rem', color: 'var(--primary)', margin: '15px 0' }}>Institution Profile</h2>
                                 <p style={{ lineHeight: 1.8, color: 'var(--text-muted)', fontSize: '1.1rem' }}>
                                     Mount Zion College of Nursing is a premier institution dedicated to nurturing future nursing

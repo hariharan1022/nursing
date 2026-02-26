@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Ultra&display=swap');
 
 :root {
     --primary: #002B5B;
@@ -9,8 +9,8 @@
     --accent: #D4AF37;
     /* Premium Gold */
     --accent-dark: #B8860B;
-    --text-dark: #1E293B;
-    --text-muted: #64748B;
+    --text-dark: #001C30;
+    --text-muted: #475569;
     --text-light: #FFFFFF;
     --bg-light: rgba(248, 250, 252, 0.6);
     /* Semi-transparent to show pattern */
@@ -374,19 +374,44 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Outfit', 'Inter', sans-serif;
     /* Animated Gradient Background - Refined */
     background: linear-gradient(-45deg, #f8fafc, #edf2f7, #e2e8f0, #f1f5f9);
     background-size: 400% 400%;
     animation: gradientFlow 20s ease infinite;
     color: var(--text-dark);
-    line-height: 1.6;
+    line-height: 1.7;
+    letter-spacing: -0.01em;
     overflow-x: hidden;
     -webkit-tap-highlight-color: transparent;
     width: 100%;
     max-width: 100vw;
     position: relative;
     min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+.motto-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 800;
+    color: var(--primary);
+    position: relative;
+    display: inline-block;
+}
+
+.premium-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
 }
 
 /* Moving Pattern Overlay */
@@ -410,11 +435,11 @@ body::after {
 
 /* --- Premium UI Utilities --- */
 .section-title-premium {
+    font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
-    font-weight: 900;
+    font-weight: 800;
     color: var(--primary);
-    text-transform: uppercase;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
     position: relative;
     padding-bottom: 15px;
     margin-bottom: 20px;
@@ -429,7 +454,7 @@ body::after {
     width: 60px;
     height: 4px;
     background: var(--accent);
-    border-radius: 2px;
+    border-radius: 50px;
 }
 
 .blue-box-premium {
@@ -770,7 +795,7 @@ body.header-sticky-active {
 #navbar .nav-links a {
     font-size: 0.88rem;
     font-weight: 600;
-    color: #334155;
+    color: var(--text-dark);
     padding: 6px 14px;
     text-transform: none;
     /* Reference image uses Mixed Case */
@@ -855,11 +880,11 @@ body.header-sticky-active {
 
 .search-icon {
     position: absolute;
-    right: 12px;
+    right: 15px;
     color: var(--primary);
     pointer-events: none;
-    font-size: 0.85rem;
-    opacity: 0.7;
+    font-size: 1rem;
+    opacity: 0.8;
 }
 
 .search-results-dropdown {
@@ -1810,8 +1835,8 @@ nav#navbar {
 
 .btn-primary:hover {
     transform: translateY(-4px);
-    box-shadow: 0 15px 30px -5px rgba(133, 0, 0, 0.4);
-    background: var(--primary-light);
+    box-shadow: 0 15px 30px -5px rgba(0, 43, 91, 0.3);
+    background: linear-gradient(135deg, #003a7a 0%, #0050a0 100%);
 }
 
 .btn::after {
@@ -1939,10 +1964,11 @@ nav#navbar {
 
 
 .inner-hero h1 {
+    font-family: 'Playfair Display', serif;
     font-size: 4.5rem;
-    font-weight: 900;
+    font-weight: 800;
     margin-bottom: 1.5rem;
-    letter-spacing: -2px;
+    letter-spacing: -1.5px;
     line-height: 1.1;
     color: white !important;
     text-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -2040,6 +2066,42 @@ nav#navbar {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* --- Tags & Labels --- */
+.estd-tag {
+    display: block;
+    margin: 0 auto 25px;
+    width: fit-content;
+    padding: 8px 24px;
+    background: var(--accent);
+    color: var(--primary);
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.estd-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.estd-tag:hover::before {
+    left: 100%;
 }
 
 @media (max-width: 768px) {
@@ -2171,9 +2233,10 @@ nav#navbar {
 }
 
 .slide-content h1 {
-    font-size: 4rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
     font-weight: 800;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     letter-spacing: -1.5px;
     line-height: 1.1;
     text-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
@@ -2579,11 +2642,12 @@ footer a:hover {
 }
 
 .motto-card p {
-    font-size: 1.5rem;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 700;
+    font-size: 1.6rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
     font-style: italic;
     line-height: 1.2;
+    color: white;
 }
 
 .leadership-grid {

@@ -90,7 +90,7 @@ const Home = () => {
             });
         }, observerOptions);
 
-        const elements = document.querySelectorAll('.reveal, .reveal-stagger');
+        const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom, .reveal-rotate, .reveal-skew, .reveal-blur, .reveal-flip, .reveal-up, .reveal-stagger');
         elements.forEach(el => observer.observe(el));
 
         return () => observer.disconnect();
@@ -167,6 +167,7 @@ const Home = () => {
                         <div key={index} className={`slide ${index === currentSlide ? 'active' : ''}`}>
                             <img src={slide.img} alt={`Institutional Banner ${index + 1}`} />
                             <div className="slide-content">
+                                {slide.estd && <span className="estd-tag float-breathe" style={{ display: 'block', margin: '0 auto 30px', width: 'fit-content' }}>ESTD 2009</span>}
                                 <h1><span className="reveal-skew">{slide.title}</span></h1>
                                 <p style={{ color: 'white' }}>{slide.desc}</p>
                                 {slide.cta && <Link to={slide.link} className="btn btn-primary magnetic" style={{ marginTop: '25px', padding: '12px 30px' }}>{slide.cta} &rarr;</Link>}
@@ -206,7 +207,7 @@ const Home = () => {
             {/* About Us Section */}
             <section className="section reveal-blur home-about-section" style={{ background: 'var(--bg-white)' }} data-reveal-init>
                 <div className="container text-center">
-                    <p className="home-section-kicker">Established 2009</p>
+                    <span className="estd-tag float-breathe" style={{ background: 'var(--accent)', color: 'var(--primary)', display: 'block', margin: '0 auto 35px', width: 'fit-content' }}>ESTD 2009</span>
                     <h2 style={{ fontSize: '3rem', color: 'var(--primary)', margin: '20px 0' }} className="reveal-skew">To Make Man Whole</h2>
                     <p style={{ maxWidth: '800px', margin: '0 auto 40px', lineHeight: 1.8, color: 'var(--text-muted)', fontSize: '1.1rem' }}>
                         Mount Zion College of Nursing is a premier institution dedicated to nurturing future nursing
@@ -252,7 +253,7 @@ const Home = () => {
                     <div className="apply-card home-cta-card" style={{ padding: '86px 34px', borderRadius: '34px', maxWidth: '1460px', margin: '0 auto' }}>
                         <div className="text-center">
                             <span className="hero-tag-gold float-breathe">Join the 2026 Batch</span>
-                            <h2 style={{ fontSize: '3.8rem', marginBottom: '25px', color: 'white', fontWeight: 900, textShadow: '0 4px 15px rgba(0,0,0,0.2)' }} className="reveal-skew">Empowering Excellence</h2>
+                            <h2 style={{ fontSize: '3.8rem', marginBottom: '25px', color: 'white', fontWeight: 800, textShadow: '0 4px 15px rgba(0,0,0,0.2)', fontFamily: "'Playfair Display', serif", letterSpacing: '-1px' }} className="reveal-skew">Empowering Excellence</h2>
                             <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.9)', fontWeight: 600, maxWidth: '850px', margin: '0 auto 45px' }}>
                                 Step into a rewarding career in healthcare with one of the most prestigious nursing institutions in Pudukkottai District.
                             </p>
@@ -269,7 +270,7 @@ const Home = () => {
             <section className="section" style={{ background: 'var(--bg-white)' }} id="gallery">
                 <div className="container">
                     <div style={{ textAlign: 'center', marginBottom: '60px' }} data-reveal-init className="reveal-zoom">
-                        <p className="home-section-kicker">Gallery</p>
+                        <span className="estd-tag float-breathe" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>GALLERY</span>
                         <h2 style={{ fontSize: '3rem', color: 'var(--primary)', marginTop: '15px' }}>Capturing Excellence</h2>
                         <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '15px auto' }}>
                             Highlights from the 17th Induction Program, clinical training, and student life at Mount Zion.

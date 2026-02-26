@@ -208,37 +208,10 @@ const InfoCorner = () => {
 
             <section className="section" style={{ background: 'var(--bg-light)' }}>
                 <div className="container">
-                    <div className="page-grid">
-                        {/* Sticky Sidebar */}
-                        <aside className="about-nav-card reveal-zoom sidebar-col glow-card" style={{ top: '120px' }}>
-                            <h3 style={{ color: 'var(--primary)', marginBottom: '20px', fontSize: '1.2rem' }}>Quick Access</h3>
-                            <ul style={{ listStyle: 'none', padding: 0 }}>
-                                {[
-                                    { name: 'Announcements', id: 'announcements' },
-                                    { name: 'News & Events', id: 'news' },
-                                    { name: 'Rank Holders', id: 'achievements' },
-                                    { name: 'Careers', id: 'jobs' }
-                                ].map(item => (
-                                    <li key={item.id} style={{ marginBottom: '15px' }}>
-                                        <a
-                                            href={`#${item.id}`}
-                                            onClick={(e) => {
-                                                e.preventDefault();
-                                                handleScrollToSection(item.id);
-                                            }}
-                                            style={{ textDecoration: 'none', color: 'var(--text-muted)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '10px', cursor: 'pointer' }}
-                                            className="hover-primary"
-                                        >
-                                            <i className="fas fa-chevron-right" style={{ fontSize: '0.8rem', color: 'var(--accent)' }}></i>
-                                            {item.name}
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </aside>
+                    <div>
 
                         {/* Content Area */}
-                        <div className="info-content content-col">
+                        <div className="info-content">
                             {/* Announcements Section - Top */}
                             <div id="announcements" style={{ marginBottom: '50px' }}>
                                 <h2 style={{ color: 'var(--primary)', marginBottom: '25px', display: 'flex', alignItems: 'center', gap: '15px', borderBottom: '2px solid var(--accent)', paddingBottom: '10px' }}>
@@ -373,13 +346,21 @@ const InfoCorner = () => {
                                 </h2>
                                 <div className="apply-card reveal-zoom">
                                     <div style={{ position: 'relative', zIndex: 2 }}>
-                                        <h3 style={{ color: 'var(--primary)', marginBottom: '20px', fontWeight: 900, fontSize: '2.5rem' }}>Join Our Faculty</h3>
-                                        <p style={{ color: 'var(--text-muted)', fontWeight: 600, marginBottom: '35px', fontSize: '1.2rem' }}>We are looking for dedicated Nursing Tutors and Assistant Professors to join our esteemed institution.</p>
-                                        <div style={{ display: 'flex', justifyContent: 'center', gap: '25px', flexWrap: 'wrap', alignItems: 'center' }}>
-                                            <Link to="/careers" className="btn btn-primary" style={{ padding: '18px 45px', fontWeight: 900 }}>APPLY NOW</Link>
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', color: 'var(--primary)', fontWeight: 800 }}>
-                                                <i className="fas fa-envelope" style={{ color: 'var(--accent)' }}></i> <span>jobs@mzcn.in</span>
-                                            </div>
+                                        <span style={{ display: 'inline-block', background: 'rgba(212,175,55,0.15)', border: '1px solid var(--accent)', color: 'var(--accent)', padding: '6px 20px', borderRadius: '50px', fontSize: '0.75rem', fontWeight: 800, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '20px' }}>Now Hiring</span>
+                                        <h3 style={{ color: 'white', marginBottom: '15px', fontWeight: 800, fontSize: '2.8rem', fontFamily: "'Playfair Display', serif", letterSpacing: '-1px' }}>Join Our Faculty</h3>
+                                        <p style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 500, marginBottom: '40px', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto 40px' }}>We are looking for dedicated Nursing Tutors and Assistant Professors to join our esteemed institution.</p>
+                                        <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap', alignItems: 'center' }}>
+                                            <Link to="/careers" className="btn" style={{ padding: '16px 42px', fontWeight: 800, background: 'var(--accent)', color: 'var(--primary)', border: '2px solid var(--accent)', borderRadius: '50px', fontSize: '0.9rem', letterSpacing: '1px', transition: 'all 0.3s ease', textDecoration: 'none' }}
+                                                onMouseEnter={e => { e.currentTarget.style.background = 'white'; e.currentTarget.style.borderColor = 'white'; e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 15px 30px rgba(0,0,0,0.2)'; }}
+                                                onMouseLeave={e => { e.currentTarget.style.background = 'var(--accent)'; e.currentTarget.style.borderColor = 'var(--accent)'; e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none'; }}>
+                                                <i className="fas fa-paper-plane" style={{ marginRight: '8px' }}></i> APPLY NOW
+                                            </Link>
+                                            <a href="mailto:jobs@mzcn.in" style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'white', fontWeight: 700, fontSize: '1rem', textDecoration: 'none', padding: '16px 28px', border: '2px solid rgba(255,255,255,0.3)', borderRadius: '50px', transition: 'all 0.3s ease', background: 'rgba(255,255,255,0.08)' }}
+                                                onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.18)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.6)'; e.currentTarget.style.transform = 'translateY(-3px)'; }}
+                                                onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+                                                <i className="fas fa-envelope" style={{ color: 'var(--accent)' }}></i>
+                                                <span>jobs@mzcn.in</span>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

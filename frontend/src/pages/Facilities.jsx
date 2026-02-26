@@ -236,7 +236,7 @@ const Facilities = () => {
             });
         }, observerOptions);
 
-        const elements = document.querySelectorAll('.reveal');
+        const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-zoom, .reveal-rotate, .reveal-skew, .reveal-blur, .reveal-flip, .reveal-up, .reveal-stagger');
         elements.forEach(el => observer.observe(el));
         return () => observer.disconnect();
     }, []);
