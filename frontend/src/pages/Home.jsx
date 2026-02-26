@@ -218,30 +218,30 @@ const Home = () => {
             </section>
 
             {/* Core Pillars */}
-            <section className="section" style={{ background: 'var(--bg-light)', paddingTop: '70px', paddingBottom: '70px' }}>
+            <section className="section" style={{ background: 'var(--bg-light)', paddingTop: '62px', paddingBottom: '62px' }}>
                 <div className="container">
-                    <div className="grid grid-cols-2 sm-grid-cols-1 core-pillar-grid" style={{ gap: '26px', maxWidth: '1120px', margin: '0 auto' }} data-reveal-init>
+                    <div className="grid grid-cols-2 sm-grid-cols-1 core-pillar-grid" data-reveal-init>
                         {/* Programs Card */}
-                        <div className="core-pillar-card reveal-flip" style={{ textAlign: 'left', padding: '30px', background: 'white', borderRadius: '14px', boxShadow: 'var(--shadow-md)' }}>
-                            <div className="core-pillar-icon" style={{ width: '52px', height: '52px', background: 'var(--primary)', color: 'var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', marginBottom: '20px' }}>
-                                <i className="fas fa-graduation-cap" style={{ fontSize: '1.25rem' }}></i>
+                        <div className="core-pillar-card reveal-flip">
+                            <div className="core-pillar-icon">
+                                <i className="fas fa-graduation-cap"></i>
                             </div>
-                            <h3 className="core-pillar-title" style={{ color: 'var(--primary)', marginBottom: '12px' }}>Nursing Programs</h3>
-                            <p style={{ color: 'var(--text-muted)', marginBottom: '18px', lineHeight: 1.5, fontSize: '1rem' }}>
+                            <h3 className="core-pillar-title">Nursing Programs</h3>
+                            <p className="core-pillar-desc">
                                 From B.Sc. to advanced leadership roles, our curriculum is designed to meet global healthcare standards and empower students.
                             </p>
-                            <Link to="/bsc-nursing" className="core-pillar-link" style={{ fontWeight: 700, color: 'var(--primary)', textDecoration: 'none', display: 'inline-block' }}>View All Programs →</Link>
+                            <Link to="/bsc-nursing" className="core-pillar-link">View All Programs →</Link>
                         </div>
                         {/* Facilities Card */}
-                        <div className="core-pillar-card reveal-flip" style={{ textAlign: 'left', padding: '30px', background: 'white', borderRadius: '14px', boxShadow: 'var(--shadow-md)' }}>
-                            <div className="core-pillar-icon" style={{ width: '52px', height: '52px', background: 'var(--primary)', color: 'var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '10px', marginBottom: '20px' }}>
-                                <i className="fas fa-hospital" style={{ fontSize: '1.25rem' }}></i>
+                        <div className="core-pillar-card reveal-flip">
+                            <div className="core-pillar-icon">
+                                <i className="fas fa-hospital"></i>
                             </div>
-                            <h3 className="core-pillar-title" style={{ color: 'var(--primary)', marginBottom: '12px' }}>World-Class Infrastructure</h3>
-                            <p style={{ color: 'var(--text-muted)', marginBottom: '18px', lineHeight: 1.5, fontSize: '1rem' }}>
+                            <h3 className="core-pillar-title">World-Class Infrastructure</h3>
+                            <p className="core-pillar-desc">
                                 Experience clinical training in our 500-bed multi-specialty hospital and state-of-the-art simulation laboratories.
                             </p>
-                            <Link to="/facilities" className="core-pillar-link" style={{ fontWeight: 700, color: 'var(--primary)', textDecoration: 'none', display: 'inline-block' }}>Explore Facilities →</Link>
+                            <Link to="/facilities" className="core-pillar-link">Explore Facilities →</Link>
                         </div>
                     </div>
                 </div>

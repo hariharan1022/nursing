@@ -36,7 +36,7 @@ const About = () => {
     return (
         <div className="about-page">
             {/* Hero Section */}
-            <div className="inner-hero">
+            <div className="inner-hero about-hero-match">
                 <div className="container relative z-10 text-center">
                     <span className="hero-tag-gold float-breathe reveal-zoom" data-reveal-init>
                         PREMIER INSTITUTION
@@ -51,22 +51,11 @@ const About = () => {
             </div>
 
             {/* About Section Content */}
-            <section className="section">
+            <section className="section about-main-section">
                 <div className="container">
-                    <div className="about-grid">
-                        {/* Sidebar Navigation */}
-                        <div className="about-nav-card">
-                            <h2 style={{ color: 'var(--primary)', marginBottom: '20px' }}>Identity</h2>
-                            <div className="motto-card">
-                                <h4 style={{ fontSize: '1.5rem', marginBottom: '10px' }}>Our Motto</h4>
-                                <p className="motto-text" style={{ fontSize: '1.4rem', textAlign: 'center', display: 'block' }}>"To make man whole."</p>
-                            </div>
-                        </div>
-
-                        <div className="about-content">
-                            <div id="profile" style={{ marginBottom: '60px' }} className="reveal-blur" data-reveal-init>
-                                <span className="estd-tag">ESTABLISHED 2009</span>
-                                <h2 style={{ fontSize: '2.5rem', color: 'var(--primary)', margin: '15px 0' }}>Institution Profile</h2>
+                    <div className="about-content about-content-full">
+                            <div id="profile" style={{ marginBottom: '54px' }} className="reveal-blur" data-reveal-init>
+                                <h2 style={{ fontSize: '2.5rem', color: 'var(--primary)', margin: '0 0 15px' }}>Institution Profile</h2>
                                 <p style={{ lineHeight: 1.8, color: 'var(--text-muted)', fontSize: '1.1rem' }}>
                                     Mount Zion College of Nursing is a premier institution dedicated to nurturing future nursing
                                     professionals. Affiliated with The Tamil Nadu Dr. M.G.R. Medical University and approved by
@@ -75,7 +64,7 @@ const About = () => {
                                 </p>
                             </div>
 
-                            <div id="vision" style={{ marginBottom: '60px', paddingTop: '20px' }} className="reveal-skew" data-reveal-init>
+                            <div id="vision" style={{ marginBottom: '52px', paddingTop: '6px' }} className="reveal-skew" data-reveal-init>
                                 <h3 style={{ color: 'var(--primary)', marginBottom: '30px', borderBottom: '2px solid var(--accent)', display: 'inline-block', fontSize: '1.8rem' }}>
                                     Vision & Mission
                                 </h3>
@@ -85,7 +74,7 @@ const About = () => {
                                 </div>
                                 <div className="premium-card">
                                     <h4 style={{ color: 'var(--primary)', marginBottom: '25px', fontSize: '1.5rem' }}>Our Mission</h4>
-                                    <ul className="mission-list" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px', listStyle: 'none', padding: 0 }}>
+                                    <ul className="mission-list mission-list-grid">
                                         {[
                                             "Provide education of the highest quality.",
                                             "Empower students to meet global healthcare challenges.",
@@ -94,9 +83,9 @@ const About = () => {
                                             "Synergize excellence through a wholesome ambience.",
                                             "Train for competence and selfless service."
                                         ].map((item, i) => (
-                                            <li key={i} className="interaction-box" style={{ padding: '15px', display: 'flex', alignItems: 'center', gap: '15px', color: 'var(--primary)', fontWeight: 600 }}>
-                                                <i className="fas fa-check-circle" style={{ color: 'var(--accent)', fontSize: '1.2rem' }}></i>
-                                                {item}
+                                            <li key={i} className="interaction-box mission-item">
+                                                <span className="mission-item-index">{String(i + 1).padStart(2, '0')}</span>
+                                                <span>{item}</span>
                                             </li>
                                         ))}
                                     </ul>
@@ -109,28 +98,28 @@ const About = () => {
                                 </h3>
                                 <div className="idp-grid">
                                     <div className="premium-card">
-                                        <div className="club-icon-box" style={{ width: '50px', height: '50px', fontSize: '1.2rem', marginBottom: '20px' }}>
+                                        <div className="club-icon-box idp-icon-box">
                                             <i className="fas fa-hospital"></i>
                                         </div>
                                         <h4 style={{ color: 'var(--primary)', marginBottom: '15px', fontSize: '1.3rem' }}>MZ Multispecialty Hospital</h4>
                                         <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: '1.6' }}>Developing a 150-bedded hospital with specialized palliative care.</p>
                                     </div>
                                     <div className="premium-card">
-                                        <div className="club-icon-box" style={{ width: '50px', height: '50px', fontSize: '1.2rem', marginBottom: '20px' }}>
+                                        <div className="club-icon-box idp-icon-box">
                                             <i className="fas fa-graduation-cap"></i>
                                         </div>
                                         <h4 style={{ color: 'var(--primary)', marginBottom: '15px', fontSize: '1.3rem' }}>Academic Autonomy</h4>
                                         <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: '1.6' }}>Strategizing to achieve autonomous status by the year 2030.</p>
                                     </div>
                                     <div className="premium-card">
-                                        <div className="club-icon-box" style={{ width: '50px', height: '50px', fontSize: '1.2rem', marginBottom: '20px' }}>
+                                        <div className="club-icon-box idp-icon-box">
                                             <i className="fas fa-vial"></i>
                                         </div>
                                         <h4 style={{ color: 'var(--primary)', marginBottom: '15px', fontSize: '1.3rem' }}>Centers of Excellence</h4>
                                         <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: '1.6' }}>High-fidelity simulation labs for advanced clinical skills.</p>
                                     </div>
                                     <div className="premium-card">
-                                        <div className="club-icon-box" style={{ width: '50px', height: '50px', fontSize: '1.2rem', marginBottom: '20px' }}>
+                                        <div className="club-icon-box idp-icon-box">
                                             <i className="fas fa-medal"></i>
                                         </div>
                                         <h4 style={{ color: 'var(--primary)', marginBottom: '15px', fontSize: '1.3rem' }}>NAAC Excellence</h4>
@@ -139,7 +128,7 @@ const About = () => {
                                 </div>
                             </div>
 
-                            <div id="organogram" style={{ marginBottom: '60px', paddingTop: '20px' }} className="reveal-zoom" data-reveal-init>
+                            <div id="organogram" style={{ marginBottom: '24px', paddingTop: '20px' }} className="reveal-zoom" data-reveal-init>
                                 <h3 style={{ color: 'var(--primary)', marginBottom: '30px', borderBottom: '2px solid var(--accent)', display: 'inline-block', fontSize: '1.8rem' }}>
                                     Organogram
                                 </h3>
@@ -148,34 +137,36 @@ const About = () => {
                                 </p>
                                 <div className="blue-box-premium reveal-skew" data-reveal-init style={{
                                     textAlign: 'center',
-                                    padding: '80px 40px'
+                                    padding: '56px 36px',
+                                    maxWidth: '1040px',
+                                    margin: '0 auto'
                                 }}>
                                     <div className="club-icon-box shadow-lg float-breathe" style={{
-                                        margin: '0 auto 30px',
-                                        width: '100px',
-                                        height: '100px',
-                                        fontSize: '3rem',
+                                        margin: '0 auto 22px',
+                                        width: '84px',
+                                        height: '84px',
+                                        fontSize: '2.35rem',
                                         background: '#ffffff',
-                                        color: 'var(--primary)'
+                                        color: 'var(--primary)',
+                                        transform: 'none'
                                     }}>
                                         <i className="fas fa-sitemap"></i>
                                     </div>
-                                    <h3 style={{ fontSize: '2.5rem', color: 'var(--primary)', marginBottom: '20px', fontWeight: 800 }}>View Organizational Chart</h3>
-                                    <p style={{ color: 'var(--text-muted)', marginBottom: '40px', maxWidth: '600px', margin: '0 auto 40px', fontSize: '1.2rem', fontWeight: 500 }}>
+                                    <h3 style={{ fontSize: '2.1rem', color: 'var(--primary)', marginBottom: '16px', fontWeight: 800 }}>View Organizational Chart</h3>
+                                    <p style={{ color: 'var(--text-muted)', marginBottom: '32px', maxWidth: '600px', margin: '0 auto 32px', fontSize: '1.1rem', fontWeight: 500 }}>
                                         Explore the detailed administrative and academic structure of our institution in a dedicated interactive view.
                                     </p>
-                                    <Link to="/organogram" className="btn btn-primary magnetic" style={{ padding: '20px 60px', textTransform: 'uppercase', letterSpacing: '2px', fontWeight: 800, fontSize: '1.1rem' }}>
+                                    <Link to="/organogram" className="btn btn-primary magnetic" style={{ padding: '16px 50px', textTransform: 'uppercase', letterSpacing: '2px', fontWeight: 800, fontSize: '1.02rem' }}>
                                         Open Full Organogram &rarr;
                                     </Link>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </section>
 
             {/* Leadership Section */}
-            <section className="section" style={{ background: 'var(--bg-light)' }} id="leadership">
+            <section className="section about-leadership-section" style={{ background: 'var(--bg-light)' }} id="leadership">
                 <div className="container">
                     <h2 style={{ textAlign: 'center', fontSize: '2.5rem', color: 'var(--primary)', marginBottom: '60px' }} className="reveal-zoom" data-reveal-init>Our Leadership</h2>
 

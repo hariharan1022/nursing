@@ -208,8 +208,8 @@ const Navbar = () => {
                                     <span className="nav-label"><i className="fas fa-university nav-icon-badge" aria-hidden="true"></i><span>About Us</span></span> <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'about' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                                 </NavLink>
                                 <ul className={`dropdown ${activeDropdown === 'about' ? 'active-mobile' : ''}`}>
-                                    <li><Link to="/about#vision" onClick={closeMobileMenu}><i className="fas fa-eye"></i> Vision & Mission</Link></li>
                                     <li><Link to="/about#profile" onClick={closeMobileMenu}><i className="fas fa-university"></i> Institutional Profile</Link></li>
+                                    <li><Link to="/about#vision" onClick={closeMobileMenu}><i className="fas fa-eye"></i> Vision & Mission</Link></li>
                                     <li><Link to="/about#leadership" onClick={closeMobileMenu}><i className="fas fa-users-cog"></i> Leadership</Link></li>
                                     <li><Link to="/organogram" onClick={closeMobileMenu}><i className="fas fa-sitemap"></i> Organogram</Link></li>
                                 </ul>
