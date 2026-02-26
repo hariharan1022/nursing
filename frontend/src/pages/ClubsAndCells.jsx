@@ -34,6 +34,110 @@ const ClubsAndCells = () => {
 
     const committees = [
         {
+            id: 'sc-st-cell', title: 'SC/ST Cell', icon: 'fa-balance-scale',
+            desc: 'The SC/ST Cell is established to safeguard the interests of students and staff belonging to Scheduled Caste (SC) and Scheduled Tribe (ST) categories and to ensure implementation of Government of India and State Government policies.',
+            objectives: [
+                'To create awareness about government schemes, scholarships, and welfare programs',
+                'To monitor implementation of reservation policy in admission and recruitment',
+                'To address grievances related to discrimination, if any',
+                'To guide students in academic and career opportunities',
+                'To promote social harmony and inclusive campus environment'
+            ],
+            members: [
+                { n: 'Dr. H M Jasmine Sheela', d: 'Principal / Chairperson' },
+                { n: 'Dr. Jerin Kumar J', d: 'Senior Faculty Member / Coordinator' },
+                { n: 'Prof. Unaisy Vinolin G', d: 'Faculty Member' },
+                { n: 'Mrs. Sutha P', d: 'Faculty Member (Woman)' },
+                { n: 'Mr. Domingo', d: 'Administrative Representative' }
+            ],
+            extra: {
+                title: 'Governance',
+                icon: 'fa-history',
+                list: [
+                    'Tenure: 2 Years (2025–2027)',
+                    'Meeting Frequency: At least twice per academic year'
+                ]
+            }
+        },
+        {
+            id: 'womens-cell', title: 'Women’s Cell', icon: 'fa-venus',
+            desc: 'The Women’s Cell is constituted to promote gender equity, empowerment, and safety of women students and staff.',
+            objectives: [
+                'To nurture the strengths and leadership qualities of women',
+                'To organize awareness programs on women’s health, rights, and safety',
+                'To address issues concerning women students and employees',
+                'To promote equal participation in academic and co-curricular activities',
+                'To conduct gender sensitization programs'
+            ],
+            members: [
+                { n: 'Dr. H M Jasmine Sheela', d: 'Senior Woman Faculty / Chairperson' },
+                { n: 'Mrs. Nagajothi', d: 'Woman Faculty Member' },
+                { n: 'Mrs. Saraswathy', d: 'Woman Faculty Member' },
+                { n: 'Mrs. Prema', d: 'Woman Administrative Staff' },
+                { n: 'Ms. Akchaya G', d: 'Student Representative (Girl Student)' }
+            ],
+            extra: {
+                title: 'Governance',
+                icon: 'fa-history',
+                list: [
+                    'Tenure: 2 Years (2025–2027)',
+                    'Meeting Frequency: Minimum twice per academic year'
+                ]
+            }
+        },
+        {
+            id: 'cm-cell', title: 'University Chief Minister (CM) Cell Coordination Unit', icon: 'fa-landmark',
+            desc: 'The University CM Cell Coordination Unit functions as a liaison mechanism for representations received through the Hon’ble Chief Minister’s Grievance Redressal System.',
+            objectives: [
+                'Timely response to forwarded grievances',
+                'Submission of action taken reports',
+                'Coordination with University authorities',
+                'Maintenance of grievance records',
+                'Transparency and accountability in institutional response'
+            ],
+            members: [
+                { n: 'Dr. H M Jasmine Sheela', d: 'Principal / Institutional Head' },
+                { n: 'Dr. Jerin Kumar J', d: 'Nodal Officer' },
+                { n: 'Mrs. Prema', d: 'Administrative Staff / Record & Compliance Officer' }
+            ],
+            extra: {
+                title: 'Reporting & Compliance',
+                icon: 'fa-clipboard-check',
+                list: [
+                    'Reporting: Through University Nodal Officer',
+                    'Review: As per directions from University and Government'
+                ]
+            }
+        },
+        {
+            id: 'equal-opportunity-cell', title: 'Equal Opportunity Cell (EOC)', icon: 'fa-universal-access',
+            desc: 'The Equal Opportunity Cell is constituted to ensure effective implementation of policies and schemes for disadvantaged and marginalized groups within the campus (As per UGC Guidelines).',
+            objectives: [
+                'To ensure implementation of reservation policy in admissions and recruitment',
+                'To provide academic, financial, and psychological guidance',
+                'To promote diversity and inclusivity',
+                'To assist differently-abled students',
+                'To prevent discrimination on caste, gender, religion, disability, or socio-economic background'
+            ],
+            members: [
+                { n: 'Dr. H M Jasmine Sheela', d: 'Principal / Chairperson' },
+                { n: 'Dr. Jerin Kumar J', d: 'Senior Faculty Member / Adviser' },
+                { n: 'Mrs. Sivakami', d: 'Faculty Member' },
+                { n: 'Mrs. Antony Asha', d: 'Faculty Member' },
+                { n: 'Mrs. Prema', d: 'Administrative Officer' },
+                { n: 'Ms. Rashmi', d: 'Student Representative / Special Invitee' }
+            ],
+            extra: {
+                title: 'Advisory Committee Provisions',
+                icon: 'fa-info-circle',
+                list: [
+                    'The Committee shall meet at least once in four months',
+                    'Action taken reports shall be reviewed in subsequent meetings',
+                    'Tenure: 2 Years (2025–2027)'
+                ]
+            }
+        },
+        {
             id: 'curriculum', title: 'Curriculum Committee', icon: 'fa-book-open',
             desc: 'The Curriculum Committee plans, designs, evaluates, and updates the academic curriculum to ensure alignment with regulatory requirements, current healthcare practices, and professional nursing competencies.',
             objectives: [
@@ -348,7 +452,7 @@ const ClubsAndCells = () => {
                         Empowering Excellence
                     </h1>
                     <p className="reveal-blur stagger-2" data-reveal-init style={{ maxWidth: '800px', margin: '0 auto' }}>
-                        Our various committees and cells ensure a balanced, safe, and progressive environment for academic and personal growth.
+                        Mount Zion College of Nursing has constituted the following statutory and support cells to ensure inclusive growth, social justice, gender equity, and responsive governance in accordance with UGC regulations and institutional best practices.
                     </p>
                 </div>
             </div>
