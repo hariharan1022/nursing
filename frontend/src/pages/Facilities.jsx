@@ -319,7 +319,7 @@ const Facilities = () => {
 
                 {/* ACADEMIC INFRASTRUCTURE */}
                 <section id="academic" className="reveal scroll-mt-32">
-                    <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 relative overflow-hidden">
+                    <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 relative">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50/50 rounded-full blur-3xl -translate-y-1/3 translate-x-1/3 opacity-60"></div>
 
                         <div className="relative z-10">
@@ -330,7 +330,7 @@ const Facilities = () => {
                                 <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Academic Infrastructure</h2>
                             </div>
 
-                            <div className="grid md-grid-cols-2 gap-8">
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                                 <div className="space-y-6">
                                     <div className="blue-box-premium p-10 reveal-left" data-reveal-init>
                                         <h3 className="text-2xl font-bold text-primary mb-4">Modern Classrooms</h3>
@@ -346,12 +346,14 @@ const Facilities = () => {
                                     </div>
                                 </div>
                                 <div className="space-y-6">
-                                    <div className="premium-card reveal-right" data-reveal-init>
-                                        <h3 className="text-2xl font-bold text-slate-900 mb-6">Multipurpose Facilities</h3>
-                                        <p className="text-gray-700 leading-relaxed text-lg mb-6">
-                                            Three spacious multipurpose halls with modern projection systems suitable for academic, cultural, and professional development activities.
-                                        </p>
-                                        <div className="flex gap-3">
+                                    <div className="premium-card p-10 reveal-right h-full flex flex-col justify-between" data-reveal-init>
+                                        <div>
+                                            <h3 className="text-2xl font-bold text-slate-900 mb-6">Multipurpose Facilities</h3>
+                                            <p className="text-gray-700 leading-relaxed text-lg mb-6">
+                                                Three spacious multipurpose halls with modern projection systems suitable for academic, cultural, and professional development activities.
+                                            </p>
+                                        </div>
+                                        <div className="flex flex-wrap gap-3">
                                             <span className="px-4 py-2 bg-slate-100 text-slate-600 text-xs font-black rounded-xl border border-slate-200 uppercase tracking-widest">Academic</span>
                                             <span className="px-4 py-2 bg-slate-100 text-slate-600 text-xs font-black rounded-xl border border-slate-200 uppercase tracking-widest">Cultural</span>
                                             <span className="px-4 py-2 bg-slate-100 text-slate-600 text-xs font-black rounded-xl border border-slate-200 uppercase tracking-widest">Growth</span>
@@ -453,7 +455,7 @@ const Facilities = () => {
                                     { t: "Microbiology Lab", d: "Clinical pathology, staining techniques, and advanced diagnostic microscopy.", icon: Microscope },
                                     { t: "Anatomy & Physiology", d: "An exhaustive museum of biological specimens, intricate models, and skeletal systems.", icon: Landmark, imgs: anatomyImages }
                                 ].map((lab, i) => (
-                                    <div key={i} className="premium-card shine-effect group transition-all duration-300 flex flex-col">
+                                    <div key={i} className="premium-card p-8 shine-effect group transition-all duration-300 flex flex-col">
                                         <div className="flex flex-col gap-6 flex-grow">
                                             <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center bg-slate-50 rounded-2xl border border-slate-100 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm">
                                                 <lab.icon size={30} className="transition-transform group-hover:scale-110" />
