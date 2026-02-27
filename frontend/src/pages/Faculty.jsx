@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Faculty = () => {
     useEffect(() => {
@@ -100,12 +101,15 @@ const Faculty = () => {
                     <div className="reveal-left bg-white rounded-[40px] shadow-premium overflow-hidden border border-gray-100 mb-12" data-reveal-init>
                         <div className="flex flex-col lg:flex-row items-stretch">
                             <div className="lg:w-1/3 bg-slate-50 p-10 text-center flex flex-col items-center justify-center border-r border-gray-100">
-                                <div className="w-48 h-48 rounded-[32px] overflow-hidden border-4 border-white shadow-xl mb-6 transform hover:scale-105 transition-transform">
-                                    <img src={`${import.meta.env.BASE_URL}photo/PRINCIPAL.png`} alt="Principal" className="w-full h-full object-cover" />
+                                <div className="w-64 h-80 rounded-[40px] overflow-hidden border-4 border-white shadow-2xl mb-6 transform hover:scale-105 transition-transform bg-white">
+                                    <img src={`${import.meta.env.BASE_URL}photo/PRINCIPAL.png`} alt="Principal" className="w-full h-full object-cover object-top" />
                                 </div>
                                 <h4 className="text-2xl font-black mb-1" style={{ color: 'var(--primary)' }}>Prof. Dr. Jasmine Sheela</h4>
                                 <span className="px-4 py-1 text-[10px] font-black rounded-full uppercase tracking-widest leading-none" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>Principal & Professor</span>
                                 <p className="text-xs text-slate-500 font-bold mt-2">M.Sc. (N), Ph.D., R.N.R.M.</p>
+                                <Link to="/principal-profile" className="mt-5 px-6 py-2.5 bg-primary text-white text-[10px] font-black rounded-xl uppercase tracking-widest hover:bg-accent hover:text-primary transition-all shadow-lg hover:shadow-accent/20">
+                                    View Profile <i className="fas fa-arrow-right ml-2"></i>
+                                </Link>
                             </div>
                             <div className="lg:w-2/3 p-10 md:p-14">
                                 <h3 className="text-3xl font-black mb-6 flex items-center gap-4" style={{ color: 'var(--primary)' }}>
@@ -123,12 +127,15 @@ const Faculty = () => {
                     <div className="reveal-right bg-white rounded-[40px] shadow-premium overflow-hidden border border-gray-100 mb-24" data-reveal-init>
                         <div className="flex flex-col lg:flex-row-reverse items-stretch">
                             <div className="lg:w-1/3 bg-slate-50 p-10 text-center flex flex-col items-center justify-center border-l border-gray-100">
-                                <div className="w-48 h-48 rounded-[32px] overflow-hidden border-4 border-white shadow-xl mb-6 transform hover:scale-105 transition-transform">
-                                    <img src={`${import.meta.env.BASE_URL}photo/Vice%20Principal.png`} alt="Vice Principal" className="w-full h-full object-cover" />
+                                <div className="w-64 h-80 rounded-[40px] overflow-hidden border-4 border-white shadow-2xl mb-6 transform hover:scale-105 transition-transform bg-white">
+                                    <img src={`${import.meta.env.BASE_URL}photo/Vice%20Principal.png`} alt="Vice Principal" className="w-full h-full object-cover object-top" />
                                 </div>
                                 <h4 className="text-2xl font-black mb-1" style={{ color: 'var(--primary)' }}>Prof. Dr. Jerin Kumar J</h4>
                                 <span className="px-4 py-1 text-[10px] font-black rounded-full uppercase tracking-widest leading-none" style={{ background: 'var(--accent)', color: 'var(--primary)' }}>Vice Principal & Professor</span>
                                 <p className="text-xs text-slate-500 font-bold mt-2">M.Sc. (N), Ph.D., M.Sc. (Psy.Tpy)., R.N.R.M.</p>
+                                <Link to="/vice-principal-profile" className="mt-5 px-6 py-2.5 bg-primary text-white text-[10px] font-black rounded-xl uppercase tracking-widest hover:bg-accent hover:text-primary transition-all shadow-lg hover:shadow-accent/20 inline-block">
+                                    View Profile <i className="fas fa-arrow-right ml-2"></i>
+                                </Link>
                             </div>
                             <div className="lg:w-2/3 p-10 md:p-14">
                                 <h3 className="text-3xl font-black mb-6 flex items-center gap-4" style={{ color: 'var(--primary)' }}>

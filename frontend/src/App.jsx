@@ -21,6 +21,8 @@ import Organogram from './pages/Organogram';
 import Affiliations from './pages/Affiliations';
 import Research from './pages/Research';
 import AcademicCalendar from './pages/AcademicCalendar';
+import PrincipalProfile from './pages/PrincipalProfile';
+import VicePrincipalProfile from './pages/VicePrincipalProfile';
 
 // Component to scroll to top on route change
 const ScrollToTop = () => {
@@ -109,6 +111,8 @@ function AppContent() {
         <Route path="/affiliations" element={<Affiliations />} />
         <Route path="/research" element={<Research />} />
         <Route path="/academic-calendar" element={<AcademicCalendar />} />
+        <Route path="/principal-profile" element={<PrincipalProfile />} />
+        <Route path="/vice-principal-profile" element={<VicePrincipalProfile />} />
       </Routes>
       <Footer />
     </div>
