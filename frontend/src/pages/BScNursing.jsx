@@ -281,15 +281,15 @@ const BScNursing = () => {
                 </div>
             </section>
 
-            <section className="section reveal-blur" data-reveal-init>
+            <section className="section reveal-up" data-reveal-init>
                 <div className="container">
-                    <div className="apply-card">
+                    <div className="premium-cta-box">
                         <div style={{ position: 'relative', zIndex: 2 }}>
-                            <h2 style={{ color: 'var(--primary)', marginBottom: '25px', fontWeight: 900, fontSize: '2.8rem' }} className="pulse-glow">Ready to start your nursing career?</h2>
-                            <p style={{ fontSize: '1.25rem', marginBottom: '45px', color: 'var(--text-muted)', fontWeight: 600 }}>Join Mount Zion College of Nursing and become a qualified professional nurse.</p>
+                            <h2>Ready to start your nursing career?</h2>
+                            <p>Join Mount Zion College of Nursing and become a qualified professional nurse.</p>
                             <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
-                                <Link to="/admissions" className="btn btn-primary" style={{ padding: '18px 45px', fontWeight: 900 }}>ADMISSION INFO</Link>
-                                <Link to="/contact" className="btn btn-outline" style={{ padding: '18px 45px', fontWeight: 900 }}>CONTACT US</Link>
+                                <Link to="/admissions" className="btn btn-primary" style={{ padding: '16px 40px', fontWeight: 900 }}>ADMISSION INFO</Link>
+                                <Link to="/contact" className="btn btn-outline" style={{ padding: '16px 40px', fontWeight: 900 }}>CONTACT US</Link>
                             </div>
                         </div>
                     </div>

@@ -6458,3 +6458,63 @@ button[style*="background: var(--accent)"] {
         font-size: 0.82rem;
     }
 }
+
+/* Premium CTA Box */
+.premium-cta-box {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%) !important;
+    border-radius: 40px !important;
+    padding: 80px 40px !important;
+    text-align: center !important;
+    position: relative !important;
+    overflow: hidden !important;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+}
+
+.premium-cta-box::before {
+    content: '' !important;
+    position: absolute !important;
+    top: -20% !important;
+    right: -10% !important;
+    width: 400px !important;
+    height: 400px !important;
+    background: radial-gradient(circle, var(--accent) 0%, transparent 70%) !important;
+    opacity: 0.1 !important;
+    filter: blur(60px) !important;
+    pointer-events: none !important;
+}
+
+.premium-cta-box h2 {
+    color: #ffffff !important;
+    font-size: clamp(2rem, 5vw, 3.2rem) !important;
+    font-weight: 900 !important;
+    margin-bottom: 20px !important;
+    line-height: 1.1 !important;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.premium-cta-box p {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-size: 1.2rem !important;
+    max-width: 700px !important;
+    margin: 0 auto 40px auto !important;
+    font-weight: 500 !important;
+}
+
+.premium-cta-box .btn-primary {
+    background: var(--accent) !important;
+    color: var(--primary) !important;
+    border: none !important;
+}
+
+.premium-cta-box .btn-outline {
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: white !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.premium-cta-box .btn-outline:hover {
+    background: white !important;
+    color: var(--primary) !important;
+}
