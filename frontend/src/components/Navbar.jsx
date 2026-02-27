@@ -246,7 +246,7 @@ const Navbar = () => {
 
                             <li className={`reveal-item ${activeDropdown === 'updates' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.25s' }}>
                                 <NavLink to="/info-corner" onClick={(e) => toggleDropdown(e, 'updates')}>
-                                    <span className="nav-label"><i className="fas fa-newspaper nav-icon-badge" aria-hidden="true"></i><span>Updates</span></span> <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'updates' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
+                                    <span className="nav-label"><i className="fas fa-newspaper nav-icon-badge" aria-hidden="true"></i><span>Info Corner</span></span> <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'updates' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                                 </NavLink>
                                 <ul className={`dropdown ${activeDropdown === 'updates' ? 'active-mobile' : ''}`}>
                                     <li><Link to="/info-corner#announcements" onClick={closeMobileMenu}><i className="fas fa-bullhorn"></i> Announcements</Link></li>

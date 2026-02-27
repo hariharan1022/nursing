@@ -208,7 +208,7 @@ const InfoCorner = () => {
             <div className="inner-hero">
                 <div className="container relative z-10 text-center">
                     <span className="hero-tag-gold reveal-zoom" data-reveal-init>
-                        LATEST UPDATES
+                        INFO CORNER
                     </span>
                     <h1 className="reveal-skew stagger-1" data-reveal-init>
                         Information Corner
