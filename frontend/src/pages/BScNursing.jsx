@@ -179,7 +179,7 @@ const BScNursing = () => {
                 </div>
             </section>
 
-            <section className="section" style={{ background: 'var(--bg-light)' }} id="curriculum">
+            <section className="section bg-mesh-premium" id="curriculum">
                 <div className="container">
                     <div className="reveal-zoom" style={{ textAlign: 'center', marginBottom: '50px' }} data-reveal-init>
                         <h2 style={{ color: 'var(--primary)' }}>Detailed Syllabus & Credits</h2>

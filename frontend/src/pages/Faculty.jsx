@@ -75,7 +75,7 @@ const Faculty = () => {
                 </div>
             </div>
 
-            <section className="section" style={{ background: 'var(--bg-light)' }}>
+            <section className="section bg-mesh-premium">
                 <div className="container">
                     {/* Intro Card */}
                     <div className="reveal-up mb-16" data-reveal-init>

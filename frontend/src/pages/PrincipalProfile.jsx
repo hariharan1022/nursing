@@ -123,7 +123,7 @@ const PrincipalProfile = () => {
                 </div>
             </div>
 
-            <section className="section py-10 md:py-20" style={{ background: 'var(--bg-light)', position: 'relative' }}>
+            <section className="section py-10 md:py-20 bg-mesh-premium">
                 <div className="container px-4">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
 

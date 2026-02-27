@@ -13,10 +13,10 @@
     --text-dark: #001C30;
     --text-muted: #475569;
     --text-light: #FFFFFF;
-    --bg-light: rgba(248, 250, 252, 0.6);
-    /* Semi-transparent to show pattern */
-    --bg-white: rgba(255, 255, 255, 0.85);
-    /* Glass-like effect */
+    --bg-light: #f8fafc;
+    /* Clean Slate 50 */
+    --bg-white: #ffffff;
+    /* Pure White */
     --card-bg: #FFFFFF;
     --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
     --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
@@ -31,8 +31,18 @@
     --nav-height: 80px;
     --nav-height-sticky: 70px;
     --medical-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='104' viewBox='0 0 60 104'%3E%3Cpath d='M0 26 L30 43.3 L60 26 M30 43.3 L30 78 M0 78 L30 95.3 L60 78 M30 95.3 L30 130 M0 78 L0 26 L30 8.7 L60 26 L60 78 L30 95.3 Z M30 8.7 L30 43.3' stroke='%23ffffff' stroke-width='1.5' stroke-opacity='0.15' fill='none'/%3E%3C/svg%3E");
-    --bg-light: rgba(248, 250, 252, 0.6);
-    --bg-white: rgba(255, 255, 255, 0.85);
+    --bg-light: #f8fafc;
+    --bg-white: #ffffff;
+}
+
+.bg-mesh-premium {
+    background-color: #f8fafc !important;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(212, 175, 55, 0.08) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(0, 43, 91, 0.05) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(212, 175, 55, 0.08) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(0, 43, 91, 0.05) 0px, transparent 50%) !important;
+    position: relative;
 }
 
 .font-cooper {
@@ -5631,10 +5641,10 @@ strong {
 
     nav#navbar,
     .header-wrapper.sticky nav {
-        background: #ffffff !important;
+        background: #fcfdfe !important;
         border-bottom: 1px solid #d7dde7 !important;
         backdrop-filter: none !important;
-        box-shadow: none !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important;
     }
 
     #navbar .nav-links a {
@@ -6506,15 +6516,44 @@ button[style*="background: var(--accent)"] {
     background: var(--accent) !important;
     color: var(--primary) !important;
     border: none !important;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3) !important;
+    transform: translateY(0);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+}
+
+.premium-cta-box .btn-primary:hover {
+    transform: translateY(-5px) scale(1.05) !important;
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.4) !important;
+    background: #e5c040 !important;
 }
 
 .premium-cta-box .btn-outline {
-    background: rgba(255, 255, 255, 0.05) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
     color: white !important;
-    border: 1.5px solid rgba(255, 255, 255, 0.2) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(10px) !important;
+    transition: all 0.4s ease !important;
 }
 
 .premium-cta-box .btn-outline:hover {
     background: white !important;
     color: var(--primary) !important;
+    border-color: white !important;
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Add a glowing accent at the bottom of the box */
+.premium-cta-box::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 100px;
+    background: radial-gradient(ellipse at bottom, var(--accent) 0%, transparent 70%);
+    opacity: 0.15;
+    filter: blur(40px);
+    pointer-events: none;
 }
