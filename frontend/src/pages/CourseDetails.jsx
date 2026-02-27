@@ -96,7 +96,7 @@ const CourseDetails = () => {
                 className="btn btn-primary magnetic"
                 style={{ padding: "15px 40px" }}
               >
-                View Full Syllabus & Details →
+                Departments & Syllabus Details →
               </Link>
             </div>
           </div>
@@ -162,9 +162,8 @@ const CourseDetails = () => {
                 marginBottom: "15px",
               }}
             >
-              Departments
+              Our specialized academic structure
             </h2>
-            <p className="text-muted">Our specialized academic structure</p>
           </div>
 
           <div
