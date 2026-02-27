@@ -11,6 +11,7 @@ import Faculty from './pages/Faculty';
 import ClubsAndCells from './pages/ClubsAndCells';
 import InfoCorner from './pages/InfoCorner';
 import Admissions from './pages/Admissions';
+import AdmissionForm from './pages/AdmissionForm';
 import Contact from './pages/Contact';
 import Feedback from './pages/Feedback';
 import Gallery from './pages/Gallery';
@@ -98,6 +99,7 @@ function AppContent() {
         <Route path="/clubs-and-cells" element={<ClubsAndCells />} />
         <Route path="/info-corner" element={<InfoCorner />} />
         <Route path="/admissions" element={<Admissions />} />
+        <Route path="/apply-now" element={<AdmissionForm />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/feedback" element={<Feedback />} />
         <Route path="/gallery" element={<Gallery />} />

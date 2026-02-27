@@ -43,7 +43,7 @@ const Home = () => {
             title: "Admissions Open " + new Date().getFullYear(),
             desc: "Join the premier nursing college in Pudukkottai District.",
             cta: "Apply Now",
-            link: "/admissions"
+            link: "/apply-now"
         },
         {
             img: `${import.meta.env.BASE_URL}photo/p5_files/banner5.jpeg`,
@@ -256,7 +256,7 @@ const Home = () => {
                                 Step into a rewarding career in healthcare with one of the most prestigious nursing institutions in Pudukkottai District.
                             </p>
                             <div className="home-cta-btn-group" style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                                <Link to="/admissions" className="btn btn-outline home-cta-btn" style={{ padding: '15px 38px', fontSize: '0.94rem', fontWeight: 900, minWidth: '300px' }}>Apply For Admission</Link>
+                                <Link to="/apply-now" className="btn btn-outline home-cta-btn" style={{ padding: '15px 38px', fontSize: '0.94rem', fontWeight: 900, minWidth: '300px' }}>Apply For Admission</Link>
                                 <Link to="/contact" className="btn btn-outline home-cta-btn" style={{ padding: '15px 38px', fontSize: '0.94rem', fontWeight: 900, minWidth: '300px' }}>Contact Office</Link>
                             </div>
                         </div>

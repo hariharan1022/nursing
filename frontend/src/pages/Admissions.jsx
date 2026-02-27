@@ -323,7 +323,7 @@ const Admissions = () => {
                                     <h4 className="text-2xl font-black text-primary mb-4">Ready to Begin?</h4>
                                     <p className="text-muted mb-8 font-medium">Download the prospectus or fill out our online inquiry form to get started with your application process.</p>
                                     <div className="flex flex-wrap gap-4 justify-center">
-                                        <Link to="/contact" className="btn btn-primary magnetic px-8 py-4">Inquire Online</Link>
+                                        <Link to="/apply-now" className="btn btn-primary magnetic px-8 py-4">Apply Online</Link>
                                     </div>
                                 </div>
                             </div>

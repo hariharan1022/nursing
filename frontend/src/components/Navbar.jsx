@@ -173,7 +173,7 @@ const Navbar = () => {
                                     </ul>
                                 )}
                             </div>
-                            <Link to="/admissions" className="apply-btn">
+                            <Link to="/apply-now" className="apply-btn">
                                 APPLY NOW
                             </Link>
 
@@ -283,7 +283,7 @@ const Navbar = () => {
                                     <li><Link to="/admissions#documents" onClick={closeMobileMenu}><i className="fas fa-file-alt"></i> Required Documents</Link></li>
                                     <li><Link to="/admissions#scholarships" onClick={closeMobileMenu}><i className="fas fa-graduation-cap"></i> Scholarships</Link></li>
                                     <li><Link to="/admissions#selection" onClick={closeMobileMenu}><i className="fas fa-user-check"></i> Selection Process</Link></li>
-                                    <li><Link to="/admissions#apply" onClick={closeMobileMenu}><i className="fas fa-edit"></i> Start Application</Link></li>
+                                    <li><Link to="/apply-now" onClick={closeMobileMenu}><i className="fas fa-edit"></i> Start Application</Link></li>
                                 </ul>
                             </li>
 
