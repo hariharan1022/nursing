@@ -6,30 +6,67 @@ const Footer = () => {
         <footer className="footer-section">
             <style>
                 {`
+                @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
                 .footer-section {
                     background: #001f4d;
                     color: white;
                     padding: 100px 0 30px;
                     position: relative;
                     overflow: hidden;
+                    font-family: 'Inter', sans-serif;
                 }
+
+                /* Layer 1: Moving Background Pattern */
                 .footer-section::before {
+                    content: '';
+                    position: absolute;
+                    top: -50px;
+                    left: -50px;
+                    right: -50px;
+                    bottom: -50px;
+                    background-image: var(--medical-pattern);
+                    background-size: 60px 104px;
+                    opacity: 0.05;
+                    animation: footerPatternDrift 60s linear infinite;
+                    pointer-events: none;
+                }
+
+                @keyframes footerPatternDrift {
+                    0% { transform: translate(0, 0); }
+                    100% { transform: translate(-60px, -104px); }
+                }
+
+                /* Layer 2: Aurora Glow Flow */
+                .footer-section::after {
                     content: '';
                     position: absolute;
                     top: 0;
                     left: 0;
                     width: 100%;
-                    height: 5px;
-                    background: #F5CD02;
+                    height: 100%;
+                    background: radial-gradient(circle at 10% 10%, rgba(245, 205, 2, 0.03) 0%, transparent 50%),
+                                radial-gradient(circle at 90% 90%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+                    animation: footerAurora 15s ease-in-out infinite alternate;
+                    pointer-events: none;
                 }
+
+                @keyframes footerAurora {
+                    0% { opacity: 0.3; transform: scale(1); }
+                    100% { opacity: 0.7; transform: scale(1.1); }
+                }
+
+                /* Text & Title Animations */
                 .f-title {
-                    color: #F5CD02;
-                    font-size: 1.2rem;
-                    font-weight: 700;
+                    color: #F5CD02 !important;
+                    font-size: 1.35rem !important;
+                    font-weight: 800 !important;
                     margin-bottom: 25px;
                     position: relative;
                     padding-bottom: 10px;
-                    font-family: 'Manrope', sans-serif;
+                    font-family: 'Playfair Display', serif !important;
+                    letter-spacing: -0.2px;
+                    display: inline-block;
                 }
                 .f-title::after {
                     content: '';
@@ -37,69 +74,164 @@ const Footer = () => {
                     bottom: 0;
                     left: 0;
                     width: 40px;
-                    height: 2px;
+                    height: 2.5px;
                     background: #F5CD02;
+                    transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
                 }
+                .footer-section:hover .f-title::after {
+                    width: 100%;
+                }
+
+                .footer-motto {
+                    font-family: 'Playfair Display', serif !important;
+                    font-style: italic !important;
+                    font-weight: 900 !important;
+                    color: #F5CD02 !important;
+                    display: block;
+                    font-size: 1.4rem !important;
+                    margin-bottom: 15px !important;
+                    letter-spacing: 0.5px;
+                    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+                    position: relative;
+                    line-height: 1.2;
+                    animation: mottoFloat 6s ease-in-out infinite;
+                }
+
+                @keyframes mottoFloat {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-5px); }
+                }
+
+                .footer-desc {
+                    color: rgba(255,255,255,0.85);
+                    line-height: 1.8;
+                    margin-bottom: 25px;
+                    font-size: 0.98rem;
+                    font-family: 'Inter', sans-serif;
+                    max-width: 320px;
+                }
+
                 .f-link {
                     color: rgba(255,255,255,0.7);
                     text-decoration: none;
-                    transition: all 0.3s ease;
-                    display: block;
-                    margin-bottom: 10px;
-                    font-size: 0.92rem;
-                    font-family: 'Manrope', sans-serif;
+                    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+                    display: flex; /* Changed from inline-block to flex for vertical stacking */
+                    align-items: center;
+                    margin-bottom: 12px;
+                    font-size: 0.94rem;
+                    position: relative;
+                    width: fit-content;
+                }
+                .f-link::before {
+                    content: '→';
+                    position: absolute;
+                    left: -20px;
+                    opacity: 0;
+                    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+                    color: #F5CD02;
+                    font-weight: 800;
                 }
                 .f-link:hover {
                     color: #F5CD02;
-                    transform: translateX(5px);
+                    padding-left: 25px;
+                    transform: scale(1.02);
                 }
+                .f-link:hover::before {
+                    left: 0;
+                    opacity: 1;
+                }
+
                 .f-contact-item {
                     display: flex;
-                    gap: 12px;
-                    margin-bottom: 15px;
-                    font-size: 0.9rem;
-                    color: rgba(255,255,255,0.8);
+                    gap: 15px;
+                    margin-bottom: 20px;
+                    font-size: 0.95rem;
+                    color: rgba(255,255,255,0.9);
+                    line-height: 1.6;
+                    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+                    padding: 12px;
+                    border-radius: 12px;
+                    background: rgba(255,255,255,0.03); 
+                    border: 1px solid rgba(255,255,255,0.05);
                 }
-                .f-contact-icon {
-                    color: #F5CD02;
-                    font-size: 1rem;
-                    margin-top: 3px;
+                .f-contact-item:hover {
+                    background: rgba(245, 205, 2, 0.08); /* Noticeable Golden Tint */
+                    border-color: rgba(245, 205, 2, 0.3);
+                    transform: translateY(-8px) scale(1.02);
+                    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
                 }
-                .social-icon {
+                .f-contact-icon-wrapper {
                     width: 38px;
                     height: 38px;
+                    background: rgba(245, 205, 2, 0.1);
+                    border: 1px solid rgba(245, 205, 2, 0.2);
+                    border-radius: 10px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+                }
+                .f-contact-item:hover .f-contact-icon-wrapper {
+                    background: #F5CD02;
+                    color: #001f4d;
+                    transform: rotate(12deg) scale(1.1);
+                }
+                .f-contact-item:hover .f-contact-icon {
+                    color: #001f4d;
+                }
+
+                .social-icon {
+                    width: 42px;
+                    height: 42px;
                     border-radius: 50%;
-                    background: rgba(255,255,255,0.08);
-                    border: 1px solid rgba(255,255,255,0.18);
+                    background: rgba(255,255,255,0.05);
+                    border: 1px solid rgba(255,255,255,0.15);
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     color: white;
-                    transition: all 0.3s ease;
+                    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
                     text-decoration: none;
+                    position: relative;
+                    overflow: hidden;
                 }
                 .social-icon:hover {
                     background: #F5CD02;
-                    transform: none;
+                    transform: translateY(-8px) scale(1.1);
                     color: #001739;
+                    box-shadow: 0 10px 20px rgba(245, 205, 2, 0.3);
                 }
+
                 .animated-text {
                     color: #F5CD02;
-                    font-weight: 700;
+                    font-weight: 800;
+                    background: linear-gradient(90deg, #F5CD02, #fff, #F5CD02);
+                    background-size: 200% auto;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    animation: shine 3s linear infinite;
                 }
+
+                @keyframes shine {
+                    to { background-position: 200% center; }
+                }
+
                 .affiliation-tag {
-                    padding: 6px 15px;
-                    background: rgba(255,255,255,0.05);
+                    padding: 8px 18px;
+                    background: rgba(255,255,255,0.04);
                     border: 1px solid rgba(255,255,255,0.1);
                     border-radius: 50px;
                     font-size: 0.8rem;
-                    color: rgba(255,255,255,0.7);
-                    transition: all 0.3s ease;
+                    color: rgba(255,255,255,0.6);
+                    transition: all 0.4s ease;
                     text-decoration: none;
                 }
                 .affiliation-tag:hover {
+                    background: rgba(245, 205, 2, 0.1);
                     border-color: #F5CD02;
                     color: #F5CD02;
+                    transform: scale(1.05);
                 }
                 .footer-bottom {
                     margin-top: 40px;
@@ -112,8 +244,25 @@ const Footer = () => {
                     padding-top: 25px;
                 }
 
+                .footer-motto {
+                    font-family: 'Playfair Display', serif;
+                    font-style: italic;
+                    font-weight: 800;
+                    color: #D4AF37;
+                    display: block;
+                    font-size: 1.25rem;
+                    margin-bottom: 12px;
+                    letter-spacing: 0.5px;
+                    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+                    position: relative;
+                }
+
                 /* Mobile Layout Redesign */
                 @media (max-width: 768px) {
+                    .footer-motto {
+                        font-size: 1.05rem;
+                        margin-bottom: 6px;
+                    }
                     .footer-section {
                         padding: 30px 15px 20px;
                     }
@@ -194,8 +343,8 @@ const Footer = () => {
                 <div className="desktop-grid grid grid-cols-4 md-grid-cols-2" style={{ gap: '40px' }}>
                     <div>
                         <img src={HeaderLogo} alt="MZCN Logo" style={{ height: '80px', width: 'auto', marginBottom: '25px', borderRadius: '8px' }} />
-                        <p style={{ color: 'rgba(255,255,255,0.86)', lineHeight: 1.8, marginBottom: '25px', fontSize: '0.95rem' }}>
-                            <span style={{ fontFamily: "'Playfair Display', serif", fontStyle: 'italic', fontWeight: 700, color: '#D4AF37', display: 'block', fontSize: '1.15rem', marginBottom: '8px' }}>"To Make Man Whole."</span>
+                        <p className="footer-desc">
+                            <span className="footer-motto">"To Make Man Whole."</span>
                             Providing world-class nursing education with clinical excellence for over <span className="animated-text">17 years</span>.
                         </p>
                         <div style={{ display: 'flex', gap: '15px' }}>
@@ -219,40 +368,50 @@ const Footer = () => {
                     <div>
                         <h4 className="f-title">Contact Us</h4>
                         <div className="f-contact-item">
-                            <i className="fas fa-map-marker-alt f-contact-icon"></i>
-                            <span>Lena Vilakku, Pilivalam P.O, Thirumayam Tk.<br />Pudukkottai Dt - 622507<br />Tamil Nadu, INDIA</span>
+                            <div className="f-contact-icon-wrapper">
+                                <i className="fas fa-map-marker-alt f-contact-icon"></i>
+                            </div>
+                            <span style={{ fontSize: '0.92rem', letterSpacing: '0.2px' }}>Lena Vilakku, Pilivalam P.O, Thirumayam Tk.<br />Pudukkottai Dt - 622507<br />Tamil Nadu, INDIA</span>
                         </div>
                         <div className="f-contact-item">
-                            <i className="fas fa-envelope f-contact-icon"></i>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
-                                <a href="mailto:info@mzcn.in" className="f-link" style={{ margin: 0, fontSize: '0.85rem' }}>info@mzcn.in</a>
-                                <a href="mailto:principal@mzcn.in" className="f-link" style={{ margin: 0, fontSize: '0.85rem' }}>principal@mzcn.in</a>
-                                <a href="mailto:viceprincipal@mzcn.in" className="f-link" style={{ margin: 0, fontSize: '0.85rem' }}>viceprincipal@mzcn.in</a>
-                                <a href="mailto:jobs@mzcn.in" className="f-link" style={{ margin: 0, fontSize: '0.85rem' }}>jobs@mzcn.in</a>
+                            <div className="f-contact-icon-wrapper" style={{ alignSelf: 'flex-start' }}>
+                                <i className="fas fa-envelope f-contact-icon"></i>
+                            </div>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                                <a href="mailto:info@mzcn.in" className="f-link" style={{ margin: 0, fontSize: '0.88rem', fontWeight: 500 }}>info@mzcn.in</a>
+                                <a href="mailto:principal@mzcn.in" className="f-link" style={{ margin: 0, fontSize: '0.88rem', fontWeight: 500 }}>principal@mzcn.in</a>
+                                <a href="mailto:viceprincipal@mzcn.in" className="f-link" style={{ margin: 0, fontSize: '0.88rem', fontWeight: 500 }}>viceprincipal@mzcn.in</a>
+                                <a href="mailto:jobs@mzcn.in" className="f-link" style={{ margin: 0, fontSize: '0.88rem', fontWeight: 500 }}>jobs@mzcn.in</a>
                             </div>
                         </div>
                     </div>
 
                     <div>
                         <h4 className="f-title">Support & Admission</h4>
-                        <div className="f-contact-item" style={{ marginBottom: '15px', background: 'rgba(255,255,255,0.03)', padding: '10px', borderRadius: '8px' }}>
-                            <i className="fas fa-user-tie f-contact-icon"></i>
+                        <div className="f-contact-item" style={{ marginBottom: '15px' }}>
+                            <div className="f-contact-icon-wrapper">
+                                <i className="fas fa-user-tie f-contact-icon"></i>
+                            </div>
                             <div>
                                 <p style={{ margin: 0, fontSize: '0.82rem', fontWeight: 700, color: '#F5CD02', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Principal</p>
                                 <p style={{ margin: '2px 0', fontSize: '0.92rem', fontWeight: 600 }}>+91 99655 20316</p>
                                 <p style={{ margin: 0, fontSize: '0.72rem', opacity: 0.6 }}><i className="far fa-clock" style={{ marginRight: '4px' }}></i>9:00 AM – 4:30 PM</p>
                             </div>
                         </div>
-                        <div className="f-contact-item" style={{ marginBottom: '20px', background: 'rgba(255,255,255,0.03)', padding: '10px', borderRadius: '8px' }}>
-                            <i className="fas fa-user-shield f-contact-icon"></i>
+                        <div className="f-contact-item" style={{ marginBottom: '20px' }}>
+                            <div className="f-contact-icon-wrapper">
+                                <i className="fas fa-user-shield f-contact-icon"></i>
+                            </div>
                             <div>
                                 <p style={{ margin: 0, fontSize: '0.82rem', fontWeight: 700, color: '#F5CD02', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Vice Principal</p>
                                 <p style={{ margin: '2px 0', fontSize: '0.92rem', fontWeight: 600 }}>+91 99655 66664</p>
                                 <p style={{ margin: 0, fontSize: '0.72rem', opacity: 0.6 }}><i className="far fa-clock" style={{ marginRight: '4px' }}></i>9:00 AM – 4:30 PM</p>
                             </div>
                         </div>
-                        <div className="f-contact-item" style={{ background: 'rgba(255,255,255,0.03)', padding: '10px', borderRadius: '8px' }}>
-                            <i className="fas fa-headset f-contact-icon"></i>
+                        <div className="f-contact-item">
+                            <div className="f-contact-icon-wrapper">
+                                <i className="fas fa-headset f-contact-icon"></i>
+                            </div>
                             <div>
                                 <p style={{ margin: 0, fontSize: '0.82rem', fontWeight: 700, color: '#F5CD02', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Admission Enquiry</p>
                                 <p style={{ margin: '2px 0', fontSize: '0.92rem', fontWeight: 600 }}>+91 75021 73000</p>
@@ -268,7 +427,7 @@ const Footer = () => {
                     <div className="mobile-brand-row">
                         <img src={HeaderLogo} alt="MZCN Logo" className="m-logo" style={{ height: '60px', width: 'auto', borderRadius: '6px' }} />
                         <p className="m-brand-text">
-                            <span style={{ fontFamily: "'Playfair Display', serif", fontStyle: 'italic', fontWeight: 700, color: '#D4AF37', display: 'block', fontSize: '0.95rem', marginBottom: '4px' }}>"To Make Man Whole."</span>
+                            <span className="footer-motto">"To Make Man Whole."</span>
                             Providing world-class nursing education with clinical excellence for over <span className="animated-text">17 years</span>.
                         </p>
                     </div>
