@@ -6,54 +6,75 @@ const Faculty = () => {
         window.scrollTo(0, 0);
     }, []);
 
+    const bundledFacultyPhotos = import.meta.glob('../assets/faculty/*.{png,jpg,jpeg,webp}', { eager: true });
+
+    const normalizePhotoKey = (value = '') => value.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+    const facultyPhotoByKey = Object.entries(bundledFacultyPhotos).reduce((acc, [path, module]) => {
+        const fileName = path.split('/').pop().replace(/\.[^/.]+$/, '');
+        acc[normalizePhotoKey(fileName)] = module.default;
+        return acc;
+    }, {});
+
+    const getStaffPhoto = (staff) => {
+        if (staff.photo) {
+            return `${import.meta.env.BASE_URL}${encodeURI(staff.photo)}`;
+        }
+        const resolvedPhotoKey = staff.photoKey || staff.name;
+        if (!resolvedPhotoKey) {
+            return null;
+        }
+        return facultyPhotoByKey[normalizePhotoKey(resolvedPhotoKey)] || null;
+    };
+
     const departments = [
         {
             name: '1. Child Health Nursing',
             staff: [
-                { name: 'Prof. Dr. Jasmine Sheela H. M.', qual: 'M.Sc. (N), Ph.D., R.N.R.M.', post: 'Professor cum Principal' },
-                { name: 'Prof. Sathiyaa N.', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Professor & Head of the Department' },
-                { name: 'Mrs. Anthonyasha J.', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Assistant Professor' }
+                { name: 'Prof. Dr. Jasmine Sheela H. M', qual: 'M.Sc. (N), Ph.D., R.N.R.M.', post: 'Professor cum Principal', photo: 'photo/PRINCIPAL.png' },
+                { name: 'Prof. Sathiya N', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Professor & Head of the Department', photoKey: 'Prof. Sathiya N' },
+                { name: 'Mrs. Anthony Asha J', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Assistant Professor', photoKey: 'Mrs. Anthony Asha J' }
             ]
         },
         {
             name: '2. Mental Health Nursing',
             staff: [
-                { name: 'Prof. Dr. Jerin Kumar J.', qual: 'M.Sc. (N), Ph.D., M.Sc. (Psy.Tpy & Cou)., R.N.R.M.', post: 'Professor cum Vice Principal & Head of the Department' },
-                { name: 'Prof. Unaisy Vinolin', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Professor' },
-                { name: 'Ms. Devakirubai Daniya P.', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor' }
+                { name: 'Prof. Dr. Jerin Kumar J', qual: 'M.Sc. (N), Ph.D., M.Sc. (Psy.Tpy & Cou)., R.N.R.M.', post: 'Professor cum Vice Principal & Head of the Department', photo: 'photo/Vice Principal.png' },
+                { name: 'Prof. Unaisy Vinolin', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Professor', photoKey: 'Prof. Unaisy Vinolin' },
+                { name: 'Ms. Devakirubai Daniya P', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor', photoKey: 'Ms. Devakirubai Daniya', photoFit: 'contain', photoBg: '#ffffff' }
             ]
         },
         {
             name: '3. Adult Health Nursing',
             staff: [
-                { name: 'Mrs. Nagajothi K.', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Associate Professor & Head of the Department' },
-                { name: 'Mr. Sundar V.', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Senior Tutor' },
-                { name: 'Ms. Yogeshwari R.', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor' },
-                { name: 'Ms. Anitha P.', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor' }
+                { name: 'Mrs. Nagajothi K', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Associate Professor & Head of the Department' },
+                { name: 'Mr. Sundar V', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Senior Tutor', photoKey: 'Mr. Sundar V' },
+                { name: 'Ms. Yogeshwari R', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor', photoKey: 'Mrs. Yogeshwari R' },
+                { name: 'Ms. Anitha P', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor', photoKey: 'Ms. Anitha P' }
             ]
         },
         {
             name: '4. Fundamentals of Nursing',
             staff: [
-                { name: 'Mrs. Sivakami G.', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Assistant Professor & Head of the Department' },
-                { name: 'Mrs. Prithika R.', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor' },
-                { name: 'Mrs. Balasundari D.', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor' },
-                { name: 'Mrs. Viveka M.', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor' }
+                { name: 'Mrs. Sivakami G', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Assistant Professor & Head of the Department', photoKey: 'Mrs. Sivakami G' },
+                { name: 'Mrs. Prithika R', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor', photoKey: 'Mrs. Prithika R' },
+                { name: 'Mrs. Bala Sundari D', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor', photoKey: 'Mrs. Bala Sundari D' },
+                { name: 'Mrs. Vivekka M', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor', photoKey: 'Mrs. Vivekka M' }
             ]
         },
         {
             name: '5. Community Health Nursing',
             staff: [
-                { name: 'Mrs. Saraswathy K.', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Assistant Professor & Head of the Department' },
-                { name: 'Mrs. Mariammal K.', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor' },
-                { name: 'Mr. Jabez Monison J.', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor' }
+                { name: 'Mrs. Saraswathy K', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Assistant Professor & Head of the Department', photoKey: 'Mrs. Saraswathy K' },
+                { name: 'Mrs. Mariyammal K', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor', photoKey: 'Mrs. Mariyammal K' },
+                { name: 'Mr. Jabez Monison J', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor', photoKey: 'Mr. Jabez Monison J' }
             ]
         },
         {
             name: '6. Obstetrics & Gynaecological Nursing',
             staff: [
-                { name: 'Mrs. Sutha P.', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Assistant Professor & Head of the Department' },
-                { name: 'Mrs. Rajeswari', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor' }
+                { name: 'Mrs. Sutha P', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Assistant Professor & Head of the Department', photoKey: 'Mrs. Sutha P' },
+                { name: 'Mrs. Rajeswari M', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor', photoKey: 'Rajeswari M' }
             ]
         }
     ];
@@ -176,22 +197,46 @@ const Faculty = () => {
                                             </tr>
                                         </thead>
                                         <tbody className="divide-y divide-slate-50">
-                                            {dept.staff.map((s, i) => (
-                                                <tr key={i} className="hover:bg-slate-50 transition-colors group">
-                                                    <td className="px-6 py-5 text-sm font-black text-slate-300">0{i + 1}</td>
-                                                    <td className="px-6 py-5">
-                                                        <div className="font-bold text-base group-hover:translate-x-1 transition-transform" style={{ color: 'var(--primary)' }}>{s.name}</div>
-                                                    </td>
-                                                    <td className="px-6 py-5">
-                                                        <span className="text-sm font-bold text-slate-500">{s.qual}</span>
-                                                    </td>
-                                                    <td className="px-6 py-5">
-                                                        <span className="px-4 py-1.5 bg-blue-50 text-indigo-900 text-[10px] font-black rounded-lg uppercase tracking-wider group-hover:bg-accent group-hover:text-primary transition-colors">
-                                                            {s.post}
-                                                        </span>
-                                                    </td>
-                                                </tr>
-                                            ))}
+                                            {dept.staff.map((s, i) => {
+                                                const staffPhoto = getStaffPhoto(s);
+                                                return (
+                                                    <tr key={i} className="hover:bg-slate-50 transition-colors group">
+                                                        <td className="px-6 py-5 text-sm font-black text-slate-300">0{i + 1}</td>
+                                                        <td className="px-6 py-5">
+                                                            <div className="flex items-center gap-3 min-w-[260px]">
+                                                                {staffPhoto ? (
+                                                                    <img
+                                                                        src={staffPhoto}
+                                                                        alt={s.name}
+                                                                        className={`w-14 h-14 border border-slate-200 shadow-sm shrink-0 ${s.photoShape === 'square' ? 'rounded-xl' : 'rounded-full'}`}
+                                                                        style={{
+                                                                            objectFit: s.photoFit || 'cover',
+                                                                            objectPosition: s.photoPosition || 'center 18%',
+                                                                            transform: `scale(${s.photoScale || 1})`,
+                                                                            transformOrigin: 'center',
+                                                                            backgroundColor: s.photoBg || '#fff'
+                                                                        }}
+                                                                        loading="lazy"
+                                                                    />
+                                                                ) : (
+                                                                    <div className="w-14 h-14 rounded-full border border-slate-200 bg-slate-100 text-slate-400 flex items-center justify-center shrink-0">
+                                                                        <i className="fas fa-user text-sm"></i>
+                                                                    </div>
+                                                                )}
+                                                                <div className="font-bold text-base group-hover:translate-x-1 transition-transform" style={{ color: 'var(--primary)' }}>{s.name}</div>
+                                                            </div>
+                                                        </td>
+                                                        <td className="px-6 py-5">
+                                                            <span className="text-sm font-bold text-slate-500">{s.qual}</span>
+                                                        </td>
+                                                        <td className="px-6 py-5">
+                                                            <span className="px-4 py-1.5 bg-blue-50 text-indigo-900 text-[10px] font-black rounded-lg uppercase tracking-wider group-hover:bg-accent group-hover:text-primary transition-colors">
+                                                                {s.post}
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                );
+                                            })}
                                         </tbody>
                                     </table>
                                 </div>

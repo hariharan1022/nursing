@@ -23,6 +23,7 @@ import Research from './pages/Research';
 import AcademicCalendar from './pages/AcademicCalendar';
 import PrincipalProfile from './pages/PrincipalProfile';
 import VicePrincipalProfile from './pages/VicePrincipalProfile';
+import AlumniVoices from './pages/AlumniVoices';
 
 // Component to scroll to top on route change
 const ScrollToTop = () => {
@@ -100,6 +101,7 @@ function AppContent() {
         <Route path="/faculty" element={<Faculty />} />
         <Route path="/clubs-and-cells" element={<ClubsAndCells />} />
         <Route path="/info-corner" element={<InfoCorner />} />
+        <Route path="/alumni-voices" element={<AlumniVoices />} />
         <Route path="/admissions" element={<Admissions />} />
         <Route path="/apply-now" element={<AdmissionForm />} />
         <Route path="/contact" element={<Contact />} />

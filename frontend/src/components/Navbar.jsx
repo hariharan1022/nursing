@@ -31,10 +31,11 @@ const Navbar = () => {
 
         { title: 'Clubs & Cells', path: '/clubs-and-cells', keywords: 'clubs cells activities extracurricular' },
         { title: 'Information Corner', path: '/info-corner', keywords: 'info corner information news' },
+        { title: 'Upcoming Events', path: '/info-corner#upcoming', keywords: 'upcoming events blood donation industrial visit water purification sewage treatment' },
         { title: 'Announcements', path: '/info-corner#announcements', keywords: 'announcements notice' },
         { title: 'News & Events', path: '/info-corner#news', keywords: 'news events happenings' },
         { title: 'Rank Holders', path: '/info-corner#achievements', keywords: 'rank holders achievements toppers' },
-        { title: 'Alumni Voices', path: '/info-corner#alumni', keywords: 'alumni voices success stories testimonials' },
+        { title: 'Alumni Voices', path: '/alumni-voices', keywords: 'alumni voices success stories testimonials' },
         { title: 'Current Openings', path: '/careers', keywords: 'careers jobs recruitment vacancy current openings' },
         { title: 'Job Application', path: '/apply-job', keywords: 'job application apply work' },
         { title: 'Admissions', path: '/admissions', keywords: 'admissions apply enrollment' },
@@ -249,10 +250,11 @@ const Navbar = () => {
                                     <span className="nav-label"><i className="fas fa-newspaper nav-icon-badge" aria-hidden="true"></i><span>Info Corner</span></span> <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'updates' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                                 </NavLink>
                                 <ul className={`dropdown ${activeDropdown === 'updates' ? 'active-mobile' : ''}`}>
+                                    <li><Link to="/info-corner#upcoming" onClick={closeMobileMenu}><i className="fas fa-calendar-alt"></i> Upcoming Events</Link></li>
                                     <li><Link to="/info-corner#announcements" onClick={closeMobileMenu}><i className="fas fa-bullhorn"></i> Announcements</Link></li>
                                     <li><Link to="/info-corner#news" onClick={closeMobileMenu}><i className="fas fa-newspaper"></i> News & Events</Link></li>
                                     <li><Link to="/info-corner#achievements" onClick={closeMobileMenu}><i className="fas fa-trophy"></i> Rank Holders</Link></li>
-                                    <li><Link to="/info-corner#alumni" onClick={closeMobileMenu}><i className="fas fa-user-graduate"></i> Alumni Voices</Link></li>
+                                    <li><Link to="/alumni-voices" onClick={closeMobileMenu}><i className="fas fa-user-graduate"></i> Alumni Voices</Link></li>
                                     <li><Link to="/careers" onClick={closeMobileMenu}><i className="fas fa-briefcase"></i> Current Openings</Link></li>
                                     <li><Link to="/apply-job" onClick={closeMobileMenu}><i className="fas fa-id-card"></i> Job Application</Link></li>
                                 </ul>
