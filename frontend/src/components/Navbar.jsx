@@ -289,8 +289,8 @@ const Navbar = () => {
                                 </ul>
                             </li>
 
-                            <li className={`reveal-item ${activeDropdown === 'contact' ? 'dropdown-open' : ''}`} style={{ transitionDelay: '0.4s' }}>
-                                <NavLink to="/contact" onClick={(e) => toggleDropdown(e, 'contact')}>
+                            <li className="reveal-item" style={{ transitionDelay: '0.4s' }}>
+                                <NavLink to="/contact" onClick={closeMobileMenu}>
                                     <span className="nav-label"><i className="fas fa-phone-alt nav-icon-badge" aria-hidden="true"></i><span>Contact</span></span>
                                 </NavLink>
                             </li>
