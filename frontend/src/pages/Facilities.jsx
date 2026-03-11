@@ -136,7 +136,7 @@ const ImageGallery = ({ images }) => {
 
     return (
         <>
-            <div className="gallery-grid mt-8" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))' }}>
+            <div className="gallery-grid mt-8" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))', gap: '1rem' }}>
                 {images.map((img, index) => (
                     <div
                         key={index}
@@ -443,7 +443,7 @@ const Facilities = () => {
                                 </div>
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-stagger" data-reveal-init>
+                            <div className="columns-1 md:columns-2 lg:columns-3 gap-8 reveal-stagger" data-reveal-init>
                                 {[
                                     { t: "Fundamentals of Nursing", d: "Core clinical skill rehearsals and basic nursing procedures on high-fidelity manikins.", icon: Stethoscope, imgs: fundamentalsImages },
                                     { t: "Adult Health Nursing", d: "Sophisticated simulation of intensive care and advanced medical-surgical protocols.", icon: Activity, imgs: adultHealthImages },
@@ -455,7 +455,7 @@ const Facilities = () => {
                                     { t: "Microbiology Lab", d: "Clinical pathology, staining techniques, and advanced diagnostic microscopy.", icon: Microscope },
                                     { t: "Anatomy & Physiology", d: "An exhaustive museum of biological specimens, intricate models, and skeletal systems.", icon: Landmark, imgs: anatomyImages }
                                 ].map((lab, i) => (
-                                    <div key={i} className="premium-card p-8 shine-effect group transition-all duration-300 flex flex-col">
+                                    <div key={i} className="premium-card p-8 shine-effect group transition-all duration-300 flex flex-col break-inside-avoid mb-8 shadow-md hover:shadow-xl">
                                         <div className="flex flex-col gap-6 flex-grow">
                                             <div className="w-16 h-16 flex-shrink-0 flex items-center justify-center bg-slate-50 rounded-2xl border border-slate-100 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-sm">
                                                 <lab.icon size={30} className="transition-transform group-hover:scale-110" />
