@@ -93,6 +93,7 @@ const Feedback = () => {
 
                                 <form action="https://formsubmit.co/info@mzcn.in" method="POST">
                                     <input type="hidden" name="_subject" value="New General Feedback - MZCN" />
+                                    <input type="hidden" name="_next" value={window.location.origin + window.location.pathname + '#/feedback?status=success'} />
                                     <div className="form-group-styled">
                                         <label className="form-label-styled">Email <span style={{ color: '#d93025' }}>*</span></label>
                                         <input type="email" name="email" className="form-control-styled" placeholder="Your email" required />
@@ -113,6 +114,7 @@ const Feedback = () => {
 
                                 <form action="https://formsubmit.co/info@mzcn.in" method="POST">
                                     <input type="hidden" name="_subject" value="New Staff/Student Satisfaction Feedback - MZCN" />
+                                    <input type="hidden" name="_next" value={window.location.origin + window.location.pathname + '#/feedback?status=success'} />
                                     <div className="form-group-styled">
                                         <label className="form-label-styled">I am a: <span style={{ color: '#d93025' }}>*</span></label>
                                         <select name="role" required className="form-control-styled">
@@ -163,6 +165,7 @@ const Feedback = () => {
 
                                 <form action="https://formsubmit.co/info@mzcn.in" method="POST">
                                     <input type="hidden" name="_subject" value="New Course Academic Feedback - MZCN" />
+                                    <input type="hidden" name="_next" value={window.location.origin + window.location.pathname + '#/feedback?status=success'} />
                                     <div className="form-group-styled">
                                         <label className="form-label-styled">Course Name <span style={{ color: '#d93025' }}>*</span></label>
                                         <input type="text" name="course_name" placeholder="B.Sc. Nursing" required className="form-control-styled" />
@@ -209,6 +212,7 @@ const Feedback = () => {
 
                                 <form action="https://formsubmit.co/info@mzcn.in" method="POST">
                                     <input type="hidden" name="_subject" value="New Hostel Feedback - MZCN" />
+                                    <input type="hidden" name="_next" value={window.location.origin + window.location.pathname + '#/feedback?status=success'} />
                                     <div className="form-group-styled">
                                         <label className="form-label-styled">Room Number / Block <span style={{ color: '#d93025' }}>*</span></label>
                                         <input type="text" name="room_block" placeholder="Your answer" required className="form-control-styled" />
@@ -254,6 +258,7 @@ const Feedback = () => {
 
                                 <form action="https://formsubmit.co/info@mzcn.in" method="POST">
                                     <input type="hidden" name="_subject" value="New Institutional Quality Feedback - MZCN" />
+                                    <input type="hidden" name="_next" value={window.location.origin + window.location.pathname + '#/feedback?status=success'} />
                                     <div className="form-group-styled">
                                         <label className="form-label-styled">Rate the following (1-5 Scale): <span style={{ color: '#d93025' }}>*</span></label>
                                         <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>

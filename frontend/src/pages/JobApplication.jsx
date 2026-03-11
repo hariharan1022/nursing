@@ -91,7 +91,7 @@ const JobApplication = () => {
                     <form action="https://formsubmit.co/info@mzcn.in" method="POST">
                         {/* Configuration for FormSubmit */}
                         <input type="hidden" name="_subject" value={`Job Application: ${jobTitle} - MZCN`} />
-                        <input type="hidden" name="_next" value={window.location.origin + '/nursing/#/careers?status=success'} />
+                        <input type="hidden" name="_next" value={window.location.origin + window.location.pathname + '#/careers?status=success'} />
                         <input type="hidden" name="_template" value="table" />
                         <input type="hidden" name="applied_for" value={jobTitle} />
 
