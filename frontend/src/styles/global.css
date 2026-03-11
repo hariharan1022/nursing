@@ -714,7 +714,7 @@ body.header-sticky-active {
 .main-header {
     background: #ffffff;
     padding: 5px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 2px solid var(--primary) !important;
     position: relative;
     z-index: 1000;
     transition: all 0.3s ease;
@@ -724,6 +724,8 @@ body.header-sticky-active {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 100% !important;
+    padding: 0 40px;
 }
 
 .header-actions {
@@ -826,7 +828,7 @@ body.header-sticky-active {
 .header-wrapper.sticky .main-header {
     padding: 3px 0;
     box-shadow: none;
-    border-bottom: none;
+    border-bottom: 2px solid var(--primary) !important;
 }
 
 .header-wrapper.sticky .logo img {
@@ -1111,7 +1113,7 @@ nav#navbar {
 }
 
 .nav-main-logo {
-    height: 70px !important;
+    height: 55px !important;
     /* Larger height for the new combined logo */
     max-width: 350px;
     object-fit: contain;
