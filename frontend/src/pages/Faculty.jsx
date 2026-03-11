@@ -20,11 +20,10 @@ const Faculty = () => {
         if (staff.photo) {
             return `${import.meta.env.BASE_URL}${encodeURI(staff.photo)}`;
         }
-        const resolvedPhotoKey = staff.photoKey || staff.name;
-        if (!resolvedPhotoKey) {
+        if (!staff.photoKey) {
             return null;
         }
-        return facultyPhotoByKey[normalizePhotoKey(resolvedPhotoKey)] || null;
+        return facultyPhotoByKey[normalizePhotoKey(staff.photoKey)] || null;
     };
 
     const departments = [
@@ -47,7 +46,7 @@ const Faculty = () => {
         {
             name: '3. Adult Health Nursing',
             staff: [
-                { name: 'Mrs. Nagajothi K', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Associate Professor & Head of the Department' },
+                { name: 'Mrs. Nagajothi K', qual: 'M.Sc. (N)., R.N.R.M.', post: 'Associate Professor & Head of the Department', photoKey: 'Mrs.Nagajothi k' },
                 { name: 'Mr. Sundar V', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Senior Tutor', photoKey: 'Mr. Sundar V' },
                 { name: 'Ms. Yogeshwari R', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor', photoKey: 'Mrs. Yogeshwari R' },
                 { name: 'Ms. Anitha P', qual: 'B.Sc. (N)., R.N.R.M.', post: 'Tutor', photoKey: 'Ms. Anitha P' }

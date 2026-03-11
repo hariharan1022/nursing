@@ -5634,7 +5634,7 @@ strong {
 
 .main-header {
     background: #ffffff !important;
-    border-bottom: 1px solid #d7dde7 !important;
+    border-bottom: 3px solid var(--primary) !important;
     backdrop-filter: none !important;
     box-shadow: none !important;
 }
