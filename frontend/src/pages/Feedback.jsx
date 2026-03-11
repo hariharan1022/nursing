@@ -91,7 +91,7 @@ const Feedback = () => {
                                 <p style={{ marginBottom: '20px', color: 'var(--text-muted)', fontSize: '0.9rem' }}>We would love to hear your thoughts or feedback on how we can improve your experience!</p>
                                 <p style={{ color: '#d93025', fontSize: '0.8rem', marginBottom: '20px' }}>* Indicates required question</p>
 
-                                <form action="https://formsubmit.co/hariharanmahesh34@gmail.com" method="POST">
+                                <form action="https://formsubmit.co/info@mzcn.in" method="POST">
                                     <input type="hidden" name="_subject" value="New General Feedback - MZCN" />
                                     <div className="form-group-styled">
                                         <label className="form-label-styled">Email <span style={{ color: '#d93025' }}>*</span></label>
