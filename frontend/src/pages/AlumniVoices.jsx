@@ -11,6 +11,7 @@ import alumniAnishImg from '../assets/updates/Alumni/Anish.png';
 import alumniAnithaImg from '../assets/updates/Alumni/Anitha.jpeg';
 import alumniManjulaImg from '../assets/updates/Alumni/Manjula.jpeg';
 import alumniPaulImg from '../assets/updates/Alumni/Paul Daril.jpeg';
+import alumniNavasakthivelImg from '../assets/updates/Alumni/Navasakthivel.jpeg'
 
 const alumniVoices = [
     {
@@ -108,6 +109,14 @@ const alumniVoices = [
         hospital: 'Dr. Rela Institute and Medical Centre, Chennai',
         image: alumniSivaImg,
         quote: 'My journey at MZCN from 2020 to 2025 has been one of growth, learning, and unforgettable memories. The supportive faculty and disciplined academic environment shaped both my professional skills and personal values. Clinical exposure and hands-on training at MZ gave me the confidence to face real-world challenges. Beyond academics, friendships and campus life made these years truly special. Today, I, Sivashanmugam, working as a Cath Lab Scrub Nurse at Dr. Rela Institute and Medical Centre, Chennai, proudly carry the lessons learned at MZCN. MZ will always remain the foundation of my nursing career and success.'
+    },
+    {
+        name: 'Mr. Navasakthivel',
+        batch: 'Innovators (2011 - 2015)',
+        designation: 'Staff Nurse',
+        hospital: 'Big Security Force hospital,Saudi Arabia',
+        image: alumniNavasakthivelImg,
+        quote: "When I first entered this gate, I was having so much fear because of my Tamil medium background. But my professors and friends gave me full support and encouraged me to speak without any hesitation. Today I am working in a big Security Force hospital, Saudi Arabia as a registered staff nurse, and all the credit goes to my college only. Really, I can't forget those golden days in my life. Always, Thankful for my college."
     }
 ];
 
