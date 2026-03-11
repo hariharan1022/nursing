@@ -88,7 +88,7 @@ const JobApplication = () => {
 
             <div className="container">
                 <div className="form-card reveal active">
-                    <form action="https://formsubmit.co/hariharanmahesh34@gmail.com" method="POST">
+                    <form action="https://formsubmit.co/info@mzcn.in" method="POST">
                         {/* Configuration for FormSubmit */}
                         <input type="hidden" name="_subject" value={`Job Application: ${jobTitle} - MZCN`} />
                         <input type="hidden" name="_next" value={window.location.origin + '/nursing/#/careers?status=success'} />

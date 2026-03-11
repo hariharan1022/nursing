@@ -91,7 +91,7 @@ const Feedback = () => {
                                 <p style={{ marginBottom: '20px', color: 'var(--text-muted)', fontSize: '0.9rem' }}>We would love to hear your thoughts or feedback on how we can improve your experience!</p>
                                 <p style={{ color: '#d93025', fontSize: '0.8rem', marginBottom: '20px' }}>* Indicates required question</p>
 
-                                <form action="https://formsubmit.co/hariharanmahesh34@gmail.com" method="POST">
+                                <form action="https://formsubmit.co/info@mzcn.in" method="POST">
                                     <input type="hidden" name="_subject" value="New General Feedback - MZCN" />
                                     <div className="form-group-styled">
                                         <label className="form-label-styled">Email <span style={{ color: '#d93025' }}>*</span></label>
@@ -111,7 +111,7 @@ const Feedback = () => {
                                 <h2 style={{ color: 'var(--primary)', marginBottom: '5px' }}><i className="fas fa-user-friends"></i> Staff & Student Satisfaction</h2>
                                 <p style={{ marginBottom: '20px', color: 'var(--text-muted)', fontSize: '0.9rem' }}>Help us understand how we can support our community better.</p>
 
-                                <form action="https://formsubmit.co/hariharanmahesh34@gmail.com" method="POST">
+                                <form action="https://formsubmit.co/info@mzcn.in" method="POST">
                                     <input type="hidden" name="_subject" value="New Staff/Student Satisfaction Feedback - MZCN" />
                                     <div className="form-group-styled">
                                         <label className="form-label-styled">I am a: <span style={{ color: '#d93025' }}>*</span></label>
@@ -161,7 +161,7 @@ const Feedback = () => {
                                 <h2 style={{ color: 'var(--primary)', marginBottom: '5px' }}><i className="fas fa-graduation-cap"></i> Course & Academic Feedback</h2>
                                 <p style={{ marginBottom: '20px', color: 'var(--text-muted)', fontSize: '0.9rem' }}>Your academic feedback is crucial for maintaining our high educational standards.</p>
 
-                                <form action="https://formsubmit.co/hariharanmahesh34@gmail.com" method="POST">
+                                <form action="https://formsubmit.co/info@mzcn.in" method="POST">
                                     <input type="hidden" name="_subject" value="New Course Academic Feedback - MZCN" />
                                     <div className="form-group-styled">
                                         <label className="form-label-styled">Course Name <span style={{ color: '#d93025' }}>*</span></label>
@@ -207,7 +207,7 @@ const Feedback = () => {
                                 <h2 style={{ color: 'var(--primary)', marginBottom: '5px' }}><i className="fas fa-hotel"></i> Hostel & Residential Feedback</h2>
                                 <p style={{ marginBottom: '20px', color: 'var(--text-muted)', fontSize: '0.9rem' }}>Help us maintain a comfortable and safe living environment.</p>
 
-                                <form action="https://formsubmit.co/hariharanmahesh34@gmail.com" method="POST">
+                                <form action="https://formsubmit.co/info@mzcn.in" method="POST">
                                     <input type="hidden" name="_subject" value="New Hostel Feedback - MZCN" />
                                     <div className="form-group-styled">
                                         <label className="form-label-styled">Room Number / Block <span style={{ color: '#d93025' }}>*</span></label>
@@ -252,7 +252,7 @@ const Feedback = () => {
                                 <h2 style={{ color: 'var(--primary)', marginBottom: '5px' }}><i className="fas fa-university"></i> Institutional Quality Feedback</h2>
                                 <p style={{ marginBottom: '20px', color: 'var(--text-muted)', fontSize: '0.9rem' }}>Evaluate the institution's overall quality and standards.</p>
 
-                                <form action="https://formsubmit.co/hariharanmahesh34@gmail.com" method="POST">
+                                <form action="https://formsubmit.co/info@mzcn.in" method="POST">
                                     <input type="hidden" name="_subject" value="New Institutional Quality Feedback - MZCN" />
                                     <div className="form-group-styled">
                                         <label className="form-label-styled">Rate the following (1-5 Scale): <span style={{ color: '#d93025' }}>*</span></label>
