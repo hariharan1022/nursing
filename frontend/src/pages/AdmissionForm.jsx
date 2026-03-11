@@ -147,7 +147,7 @@ const AdmissionForm = () => {
 
             <div className="form-container">
                 <div className="admission-card reveal active">
-                    <form action="https://formsubmit.co/hariharanmahesh34@gmail.com" method="POST" onSubmit={() => setIsSubmitting(true)}>
+                    <form action="https://formsubmit.co/info@mzcn.in" method="POST" onSubmit={() => setIsSubmitting(true)}>
                         <input type="hidden" name="_subject" value="New Admission Inquiry - MZCN" />
                         <input type="hidden" name="_next" value={window.location.origin + '/nursing/#/admissions?status=success'} />
                         <input type="hidden" name="_template" value="table" />
