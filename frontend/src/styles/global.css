@@ -714,7 +714,7 @@ body.header-sticky-active {
 .main-header {
     background: #ffffff;
     padding: 5px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 2px solid var(--primary);
     position: relative;
     z-index: 1000;
     transition: all 0.3s ease;
@@ -826,7 +826,7 @@ body.header-sticky-active {
 .header-wrapper.sticky .main-header {
     padding: 3px 0;
     box-shadow: none;
-    border-bottom: none;
+    border-bottom: 2px solid var(--primary);
 }
 
 .header-wrapper.sticky .logo img {
@@ -5632,7 +5632,7 @@ strong {
 
 .main-header {
     background: #ffffff !important;
-    border-bottom: 1px solid #d7dde7 !important;
+    border-bottom: 3px solid var(--primary) !important;
     backdrop-filter: none !important;
     box-shadow: none !important;
 }
