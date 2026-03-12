@@ -313,7 +313,7 @@ const Navbar = () => {
                                     <span className="nav-label"><i className="fas fa-link nav-icon-badge" aria-hidden="true"></i><span>Portals</span></span> <i className={`fas fa-chevron-down dropdown-arrow ${activeDropdown === 'portals' ? 'rotated' : ''}`} style={{ fontSize: '0.7rem', marginLeft: '5px' }}></i>
                                 </button>
                                 <ul className={`dropdown ${activeDropdown === 'portals' ? 'active-mobile' : ''}`}>
-                                    <li><a href="http://betanet.mzcet.in:8080/" target="_blank" rel="noopener noreferrer"><i className="fas fa-user-graduate" style={{ width: '20px', color: 'var(--accent)' }}></i> Student Portal</a></li>
+                                    <li><a href="http://betanet.mzcet.in:8080/NursingLogin.aspx" target="_blank" rel="noopener noreferrer"><i className="fas fa-user-graduate" style={{ width: '20px', color: 'var(--accent)' }}></i> Student Portal</a></li>
                                     <li><a href="https://mail.google.com/a/mzcn.in" target="_blank" rel="noopener noreferrer"><i className="fas fa-envelope-open-text" style={{ width: '20px', color: 'var(--accent)' }}></i> Web Mail</a></li>
                                 </ul>
                             </li>
