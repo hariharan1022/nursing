@@ -5,45 +5,15 @@
   <link rel="icon" type="image/webp" href="./logo.webp" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mount Zion College of Nursing</title>
-  <style>
-    body { margin: 0; background-color: #f8fafc; }
-    .loading-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        gap: 20px;
-        font-family: system-ui, -apple-system, sans-serif;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-    .loading-container.visible { opacity: 1; }
-    .spinner {
-        width: 40px;
-        height: 40px;
-        border: 4px solid #e2e8f0;
-        border-top: 4px solid #3b82f6;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-    }
-    .loading-text { font-size: 1.1rem; color: #64748b; font-weight: 500; }
-    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-  </style>
+
 </head>
 <body>
-  <div class="loading-container" id="loader">
-      <div class="spinner"></div>
-      <div class="loading-text">Opening Site...</div>
-  </div>
+
 
   <script>
     const DEV_SERVER_URL = "http://localhost:5173";
     
-    // Only show the loading UI if we haven't redirected within 300ms
-    const loaderTimeout = setTimeout(() => {
-      document.getElementById('loader').classList.add('visible');
-    }, 300);
+
 
     async function tryRedirect() {
       try {
@@ -54,7 +24,6 @@
         await fetch(DEV_SERVER_URL, { mode: 'no-cors', signal: controller.signal });
         
         // Success! Redirect immediately
-        clearTimeout(loaderTimeout);
         window.location.replace(DEV_SERVER_URL);
       } catch (err) {
         // Server not ready, keep checking
