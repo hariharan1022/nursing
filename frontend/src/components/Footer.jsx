@@ -512,7 +512,7 @@ const Footer = () => {
                         © {new Date().getFullYear()} Mount Zion College of Nursing. All Rights Reserved.
                     </p>
                     <p style={{ margin: 0, fontSize: '0.8rem' }}>
-                        Designed and Maintained by <span className="animated-text">Dept. of IT AIDS - MZCET</span>
+                        Designed and Maintained by <span className="animated-text">Dept. of IT & AIDS - MZCET</span>
                     </p>
                 </div>
             </div>
