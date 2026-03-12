@@ -21,7 +21,7 @@
         width: 50px;
         height: 50px;
         border: 4px solid #e2e8f0;
-        border-top: 4px solid #3b82f6; /* Blue accent color */
+        border-top: 4px solid #3b82f6;
         border-radius: 50%;
         animation: spin 1s linear infinite;
     }
@@ -30,6 +30,13 @@
         color: #64748b;
         font-weight: 500;
         animation: pulse 1.5s ease-in-out infinite;
+    }
+    .status-note {
+        font-size: 0.9rem;
+        color: #94a3b8;
+        max-width: 300px;
+        text-align: center;
+        line-height: 1.4;
     }
     @keyframes spin {
         0% { transform: rotate(0deg); }
@@ -40,15 +47,39 @@
         50% { opacity: 0.5; }
     }
   </style>
-  <script type="module" crossorigin src="./assets/index-BOpe9vy0.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/index-DFLAH8Xd.css">
 </head>
 <body>
   <div id="root">
     <div class="loading-container">
         <div class="spinner"></div>
-        <div class="loading-text">Loading Mount Zion College of Nursing...</div>
+        <div class="loading-text">Connecting to Live Site...</div>
+        <div class="status-note">
+            Opening the local website. If this takes too long, make sure <strong>start-site.bat</strong> is running.
+        </div>
     </div>
   </div>
+  <script>
+    const DEV_SERVER_URL = "http://localhost:5173";
+    
+    async function tryRedirect() {
+      try {
+        // Try to reach the dev server. 
+        // We use 'no-cors' and a timeout to check if the server is responsive.
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 1000);
+        
+        await fetch(DEV_SERVER_URL, { mode: 'no-cors', signal: controller.signal });
+        
+        // If fetch succeeds (or responds), redirect immediately
+        window.location.href = DEV_SERVER_URL;
+      } catch (err) {
+        // Server not ready yet, check again in 1 second
+        setTimeout(tryRedirect, 1000);
+      }
+    }
+
+    // Start the redirect check
+    tryRedirect();
+  </script>
 </body>
 </html>
