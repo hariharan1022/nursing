@@ -1,37 +1,19 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/webp" href="./logo.webp" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <title>Mount Zion College of Nursing</title>
 
+  <script type="module" crossorigin src="./assets/index-BOpe9vy0.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DFLAH8Xd.css">
 </head>
+
 <body>
-
-
-  <script>
-    const DEV_SERVER_URL = "http://localhost:5173";
-    
-
-
-    async function tryRedirect() {
-      try {
-        // Test connectivity quickly
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 800);
-        
-        await fetch(DEV_SERVER_URL, { mode: 'no-cors', signal: controller.signal });
-        
-        // Success! Redirect immediately
-        window.location.replace(DEV_SERVER_URL);
-      } catch (err) {
-        // Server not ready, keep checking
-        setTimeout(tryRedirect, 500);
-      }
-    }
-
-    tryRedirect();
-  </script>
+  <div id="root"></div>
 </body>
-</html>
+
+</html>
